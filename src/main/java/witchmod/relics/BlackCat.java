@@ -11,11 +11,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class BlackCat extends AbstractRelic {
-    public static final String ID = "Black Cat";
+public class BlackCat extends AbstractWitchRelic {
+    public static final String ID = "BlackCat";
+    private static final RelicTier TIER = RelicTier.STARTER;
+    private static final String IMG = "blackcat.png";
+    private static final LandingSound SOUND = LandingSound.FLAT;
 
     public BlackCat() {
-        super(ID, "blackcat.png", AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.FLAT);
+        super(ID, IMG, TIER, SOUND);
     }
 
     @Override

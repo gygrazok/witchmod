@@ -1,32 +1,21 @@
 package witchmod;
 
-//import com.megacrit.cardcrawl.helpers.GameDictionary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;/**
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;**/
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
-//import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
-//import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
-//import basemod.interfaces.SetUnlocksSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
-//import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Strike_Witch;
@@ -35,7 +24,6 @@ import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
 import witchmod.relics.BlackCat;
 
-//import necromod.relics.Phylactery;
 
 @SpireInitializer
 public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber {
@@ -49,27 +37,26 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	private static final Color WITCH_COLOR = CardHelper.getColor(90.0f, 90.0f, 100.0f);
 	private static final String ASSETS_FOLDER = "img";
 	
-	private static final String ATTACK_CARD = "512/bg_attack_white.png";
-	private static final String SKILL_CARD = "512/bg_skill_white.png";
-	private static final String POWER_CARD = "512/bg_power_white.png";
+	private static final String ATTACK_CARD = "512/bg_attack_witch.png";
+	private static final String SKILL_CARD = "512/bg_skill_witch.png";
+	private static final String POWER_CARD = "512/bg_power_witch.png";
 	
-	private static final String ENERGY_ORB = "512/card_white_orb.png";
+	private static final String ENERGY_ORB = "512/card_witch_orb.png";
 	
-	private static final String ATTACK_CARD_PORTRAIT = "1024/bg_attack_white.png";
-	private static final String SKILL_CARD_PORTRAIT = "1024/bg_skill_white.png";
-    private static final String POWER_CARD_PORTRAIT = "1024/bg_power_white.png";
-    private static final String ENERGY_ORB_PORTRAIT = "1024/card_white_orb.png";
+	private static final String ATTACK_CARD_PORTRAIT = "1024/bg_attack_witch.png";
+	private static final String SKILL_CARD_PORTRAIT = "1024/bg_skill_witch.png";
+    private static final String POWER_CARD_PORTRAIT = "1024/bg_power_witch.png";
+    private static final String ENERGY_ORB_PORTRAIT = "1024/card_witch_orb.png";
     
-    private static final String CHAR_BUTTON = "charSelect/necromancerButton.png";
-    private static final String CHAR_PORTRAIT = "charSelect/necromancerPortrait.jpg";
-    public static final String CHAR_SHOULDER_1 = "char/necromancer/shoulder.png";
-    public static final String CHAR_SHOULDER_2 = "char/necromancer/shoulder2.png";
-    public static final String CHAR_CORPSE = "char/necromancer/corpse.png";
-    public static final String CHAR_SKELETON_ATLAS = "char/necromancer/skeleton.atlas";
-    public static final String CHAR_SKELETON_JSON = "char/necromancer/skeleton.json";
+    private static final String CHAR_BUTTON = "charSelect/button.png";
+    private static final String CHAR_PORTRAIT = "charSelect/portrait.jpg";
+    public static final String CHAR_SHOULDER_1 = "char/shoulder.png";
+    public static final String CHAR_SHOULDER_2 = "char/shoulder2.png";
+    public static final String CHAR_CORPSE = "char/corpse.png";
+    public static final String CHAR_SKELETON_ATLAS = "char/skeleton.atlas";
+    public static final String CHAR_SKELETON_JSON = "char/skeleton.json";
     
-    //badge
-    public static final String BADGE_IMG = "NRelicBadge.png";
+    public static final String BADGE_IMG = "badge.png";
     
     
     public static final String getResourcePath(String resource) {
@@ -117,7 +104,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditCharacters() {
 		BaseMod.addCharacter(WitchCharacter.class, "The Witch", "WitchCharacter",
 				AbstractCardEnum.WITCH.toString(), "The Witch",
-				getResourcePath(CHAR_BUTTON), getResourcePath(CHAR_PORTRAIT),
+				getResourcePath(CHAR_BUTTON), 
+				getResourcePath(CHAR_PORTRAIT),
 				WitchEnum.WITCH.toString());
 	}
 

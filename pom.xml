@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>witchmod</groupId>
+  <artifactId>WitchMod</artifactId>
+  <packaging>jar</packaging>
+  <version>0.1</version>
+  <name>WitchMod</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.megacrit.cardcrawl</groupId>
+			<artifactId>slaythespire</artifactId>
+			<version>014</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>basemod</groupId>
+			<artifactId>basemod</artifactId>
+			<version>1.5.2</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>modthespire</groupId>
+			<artifactId>modthespire</artifactId>
+			<version>1.5.2</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>WitchMod</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<target>
+								<copy file="target/WitchMod.jar" tofile="../_ModTheSpire/mods/WitchMod.jar" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

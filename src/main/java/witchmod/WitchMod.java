@@ -17,8 +17,10 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import witchmod.cards.Athame;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Strike_Witch;
+import witchmod.cards.WitchHex;
 import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
@@ -117,6 +119,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditCards() {
 		BaseMod.addCard(new Strike_Witch());
 		BaseMod.addCard(new Defend_Witch());
+		BaseMod.addCard(new WitchHex());
+		BaseMod.addCard(new Athame());
 		
 		
 		

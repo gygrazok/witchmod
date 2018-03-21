@@ -2,11 +2,14 @@ package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.unique.FeedAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import witchmod.actions.AthameAction;
 
 public class Athame extends AbstractWitchCard{
 	public static final String ID = "Athame";
@@ -23,18 +26,18 @@ public class Athame extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 7;
-	private static final int UPGRADE_BONUS = 4;
+	private static final int POWER_UPGRADED_BONUS = 4;
+	private static final int MAGIC_NUMBER = 2;
+	private static final int MAGIC_NUMBER_UPGRADED_BONUS = 1;
 
 	public Athame() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
+		this.magicNumber = MAGIC_NUMBER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-				new DamageInfo(p, this.damage, this.damageTypeForTurn),
-				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-		
+		AbstractDungeon.actionManager.addToBottom(new AthameAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.magicNumber));
 	}
 
 	public AbstractCard makeCopy() {
@@ -44,7 +47,8 @@ public class Athame extends AbstractWitchCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_BONUS);
+			upgradeDamage(POWER_UPGRADED_BONUS);
+			upgradeMagicNumber(MAGIC_NUMBER_UPGRADED_BONUS);
 			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();
 		}

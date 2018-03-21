@@ -7,9 +7,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 @SpirePatch(cls="com.megacrit.cardcrawl.rooms.MonsterRoom", method="getCardRarity")
 public class MonsterRoomPatch {
-	@SpireInsertPatch(loc=43, localvars={"rareRate"})
+	@SpireInsertPatch(rloc=4)
 	public static void Insert(Object __obj_instance, int rareRate) {
-		if (AbstractDungeon.player.hasPower("AthamesOffering")){
+		if (AbstractDungeon.player.hasPower("AthamesOffering") && AbstractDungeon.player.getPower("AthamesOffering").amount > 0){
 			rareRate *= AbstractDungeon.player.getPower("AthamesOffering").amount;
 		}
 	}

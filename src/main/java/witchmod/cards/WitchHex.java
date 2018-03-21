@@ -14,8 +14,8 @@ public class WitchHex extends AbstractWitchCard {
 	public static final String ID = "WitchHex";
 	public static final	String NAME = "Witch Hex";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Applies 1 Weak, 1 Vulnerability and 1 Frail to an enemy.";
-	public static final	String DESCRIPTION_UPGRADED = "Applies 1 Weak, 1 Vulnerability and 1 Frail to all enemies.";
+	public static final	String DESCRIPTION = "Applies 1 Weak, 1 Vulnerable and 1 Frail to an enemy.";
+	public static final	String DESCRIPTION_UPGRADED = "Applies 1 Weak, 1 Vulnerable and 1 Frail to all enemies.";
 
 	private static final CardRarity RARITY = CardRarity.BASIC;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

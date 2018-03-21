@@ -21,7 +21,7 @@ public class PandorasBoxPatch {
 			
 			for (Iterator<AbstractCard> i = AbstractDungeon.player.masterDeck.group.iterator(); i.hasNext();) {
 				AbstractCard e = (AbstractCard) i.next();
-				if (e.cardID.equals("Strike_P") || e.cardID.equals("Defend_P")) {
+				if (e.cardID.equals("Strike_Witch") || e.cardID.equals("Defend_Witch")) {
 					i.remove();
 					count.set(box, ((Integer) count.get(box)) + 1);
 				}

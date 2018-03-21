@@ -22,22 +22,22 @@ public class WitchCharacter extends CustomPlayer{
     public static final int ENERGY_PER_TURN = 3;
 
 	public static final String[] orbTextures = {
-			"img/char/orb/layer1.png",
-			"img/char/orb/layer2.png",
-			"img/char/orb/layer3.png",
-			"img/char/orb/layer4.png",
-			"img/char/orb/layer5.png",
-			"img/char/orb/layer6.png",
-			"img/char/orb/layer1d.png",
-			"img/char/orb/layer2d.png",
-			"img/char/orb/layer3d.png",
-			"img/char/orb/layer4d.png",
-			"img/char/orb/layer5d.png"
+			"images/char/orb/layer1.png",
+			"images/char/orb/layer2.png",
+			"images/char/orb/layer3.png",
+			"images/char/orb/layer4.png",
+			"images/char/orb/layer5.png",
+			"images/char/orb/layer6.png",
+			"images/char/orb/layer1d.png",
+			"images/char/orb/layer2d.png",
+			"images/char/orb/layer3d.png",
+			"images/char/orb/layer4d.png",
+			"images/char/orb/layer5d.png"
 	};
 
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/orb/vfx.png", "img/character.g3dj", "Character_Render|idle");
+		super(name, setClass, orbTextures, "images/char/orb/vfx.png", "images/char/character.g3dj", "witch|idle");
 		
 		this.dialogX = this.drawX + 0.0f * Settings.scale;
 		this.dialogY = this.drawY + 170.0f * Settings.scale;
@@ -65,14 +65,15 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
-		retVal.add("Bone_Wall");
+		retVal.add("WitchHex");
+		retVal.add("Athame");
 		return retVal;
 	}
 	
 	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Black_Cat");
-		UnlockTracker.markRelicAsSeen("Black_Cat");
+		retVal.add("BlackCat");
+		UnlockTracker.markRelicAsSeen("BlackCat");
 		return retVal;
 	}
 	

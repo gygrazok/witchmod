@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class BlackCat extends AbstractWitchRelic {
     public static final String ID = "BlackCat";
     private static final RelicTier TIER = RelicTier.STARTER;
-    private static final String IMG = "blackcat.png";
+    private static final String IMG = "relics/blackcat.png";
     private static final LandingSound SOUND = LandingSound.FLAT;
 
     public BlackCat() {

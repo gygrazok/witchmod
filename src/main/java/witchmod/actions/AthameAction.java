@@ -29,7 +29,7 @@ public class AthameAction extends AbstractGameAction {
 			AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 			this.target.damage(this.info);
 			if (!(!this.target.isDying && this.target.currentHealth > 0 || this.target.halfDead || this.target.hasPower("Minion"))) {
-	            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AthamePower(AbstractDungeon.player,this.amount), this.amount));
+	            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AthamePower(AbstractDungeon.player,this.amount), this.amount));
 			}
 			if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
 				AbstractDungeon.actionManager.clearPostCombatActions();

@@ -1,8 +1,5 @@
 package witchmod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.unique.FeedAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,7 +17,7 @@ public class Athame extends AbstractWitchCard{
 	
 	private static final CardRarity RARITY = CardRarity.BASIC;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
-	private static final CardType TYPE = CardType.SKILL;
+	private static final CardType TYPE = CardType.ATTACK;
 	
 	private static final int POOL = 0;
 	

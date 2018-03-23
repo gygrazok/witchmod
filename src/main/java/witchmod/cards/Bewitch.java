@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class WitchHex extends AbstractWitchCard {
-	public static final String ID = "WitchHex";
-	public static final	String NAME = "Witch Hex";
+public class Bewitch extends AbstractWitchCard {
+	public static final String ID = "Bewitch";
+	public static final	String NAME = "Bewitch";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Applies 1 Weak, 1 Vulnerable and 1 Frail to an enemy.";
 	public static final	String DESCRIPTION_UPGRADED = "Applies 1 Weak, 1 Vulnerable and 1 Frail to all enemies.";
@@ -26,7 +26,7 @@ public class WitchHex extends AbstractWitchCard {
 
 
 
-	public WitchHex() {
+	public Bewitch() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 	}
 
@@ -45,13 +45,13 @@ public class WitchHex extends AbstractWitchCard {
 	}
 
 	public AbstractCard makeCopy() {
-		return new WitchHex();
+		return new Bewitch();
 	}
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			target = CardTarget.ENEMY;
+			target = CardTarget.ALL_ENEMY;
 			rawDescription = DESCRIPTION_UPGRADED;
 			this.initializeDescription();
 		}

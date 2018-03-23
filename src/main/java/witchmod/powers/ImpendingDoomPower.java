@@ -4,6 +4,7 @@
 package witchmod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -29,7 +30,8 @@ public class ImpendingDoomPower extends AbstractPower {
         this.amount = amount;
         this.updateDescription();
         this.img = new Texture(WitchMod.getResourcePath(IMG));
-        isTurnBased = true;
+        this.isTurnBased = true;
+        this.type = PowerType.DEBUFF;
     }
 
     @Override
@@ -42,7 +44,7 @@ public class ImpendingDoomPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner,new DamageInfo(source, amount, DamageType.HP_LOSS)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner,new DamageInfo(source, amount, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, "ImpendingDoom"));
         }
     }

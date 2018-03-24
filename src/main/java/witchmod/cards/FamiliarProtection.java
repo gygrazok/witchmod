@@ -10,7 +10,7 @@ public class FamiliarProtection extends AbstractWitchCard {
 	public static final String ID = "FamiliarProtection";
 	public static final	String NAME = "Familiar Protection";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. Perpetual.";
+	public static final	String DESCRIPTION = "Gain !B! block. Persistent.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -19,7 +19,7 @@ public class FamiliarProtection extends AbstractWitchCard {
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 5;
+	private static final int POWER = 6;
 	private static final int UPGRADE_BONUS = 3;
 
 
@@ -28,6 +28,7 @@ public class FamiliarProtection extends AbstractWitchCard {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
 		this.retain = true;
+		
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -36,6 +37,11 @@ public class FamiliarProtection extends AbstractWitchCard {
 	
 	public AbstractCard makeCopy() {
 		return new FamiliarProtection();
+	}
+	
+	@Override
+	public void triggerOnEndOfPlayerTurn(){
+		this.retain = true;
 	}
 	
 	public void upgrade() {

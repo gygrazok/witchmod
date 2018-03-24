@@ -36,8 +36,6 @@ public class MonsterRoomPatch {
 		if (AbstractDungeon.player.hasPower("AthamesOffering") && AbstractDungeon.player.getPower("AthamesOffering").amount > 0){
 			logger.info("If executed: "+AbstractDungeon.player.getPower("AthamesOffering").amount);
 			rareRate *= AbstractDungeon.player.getPower("AthamesOffering").amount;
-		} else {
-			logger.info("Amount = 0? "+AbstractDungeon.player.getPower("AthamesOffering").amount);
 		}
 		logger.info("Final rate = "+rareRate);
 	}

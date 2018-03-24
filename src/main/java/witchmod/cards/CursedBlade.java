@@ -1,33 +1,31 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.powers.ImpendingDoomPower;
-
-public class DoomBlade extends AbstractWitchCard{
-	public static final String ID = "DoomBlade";
-	public static final	String NAME = "Doom Blade";
+public class CursedBlade extends AbstractWitchCard{
+	public static final String ID = "CursedBlade";
+	public static final	String NAME = "Cursed Blade";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Next turn the target loses !D! life.";
+	public static final	String DESCRIPTION = "Deal !D! damage. Shuffle a random Curse into your discard pile.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
-	private static final CardType TYPE = CardType.SKILL;
+	private static final CardType TYPE = CardType.ATTACK;
 	
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 8;
-	private static final int UPGRADE_BONUS = 4;
+	private static final int POWER = 15;
+	private static final int UPGRADE_BONUS = 5;
 
-	public DoomBlade() {
+	public CursedBlade() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 	}
@@ -36,11 +34,12 @@ public class DoomBlade extends AbstractWitchCard{
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
 				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ImpendingDoomPower(m, p, this.damage), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(AbstractDungeon.returnRandomCurse(),1));
+		
 	}
 
 	public AbstractCard makeCopy() {
-		return new DoomBlade();
+		return new CursedBlade();
 	}
 
 	public void upgrade() {

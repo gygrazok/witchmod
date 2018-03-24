@@ -15,11 +15,11 @@ public class Athame extends AbstractWitchCard{
 	public static final	String DESCRIPTION = "Deal !D! damage. NL If this kills a non-minion enemy, double the chance of receiving rare cards as monster rewards. Exhaust.";
 	public static final	String DESCRIPTION_UPGRADED = "Deal !D! damage. NL If this kills a non-minion enemy, triple the chance of receiving rare cards as monster rewards. Exhaust.";
 	
-	private static final CardRarity RARITY = CardRarity.BASIC;
+	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	
-	private static final int POOL = 0;
+	private static final int POOL = 1;
 	
 	private static final int COST = 1;
 	private static final int POWER = 7;

@@ -45,7 +45,7 @@ public class WitchCharacter extends CustomPlayer{
 		initializeClass(null, WitchMod.getResourcePath(WitchMod.CHAR_SHOULDER_2),
 				WitchMod.getResourcePath(WitchMod.CHAR_SHOULDER_1),
 				WitchMod.getResourcePath(WitchMod.CHAR_CORPSE), 
-				getLoadout(), 20.0F, -10.0F, 120.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
+				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 	}
 	
 	@Override
@@ -66,6 +66,16 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
 		retVal.add("Bewitch");
+		retVal.add("Athame");
+		retVal.add("CursedBlade");
+		retVal.add("Demonfyre");
+		retVal.add("DoomBlade");
+		retVal.add("FamiliarProtection");
+		retVal.add("Foresight");
+		retVal.add("Hexguard");
+		retVal.add("PainBolt");
+		retVal.add("UnluckySeven");
+		retVal.add("UnnaturalEnergy");
 		return retVal;
 	}
 	

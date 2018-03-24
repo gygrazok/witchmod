@@ -19,7 +19,7 @@ public class PainBolt extends AbstractWitchCard{
 	public static final String ID = "PainBolt";
 	public static final	String NAME = "Pain Bolt";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Applies X vulnerable. Deal !D! damage.";
+	public static final	String DESCRIPTION = "Applies X vulnerable. Deal !D! times X damage.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -42,6 +42,7 @@ public class PainBolt extends AbstractWitchCard{
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY), 0.3f));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
+		p.energy.use(effect);
 	}
 	
 	@Override

@@ -24,13 +24,17 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.Athame;
 import witchmod.cards.Bewitch;
+import witchmod.cards.BleedOut;
+import witchmod.cards.CursedBlade;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
+import witchmod.cards.DoomBlade;
 import witchmod.cards.FamiliarProtection;
 import witchmod.cards.Foresight;
 import witchmod.cards.Hexguard;
 import witchmod.cards.PainBolt;
 import witchmod.cards.Strike_Witch;
+import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
 import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
@@ -130,16 +134,27 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	}
 
 	public void receiveEditCards() {
+		//BASIC
 		BaseMod.addCard(new Strike_Witch());
 		BaseMod.addCard(new Defend_Witch());
 		BaseMod.addCard(new Bewitch());
-		BaseMod.addCard(new Athame());
+		
+		//COMMON
 		BaseMod.addCard(new Demonfyre());
 		BaseMod.addCard(new FamiliarProtection());
+		BaseMod.addCard(new BleedOut());
+		
+		//UNCOMMON
+		BaseMod.addCard(new Athame());
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Hexguard());
-		BaseMod.addCard(new UnnaturalEnergy());
 		BaseMod.addCard(new PainBolt());
+		BaseMod.addCard(new CursedBlade());
+
+		//RARE
+		BaseMod.addCard(new UnluckySeven());
+		BaseMod.addCard(new UnnaturalEnergy());
+		BaseMod.addCard(new DoomBlade());
 	}
 
 

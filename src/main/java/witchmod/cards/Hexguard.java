@@ -29,7 +29,7 @@ public class Hexguard extends AbstractWitchCard {
 	public Hexguard() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
-		this.magicNumber = 1;
+		this.baseMagicNumber = 1;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {

@@ -1,6 +1,5 @@
 package witchmod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,33 +13,29 @@ public class Bewitch extends AbstractWitchCard {
 	public static final String ID = "Bewitch";
 	public static final	String NAME = "Bewitch";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Applies 1 Weak, 1 Vulnerable and 1 Frail to an enemy.";
-	public static final	String DESCRIPTION_UPGRADED = "Applies 1 Weak, 1 Vulnerable and 1 Frail to all enemies.";
+	public static final	String DESCRIPTION = "Applies !M! Weak, !M! Vulnerable and !M! Frail to all enemies.";
 
 	private static final CardRarity RARITY = CardRarity.BASIC;
-	private static final CardTarget TARGET = CardTarget.ENEMY;
+	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
 
 	private static final int POOL = 0;
 	private static final int COST = 1;
 
+	private static final int POWER = 1;
+	private static final int UPGRADED_BONUS = 1;
 
 
 	public Bewitch() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		this.baseMagicNumber = this.magicNumber = POWER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (upgraded) {
-			for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, 1, false),1, true, AbstractGameAction.AttackEffect.NONE));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, 1, false),1, true, AbstractGameAction.AttackEffect.NONE));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new FrailPower(mo, 1, false),1, true, AbstractGameAction.AttackEffect.NONE));
-			}
-		} else {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1, false),1, true, AbstractGameAction.AttackEffect.NONE));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false),1, true, AbstractGameAction.AttackEffect.NONE));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, 1, false),1, true, AbstractGameAction.AttackEffect.NONE));
+		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false),magicNumber, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false),magicNumber, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new FrailPower(mo, magicNumber, false),magicNumber, true));
 		}
 	}
 
@@ -51,9 +46,8 @@ public class Bewitch extends AbstractWitchCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			target = CardTarget.ALL_ENEMY;
-			rawDescription = DESCRIPTION_UPGRADED;
-			this.initializeDescription();
+			upgradeMagicNumber(UPGRADED_BONUS);
+			upgradedMagicNumber = true;
 		}
 	}
 }

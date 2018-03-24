@@ -30,7 +30,6 @@ public class UnnaturalEnergy extends AbstractWitchCard {
 	public UnnaturalEnergy() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseMagicNumber = POWER;
-		this.retain = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {

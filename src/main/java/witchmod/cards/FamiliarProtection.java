@@ -40,7 +40,7 @@ public class FamiliarProtection extends AbstractWitchCard {
 	}
 	
 	@Override
-	public void triggerOnEndOfPlayerTurn(){
+	public void atTurnStart(){
 		this.retain = true;
 	}
 	

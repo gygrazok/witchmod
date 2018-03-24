@@ -32,8 +32,11 @@ import witchmod.cards.DoomBlade;
 import witchmod.cards.FamiliarProtection;
 import witchmod.cards.Foresight;
 import witchmod.cards.Hexguard;
+import witchmod.cards.Intelligence;
 import witchmod.cards.PainBolt;
+import witchmod.cards.RitualOfDecay;
 import witchmod.cards.Strike_Witch;
+import witchmod.cards.TrollsBlood;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
 import witchmod.characters.WitchCharacter;
@@ -143,6 +146,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Demonfyre());
 		BaseMod.addCard(new FamiliarProtection());
 		BaseMod.addCard(new BleedOut());
+		BaseMod.addCard(new RitualOfDecay());
 		
 		//UNCOMMON
 		BaseMod.addCard(new Athame());
@@ -150,11 +154,13 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Hexguard());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
+		BaseMod.addCard(new TrollsBlood());
 
 		//RARE
 		BaseMod.addCard(new UnluckySeven());
 		BaseMod.addCard(new UnnaturalEnergy());
 		BaseMod.addCard(new DoomBlade());
+		BaseMod.addCard(new Intelligence());
 	}
 
 

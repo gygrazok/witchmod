@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.powers;
 
 import com.badlogic.gdx.graphics.Texture;

@@ -30,7 +30,7 @@ public class Athame extends AbstractWitchCard{
 	public Athame() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
-		this.magicNumber = MAGIC_NUMBER;
+		this.baseMagicNumber = this.magicNumber = MAGIC_NUMBER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

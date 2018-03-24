@@ -31,7 +31,7 @@ public class Demonfyre extends AbstractWitchCard{
 	public Demonfyre() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
-		this.baseMagicNumber = MAGIC;
+		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

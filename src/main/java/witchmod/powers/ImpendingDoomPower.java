@@ -19,7 +19,7 @@ import witchmod.WitchMod;
 public class ImpendingDoomPower extends AbstractPower {
     public static final String POWER_ID = "ImpendingDoom";
     public static final String NAME = "Impending Doom";
-    public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b"};
+    public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b"," health"};
     public static final String IMG = "powers/athamesoffering.png";
     private AbstractCreature source;
     public ImpendingDoomPower(AbstractCreature owner, AbstractCreature source, int amount) {
@@ -36,7 +36,7 @@ public class ImpendingDoomPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0]+this.amount;
+        this.description = DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1];
     }
     
 

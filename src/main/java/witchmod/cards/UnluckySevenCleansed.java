@@ -26,8 +26,9 @@ public class UnluckySevenCleansed extends AbstractWitchCard {
 	
 	public UnluckySevenCleansed() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseMagicNumber = POWER;
+		this.baseMagicNumber = this.magicNumber = POWER;
 		this.exhaust = true;
+		initializeDescription();
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {

@@ -19,7 +19,7 @@ public class PainBolt extends AbstractWitchCard{
 	public static final String ID = "PainBolt";
 	public static final	String NAME = "Pain Bolt";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Applies X vulnerable. Deal !D! * X damage in a single attack.";
+	public static final	String DESCRIPTION = "Applies X vulnerable. Deal !D! damage";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -38,23 +38,19 @@ public class PainBolt extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int effect = EnergyPanel.getCurrentEnergy();
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
-        
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.SCARLET)));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY), 0.3f));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
+        if (effect > 0) {
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
+    		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
+        }
 		p.energy.use(effect);
 	}
 	
 	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
+	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
 		int effect = EnergyPanel.getCurrentEnergy();
-		int oldDamage = baseDamage;
-		baseDamage *= effect;
-		super.calculateCardDamage(mo);
-		this.rawDescription = DESCRIPTION + "NL (current damage "+baseDamage+")";
-		this.initializeDescription();
-		baseDamage = oldDamage;
+		return tmp*effect;
 	}
 	
     @Override

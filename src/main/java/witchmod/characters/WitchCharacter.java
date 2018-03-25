@@ -2,8 +2,7 @@ package witchmod.characters;
 
 import java.util.ArrayList;
 
-//import com.badlogic.gdx.math.*;
-//import com.esotericsoftware.spine.*;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -12,6 +11,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.abstracts.CustomPlayer;
 import witchmod.WitchMod;
+import witchmod.cardgroup.WitchCardGroup;
 import witchmod.patches.WitchEnum;
 
 
@@ -38,7 +38,7 @@ public class WitchCharacter extends CustomPlayer{
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
 		super(name, setClass, orbTextures, "images/char/orb/vfx.png", "images/char/character.g3dj", "witch|idle");
-		
+		hand = new WitchCardGroup(CardGroup.CardGroupType.HAND);
 		this.dialogX = this.drawX + 0.0f * Settings.scale;
 		this.dialogY = this.drawY + 170.0f * Settings.scale;
 		

@@ -177,6 +177,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] recurrent = {"recurrent"};
 		BaseMod.addKeyword(recurrent, "When played gets shuffled back into the deck instead of being discarded.");
 
+		String[] cleanse = {"cleanse"};
+		BaseMod.addKeyword(recurrent, "This card is cleansed if the condition is satisfied at the end of your turn while it is in your hand.");
 	}
 
 }

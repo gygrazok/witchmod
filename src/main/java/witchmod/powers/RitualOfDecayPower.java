@@ -17,7 +17,7 @@ import witchmod.WitchMod;
 public class RitualOfDecayPower extends AbstractPower {
     public static final String POWER_ID = "RitualOfDecayPower";
     public static final String NAME = "Ritual of Decay";
-    public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card."};
+    public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card."," NL Used for this turn."};
     public static final String IMG = "powers/athamesoffering.png";
     private boolean used = false;
     public RitualOfDecayPower(AbstractCreature owner) {
@@ -32,7 +32,10 @@ public class RitualOfDecayPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+    	this.description = DESCRIPTIONS[0];
+    	if (used) {
+    		this.description += DESCRIPTIONS[1];
+    	}
     }
     
     @Override
@@ -54,12 +57,14 @@ public class RitualOfDecayPower extends AbstractPower {
         		this.flash();	
     		}
     		used = true;
+    		updateDescription();
     	}
     }
     
     @Override
     public void atStartOfTurn(){
     	used = false;
+    	updateDescription();
     }
     
 }

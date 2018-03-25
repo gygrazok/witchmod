@@ -35,7 +35,6 @@ public class Demonfyre extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		//the damage already includes the bonus from the demonfyre power
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.FIRE));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DemonfyrePower(p, this.magicNumber), this.magicNumber));
 	}
@@ -45,13 +44,11 @@ public class Demonfyre extends AbstractWitchCard{
 	}
 	
 	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
+	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
 		int bonus = AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID) == null?0:AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID).amount;
-		//ugly hack to include the bonus in the calculations
-		this.baseDamage += bonus;
-		super.calculateCardDamage(mo);
-		this.baseDamage -= bonus;
+		return tmp + bonus;
 	}
+	
 
 	public void upgrade() {
 		if (!this.upgraded) {

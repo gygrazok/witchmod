@@ -6,13 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.actions.ShuffleCardInDeckAction;
-
 public class UnnaturalEnergy extends AbstractWitchCard {
 	public static final String ID = "UnnaturalEnergy";
 	public static final	String NAME = "Unnatural Energy";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain [B]. Recurrent.";
+	public static final	String DESCRIPTION = "Gain [B]. NL Recurrent.";
 	public static final	String DESCRIPTION_UPGRADED = "Gain [B][B]. NL Recurrent.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
@@ -29,12 +27,12 @@ public class UnnaturalEnergy extends AbstractWitchCard {
 	
 	public UnnaturalEnergy() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseMagicNumber = POWER;
+		this.baseMagicNumber = this.magicNumber = POWER;
+		this.reshuffleOnUse = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ShuffleCardInDeckAction(AbstractDungeon.player, this));
 	}
 	
 	
@@ -46,6 +44,8 @@ public class UnnaturalEnergy extends AbstractWitchCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
+			this.rawDescription = DESCRIPTION_UPGRADED;
+			initializeDescription();
 		}
 	}
 }

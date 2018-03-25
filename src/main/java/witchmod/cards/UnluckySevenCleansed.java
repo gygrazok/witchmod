@@ -11,7 +11,7 @@ public class UnluckySevenCleansed extends AbstractWitchCard {
 	public static final String ID = "UnluckySevenCleansed";
 	public static final	String NAME = "Lucky Seven";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain [B][B][B][B][B][B][B]. NL Draw !M! cards. NL Exhaust.";
+	public static final	String DESCRIPTION = "Gain !M! [B]. NL Draw !M! cards. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

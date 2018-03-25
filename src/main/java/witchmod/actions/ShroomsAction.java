@@ -30,7 +30,7 @@ public class ShroomsAction extends AbstractGameAction{
             c.costForTurn = c.cost = newCost;
             c.isCostModified = true;
         }
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
+		AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
 		this.isDone = true;
 	}
 }

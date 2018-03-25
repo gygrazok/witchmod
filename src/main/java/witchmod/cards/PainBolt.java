@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.relics.PaperFrog;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
@@ -23,7 +24,7 @@ public class PainBolt extends AbstractWitchCard{
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
-	private static final CardType TYPE = CardType.SKILL;
+	private static final CardType TYPE = CardType.ATTACK;
 	
 	private static final int POOL = 1;
 	
@@ -42,6 +43,11 @@ public class PainBolt extends AbstractWitchCard{
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY), 0.3f));
         if (effect > 0) {
         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, effect, false), effect));
+        	if (!m.hasPower(VulnerablePower.POWER_ID)) {
+        		//since the damage is calculated BEFORE the applying of vulnerable,
+        		//we have to manually account for the vulnerable we just applied if the target doesn't already have it
+        		this.damage *= p.hasRelic(PaperFrog.ID)?1.75:1.5;
+        	}
     		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
         }
 		p.energy.use(effect);

@@ -76,6 +76,18 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("PainBolt");
 		retVal.add("UnluckySeven");
 		retVal.add("UnnaturalEnergy");
+		retVal.add("BleedOut");
+		retVal.add("EvilEye");
+		retVal.add("Intelligence");
+		retVal.add("KarmaSuction");
+		retVal.add("NighInvulnerability");
+		retVal.add("RitualOfDecay");
+		retVal.add("Shrooms");
+		retVal.add("TrollsBlood");
+		retVal.add("BroomstickSmash");
+		retVal.add("EnfeeblingStrike");
+		retVal.add("Graveburst");
+		retVal.add("MysticUnburial");
 		return retVal;
 	}
 	

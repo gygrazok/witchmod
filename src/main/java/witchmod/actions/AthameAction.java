@@ -1,15 +1,19 @@
 package witchmod.actions;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import witchmod.powers.AthamePower;
 
 public class AthameAction extends AbstractGameAction {
+	private Logger log = LogManager.getLogger(AthameAction.class);
 	private DamageInfo info;
 
 	public AthameAction(AbstractCreature target, DamageInfo info, int amount) {
@@ -17,22 +21,23 @@ public class AthameAction extends AbstractGameAction {
 		this.setValues(target, info);
 		this.amount = amount;
 		this.actionType = AbstractGameAction.ActionType.DAMAGE;
-		this.duration = 0.1f;
+		this.duration = 0;
 	}
 
 	@Override
 	public void update() {
-		if (this.duration == 0.1f && this.target != null) {
-			AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-			this.target.damage(this.info);
-			if (!(!this.target.isDying && this.target.currentHealth > 0 || this.target.halfDead)) {
-	            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AthamePower(AbstractDungeon.player,this.amount), this.amount));
-			}
-			/*if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-				AbstractDungeon.actionManager.clearPostCombatActions();
-			}*/
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SLASH_VERTICAL));
+		
+		info.applyPowers(AbstractDungeon.player, target); //not sure if needed
+		log.info("Athame: final damage = "+info.output);
+		log.info("Athame: enemy stats = "+target.currentBlock+"+"+target.currentHealth);
+		if (info.output >= target.currentBlock+target.currentHealth) {
+			//enough damage to kill
+			log.info("Athame: applying athame power");
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AthamePower(AbstractDungeon.player,this.amount), this.amount));
 		}
-		this.tickDuration();
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+		this.isDone = true;
 	}
 }
 

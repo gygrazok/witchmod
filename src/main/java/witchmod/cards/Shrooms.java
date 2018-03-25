@@ -36,7 +36,7 @@ public class Shrooms extends AbstractWitchCard {
 		for (int i = 0; i < this.magicNumber; i++) {
 			AbstractDungeon.actionManager.addToBottom(new ShroomsAction());
 		}
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PINK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), (float)0.5*this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PINK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), (float)0.1*this.magicNumber));
 
 	}
 	

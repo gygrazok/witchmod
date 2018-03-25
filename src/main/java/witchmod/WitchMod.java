@@ -25,16 +25,24 @@ import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.Athame;
 import witchmod.cards.Bewitch;
 import witchmod.cards.BleedOut;
+import witchmod.cards.BroomstickSmash;
 import witchmod.cards.CursedBlade;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
+import witchmod.cards.EnfeeblingStrike;
+import witchmod.cards.EvilEye;
 import witchmod.cards.FamiliarProtection;
 import witchmod.cards.Foresight;
+import witchmod.cards.Graveburst;
 import witchmod.cards.Hexguard;
 import witchmod.cards.Intelligence;
+import witchmod.cards.KarmaSuction;
+import witchmod.cards.MysticUnburial;
+import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
 import witchmod.cards.RitualOfDecay;
+import witchmod.cards.Shrooms;
 import witchmod.cards.Strike_Witch;
 import witchmod.cards.TrollsBlood;
 import witchmod.cards.UnluckySeven;
@@ -147,6 +155,9 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new FamiliarProtection());
 		BaseMod.addCard(new BleedOut());
 		BaseMod.addCard(new RitualOfDecay());
+		BaseMod.addCard(new KarmaSuction());
+		BaseMod.addCard(new EvilEye());
+		BaseMod.addCard(new BroomstickSmash());
 		
 		//UNCOMMON
 		BaseMod.addCard(new Athame());
@@ -155,12 +166,17 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
 		BaseMod.addCard(new TrollsBlood());
+		BaseMod.addCard(new NighInvulnerability());
+		BaseMod.addCard(new Shrooms());
+		BaseMod.addCard(new EnfeeblingStrike());
 
 		//RARE
 		BaseMod.addCard(new UnluckySeven());
 		BaseMod.addCard(new UnnaturalEnergy());
 		BaseMod.addCard(new DoomBlade());
 		BaseMod.addCard(new Intelligence());
+		BaseMod.addCard(new Graveburst());
+		BaseMod.addCard(new MysticUnburial());
 	}
 
 
@@ -178,7 +194,10 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(recurrent, "When played gets shuffled back into the deck instead of being discarded.");
 
 		String[] cleanse = {"cleanse"};
-		BaseMod.addKeyword(recurrent, "This card is cleansed if the condition is satisfied at the end of your turn while it is in your hand.");
+		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied at the end of your turn while it is in your hand.");
+		
+		String[] cardType = {"card type", "card types"};
+		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
 	}
 
 }

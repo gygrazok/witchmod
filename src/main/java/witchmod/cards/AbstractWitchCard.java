@@ -76,7 +76,6 @@ public abstract class AbstractWitchCard extends CustomCard{
 			renderTitleMethod.setAccessible(true);
 			Method renderTypeMethod = AbstractCard.class.getDeclaredMethod("renderType",SpriteBatch.class);
 			renderTypeMethod.setAccessible(true);
-
 			Method renderDescriptionMethod = AbstractCard.class.getDeclaredMethod("renderDescription",SpriteBatch.class);
 			renderDescriptionMethod.setAccessible(true);
 			Method renderTintMethod = AbstractCard.class.getDeclaredMethod("renderTint",SpriteBatch.class);
@@ -108,17 +107,9 @@ public abstract class AbstractWitchCard extends CustomCard{
 					this.hb.render(sb);
 				}
 			}
-		} catch (NoSuchMethodException | SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
+		} catch (NoSuchMethodException | SecurityException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
-
-
 	}
 
 	protected void renderDescriptionCN(SpriteBatch sb) {
@@ -126,13 +117,7 @@ public abstract class AbstractWitchCard extends CustomCard{
 			Method renderDescriptionCNMethod = AbstractCard.class.getDeclaredMethod("renderDescriptionCN",SpriteBatch.class);
 			renderDescriptionCNMethod.setAccessible(true);
 			renderDescriptionCNMethod.invoke(this, sb);
-		} catch (NoSuchMethodException | SecurityException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
+		} catch (NoSuchMethodException | SecurityException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
 	}
@@ -146,4 +131,5 @@ public abstract class AbstractWitchCard extends CustomCard{
 			e.printStackTrace();
 		}
 	}
+	
 }

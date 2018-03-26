@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import witchmod.powers.EvilEyePower;
 
-public class EvilEye extends AbstractWitchCard {
-	public static final String ID = "EvilEye";
-	public static final	String NAME = "Evil Eye";
+public class Schadenfreude extends AbstractWitchCard {
+	public static final String ID = "Schadenfreude";
+	public static final	String NAME = "Schadenfreude";
 	public static final	String IMG = "cards/placeholder_power.png";
 	public static final	String DESCRIPTION = "Whenever you apply a Debuff to an enemy, gain !M! block.";
 	
@@ -24,7 +24,7 @@ public class EvilEye extends AbstractWitchCard {
 	private static final int POWER = 2;
 	private static final int UPGRADED_BONUS = 1;
 	
-	public EvilEye() {
+	public Schadenfreude() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 	}
@@ -34,7 +34,7 @@ public class EvilEye extends AbstractWitchCard {
 	}
 	
 	public AbstractCard makeCopy() {
-		return new EvilEye();
+		return new Schadenfreude();
 	}
 	
 	public void upgrade() {

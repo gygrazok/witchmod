@@ -24,6 +24,8 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.Athame;
 import witchmod.cards.Bewitch;
+import witchmod.cards.BlackBolt;
+import witchmod.cards.BlackShield;
 import witchmod.cards.BleedOut;
 import witchmod.cards.BroomstickSmash;
 import witchmod.cards.CursedBlade;
@@ -31,13 +33,16 @@ import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.EnfeeblingStrike;
-import witchmod.cards.EvilEye;
+import witchmod.cards.EternalThirst;
+import witchmod.cards.Schadenfreude;
 import witchmod.cards.FamiliarProtection;
 import witchmod.cards.Foresight;
 import witchmod.cards.Graveburst;
 import witchmod.cards.Hexguard;
 import witchmod.cards.Intelligence;
 import witchmod.cards.KarmaSuction;
+import witchmod.cards.Malady;
+import witchmod.cards.MercurialRod;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
@@ -47,6 +52,7 @@ import witchmod.cards.Strike_Witch;
 import witchmod.cards.TrollsBlood;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
+import witchmod.cards.WickedInspiration;
 import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
@@ -151,32 +157,50 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Bewitch());
 		
 		//COMMON
+		//Attacks
 		BaseMod.addCard(new Demonfyre());
-		BaseMod.addCard(new FamiliarProtection());
 		BaseMod.addCard(new BleedOut());
-		BaseMod.addCard(new RitualOfDecay());
-		BaseMod.addCard(new KarmaSuction());
-		BaseMod.addCard(new EvilEye());
 		BaseMod.addCard(new BroomstickSmash());
+		BaseMod.addCard(new BlackBolt());
+		BaseMod.addCard(new MercurialRod());
+		//Skills
+		BaseMod.addCard(new BlackShield());
+		BaseMod.addCard(new FamiliarProtection());
+		BaseMod.addCard(new KarmaSuction());
+		BaseMod.addCard(new WickedInspiration());
+		//Powers
+		BaseMod.addCard(new RitualOfDecay());
+		BaseMod.addCard(new Schadenfreude());
+
+
 		
 		//UNCOMMON
+		//Attacks
 		BaseMod.addCard(new Athame());
-		BaseMod.addCard(new Foresight());
-		BaseMod.addCard(new Hexguard());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
-		BaseMod.addCard(new TrollsBlood());
-		BaseMod.addCard(new NighInvulnerability());
-		BaseMod.addCard(new Shrooms());
 		BaseMod.addCard(new EnfeeblingStrike());
+		//Skills
+		BaseMod.addCard(new Foresight());
+		BaseMod.addCard(new Hexguard());
+		BaseMod.addCard(new Shrooms());
+		BaseMod.addCard(new NighInvulnerability());
+		BaseMod.addCard(new Malady());
+		//Powers
+		BaseMod.addCard(new TrollsBlood());
+
 
 		//RARE
-		BaseMod.addCard(new UnluckySeven());
-		BaseMod.addCard(new UnnaturalEnergy());
+		//Attacks
 		BaseMod.addCard(new DoomBlade());
-		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new Graveburst());
+		BaseMod.addCard(new EternalThirst());
+		//Skills
 		BaseMod.addCard(new MysticUnburial());
+		BaseMod.addCard(new UnnaturalEnergy());
+		BaseMod.addCard(new UnluckySeven());
+		//Powers
+		BaseMod.addCard(new Intelligence());
 	}
 
 

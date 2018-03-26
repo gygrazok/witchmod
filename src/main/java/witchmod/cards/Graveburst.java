@@ -1,23 +1,20 @@
 package witchmod.cards;
 
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.ReflectionHacks;
-import witchmod.actions.GraveburstAction;
 
 public class Graveburst extends AbstractWitchCard{
 	public static final String ID = "Graveburst";
 	public static final	String NAME = "Graveburst";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "For each card of different type in your discard pile, shuffle it in your draw pile and deal !D! damage to all enemies.";
-	public static final	String EXTENDED_DESCRIPTION[] = new String[] {" NL (You have "," different card types in your discard pile)"," card type in your discard pile)"};
+	public static final	String DESCRIPTION = "Deal damage to all enemies equal to the twice the number of Attacks in your discard pile.";
+	public static final	String UPGRADE_DESCRIPTION = "Deal damage to all enemies equal to the twice the number of Attacks in your discard pile. Persistent.";
+	public static final	String EXTENDED_DESCRIPTION[] = new String[] {" NL (Deals !D! damage.)"};
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -26,8 +23,7 @@ public class Graveburst extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 2;
-	private static final int POWER = 3;
-	private static final int UPGRADE_BONUS = 4;
+	private static final int POWER = 2;
 
 	public Graveburst() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -36,7 +32,7 @@ public class Graveburst extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GraveburstAction(multiDamage,this.damageTypeForTurn));      
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AttackEffect.FIRE, true));      
 	}
 	
 	public AbstractCard makeCopy() {
@@ -45,33 +41,40 @@ public class Graveburst extends AbstractWitchCard{
 	
     @Override
     public void applyPowers() {
-        super.applyPowers();
         int count = 0;
-        Map<CardType, Boolean> types = new HashMap<>();
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-        	types.put(c.type, true);
+        	if (c.type == CardType.ATTACK) {
+        		count++;
+        	}
         }
-        count = types.size();
-        this.rawDescription = DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[0] + count;
-        this.rawDescription += (count == 1 ? EXTENDED_DESCRIPTION[2] : EXTENDED_DESCRIPTION[1]);
+        baseDamage = count*POWER;
+        super.applyPowers();
+        rawDescription = upgraded?UPGRADE_DESCRIPTION:DESCRIPTION;
+        rawDescription += EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 	
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        rawDescription = upgraded?UPGRADE_DESCRIPTION:DESCRIPTION;
+        rawDescription += EXTENDED_DESCRIPTION[0];
+        this.initializeDescription();
+    }
+    
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_BONUS);
+			this.retain = true;
 		}
 	}
 	
-	//ugly reflection hack
-	private void useSmallFont() {
-		try {
-			Method getDescFontMethod = AbstractCard.class.getDeclaredMethod("getDescFont");
-			getDescFontMethod.setAccessible(true);
-		} catch (NoSuchMethodException | SecurityException e) {
-			e.printStackTrace();
+	@Override
+	public void atTurnStart(){
+		if (upgraded) {
+			this.retain = true;
 		}
 	}
+	
 }

@@ -12,10 +12,10 @@ import witchmod.powers.SummonFamiliarPower;
 
 public class SummonOwlFamiliar extends AbstractWitchCard {
 	public static final String ID = "SummonOwlFamiliar";
-	public static final	String NAME = "Summon Owl Familiar";
+	public static final	String NAME = "Owl Familiar";
 	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "At the start of your turn, add an Owl Familiar card to your hand. NL Limit 1 Familiar power active.";
-	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Owl Familiar card to your hand. NL Limit 1 Familiar power active.";
+	public static final	String DESCRIPTION = "At the start of your turn, add an Owl card to your hand. NL Limit 1 Familiar active.";
+	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Owl card to your hand. NL Limit 1 Familiar active.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;

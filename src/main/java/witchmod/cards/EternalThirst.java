@@ -16,7 +16,7 @@ public class EternalThirst extends CustomCard {
 	public static final String ID = "EternalThirst";
 	public static final	String NAME = "Eternal Thirst";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Unplayable. Cleanse: suffer at least 20 damage in this fight.";
+	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: suffer at least 20 damage in this fight.";
 	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL You have suffered ", " damage."};
 	
 	private static final CardRarity RARITY = CardRarity.RARE;

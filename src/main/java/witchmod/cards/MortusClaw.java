@@ -1,7 +1,6 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,8 +8,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import witchmod.powers.ImpendingDoomPower;
 
 public class MortusClaw extends AbstractWitchCard{
 	public static final String ID = "MortusClaw";
@@ -24,9 +21,9 @@ public class MortusClaw extends AbstractWitchCard{
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 1;
-	private static final int POWER = 6;
-	private static final int UPGRADE_BONUS = 3;
+	private static final int COST = 3;
+	private static final int POWER = 20;
+	private static final int UPGRADE_BONUS = 10;
 
 	public MortusClaw() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

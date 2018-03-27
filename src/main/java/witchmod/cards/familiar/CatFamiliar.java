@@ -2,6 +2,7 @@ package witchmod.cards.familiar;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -46,6 +47,12 @@ public class CatFamiliar extends AbstractWitchCard{
 	public AbstractCard makeCopy() {
 		return new CatFamiliar();
 	}
+	
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+    }
+
 
 	public void upgrade() {
 		if (!this.upgraded) {

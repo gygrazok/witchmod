@@ -15,9 +15,9 @@ public class HandOfAkelarre extends AbstractWitchCard{
 	public static final String ID = "HandOfAkelarre";
 	public static final	String NAME = "Hand of Akelarre";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal damage equal to double the number of cards you drew this turn. NL (Current damage !D!)";
-	public static final	String DESCRIPTION_UPGRADED = "Draw !M! card, then deal damage equal to double the number of cards you drew this turn. NL (Current damage !D!)";
-	
+	public static final	String DESCRIPTION = "Deal damage equal to double the number of cards you drew this turn.";
+	public static final	String DESCRIPTION_UPGRADED = "Draw !M! card, then deal damage equal to double the number of cards you drew this turn.";
+	public static final String EXTENDED_DESCRIPTION = " NL (Current damage !D!)";
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
@@ -43,14 +43,36 @@ public class HandOfAkelarre extends AbstractWitchCard{
 		return new HandOfAkelarre();
 	}
 	
+    @Override
+    public void applyPowers() {
+    	calcBaseDamage();
+        super.applyPowers();
+        this.rawDescription = upgraded?DESCRIPTION:DESCRIPTION_UPGRADED;
+        this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION;
+        this.initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.rawDescription = upgraded?DESCRIPTION:DESCRIPTION_UPGRADED;
+        this.initializeDescription();
+    }
+	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
+		calcBaseDamage();
+		super.calculateCardDamage(mo);	
+        this.rawDescription = upgraded?DESCRIPTION:DESCRIPTION_UPGRADED;
+        this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION;
+        this.initializeDescription();
+	}
+	
+	private void calcBaseDamage() {
 		baseDamage = ((WitchCharacter)AbstractDungeon.player).cardsDrawnThisTurn;
 		if (upgraded) {
 			baseDamage++;
 		}
 		baseDamage = baseDamage*2;
-		super.calculateCardDamage(mo);	
 	}
 	
 

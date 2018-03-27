@@ -1,6 +1,7 @@
 package witchmod.cards.familiar;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +12,7 @@ import witchmod.cards.AbstractWitchCard;
 
 public class RatFamiliar extends AbstractWitchCard{
 	public static final String ID = "RatFamiliar";
-	public static final	String NAME = "Rat Familiar";
+	public static final	String NAME = "Rat";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Apply !M! poison. NL Exhaust. NL Ethereal.";
 	
@@ -39,6 +40,12 @@ public class RatFamiliar extends AbstractWitchCard{
 	public AbstractCard makeCopy() {
 		return new RatFamiliar();
 	}
+	
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+    }
+
 
 	public void upgrade() {
 		if (!this.upgraded) {

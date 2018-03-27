@@ -1,6 +1,7 @@
 package witchmod.cards.familiar;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +12,7 @@ import witchmod.cards.AbstractWitchCard;
 
 public class ToadFamiliar extends AbstractWitchCard{
 	public static final String ID = "ToadFamiliar";
-	public static final	String NAME = "Toad Familiar";
+	public static final	String NAME = "Toad";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Gain !B! block. Remove up to !M! stacks of Vulnerable, Weak or Frail (randomly chosen). NL Exhaust. NL Ethereal.";
 	
@@ -43,6 +44,12 @@ public class ToadFamiliar extends AbstractWitchCard{
 	public AbstractCard makeCopy() {
 		return new ToadFamiliar();
 	}
+	
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+    }
+
 
 	public void upgrade() {
 		if (!this.upgraded) {

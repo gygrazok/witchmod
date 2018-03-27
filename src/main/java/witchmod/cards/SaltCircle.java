@@ -6,9 +6,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FamiliarProtection extends AbstractWitchCard {
-	public static final String ID = "FamiliarProtection";
-	public static final	String NAME = "Familiar Protection";
+public class SaltCircle extends AbstractWitchCard {
+	public static final String ID = "SaltCircle";
+	public static final	String NAME = "Salt Circle";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Gain !B! block. Persistent.";
 	
@@ -24,7 +24,7 @@ public class FamiliarProtection extends AbstractWitchCard {
 
 
 	
-	public FamiliarProtection() {
+	public SaltCircle() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
 		this.retain = true;
@@ -36,7 +36,7 @@ public class FamiliarProtection extends AbstractWitchCard {
 	}
 	
 	public AbstractCard makeCopy() {
-		return new FamiliarProtection();
+		return new SaltCircle();
 	}
 	
 	@Override

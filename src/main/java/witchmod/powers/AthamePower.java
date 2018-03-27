@@ -19,7 +19,6 @@ public class AthamePower extends AbstractPower {
         this.updateDescription();
         this.img = new Texture(WitchMod.getResourcePath(IMG));
         this.type = PowerType.BUFF;
-        this.priority = 99;
     }
 
     @Override

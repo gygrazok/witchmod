@@ -13,7 +13,7 @@ public class TrollsBlood extends AbstractWitchCard {
 	public static final	String IMG = "cards/placeholder_power.png";
 	public static final	String DESCRIPTION = "Recover !M! health at the end of each turn.";
 	
-	private static final CardRarity RARITY = CardRarity.UNCOMMON;
+	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.POWER;
 	

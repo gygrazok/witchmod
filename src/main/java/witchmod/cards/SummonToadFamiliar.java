@@ -12,10 +12,10 @@ import witchmod.powers.SummonFamiliarPower;
 
 public class SummonToadFamiliar extends AbstractWitchCard {
 	public static final String ID = "SummonToadFamiliar";
-	public static final	String NAME = "Summon Toad Familiar";
+	public static final	String NAME = "Toad Familiar";
 	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "At the start of your turn, add a Toad Familiar card to your hand. NL Limit 1 Familiar power active.";
-	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Toad Familiar card to your hand. NL Limit 1 Familiar power active.";
+	public static final	String DESCRIPTION = "At the start of your turn, add a Toad card to your hand. NL Limit 1 Familiar active.";
+	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Toad card to your hand. NL Limit 1 Familiar active.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

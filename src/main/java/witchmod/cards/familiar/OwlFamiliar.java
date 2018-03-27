@@ -1,6 +1,7 @@
 package witchmod.cards.familiar;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -39,6 +40,12 @@ public class OwlFamiliar extends AbstractWitchCard{
 	public AbstractCard makeCopy() {
 		return new OwlFamiliar();
 	}
+	
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+    }
+
 
 	public void upgrade() {
 		if (!this.upgraded) {

@@ -14,13 +14,13 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class RitualOfDecayPower extends AbstractPower {
-    public static final String POWER_ID = "RitualOfDecayPower";
-    public static final String NAME = "Ritual of Decay";
+public class TwistedMindPower extends AbstractPower {
+    public static final String POWER_ID = "TwistedMindPower";
+    public static final String NAME = "Twisted Mind";
     public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card."," NL Used for this turn."};
     public static final String IMG = "powers/athamesoffering.png";
     private boolean used = false;
-    public RitualOfDecayPower(AbstractCreature owner) {
+    public TwistedMindPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

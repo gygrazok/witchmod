@@ -6,16 +6,16 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.powers.RitualOfDecayPower;
+import witchmod.powers.TwistedMindPower;
 
-public class RitualOfDecay extends AbstractWitchCard {
-	public static final String ID = "RitualOfDecay";
-	public static final	String NAME = "Ritual of Decay";
+public class TwistedMind extends AbstractWitchCard {
+	public static final String ID = "TwistedMind";
+	public static final	String NAME = "Twisted Mind";
 	public static final	String IMG = "cards/placeholder_power.png";
 	public static final	String DESCRIPTION = "When you play the first card each turn, all enemies lose health equal to the cost of that card.";
 	public static final	String DESCRIPTION_UPGRADED = "When you play the first card each turn, all enemies lose health equal to the cost of that card. Innate.";
 	
-	private static final CardRarity RARITY = CardRarity.COMMON;
+	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.POWER;
 	
@@ -25,16 +25,16 @@ public class RitualOfDecay extends AbstractWitchCard {
 
 
 	
-	public RitualOfDecay() {
+	public TwistedMind() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RitualOfDecayPower(p)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TwistedMindPower(p)));
 	}
 	
 	public AbstractCard makeCopy() {
-		return new RitualOfDecay();
+		return new TwistedMind();
 	}
 	
 	public void upgrade() {

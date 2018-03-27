@@ -12,12 +12,12 @@ import witchmod.powers.SummonFamiliarPower;
 
 public class SummonBatFamiliar extends AbstractWitchCard {
 	public static final String ID = "SummonBatFamiliar";
-	public static final	String NAME = "Summon Bat Familiar";
+	public static final	String NAME = "Bat Familiar";
 	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "At the start of your turn, add a Bat Familiar card to your hand. NL Limit 1 Familiar power active.";
-	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Bat Familiar card to your hand. NL Limit 1 Familiar power active.";
+	public static final	String DESCRIPTION = "At the start of your turn, add a Bat card to your hand. NL Limit 1 Familiar active.";
+	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Bat card to your hand. NL Limit 1 Familiar active.";
 	
-	private static final CardRarity RARITY = CardRarity.COMMON;
+	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.POWER;
 	

@@ -7,14 +7,16 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RemembranceAction extends AbstractGameAction {
-	public RemembranceAction() {
+	public RemembranceAction(int amount) {
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
 		this.duration = 0;
+		this.amount = amount;
 	}
 
 	@Override
@@ -36,6 +38,7 @@ public class RemembranceAction extends AbstractGameAction {
         }
         for (AbstractCard card : cards) {        	
         	AbstractDungeon.actionManager.addToBottom(new ShuffleCardInDeckAction(AbstractDungeon.player, card));
+        	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,amount));
         }
         this.isDone = true;
 

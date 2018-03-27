@@ -24,10 +24,12 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.ArmorTheft;
 import witchmod.cards.Athame;
+import witchmod.cards.AutumnalRite;
 import witchmod.cards.Bewitch;
 import witchmod.cards.BlackBolt;
 import witchmod.cards.BlackShield;
 import witchmod.cards.BleedOut;
+import witchmod.cards.BloodSabbath;
 import witchmod.cards.BroomstickSmash;
 import witchmod.cards.CursedBlade;
 import witchmod.cards.Defend_Witch;
@@ -35,20 +37,25 @@ import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.EnfeeblingStrike;
 import witchmod.cards.EternalThirst;
-import witchmod.cards.FamiliarProtection;
+import witchmod.cards.SaltCircle;
+import witchmod.cards.FatalRay;
 import witchmod.cards.Foresight;
+import witchmod.cards.GnarledBody;
 import witchmod.cards.Graveburst;
+import witchmod.cards.HandOfAkelarre;
 import witchmod.cards.Hexdarts;
 import witchmod.cards.Hexguard;
 import witchmod.cards.Intelligence;
 import witchmod.cards.KarmaDrain;
 import witchmod.cards.Malady;
 import witchmod.cards.MercurialRod;
+import witchmod.cards.MortusClaw;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
-import witchmod.cards.Remembrance;
-import witchmod.cards.RitualOfDecay;
+import witchmod.cards.BitterMemories;
+import witchmod.cards.TwistedMind;
+import witchmod.cards.RoilingBarrier;
 import witchmod.cards.Schadenfreude;
 import witchmod.cards.Shrooms;
 import witchmod.cards.SoulBarrier;
@@ -69,6 +76,7 @@ import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
 import witchmod.relics.BlackCat;
+import witchmod.relics.PetCage;
 
 
 @SpireInitializer
@@ -160,6 +168,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	public void receiveEditRelics() {
 		RelicLibrary.add(new BlackCat());
+		RelicLibrary.add(new PetCage());
 	}
 
 	public void receiveEditCards() {
@@ -175,20 +184,16 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new BroomstickSmash());
 		BaseMod.addCard(new BlackBolt());
 		BaseMod.addCard(new MercurialRod());
+		BaseMod.addCard(new HandOfAkelarre());
 		//Skills
 		BaseMod.addCard(new BlackShield());
-		BaseMod.addCard(new FamiliarProtection());
+		BaseMod.addCard(new SaltCircle());
 		BaseMod.addCard(new KarmaDrain());
 		BaseMod.addCard(new WickedInspiration());
 		BaseMod.addCard(new SoulBarrier());
 		BaseMod.addCard(new Bewitch());
-		
-		//Powers
-		BaseMod.addCard(new RitualOfDecay());
-		BaseMod.addCard(new Schadenfreude());
-		BaseMod.addCard(new SummonBatFamiliar());
-		BaseMod.addCard(new SummonCatFamiliar());
-
+		BaseMod.addCard(new GnarledBody());
+		BaseMod.addCard(new RoilingBarrier());
 
 		
 		//UNCOMMON
@@ -198,6 +203,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new CursedBlade());
 		BaseMod.addCard(new EnfeeblingStrike());
 		BaseMod.addCard(new SoulStrike());
+		BaseMod.addCard(new MortusClaw());
 		//Skills
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Hexguard());
@@ -205,11 +211,14 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new NighInvulnerability());
 		BaseMod.addCard(new Malady());
 		BaseMod.addCard(new ArmorTheft());
-		BaseMod.addCard(new Remembrance());
+		BaseMod.addCard(new BitterMemories());
+		BaseMod.addCard(new AutumnalRite());
 		//Powers
-		BaseMod.addCard(new TrollsBlood());
+		BaseMod.addCard(new TwistedMind());
+		BaseMod.addCard(new Schadenfreude());
 		BaseMod.addCard(new SummonOwlFamiliar());
 		BaseMod.addCard(new SummonRatFamiliar());
+		BaseMod.addCard(new SummonBatFamiliar());
 
 
 		//RARE
@@ -218,6 +227,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Graveburst());
 		BaseMod.addCard(new EternalThirst());
 		BaseMod.addCard(new SoulBurst());
+		BaseMod.addCard(new FatalRay());
+		BaseMod.addCard(new BloodSabbath());
 		//Skills
 		BaseMod.addCard(new MysticUnburial());
 		BaseMod.addCard(new UnnaturalEnergy());
@@ -226,6 +237,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		//Powers
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
+		BaseMod.addCard(new SummonCatFamiliar());
+		BaseMod.addCard(new TrollsBlood());
 	}
 
 
@@ -249,7 +262,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
 		
 		String[] rot = {"rot", "contagious rot"};
-		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn, Poison is increased by #b2.");
+		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn, Rot is increased by #b2.");
 		
 	}
 

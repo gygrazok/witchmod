@@ -16,7 +16,7 @@ public class UnluckySeven extends CustomCard {
 	public static final String ID = "UnluckySeven";
 	public static final	String NAME = "Unlucky Seven";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Unplayable. Cleanse: have your current health ending with 7.";
+	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: have your current health ending with 7.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

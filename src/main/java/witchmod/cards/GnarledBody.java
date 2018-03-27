@@ -18,7 +18,7 @@ public class GnarledBody extends AbstractWitchCard{
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 6;
+	private static final int COST = 7;
 	private static final int POWER = 12;
 	private static final int UPGRADE_BONUS = 4;
 
@@ -38,13 +38,14 @@ public class GnarledBody extends AbstractWitchCard{
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
-		cost = AbstractDungeon.player.hand.group.size();
+		setCostForTurn(AbstractDungeon.player.hand.group.size());
+		
 	}
 	
 	@Override
 	public void triggerOnOtherCardPlayed(AbstractCard c) {
 		super.triggerOnOtherCardPlayed(c);
-		cost = AbstractDungeon.player.hand.group.size();
+		setCostForTurn(AbstractDungeon.player.hand.group.size());
 	}
 	
 	public void upgrade() {

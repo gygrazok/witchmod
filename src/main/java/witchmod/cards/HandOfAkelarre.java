@@ -47,14 +47,14 @@ public class HandOfAkelarre extends AbstractWitchCard{
     public void applyPowers() {
     	calcBaseDamage();
         super.applyPowers();
-        this.rawDescription = upgraded?DESCRIPTION:DESCRIPTION_UPGRADED;
+        this.rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
         this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION;
         this.initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard() {
-        this.rawDescription = upgraded?DESCRIPTION:DESCRIPTION_UPGRADED;
+        this.rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
         this.initializeDescription();
     }
 	
@@ -62,7 +62,7 @@ public class HandOfAkelarre extends AbstractWitchCard{
 	public void calculateCardDamage(AbstractMonster mo) {
 		calcBaseDamage();
 		super.calculateCardDamage(mo);	
-        this.rawDescription = upgraded?DESCRIPTION:DESCRIPTION_UPGRADED;
+        this.rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
         this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION;
         this.initializeDescription();
 	}

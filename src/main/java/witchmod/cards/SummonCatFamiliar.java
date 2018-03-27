@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.cards.familiar.CatFamiliar;
 import witchmod.cards.familiar.FamiliarCardEnum;
 import witchmod.powers.SummonFamiliarPower;
 

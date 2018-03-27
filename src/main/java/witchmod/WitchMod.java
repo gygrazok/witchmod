@@ -22,6 +22,7 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import witchmod.cards.ArmorTheft;
 import witchmod.cards.Athame;
 import witchmod.cards.Bewitch;
 import witchmod.cards.BlackBolt;
@@ -49,6 +50,11 @@ import witchmod.cards.PainBolt;
 import witchmod.cards.RitualOfDecay;
 import witchmod.cards.Shrooms;
 import witchmod.cards.Strike_Witch;
+import witchmod.cards.SummonBatFamiliar;
+import witchmod.cards.SummonCatFamiliar;
+import witchmod.cards.SummonOwlFamiliar;
+import witchmod.cards.SummonRatFamiliar;
+import witchmod.cards.SummonToadFamiliar;
 import witchmod.cards.TrollsBlood;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
@@ -171,6 +177,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		//Powers
 		BaseMod.addCard(new RitualOfDecay());
 		BaseMod.addCard(new Schadenfreude());
+		BaseMod.addCard(new SummonBatFamiliar());
+		BaseMod.addCard(new SummonCatFamiliar());
 
 
 		
@@ -186,8 +194,11 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Shrooms());
 		BaseMod.addCard(new NighInvulnerability());
 		BaseMod.addCard(new Malady());
+		BaseMod.addCard(new ArmorTheft());
 		//Powers
 		BaseMod.addCard(new TrollsBlood());
+		BaseMod.addCard(new SummonOwlFamiliar());
+		BaseMod.addCard(new SummonRatFamiliar());
 
 
 		//RARE
@@ -201,6 +212,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new UnluckySeven());
 		//Powers
 		BaseMod.addCard(new Intelligence());
+		BaseMod.addCard(new SummonToadFamiliar());
 	}
 
 

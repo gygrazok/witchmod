@@ -37,6 +37,8 @@ public class WitchCharacter extends CustomPlayer{
 			"images/char/orb/layer5d.png"
 	};
 
+	public int cardsDrawnTotal = 0;
+	public int cardsDrawnThisTurn = 0;
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
 		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON));
@@ -109,6 +111,19 @@ public class WitchCharacter extends CustomPlayer{
 		return new CharSelectInfo("The Witch", "A cackling sorceress specialized in dealing with curses.",
 				70, 70, 99, 5,
 			WitchEnum.WITCH, getStartingRelics(), getStartingDeck(), false);
+	}
+	
+	@Override
+	public void draw(int numCards) {
+		super.draw(numCards);
+		cardsDrawnThisTurn += numCards;
+		cardsDrawnTotal += numCards;
+	}
+	
+	@Override
+	public void applyStartOfTurnCards() {
+		super.applyStartOfTurnCards();
+		cardsDrawnThisTurn = 0;
 	}
 	
 

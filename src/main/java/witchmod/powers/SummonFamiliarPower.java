@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.random.Random;
 
 import witchmod.WitchMod;
 import witchmod.cards.familiar.BatFamiliar;
@@ -76,7 +75,7 @@ public class SummonFamiliarPower extends AbstractPower {
 		return "MISSING CARD "+card.toString();
 	}
 	
-	public static AbstractCard getRandomFamiliarCard(){
+	public static AbstractCard getRandomFamiliarCard(){		
 		switch ((int)(Math.random()*5)) {
 		case 0: return new BatFamiliar();
 		case 1: return new RatFamiliar();

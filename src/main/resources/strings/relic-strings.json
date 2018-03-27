@@ -3,5 +3,10 @@
 		"NAME": "Black Cat",
 		"FLAVOUR": "Meow",
 		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight. Gain [B] whenever you draw a Curse."]
+	},
+	"PetCage":{
+		"NAME": "Pet Cage",
+		"FLAVOUR": "It makes strange noises.",
+		"DESCRIPTIONS":["Add a random Familiar in your hand at the beginning of each turn."]
 	}
 }

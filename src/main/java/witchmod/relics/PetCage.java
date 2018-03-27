@@ -1,7 +1,6 @@
 package witchmod.relics;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -22,10 +21,11 @@ public class PetCage extends AbstractWitchRelic {
         return this.DESCRIPTIONS[0];
     }
 
+    
+    
     @Override
-    public void atBattleStartPreDraw() {
+    public void atTurnStart() {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(SummonFamiliarPower.getRandomFamiliarCard()));
-        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         AbstractDungeon.player.getRelic(ID).flash();
     }
     

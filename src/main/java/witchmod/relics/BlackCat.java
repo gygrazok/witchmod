@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.relics;
 
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;

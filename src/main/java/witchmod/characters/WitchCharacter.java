@@ -2,6 +2,8 @@ package witchmod.characters;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
@@ -37,15 +39,20 @@ public class WitchCharacter extends CustomPlayer{
 
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "images/char/orb/vfx.png", "images/char/character.g3dj", "witch|idle");
+		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON));
 		hand = new WitchCardGroup(CardGroup.CardGroupType.HAND);
+		
 		this.dialogX = this.drawX + 0.0f * Settings.scale;
-		this.dialogY = this.drawY + 170.0f * Settings.scale;
+		this.dialogY = this.drawY + 220.0f * Settings.scale;
 		
 		initializeClass(null, WitchMod.getResourcePath(WitchMod.CHAR_SHOULDER_2),
 				WitchMod.getResourcePath(WitchMod.CHAR_SHOULDER_1),
 				WitchMod.getResourcePath(WitchMod.CHAR_CORPSE), 
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
+		loadAnimation(WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_ATLAS), WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON), 1.0F); 
+
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
 	}
 	
 	@Override

@@ -10,7 +10,7 @@ public class DemonfyrePower extends AbstractPower {
     public static final String POWER_ID = "DemonfyrePower";
     public static final String NAME = "Demonfyre";
     public static final String[] DESCRIPTIONS = new String[]{ "Increases the damage of Demonfyre by #b"};
-    public static final String IMG = "powers/athamesoffering.png";
+    public static final String IMG = "powers/demonfyre.png";
     public DemonfyrePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;

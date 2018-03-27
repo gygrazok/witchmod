@@ -21,7 +21,7 @@ public class RitualOfDecay extends AbstractWitchCard {
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 1;
+	private static final int COST = 0;
 
 
 	

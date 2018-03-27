@@ -10,12 +10,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import witchmod.WitchMod;
+import witchmod.patches.AbstractCardEnum;
 
 public class EternalThirst extends CustomCard {
 	public static final String ID = "EternalThirst";
 	public static final	String NAME = "Eternal Thirst";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Unplayable. Cleanse: suffer at least 20 damage in this fight.";
+	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL You have suffered ", " damage."};
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -27,7 +29,7 @@ public class EternalThirst extends CustomCard {
 
 	
 	public EternalThirst() {
-		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,CardColor.CURSE,RARITY,TARGET,POOL);
+		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,AbstractCardEnum.WITCH,RARITY,TARGET,POOL);
 		this.exhaust = true;
 	}
 	
@@ -49,6 +51,13 @@ public class EternalThirst extends CustomCard {
             AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
     	}
     }
+    
+    @Override
+    public void tookDamage(){
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]+AbstractDungeon.player.damagedThisCombat+EXTENDED_DESCRIPTION[1];
+        initializeDescription();
+    }
+    
 
 	
 	public AbstractCard makeCopy() {

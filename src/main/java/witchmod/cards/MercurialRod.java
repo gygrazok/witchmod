@@ -11,13 +11,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class MercurialRod extends AbstractWitchCard{
 	public static final String ID = "MercurialRod";
-	public static final	String NAME = "MercurialRod";
+	public static final	String NAME = "Mercurial Rod";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "If you have 0 block, deal !D! damage, otherwise gain !M! block.";
+	public static final	String DESCRIPTION = "If you have 0 block gain !B! block, otherwise deal !D! damage.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
-	private static final CardType TYPE = CardType.SKILL;
+	private static final CardType TYPE = CardType.ATTACK;
 	
 	private static final int POOL = 1;
 	

@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BlackBolt extends AbstractWitchCard{
 	public static final String ID = "BlackBolt";
-	public static final	String NAME = "BlackBolt";
+	public static final	String NAME = "Black Bolt";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage, apply !M! weak if you have at least a Curse in hand.";
+	public static final	String DESCRIPTION = "Deal !D! damage. Apply !M! weak if you have at least a Curse in hand.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -30,7 +30,7 @@ public class BlackBolt extends AbstractWitchCard{
 
 	public BlackBolt() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseBlock = POWER;
+		this.baseDamage = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 

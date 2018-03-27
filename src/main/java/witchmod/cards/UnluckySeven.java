@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import witchmod.WitchMod;
+import witchmod.patches.AbstractCardEnum;
 
 public class UnluckySeven extends CustomCard {
 	public static final String ID = "UnluckySeven";
@@ -27,7 +28,7 @@ public class UnluckySeven extends CustomCard {
 
 	
 	public UnluckySeven() {
-		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,CardColor.CURSE,RARITY,TARGET,POOL);
+		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,AbstractCardEnum.WITCH,RARITY,TARGET,POOL);
 		this.exhaust = true;
 	}
 	

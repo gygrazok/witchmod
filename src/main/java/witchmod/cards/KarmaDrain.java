@@ -6,14 +6,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class KarmaSuction extends AbstractWitchCard{
-	public static final String ID = "KarmaSuction";
-	public static final	String NAME = "Karma Suction";
+public class KarmaDrain extends AbstractWitchCard{
+	public static final String ID = "KarmaDrain";
+	public static final	String NAME = "Karma Drain";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Applies X frail. Gain !B! block X times.";
+	public static final	String DESCRIPTION = "Applies X Weak. Gain !B! block X times.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
@@ -25,7 +25,7 @@ public class KarmaSuction extends AbstractWitchCard{
 	private static final int POWER = 4;
 	private static final int UPGRADE_BONUS = 2;
 
-	public KarmaSuction() {
+	public KarmaDrain() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
 	}
@@ -33,7 +33,7 @@ public class KarmaSuction extends AbstractWitchCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int effect = EnergyPanel.getCurrentEnergy();
         if (effect > 0) {
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, effect, false), effect));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, effect, false), effect));
         	for (int i = 0; i < effect; i++) {
         		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         	}
@@ -43,7 +43,7 @@ public class KarmaSuction extends AbstractWitchCard{
 	
 
 	public AbstractCard makeCopy() {
-		return new KarmaSuction();
+		return new KarmaDrain();
 	}
 
 	public void upgrade() {

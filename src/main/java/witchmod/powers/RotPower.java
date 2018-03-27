@@ -9,15 +9,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import witchmod.WitchMod;
+import witchmod.actions.RotLoseHPAction;
 
 public class RotPower extends AbstractPower {
     public static final String POWER_ID = "Rot";
     public static final String NAME = "Rot";
-    public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b",
-													    		" health, then increases by 2.",
-													    		" NL When it dies, spread to another enemy.",
+    public static final String[] DESCRIPTIONS = new String[]{ "At the start of its turn, loses #b",
+													    		" HP, then Rot increases by 2.",
+													    		" NL When it dies, spread to another monster.",
 													    		"Contagious"};
-    public static final String IMG = "powers/athamesoffering.png";
+    public static final String IMG = "powers/rot.png";
     private AbstractCreature source;
     public boolean contagious;
     public RotPower(AbstractCreature owner, AbstractCreature source, int amount, boolean contagious) {
@@ -49,7 +50,7 @@ public class RotPower extends AbstractPower {
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.POISON));
+            AbstractDungeon.actionManager.addToBottom(new RotLoseHPAction(owner, source, amount, contagious, AbstractGameAction.AttackEffect.POISON));
         }
     }
     

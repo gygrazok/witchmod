@@ -20,7 +20,8 @@ public class PainBolt extends AbstractWitchCard{
 	public static final String ID = "PainBolt";
 	public static final	String NAME = "Pain Bolt";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Applies X vulnerable. Deal !D! damage";
+	public static final	String DESCRIPTION = "Applies X Vulnerable THEN deal !D! multiplied by X damage in a single attack.";
+	public static final	String[] EXTENDED_DESCRIPTION = new String[] { " NL Current damage: "};
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -34,7 +35,7 @@ public class PainBolt extends AbstractWitchCard{
 
 	public PainBolt() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseDamage = POWER;
+		baseDamage = POWER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,31 +47,49 @@ public class PainBolt extends AbstractWitchCard{
         	if (!m.hasPower(VulnerablePower.POWER_ID)) {
         		//since the damage is calculated BEFORE the applying of vulnerable,
         		//we have to manually account for the vulnerable we just applied if the target doesn't already have it
-        		this.damage *= p.hasRelic(PaperFrog.ID)?1.75:1.5;
+        		damage *= p.hasRelic(PaperFrog.ID)?1.75:1.5;
         	}
-    		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
+    		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage*effect, damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
         }
 		p.energy.use(effect);
 	}
 	
-	@Override
-	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-		int effect = EnergyPanel.getCurrentEnergy();
-		return tmp*effect;
-	}
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+    	int effect = EnergyPanel.getCurrentEnergy();
+        int totalDamage = effect*damage;
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]+totalDamage;
+        initializeDescription();
+    }
 	
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+    	int effect = EnergyPanel.getCurrentEnergy();
+        int totalDamage = effect*damage;
+    	if (mo != null && !mo.hasPower(VulnerablePower.POWER_ID)) {
+    		totalDamage *= AbstractDungeon.player.hasRelic(PaperFrog.ID)?1.75:1.5;
+    	}
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]+totalDamage;
+        initializeDescription();
+    }
+    
+
     @Override
     public void onMoveToDiscard() {
-        this.rawDescription = DESCRIPTION;
-        this.initializeDescription();
+        rawDescription = DESCRIPTION;
+        initializeDescription();
     }
+		
 
 	public AbstractCard makeCopy() {
 		return new PainBolt();
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 		}

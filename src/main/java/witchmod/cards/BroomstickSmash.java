@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BroomstickSmash extends AbstractWitchCard{
 	public static final String ID = "BroomstickSmash";
 	public static final	String NAME = "Broomstick Smash";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Frail the damage is increased by 25%.";
+	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 25%.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -43,7 +43,7 @@ public class BroomstickSmash extends AbstractWitchCard{
 		if (mo == null) {
 			return tmp;
 		}
-		float bonus = mo.getPower(FrailPower.POWER_ID) == null?1f:1.25f;
+		float bonus = mo.getPower(WeakPower.POWER_ID) == null?1f:1.25f;
 		return tmp*bonus;
 	}
 

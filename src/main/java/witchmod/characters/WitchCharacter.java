@@ -74,7 +74,8 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
-		retVal.add("Bewitch");
+		retVal.add("Hexdarts");
+		/*retVal.add("Bewitch");
 		retVal.add("Athame");
 		retVal.add("CursedBlade");
 		retVal.add("Demonfyre");
@@ -86,9 +87,9 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("UnluckySeven");
 		retVal.add("UnnaturalEnergy");
 		retVal.add("BleedOut");
-		retVal.add("EvilEye");
+		retVal.add("Schadenfreude");
 		retVal.add("Intelligence");
-		retVal.add("KarmaSuction");
+		retVal.add("KarmaDrain");
 		retVal.add("NighInvulnerability");
 		retVal.add("RitualOfDecay");
 		retVal.add("Shrooms");
@@ -97,6 +98,12 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("EnfeeblingStrike");
 		retVal.add("Graveburst");
 		retVal.add("MysticUnburial");
+		retVal.add("Remembrance");
+		retVal.add("Malady");
+		retVal.add("EternalThirst");
+		retVal.add("BlackShield");
+		retVal.add("BlackBolt");
+		retVal.add("MercurialRod");*/
 		return retVal;
 	}
 	

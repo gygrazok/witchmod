@@ -10,7 +10,7 @@ import witchmod.actions.RemembranceAction;
 public class Remembrance extends AbstractWitchCard{
 	public static final String ID = "Remembrance";
 	public static final	String NAME = "Remembrance";
-	public static final	String IMG = "cards/placeholder_skills.png";
+	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Shuffle a random card of each different type from your discard pile into your draw pile.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

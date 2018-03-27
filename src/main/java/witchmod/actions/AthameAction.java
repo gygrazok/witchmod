@@ -21,14 +21,11 @@ public class AthameAction extends AbstractGameAction {
 		this.setValues(target, info);
 		this.amount = amount;
 		this.actionType = AbstractGameAction.ActionType.DAMAGE;
-		this.duration = 0;
+		this.duration = 0f;
 	}
 
 	@Override
 	public void update() {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SLASH_VERTICAL));
-		
-		info.applyPowers(AbstractDungeon.player, target); //not sure if needed
 		log.info("Athame: final damage = "+info.output);
 		log.info("Athame: enemy stats = "+target.currentBlock+"+"+target.currentHealth);
 		if (info.output >= target.currentBlock+target.currentHealth) {
@@ -36,7 +33,7 @@ public class AthameAction extends AbstractGameAction {
 			log.info("Athame: applying athame power");
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AthamePower(AbstractDungeon.player,this.amount), this.amount));
 		}
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SLASH_VERTICAL));
 		this.isDone = true;
 	}
 }

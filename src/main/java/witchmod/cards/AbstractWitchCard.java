@@ -93,8 +93,8 @@ public abstract class AbstractWitchCard extends CustomCard{
 					updateGlowMethod.invoke(this);
 					renderGlowMethod.invoke(this, sb);
 					renderImageMethod.invoke(this, sb, hovered, selected);
-					renderTintMethod.invoke(this, sb);
 					renderTypeMethod.invoke(this, sb);
+					renderTitleMethod.invoke(this, sb);
 					if (Settings.lineBreakViaCharacter) {
 						this.renderDescriptionCN(sb);
 					} else {

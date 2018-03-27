@@ -6,7 +6,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.powers.EvilEyePower;
+import witchmod.powers.SchadenfreudePower;
+
 
 public class Schadenfreude extends AbstractWitchCard {
 	public static final String ID = "Schadenfreude";
@@ -30,7 +31,7 @@ public class Schadenfreude extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EvilEyePower(p,this.magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SchadenfreudePower(p,this.magicNumber)));
 	}
 	
 	public AbstractCard makeCopy() {

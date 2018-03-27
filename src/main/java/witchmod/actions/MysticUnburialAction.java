@@ -44,7 +44,7 @@ public class MysticUnburialAction extends AbstractGameAction {
             	if (playableCards.isEmpty()) {
             		isDone = true;
             	} else {
-            		AbstractDungeon.gridSelectScreen.open(playableCards, 1, TEXT, false, false, false, false);
+            		AbstractDungeon.gridSelectScreen.open(playableCards, 1, TEXT, false, false, true, false);
             	}
             }
             this.tickDuration();
@@ -69,6 +69,7 @@ public class MysticUnburialAction extends AbstractGameAction {
     
     private void playCard(AbstractCard card) {
     	card.applyPowers();
+    	AbstractDungeon.player.discardPile.removeCard(card);
         AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));
     	
     }

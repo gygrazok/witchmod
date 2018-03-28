@@ -25,6 +25,9 @@ public class ReduceRandomDebuffAction extends AbstractGameAction {
 
 	@Override
 	public void update() {
+		if (powerID == null) {
+			this.isDone = true;
+		}
 		if (this.duration == Settings.ACTION_DUR_FAST) {
 			for (AbstractPower p : this.target.powers) {
 				if (!p.ID.equals(this.powerID)) continue;
@@ -52,8 +55,12 @@ public class ReduceRandomDebuffAction extends AbstractGameAction {
 		if (player.hasPower(VulnerablePower.POWER_ID)){
 			candidates.add(VulnerablePower.POWER_ID);
 		}
-		
-		return candidates.get((int)(Math.random()*candidates.size()));
+		if (candidates.size() > 0) {
+			return candidates.get((int)(Math.random()*candidates.size()));
+		} else {
+			return null;
+		}
+
 	}
 }
 

@@ -14,7 +14,7 @@ import witchmod.powers.DecrepitPower;
 public class ZombieSpit extends AbstractWitchCard {
 	public static final String ID = "ZombieSpit";
 	public static final	String NAME = "Zombie Spit";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage and applies !M! Decrepit.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
@@ -37,7 +37,7 @@ public class ZombieSpit extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p,damage,damageTypeForTurn), AttackEffect.POISON));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p,damage,damageTypeForTurn), AttackEffect.POISON));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber),magicNumber, true));
 	}
 

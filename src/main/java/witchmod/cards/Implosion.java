@@ -44,7 +44,7 @@ public class Implosion extends AbstractWitchCard{
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
 			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AttackEffect.FIRE));
 		}
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_HEAVY));
+		AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_HEAVY));
 	}
 
 	public AbstractCard makeCopy() {

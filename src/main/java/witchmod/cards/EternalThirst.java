@@ -1,5 +1,6 @@
 package witchmod.cards;
 
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,7 +47,7 @@ public class EternalThirst extends CustomCard {
     
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
-    	if (AbstractDungeon.player.damagedThisCombat >= 20) {
+    	if (GameActionManager.damageReceivedThisCombat >= 20) {
             this.dontTriggerOnUseCard = true;
             AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
     	}
@@ -54,7 +55,7 @@ public class EternalThirst extends CustomCard {
     
     @Override
     public void tookDamage(){
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]+AbstractDungeon.player.damagedThisCombat+EXTENDED_DESCRIPTION[1];
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]+GameActionManager.damageReceivedThisCombat+EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
     

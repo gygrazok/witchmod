@@ -15,7 +15,7 @@ public class SummonToadFamiliar extends AbstractWitchCard {
 	public static final	String NAME = "Toad Familiar";
 	public static final	String IMG = "cards/placeholder_power.png";
 	public static final	String DESCRIPTION = "At the start of your turn, add a Toad card to your hand. NL Limit 1 Familiar active.";
-	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, draw an upgraded Toad card to your hand. NL Limit 1 Familiar active.";
+	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, add an upgraded Toad card to your hand. NL Limit 1 Familiar active.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

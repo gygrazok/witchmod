@@ -14,7 +14,7 @@ public class ToadFamiliar extends AbstractWitchCard{
 	public static final String ID = "ToadFamiliar";
 	public static final	String NAME = "Toad";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. Remove up to !M! stacks of Vulnerable, Weak or Frail (randomly chosen). NL Exhaust. NL Ethereal.";
+	public static final	String DESCRIPTION = "Gain !B! block. Remove up to !M! stacks of Vulnerable, Weak or Frail. NL Exhaust. Ethereal.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -31,7 +31,7 @@ public class ToadFamiliar extends AbstractWitchCard{
 	public ToadFamiliar() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
-		this.block = POWER;
+		this.baseBlock = POWER;
 		this.exhaust = true;
 		this.isEthereal = true;
 	}

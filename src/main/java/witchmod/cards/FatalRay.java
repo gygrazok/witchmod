@@ -26,7 +26,7 @@ public class FatalRay extends AbstractWitchCard{
 	
 	private static final int COST = 2;
 	private static final int POWER = 25;
-	private static final int UPGRADE_BONUS = 35;
+	private static final int UPGRADE_BONUS = 10;
 
 	public FatalRay() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

@@ -30,8 +30,11 @@ import witchmod.cards.BlackBolt;
 import witchmod.cards.BlackShield;
 import witchmod.cards.BleedOut;
 import witchmod.cards.BloodSabbath;
+import witchmod.cards.Boline;
+import witchmod.cards.BoneCarvedDagger;
 import witchmod.cards.BroomstickSmash;
 import witchmod.cards.CursedBlade;
+import witchmod.cards.DarkProcession;
 import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
@@ -46,10 +49,12 @@ import witchmod.cards.Graveburst;
 import witchmod.cards.HandOfAkelarre;
 import witchmod.cards.Hexdarts;
 import witchmod.cards.Hexguard;
+import witchmod.cards.IllusionOfStrength;
+import witchmod.cards.Implosion;
 import witchmod.cards.Intelligence;
 import witchmod.cards.KarmaDrain;
 import witchmod.cards.Malady;
-import witchmod.cards.MercurialRod;
+import witchmod.cards.MercuryWand;
 import witchmod.cards.MortusClaw;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
@@ -74,7 +79,9 @@ import witchmod.cards.TrollsBlood;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
 import witchmod.cards.WickedInspiration;
+import witchmod.cards.WindsOfPutrefaction;
 import witchmod.cards.WretchedVengeance;
+import witchmod.cards.ZombieSpit;
 import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
@@ -179,15 +186,16 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Strike_Witch());
 		BaseMod.addCard(new Defend_Witch());
 		BaseMod.addCard(new Hexdarts());
-
 		//COMMON
 		//Attacks
 		BaseMod.addCard(new Demonfyre());
 		BaseMod.addCard(new BleedOut());
 		BaseMod.addCard(new BroomstickSmash());
 		BaseMod.addCard(new BlackBolt());
-		BaseMod.addCard(new MercurialRod());
+		BaseMod.addCard(new MercuryWand());
 		BaseMod.addCard(new HandOfAkelarre());
+		BaseMod.addCard(new BoneCarvedDagger());
+		BaseMod.addCard(new ZombieSpit());
 		//Skills
 		BaseMod.addCard(new BlackShield());
 		BaseMod.addCard(new SaltCircle());
@@ -208,6 +216,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new EnfeeblingStrike());
 		BaseMod.addCard(new SoulStrike());
 		BaseMod.addCard(new MortusClaw());
+		BaseMod.addCard(new WindsOfPutrefaction());
+		BaseMod.addCard(new Implosion());
 		//Skills
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Hexguard());
@@ -234,6 +244,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new SoulBurst());
 		BaseMod.addCard(new FatalRay());
 		BaseMod.addCard(new BloodSabbath());
+		BaseMod.addCard(new Boline());
 		//Skills
 		BaseMod.addCard(new MysticUnburial());
 		BaseMod.addCard(new UnnaturalEnergy());
@@ -245,6 +256,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new SummonToadFamiliar());
 		BaseMod.addCard(new SummonCatFamiliar());
 		BaseMod.addCard(new TrollsBlood());
+		BaseMod.addCard(new DarkProcession());
+		BaseMod.addCard(new IllusionOfStrength());
 	}
 
 

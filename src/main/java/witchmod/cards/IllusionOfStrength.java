@@ -1,18 +1,18 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 
-public class Intelligence extends AbstractWitchCard {
-	public static final String ID = "Intelligence";
-	public static final	String NAME = "Intelligence";
+public class IllusionOfStrength extends AbstractWitchCard {
+	public static final String ID = "IllusionOfStrength";
+	public static final	String NAME = "IllusionOfStrength";
 	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "Draw !M! additional card each turn.";
-	public static final	String DESCRIPTION_PLURAL = "Draw !M! additional cards each turn.";
+	public static final	String DESCRIPTION = "Gain !M! Strength. Shuffle 3 Delusion of Strength Curse cards in your draw pile.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -20,35 +20,25 @@ public class Intelligence extends AbstractWitchCard {
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 1;
+	private static final int COST = 2;
 
-	private static final int POWER = 1;
-	private static final int UPGRADE_BONUS = 1;
+	private static final int POWER = 4;
+	private static final int UPGRADE_BONUS = 2;
 
 	
-	public Intelligence() {
+	public IllusionOfStrength() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseMagicNumber = this.magicNumber = POWER;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawPower(p,magicNumber),magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new IllusionOfStrengthCurse(), 3, true, false));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainStrengthPower(p, magicNumber),magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {
-		return new Intelligence();
+		return new IllusionOfStrength();
 	}
-	
-	@Override
-	protected void upgradeMagicNumber(int amount) {
-		super.upgradeMagicNumber(amount);
-		if (magicNumber == 1) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = DESCRIPTION_PLURAL;
-		}
-	}
-	
 	
 	public void upgrade() {
 		if (!this.upgraded) {

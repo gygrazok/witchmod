@@ -10,46 +10,47 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class Hexdarts extends AbstractWitchCard {
-	public static final String ID = "Hexdarts";
-	public static final	String NAME = "Hexdarts";
+public class BoneCarvedDagger extends AbstractWitchCard {
+	public static final String ID = "BoneCarvedDagger";
+	public static final	String NAME = "Bone Carved Dagger";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "When drawn apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies.";
+	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to !M! random enemies. NL Deal !D! damage.";
 	
-	private static final CardRarity RARITY = CardRarity.BASIC;
+	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	
 	private static final int POOL = 0;
 	
-	private static final int COST = 2;
-	private static final int POWER = 8;
+	private static final int COST = 1;
+	private static final int POWER = 6;
 	private static final int UPGRADED_BONUS = 3;
 	
-	private static final int MAGIC = 1;
+	private static final int MAGIC = 3;
 	
-	public Hexdarts() {
+	public BoneCarvedDagger() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
 		baseDamage = POWER;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-			if (!monster.isDeadOrEscaped() && monster.hasPower(WeakPower.POWER_ID)) {
-				AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.SLASH_HORIZONTAL,true));
-			}
-		}
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.SLASH_HORIZONTAL));
 	}
 	
 	public AbstractCard makeCopy() {
-		return new Hexdarts();
+		return new BoneCarvedDagger();
 	}
 	
 	@Override
 	public void triggerWhenDrawn() {
-		AbstractMonster monster = AbstractDungeon.getRandomMonster();
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, AbstractDungeon.player, new WeakPower(monster, magicNumber, false), magicNumber));
+		int counter = magicNumber;
+		while (counter > 0) {
+			AbstractMonster monster = AbstractDungeon.getRandomMonster();
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, AbstractDungeon.player, new WeakPower(monster, 1, false),1, true));
+			counter--;
+		}
+		flash();
 	}
 	
 	public void upgrade() {

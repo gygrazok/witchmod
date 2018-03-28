@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MercurialRod extends AbstractWitchCard{
-	public static final String ID = "MercurialRod";
-	public static final	String NAME = "Mercurial Rod";
+public class MercuryWand extends AbstractWitchCard{
+	public static final String ID = "MercuryWand";
+	public static final	String NAME = "Mercury Rod";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "If you have 0 block gain !B! block, otherwise deal !D! damage.";
 	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL Will gain !B! block"," NL Will deal !D! damage"};
@@ -27,7 +27,7 @@ public class MercurialRod extends AbstractWitchCard{
 	private static final int BLOCK = 6;
 	private static final int UPGRADE_BONUS = 2;
 
-	public MercurialRod() {
+	public MercuryWand() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = DAMAGE;
 		this.baseBlock = BLOCK;
@@ -62,7 +62,7 @@ public class MercurialRod extends AbstractWitchCard{
     }
 	
 	public AbstractCard makeCopy() {
-		return new MercurialRod();
+		return new MercuryWand();
 	}
 
 	public void upgrade() {

@@ -17,7 +17,7 @@ public class DoomBlade extends AbstractWitchCard{
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. Next turn the target loses !D! life.";
 	
-	private static final CardRarity RARITY = CardRarity.UNCOMMON;
+	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
 	
@@ -25,7 +25,7 @@ public class DoomBlade extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 8;
-	private static final int UPGRADE_BONUS = 4;
+	private static final int UPGRADE_BONUS = 3;
 
 	public DoomBlade() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -33,10 +33,8 @@ public class DoomBlade extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-				new DamageInfo(p, this.damage, this.damageTypeForTurn),
-				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ImpendingDoomPower(m, p, this.damage), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ImpendingDoomPower(m, p, damage), magicNumber));
 	}
 
 	public AbstractCard makeCopy() {

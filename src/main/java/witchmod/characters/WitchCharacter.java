@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -39,6 +43,7 @@ public class WitchCharacter extends CustomPlayer{
 
 	public int cardsDrawnTotal = 0;
 	public int cardsDrawnThisTurn = 0;
+	public int cursesDrawnTotal = 0;
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
 		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON));
@@ -122,9 +127,37 @@ public class WitchCharacter extends CustomPlayer{
 	
 	@Override
 	public void draw(int numCards) {
-		super.draw(numCards);
-		cardsDrawnThisTurn += numCards;
-		cardsDrawnTotal += numCards;
+        for (int i = 0; i < numCards; ++i) {
+            if (!this.drawPile.isEmpty()) {
+                int newCost;
+                AbstractCard c = this.drawPile.getTopCard();
+                c.current_x = CardGroup.DRAW_PILE_X;
+                c.current_y = CardGroup.DRAW_PILE_Y;
+                c.setAngle(0.0f, true);
+                c.lighten(false);
+                c.drawScale = 0.12f;
+                c.targetDrawScale = 0.75f;
+                if (AbstractDungeon.player.hasPower("Confusion") && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && c.cost != (newCost = AbstractDungeon.cardRandomRng.random(3))) {
+                    c.costForTurn = c.cost = newCost;
+                    c.isCostModified = true;
+                }
+                c.triggerWhenDrawn();
+                this.hand.addToHand(c);
+                this.drawPile.removeTopCard();
+                if (AbstractDungeon.player.hasPower("Corruption") && c.type == AbstractCard.CardType.SKILL) {
+                    c.setCostForTurn(-9);
+                }
+                for (AbstractRelic r : this.relics) {
+                    r.onCardDraw(c);
+                }
+                cardsDrawnThisTurn++;
+                cardsDrawnTotal++;
+                if (c.type == CardType.CURSE) {
+                	cursesDrawnTotal++;
+                }
+                continue;
+            }
+        }
 	}
 	
 	@Override

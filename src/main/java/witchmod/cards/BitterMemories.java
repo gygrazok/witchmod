@@ -15,6 +15,7 @@ public class BitterMemories extends AbstractWitchCard{
 	public static final	String NAME = "Bitter Memories";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Shuffle a random discarded card of each different type into your draw pile and gain !B! block for each of them.";
+	public static final	String EXTENDED_DESCRIPTION[] = {" NL You will gain "," block."};
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -23,8 +24,8 @@ public class BitterMemories extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 2;
-	private static final int POWER_UPGRADED = 3;
+	private static final int POWER = 3;
+	private static final int POWER_UPGRADED = 4;
 
 	
 	public BitterMemories() {
@@ -51,6 +52,15 @@ public class BitterMemories extends AbstractWitchCard{
         return types.size();
 	}
 	
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        rawDescription = DESCRIPTION;
+        rawDescription += EXTENDED_DESCRIPTION[0]+(block*countCardTypes()+EXTENDED_DESCRIPTION[1]);
+        this.initializeDescription();
+    }
+	
+
 
 	public void upgrade() {
 		if (!this.upgraded) {

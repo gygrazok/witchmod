@@ -9,7 +9,7 @@ import witchmod.actions.AutumnalRiteAction;
 
 public class AutumnalRite extends AbstractWitchCard {
 	public static final String ID = "AutumnalRite";
-	public static final	String NAME = "AutumnalRite";
+	public static final	String NAME = "Autumnal Rite";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Exhaust any number of cards in your hand and draw that many cards.";
 	public static final	String DESCRIPTION_UPGRADED = "Exhaust any number of cards in your hand and draw that many cards. NL Recurrent.";

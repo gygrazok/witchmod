@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.actions.RemembranceAction;
+import witchmod.actions.BitterMemoriesAction;
 
 public class BitterMemories extends AbstractWitchCard{
-	public static final String ID = "Remembrance";
-	public static final	String NAME = "Remembrance";
+	public static final String ID = "BitterMemories";
+	public static final	String NAME = "Bitter Memories";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Shuffle a random card of each different type from your discard pile into your draw pile and gain !B! block for each of them.";
+	public static final	String DESCRIPTION = "Shuffle a random discarded card of each different type into your draw pile and gain !B! block for each of them.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -33,7 +33,7 @@ public class BitterMemories extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new RemembranceAction(block*countCardTypes()));      
+		AbstractDungeon.actionManager.addToBottom(new BitterMemoriesAction(block*countCardTypes()));      
 	}
 	
 	

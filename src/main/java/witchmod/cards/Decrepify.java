@@ -5,14 +5,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class Bewitch extends AbstractWitchCard {
-	public static final String ID = "Bewitch";
-	public static final	String NAME = "Bewitch";
+import witchmod.powers.DecrepitPower;
+
+public class Decrepify extends AbstractWitchCard {
+	public static final String ID = "Decrepify";
+	public static final	String NAME = "Decrepify";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Applies !M! Weak and !M! Vulnerable to all enemies.";
+	public static final	String DESCRIPTION = "Applies 1 Decrepify to !M! random enemies.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -21,24 +21,26 @@ public class Bewitch extends AbstractWitchCard {
 	private static final int POOL = 1;
 	private static final int COST = 1;
 
-	private static final int POWER = 1;
-	private static final int UPGRADED_BONUS = 1;
+	private static final int POWER = 3;
+	private static final int UPGRADED_BONUS = 2;
 
 
-	public Bewitch() {
+	public Decrepify() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseMagicNumber = this.magicNumber = POWER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false),magicNumber, true));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false),magicNumber, true));
+		int counter = magicNumber;
+		while (counter > 0) {
+			AbstractMonster monster = AbstractDungeon.getRandomMonster();
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new DecrepitPower(monster, 1),1, true));
+			counter--;
 		}
 	}
 
 	public AbstractCard makeCopy() {
-		return new Bewitch();
+		return new Decrepify();
 	}
 
 	public void upgrade() {

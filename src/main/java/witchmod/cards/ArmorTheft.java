@@ -12,11 +12,11 @@ public class ArmorTheft extends AbstractWitchCard {
 	public static final String ID = "ArmorTheft";
 	public static final	String NAME = "Armor Theft";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Remove up to !M! block and gain the same amount.";
-	public static final	String DESCRIPTION_UPGRADED = "Remove up to !M! block and gain the same amount. NL Persistent.";
+	public static final	String DESCRIPTION = "Steal up to !M! block from an enemy.";
+	public static final	String DESCRIPTION_UPGRADED = "Steal up to !M! block from an enemy. NL Persistent.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
-	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
 	
 	private static final int POOL = 1;
@@ -42,6 +42,15 @@ public class ArmorTheft extends AbstractWitchCard {
 	
 	public AbstractCard makeCopy() {
 		return new ArmorTheft();
+	}
+	
+	@Override
+	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+		if (m.currentBlock == 0) {
+			cantUseMessage = "That enemy doesn't have any Block to steal.";
+			return false;
+		}
+		return super.canUse(p, m);
 	}
 	
 	@Override

@@ -6,10 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class ShuffleCardInDeckAction extends AbstractGameAction {
+public class ShuffleDiscardedCardInDeckAction extends AbstractGameAction {
 	private AbstractCard card;
 	private AbstractPlayer player;
-	public ShuffleCardInDeckAction(AbstractPlayer player, AbstractCard card) {
+	public ShuffleDiscardedCardInDeckAction(AbstractPlayer player, AbstractCard card) {
 		this.player = player;
 		this.card = card;
 		this.duration = Settings.ACTION_DUR_FAST;

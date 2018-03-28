@@ -8,5 +8,10 @@
 		"NAME": "Pet Cage",
 		"FLAVOUR": "It makes strange noises.",
 		"DESCRIPTIONS":["Add a random Familiar in your hand at the beginning of each turn."]
+	},
+	"WalkingCane":{
+		"NAME": "Walking Cane",
+		"FLAVOUR": "Kids these days...",
+		"DESCRIPTIONS":["Weak, Vulnerable and Decrepit no longer decrease each turn."]
 	}
 }

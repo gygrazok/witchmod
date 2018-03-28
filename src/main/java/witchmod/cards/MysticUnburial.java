@@ -32,14 +32,13 @@ public class MysticUnburial extends AbstractWitchCard {
 	
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-		//if there is at least 1 card that can be played on at least 1 monster, you can use this card
+		//if there is at least 1 card that can be played, you can use this card
 		for (AbstractCard card : p.discardPile.group) {
 			for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-				if (card.canUse(p, monster)) {
-					return true;
-				}
+				return card.canUse(p, monster);
 			}
 		}
+		cantUseMessage = "I don't have any playable card in my discard pile.";
 		return false;
 		
 	}

@@ -35,6 +35,7 @@ public class HandOfAkelarre extends AbstractWitchCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (upgraded) {
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+			//the bonus damage from drawing this card is already included in the calcBaseDamage function
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SMASH));
 	}

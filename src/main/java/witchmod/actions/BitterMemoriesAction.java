@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class RemembranceAction extends AbstractGameAction {
-	public RemembranceAction(int amount) {
+public class BitterMemoriesAction extends AbstractGameAction {
+	public BitterMemoriesAction(int amount) {
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
 		this.duration = 0;
 		this.amount = amount;
@@ -37,7 +37,7 @@ public class RemembranceAction extends AbstractGameAction {
         	cards.add(getRandomCardFromList(entry.getValue()));
         }
         for (AbstractCard card : cards) {        	
-        	AbstractDungeon.actionManager.addToBottom(new ShuffleCardInDeckAction(AbstractDungeon.player, card));
+        	AbstractDungeon.actionManager.addToBottom(new ShuffleDiscardedCardInDeckAction(AbstractDungeon.player, card));
         	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,amount));
         }
         this.isDone = true;

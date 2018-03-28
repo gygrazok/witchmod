@@ -46,7 +46,6 @@ public class SoulStrike extends AbstractWitchCard{
 	
 	@Override
 	public void triggerWhenDrawn() {
-		super.triggerWhenDrawn();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, magicNumber), magicNumber));
 	}

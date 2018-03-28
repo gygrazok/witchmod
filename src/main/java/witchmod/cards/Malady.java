@@ -12,8 +12,8 @@ public class Malady extends AbstractWitchCard{
 	public static final String ID = "Malady";
 	public static final	String NAME = "Malady";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Apply !M! Rot.";
-	public static final	String DESCRIPTION_UPGRADED = "Apply !M! Contagious Rot (spreads on a random monster on death).";
+	public static final	String DESCRIPTION = "Apply !M! Rot. NL Exhaust.";
+	public static final	String DESCRIPTION_UPGRADED = "Apply !M! Contagious Rot (spreads on a random monster on death). NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -27,15 +27,11 @@ public class Malady extends AbstractWitchCard{
 	public Malady() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
+		this.exhaust = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new RotPower(m,p, magicNumber, true), magicNumber));
-		} else {
-	       	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new RotPower(m,p, magicNumber, false), magicNumber));
-		}
-
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new RotPower(m,p, magicNumber, upgraded), magicNumber));
 	}
 	
 

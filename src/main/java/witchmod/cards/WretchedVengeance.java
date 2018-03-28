@@ -5,15 +5,16 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawPower;
 
-public class Intelligence extends AbstractWitchCard {
-	public static final String ID = "Intelligence";
-	public static final	String NAME = "Intelligence";
+import witchmod.powers.WretchedVengeancePower;
+
+public class WretchedVengeance extends AbstractWitchCard {
+	public static final String ID = "WretchedVengeance";
+	public static final	String NAME = "Wretched Vengeance";
 	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "Draw !M! additional cards each turn.";
+	public static final	String DESCRIPTION = "When you are attacked apply !M! Decrepit to the attacker.";
 	
-	private static final CardRarity RARITY = CardRarity.RARE;
+	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.POWER;
 	
@@ -25,17 +26,17 @@ public class Intelligence extends AbstractWitchCard {
 	private static final int UPGRADE_BONUS = 1;
 
 	
-	public Intelligence() {
+	public WretchedVengeance() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseMagicNumber = this.magicNumber = POWER;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawPower(p,magicNumber),magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WretchedVengeancePower(p,magicNumber),magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {
-		return new Intelligence();
+		return new WretchedVengeance();
 	}
 	
 	public void upgrade() {

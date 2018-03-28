@@ -32,6 +32,7 @@ import witchmod.cards.BleedOut;
 import witchmod.cards.BloodSabbath;
 import witchmod.cards.BroomstickSmash;
 import witchmod.cards.CursedBlade;
+import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
@@ -61,6 +62,7 @@ import witchmod.cards.Shrooms;
 import witchmod.cards.SoulBarrier;
 import witchmod.cards.SoulBurst;
 import witchmod.cards.SoulStrike;
+import witchmod.cards.SpringRite;
 import witchmod.cards.StrangeBrew;
 import witchmod.cards.Strike_Witch;
 import witchmod.cards.SummonBatFamiliar;
@@ -72,6 +74,7 @@ import witchmod.cards.TrollsBlood;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
 import witchmod.cards.WickedInspiration;
+import witchmod.cards.WretchedVengeance;
 import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
@@ -194,6 +197,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Bewitch());
 		BaseMod.addCard(new GnarledBody());
 		BaseMod.addCard(new RoilingBarrier());
+		BaseMod.addCard(new Decrepify());
 
 		
 		//UNCOMMON
@@ -219,6 +223,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new SummonOwlFamiliar());
 		BaseMod.addCard(new SummonRatFamiliar());
 		BaseMod.addCard(new SummonBatFamiliar());
+		BaseMod.addCard(new WretchedVengeance());
 
 
 		//RARE
@@ -234,6 +239,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new UnnaturalEnergy());
 		BaseMod.addCard(new UnluckySeven());
 		BaseMod.addCard(new StrangeBrew());
+		BaseMod.addCard(new SpringRite());
 		//Powers
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
@@ -262,7 +268,10 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
 		
 		String[] rot = {"rot", "contagious rot"};
-		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn, Rot is increased by #b2.");
+		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b2.");
+		
+		String[] decrepit = {"decrepit"};
+		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. Each turn Decrepit is decreased by #b1.");
 		
 	}
 

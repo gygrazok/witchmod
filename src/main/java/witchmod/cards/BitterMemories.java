@@ -34,7 +34,7 @@ public class BitterMemories extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new BitterMemoriesAction(block*countCardTypes()));      
+		AbstractDungeon.actionManager.addToBottom(new BitterMemoriesAction(block));      
 	}
 	
 	

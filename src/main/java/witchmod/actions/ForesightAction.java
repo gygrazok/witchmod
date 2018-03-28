@@ -34,7 +34,6 @@ public class ForesightAction extends AbstractGameAction{
 		AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 		if (card.type == AbstractCard.CardType.CURSE) {
-			 AbstractDungeon.player.limbo.group.add(card);
 			card.current_y = -200.0f * Settings.scale;
 			card.target_x = Settings.WIDTH / 2.0f + 200;
 			card.target_y = Settings.HEIGHT / 2.0f;
@@ -42,9 +41,7 @@ public class ForesightAction extends AbstractGameAction{
 			card.lighten(false);
 			card.drawScale = 0.12f;
 			card.targetDrawScale = 0.75f;
-			//AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
-			 AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
-			 AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
+			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PURPLE, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.0f));
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(), 1));

@@ -36,10 +36,11 @@ public class WindsOfPutrefaction extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(), 0.0f));
+        AbstractDungeon.actionManager.addToBottom(new HandToTopOfDeckAction(p,1));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-		AbstractDungeon.actionManager.addToBottom(new HandToTopOfDeckAction(p,1));
+		
 		
 	}
 

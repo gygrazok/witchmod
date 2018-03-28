@@ -89,6 +89,7 @@ import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
 import witchmod.relics.BlackCat;
 import witchmod.relics.PetCage;
+import witchmod.relics.WalkingCane;
 
 
 @SpireInitializer
@@ -181,6 +182,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditRelics() {
 		RelicLibrary.add(new BlackCat());
 		RelicLibrary.add(new PetCage());
+		RelicLibrary.add(new WalkingCane());
 	}
 
 	public void receiveEditCards() {
@@ -288,7 +290,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b2.");
 		
 		String[] decrepit = {"decrepit"};
-		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. Each turn Decrepit is decreased by #b1.");
+		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1.");
 		
 	}
 

@@ -38,14 +38,14 @@ public class GnarledBody extends AbstractWitchCard{
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
-		setCostForTurn(AbstractDungeon.player.hand.group.size());
+		setCostForTurn(COST - AbstractDungeon.player.hand.group.size());
 		
 	}
 	
 	@Override
 	public void triggerOnOtherCardPlayed(AbstractCard c) {
 		super.triggerOnOtherCardPlayed(c);
-		setCostForTurn(AbstractDungeon.player.hand.group.size());
+		setCostForTurn(COST - AbstractDungeon.player.hand.group.size());
 	}
 	
 	public void upgrade() {

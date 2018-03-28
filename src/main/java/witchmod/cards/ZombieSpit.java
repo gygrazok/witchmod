@@ -1,5 +1,6 @@
 package witchmod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,7 +37,7 @@ public class ZombieSpit extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p,damage,damageTypeForTurn)));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p,damage,damageTypeForTurn), AttackEffect.POISON));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber),magicNumber, true));
 	}
 

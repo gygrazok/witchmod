@@ -22,7 +22,7 @@ public class MortusClaw extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 3;
-	private static final int POWER = 20;
+	private static final int POWER = 24;
 	private static final int UPGRADE_BONUS = 10;
 
 	public MortusClaw() {

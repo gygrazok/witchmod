@@ -41,6 +41,7 @@ import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.EnfeeblingStrike;
 import witchmod.cards.EternalThirst;
+import witchmod.cards.EvilEye;
 import witchmod.cards.SaltCircle;
 import witchmod.cards.FatalRay;
 import witchmod.cards.Foresight;
@@ -61,6 +62,7 @@ import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
 import witchmod.cards.BitterMemories;
 import witchmod.cards.TwistedMind;
+import witchmod.cards.Twitch;
 import witchmod.cards.RoilingBarrier;
 import witchmod.cards.Schadenfreude;
 import witchmod.cards.Shrooms;
@@ -245,12 +247,14 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new FatalRay());
 		BaseMod.addCard(new BloodSabbath());
 		BaseMod.addCard(new Boline());
+		BaseMod.addCard(new EvilEye());
 		//Skills
 		BaseMod.addCard(new MysticUnburial());
 		BaseMod.addCard(new UnnaturalEnergy());
 		BaseMod.addCard(new UnluckySeven());
 		BaseMod.addCard(new StrangeBrew());
 		BaseMod.addCard(new SpringRite());
+		BaseMod.addCard(new Twitch());
 		//Powers
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());

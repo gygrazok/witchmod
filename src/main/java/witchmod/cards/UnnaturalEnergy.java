@@ -32,7 +32,7 @@ public class UnnaturalEnergy extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
 	}
 	
 	
@@ -44,7 +44,7 @@ public class UnnaturalEnergy extends AbstractWitchCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
-			this.rawDescription = DESCRIPTION_UPGRADED;
+			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();
 		}
 	}

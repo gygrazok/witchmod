@@ -16,11 +16,8 @@ public class ReduceBlockAction extends AbstractGameAction {
 			isDone = true;
 			return;
 		}
-		if (target.currentBlock > amount) {
-			target.currentBlock -= amount;
-		} else {
-			target.currentBlock = 0;
-		}
+		target.loseBlock(amount);
+
         isDone = true;
 	}
 

@@ -13,8 +13,8 @@ public class MercuryWand extends AbstractWitchCard{
 	public static final String ID = "MercuryWand";
 	public static final	String NAME = "Mercury Rod";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "If you have 0 block gain !B! block, otherwise deal !D! damage.";
-	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL Will gain !B! block"," NL Will deal !D! damage"};
+	public static final	String DESCRIPTION = "If you have 0 block gain !B! Block, otherwise deal !D! Damage.";
+	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL Will gain !B! Block"," NL Will deal !D! Damage"};
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;

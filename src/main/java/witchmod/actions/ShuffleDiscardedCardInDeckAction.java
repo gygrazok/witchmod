@@ -21,7 +21,7 @@ public class ShuffleDiscardedCardInDeckAction extends AbstractGameAction {
     public void update() {
     	if (this.duration == Settings.ACTION_DUR_FAST) {
             player.discardPile.removeCard(card);
-        	player.hand.moveToDeck(card, true);
+        	player.discardPile.moveToDeck(card, true);
         	AbstractDungeon.player.hand.refreshHandLayout();
         	this.isDone = true;
     	}

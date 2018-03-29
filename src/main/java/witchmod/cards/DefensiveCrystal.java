@@ -6,13 +6,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RoilingBarrier extends AbstractWitchCard{
-	public static final String ID = "RoilingBarrier";
-	public static final	String NAME = "Roiling Barrier";
+import witchmod.actions.DefensiveCrystalAction;
+
+public class DefensiveCrystal extends AbstractWitchCard{
+	public static final String ID = "Twitch";
+	public static final	String NAME = "Twitch";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. This value is increased by !M! everytime you draw this card. NL Recurrent.";
+	public static final	String DESCRIPTION = "When drawn reduce by !M! the cost of all Skills in your hand for this turn. NL Gain !B! block.";
 	
-	private static final CardRarity RARITY = CardRarity.COMMON;
+	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
 	
@@ -20,36 +22,34 @@ public class RoilingBarrier extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 5;
+	private static final int UPGRADE_BONUS = 3;
 	
 	private static final int MAGIC = 1;
-	private static final int MAGIC_UPGRADE_BONUS = 1;
 
-	public RoilingBarrier() {
+	public DefensiveCrystal() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
-		this.reshuffleOnUse = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
 
+	public AbstractCard makeCopy() {
+		return new DefensiveCrystal();
+	}
+	
 	@Override
 	public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
-		baseBlock += magicNumber;
-		isBlockModified = true;
-	}
-	
-	public AbstractCard makeCopy() {
-		return new RoilingBarrier();
+        AbstractDungeon.actionManager.addToBottom(new DefensiveCrystalAction());
 	}
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);
+			upgradeBlock(UPGRADE_BONUS);
 		}
 	}
 }

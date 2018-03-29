@@ -24,8 +24,10 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.ArmorTheft;
 import witchmod.cards.Athame;
+import witchmod.cards.Atonement;
 import witchmod.cards.AutumnalRite;
 import witchmod.cards.Bewitch;
+import witchmod.cards.BitterMemories;
 import witchmod.cards.BlackBolt;
 import witchmod.cards.BlackShield;
 import witchmod.cards.BleedOut;
@@ -37,12 +39,12 @@ import witchmod.cards.CursedBlade;
 import witchmod.cards.DarkProcession;
 import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
+import witchmod.cards.DefensiveCrystal;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.EnfeeblingStrike;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
-import witchmod.cards.SaltCircle;
 import witchmod.cards.FatalRay;
 import witchmod.cards.Foresight;
 import witchmod.cards.GnarledBody;
@@ -50,20 +52,22 @@ import witchmod.cards.Graveburst;
 import witchmod.cards.HandOfAkelarre;
 import witchmod.cards.Hexdarts;
 import witchmod.cards.Hexguard;
+import witchmod.cards.IllOmen;
 import witchmod.cards.IllusionOfStrength;
 import witchmod.cards.Implosion;
 import witchmod.cards.Intelligence;
+import witchmod.cards.KarmaDr
 import witchmod.cards.KarmaDrain;
+import witchmod.cards.MagicFang;ain;
 import witchmod.cards.Malady;
 import witchmod.cards.MercuryWand;
 import witchmod.cards.MortusClaw;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
-import witchmod.cards.BitterMemories;
-import witchmod.cards.TwistedMind;
-import witchmod.cards.Twitch;
 import witchmod.cards.RoilingBarrier;
+import witchmod.cards.RustWall;
+import witchmod.cards.SaltCircle;
 import witchmod.cards.Schadenfreude;
 import witchmod.cards.Shrooms;
 import witchmod.cards.SoulBarrier;
@@ -78,8 +82,12 @@ import witchmod.cards.SummonOwlFamiliar;
 import witchmod.cards.SummonRatFamiliar;
 import witchmod.cards.SummonToadFamiliar;
 import witchmod.cards.TrollsBlood;
+import witchmod.cards.TwistedMind;
+import witchmod.cards.Twitch;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
+import witchmod.cards.VileEgg;
+import witchmod.cards.WalpurgisNight;
 import witchmod.cards.WickedInspiration;
 import witchmod.cards.WindsOfPutrefaction;
 import witchmod.cards.WretchedVengeance;
@@ -200,6 +208,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new HandOfAkelarre());
 		BaseMod.addCard(new BoneCarvedDagger());
 		BaseMod.addCard(new ZombieSpit());
+		BaseMod.addCard(new MagicFang());
 		//Skills
 		BaseMod.addCard(new BlackShield());
 		BaseMod.addCard(new SaltCircle());
@@ -210,6 +219,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new GnarledBody());
 		BaseMod.addCard(new RoilingBarrier());
 		BaseMod.addCard(new Decrepify());
+		BaseMod.addCard(new Atonement());
 
 		
 		//UNCOMMON
@@ -231,6 +241,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new ArmorTheft());
 		BaseMod.addCard(new BitterMemories());
 		BaseMod.addCard(new AutumnalRite());
+		BaseMod.addCard(new DefensiveCrystal());
+		BaseMod.addCard(new IllOmen());
 		//Powers
 		BaseMod.addCard(new TwistedMind());
 		BaseMod.addCard(new Schadenfreude());
@@ -257,6 +269,9 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new StrangeBrew());
 		BaseMod.addCard(new SpringRite());
 		BaseMod.addCard(new Twitch());
+		BaseMod.addCard(new RustWall());
+		BaseMod.addCard(new WalpurgisNight());
+		BaseMod.addCard(new VileEgg());
 		//Powers
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
@@ -286,7 +301,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] cardType = {"card type", "card types"};
 		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
 		
-		String[] rot = {"rot", "contagious rot"};
+		String[] rot = {"rot"};
 		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b2.");
 		
 		String[] decrepit = {"decrepit"};

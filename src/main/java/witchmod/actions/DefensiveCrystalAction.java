@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class TwitchAction extends AbstractGameAction{
-	public TwitchAction() {
+public class DefensiveCrystalAction extends AbstractGameAction{
+	public DefensiveCrystalAction() {
 		this.duration = 0.0f;
 	}
 

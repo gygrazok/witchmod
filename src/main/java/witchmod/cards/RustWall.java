@@ -6,50 +6,41 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RoilingBarrier extends AbstractWitchCard{
-	public static final String ID = "RoilingBarrier";
-	public static final	String NAME = "Roiling Barrier";
+public class RustWall extends AbstractWitchCard{
+	public static final String ID = "RustWall";
+	public static final	String NAME = "Rust Wall";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. This value is increased by !M! everytime you draw this card. NL Recurrent.";
+	public static final	String DESCRIPTION = "Gain !B! block. Shuffle a Curse of Rust card in your draw pile.";
 	
-	private static final CardRarity RARITY = CardRarity.COMMON;
+	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 1;
-	private static final int POWER = 5;
+	private static final int COST = 0;
+	private static final int POWER = 10;
+	private static final int UPGRADE_BONUS = 6;
 	
-	private static final int MAGIC = 1;
-	private static final int MAGIC_UPGRADE_BONUS = 1;
 
-	public RoilingBarrier() {
+	public RustWall() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
-		this.baseMagicNumber = this.magicNumber = MAGIC;
-		this.reshuffleOnUse = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+		
 	}
 
-	@Override
-	public void triggerWhenDrawn() {
-		super.triggerWhenDrawn();
-		baseBlock += magicNumber;
-		isBlockModified = true;
-	}
-	
 	public AbstractCard makeCopy() {
-		return new RoilingBarrier();
+		return new RustWall();
 	}
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);
+			upgradeBlock(UPGRADE_BONUS);
 		}
 	}
 }

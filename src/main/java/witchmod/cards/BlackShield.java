@@ -22,8 +22,8 @@ public class BlackShield extends AbstractWitchCard{
 	private static final int POWER = 6;
 	private static final int UPGRADE_BONUS = 2;
 	
-	private static final int MAGIC = 4;
-	private static final int MAGIC_UPGRADE_BONUS = 1;
+	private static final int MAGIC = 5;
+	private static final int MAGIC_UPGRADE_BONUS = 2;
 
 	public BlackShield() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

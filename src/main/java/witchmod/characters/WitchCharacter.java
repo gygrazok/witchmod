@@ -19,6 +19,7 @@ import basemod.abstracts.CustomPlayer;
 import witchmod.WitchMod;
 import witchmod.cardgroup.WitchCardGroup;
 import witchmod.patches.WitchEnum;
+import witchmod.powers.AbstractWitchPower;
 
 
 
@@ -149,6 +150,11 @@ public class WitchCharacter extends CustomPlayer{
                 }
                 for (AbstractRelic r : this.relics) {
                     r.onCardDraw(c);
+                }
+                for (AbstractPower p : powers) {
+                	if (p instanceof AbstractWitchPower) {
+                		((AbstractWitchPower)p).onCardDraw(c);
+                	}
                 }
                 cardsDrawnThisTurn++;
                 cardsDrawnTotal++;

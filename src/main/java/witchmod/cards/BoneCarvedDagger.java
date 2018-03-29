@@ -14,7 +14,7 @@ public class BoneCarvedDagger extends AbstractWitchCard {
 	public static final String ID = "BoneCarvedDagger";
 	public static final	String NAME = "Bone Carved Dagger";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to !M! random enemies. NL Deal !D! damage.";
+	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

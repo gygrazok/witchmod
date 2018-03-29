@@ -28,7 +28,7 @@ public class SoulStrike extends AbstractWitchCard{
 	private static final int UPGRADE_BONUS = 2;
 	
 	private static final int MAGIC = 2;
-	private static final int MAGIC_UPGRADE_BONUS = 3;
+	private static final int MAGIC_UPGRADE_BONUS = 2;
 
 	public SoulStrike() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

@@ -1,8 +1,9 @@
 package witchmod.cards;
 
 public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
-
-	public AbstractWitchCleansableCurse(String id, String name, String img, int cost, String rawDescription,CardType type, CardRarity rarity, CardTarget target) {
+	public boolean cleansed = false;
+	
+	public AbstractWitchCleansableCurse(String id, String name, String img, String rawDescription, CardRarity rarity) {
 		super(id, name, img, -2, rawDescription, CardType.CURSE, rarity, CardTarget.NONE, 1);
 	}
 	
@@ -12,13 +13,13 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 
 	@Override
 	public void triggerWhenDrawn() {
-		if (cleanseCheck()) {
+		if (cleansed == false && cleanseCheck()) {
 			cleanse();
 		}
 	}
 	
 	
 	public void cleanse() {
-		
+		cleansed = true;
 	}
 }

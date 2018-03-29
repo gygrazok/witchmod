@@ -42,6 +42,7 @@ import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.EnfeeblingStrike;
+import witchmod.cards.Envy;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
 import witchmod.cards.FatalRay;
@@ -237,7 +238,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new WindsOfPutrefaction());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new RiteOfSummer());
-		//Skills (12)
+		//Skills (13)
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Hexguard());
 		BaseMod.addCard(new Shrooms());
@@ -250,6 +251,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new IllOmen());
 		BaseMod.addCard(new RiteOfWinter());
 		BaseMod.addCard(new BalefulWard());
+		BaseMod.addCard(new Envy());
 		//Powers (6)
 		BaseMod.addCard(new TwistedMind());
 		BaseMod.addCard(new Schadenfreude());

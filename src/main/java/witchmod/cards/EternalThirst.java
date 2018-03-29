@@ -24,7 +24,7 @@ public class EternalThirst extends CustomCard {
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.CURSE;
 	
-	private static final int POOL = 2;
+	private static final int POOL = 1;
 	private static final int COST = -2;
 
 

@@ -25,7 +25,7 @@ import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.ArmorTheft;
 import witchmod.cards.Athame;
 import witchmod.cards.Atonement;
-import witchmod.cards.AutumnalRite;
+import witchmod.cards.BalefulWard;
 import witchmod.cards.Bewitch;
 import witchmod.cards.BitterMemories;
 import witchmod.cards.BlackBolt;
@@ -39,7 +39,6 @@ import witchmod.cards.CursedBlade;
 import witchmod.cards.DarkProcession;
 import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
-import witchmod.cards.DefensiveCrystal;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.EnfeeblingStrike;
@@ -56,15 +55,20 @@ import witchmod.cards.IllOmen;
 import witchmod.cards.IllusionOfStrength;
 import witchmod.cards.Implosion;
 import witchmod.cards.Intelligence;
-import witchmod.cards.KarmaDr
 import witchmod.cards.KarmaDrain;
-import witchmod.cards.MagicFang;ain;
+import witchmod.cards.MagicFang;
 import witchmod.cards.Malady;
+import witchmod.cards.MementoMori;
 import witchmod.cards.MercuryWand;
 import witchmod.cards.MortusClaw;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
+import witchmod.cards.QuartzShield;
+import witchmod.cards.RiteOfAutumn;
+import witchmod.cards.RiteOfSpring;
+import witchmod.cards.RiteOfSummer;
+import witchmod.cards.RiteOfWinter;
 import witchmod.cards.RoilingBarrier;
 import witchmod.cards.RustWall;
 import witchmod.cards.SaltCircle;
@@ -73,7 +77,6 @@ import witchmod.cards.Shrooms;
 import witchmod.cards.SoulBarrier;
 import witchmod.cards.SoulBurst;
 import witchmod.cards.SoulStrike;
-import witchmod.cards.SpringRite;
 import witchmod.cards.StrangeBrew;
 import witchmod.cards.Strike_Witch;
 import witchmod.cards.SummonBatFamiliar;
@@ -198,8 +201,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Strike_Witch());
 		BaseMod.addCard(new Defend_Witch());
 		BaseMod.addCard(new Hexdarts());
-		//COMMON
-		//Attacks
+		//COMMON (20)
+		//Attacks (10)
 		BaseMod.addCard(new Demonfyre());
 		BaseMod.addCard(new BleedOut());
 		BaseMod.addCard(new BroomstickSmash());
@@ -209,7 +212,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new BoneCarvedDagger());
 		BaseMod.addCard(new ZombieSpit());
 		BaseMod.addCard(new MagicFang());
-		//Skills
+		BaseMod.addCard(new MementoMori());
+		//Skills (10)
 		BaseMod.addCard(new BlackShield());
 		BaseMod.addCard(new SaltCircle());
 		BaseMod.addCard(new KarmaDrain());
@@ -222,8 +226,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Atonement());
 
 		
-		//UNCOMMON
-		//Attacks
+		//UNCOMMON (27)
+		//Attacks (9)
 		BaseMod.addCard(new Athame());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
@@ -232,7 +236,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new MortusClaw());
 		BaseMod.addCard(new WindsOfPutrefaction());
 		BaseMod.addCard(new Implosion());
-		//Skills
+		BaseMod.addCard(new RiteOfSummer());
+		//Skills (12)
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Hexguard());
 		BaseMod.addCard(new Shrooms());
@@ -240,10 +245,12 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Malady());
 		BaseMod.addCard(new ArmorTheft());
 		BaseMod.addCard(new BitterMemories());
-		BaseMod.addCard(new AutumnalRite());
-		BaseMod.addCard(new DefensiveCrystal());
+		BaseMod.addCard(new RiteOfAutumn());
+		BaseMod.addCard(new QuartzShield());
 		BaseMod.addCard(new IllOmen());
-		//Powers
+		BaseMod.addCard(new RiteOfWinter());
+		BaseMod.addCard(new BalefulWard());
+		//Powers (6)
 		BaseMod.addCard(new TwistedMind());
 		BaseMod.addCard(new Schadenfreude());
 		BaseMod.addCard(new SummonOwlFamiliar());
@@ -252,8 +259,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new WretchedVengeance());
 
 
-		//RARE
-		//Attacks
+		//RARE (23)
+		//Attacks (8)
 		BaseMod.addCard(new DoomBlade());
 		BaseMod.addCard(new Graveburst());
 		BaseMod.addCard(new EternalThirst());
@@ -262,17 +269,17 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new BloodSabbath());
 		BaseMod.addCard(new Boline());
 		BaseMod.addCard(new EvilEye());
-		//Skills
+		//Skills (9)
 		BaseMod.addCard(new MysticUnburial());
 		BaseMod.addCard(new UnnaturalEnergy());
 		BaseMod.addCard(new UnluckySeven());
 		BaseMod.addCard(new StrangeBrew());
-		BaseMod.addCard(new SpringRite());
+		BaseMod.addCard(new RiteOfSpring());
 		BaseMod.addCard(new Twitch());
 		BaseMod.addCard(new RustWall());
 		BaseMod.addCard(new WalpurgisNight());
 		BaseMod.addCard(new VileEgg());
-		//Powers
+		//Powers (6)
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
 		BaseMod.addCard(new SummonCatFamiliar());
@@ -306,7 +313,24 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] decrepit = {"decrepit"};
 		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1.");
+	
+		String[] familiarCat = {"cat"};
+		BaseMod.addKeyword(familiarCat, "Slashes an enemy.");
 		
+		String[] familiarOwl = {"owl"};
+		BaseMod.addKeyword(familiarOwl, "Draws cards.");
+		
+		String[] familiarRat = {"rat"};
+		BaseMod.addKeyword(familiarRat, "Poisons an enemy.");
+		
+		String[] familiarBat = {"bat"};
+		BaseMod.addKeyword(familiarBat, "Weakens an enemy.");
+		
+		String[] familiarToad = {"toad"};
+		BaseMod.addKeyword(familiarToad, "Increases block and consumes a debuff.");
+		
+		String[] familiarRaven = {"raven"};
+		BaseMod.addKeyword(familiarRaven, "Upgrades a card in hand.");
 	}
 
 }

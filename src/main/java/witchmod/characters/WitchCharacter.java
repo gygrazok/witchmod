@@ -7,6 +7,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -171,6 +172,19 @@ public class WitchCharacter extends CustomPlayer{
 		super.applyStartOfTurnCards();
 		cardsDrawnThisTurn = 0;
 	}
+	
+	@Override
+	protected int decrementBlock(DamageInfo info, int damageAmount) {
+		int actualBlockLost = Math.min(damageAmount, currentBlock);
+		int out = super.decrementBlock(info, damageAmount);
+        for (AbstractPower p : powers) {
+        	if (p instanceof AbstractWitchPower) {
+        		((AbstractWitchPower)p).onDamageAbsorbedByBlock(damageAmount,actualBlockLost,currentBlock);
+        	}
+        }
+        return out;
+	}
+
 	
 
 }

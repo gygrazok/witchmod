@@ -26,7 +26,7 @@ public class Boline extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 6;
-	private static final int POWER_UPGRADED_BONUS = 2;
+	private static final int POWER_UPGRADED_BONUS = 3;
 
 	public Boline() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

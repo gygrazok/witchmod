@@ -20,7 +20,7 @@ public class EternalThirstCleansed extends AbstractWitchCard{
 	
 	private static final int POOL = 0;
 	
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int POWER = 10;
 
 	public EternalThirstCleansed() {

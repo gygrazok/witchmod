@@ -37,6 +37,7 @@ public class Bewitch extends AbstractWitchCard {
 		}
 	}
 
+	
 	public AbstractCard makeCopy() {
 		return new Bewitch();
 	}

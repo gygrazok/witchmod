@@ -59,6 +59,7 @@ public class SummonFamiliarPower extends AbstractPower {
 		case OWL: return new OwlFamiliar();
 		case RAT: return new RatFamiliar();
 		case TOAD: return new ToadFamiliar();
+		case RAVEN: return new RavenFamiliar();
 		}
 		
 		return new CatFamiliar();
@@ -71,17 +72,19 @@ public class SummonFamiliarPower extends AbstractPower {
 		case OWL: return upgraded?"an upgraded Owl":"an Owl";
 		case RAT: return upgraded?"an upgraded Rat":"a Rat";
 		case TOAD: return upgraded?"an upgraded Toad":"a Toad";
+		case RAVEN: return upgraded?"an upgraded Raven":"a Raven";
 		}
 		
 		return "MISSING CARD "+card.toString();
 	}
 	
 	public static AbstractCard getRandomFamiliarCard(){		
-		switch ((int)(Math.random()*5)) {
+		switch ((int)(Math.random()*6)) {
 		case 0: return new BatFamiliar();
 		case 1: return new RatFamiliar();
 		case 2: return new OwlFamiliar();
 		case 3: return new ToadFamiliar();
+		case 4: return new RavenFamiliar();
 		default: return new CatFamiliar();
 		}
 	}

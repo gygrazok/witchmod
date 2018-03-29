@@ -5,5 +5,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public abstract class AbstractWitchPower extends AbstractPower {
 
-	public void onCardDraw(AbstractCard card) {};
+	public void onCardDraw(AbstractCard card) {}
+
+	public void onDamageAbsorbedByBlock(int amount, int actualBlockLost, int currentBlock) { }
 }

@@ -7,10 +7,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class SpringRiteAction extends AbstractGameAction{
+public class RiteOfSpringAction extends AbstractGameAction{
 	private AbstractPlayer player;
 	public static final String TEXT = "Pick any number of cards to shuffle in your draw pile.";
-	public SpringRiteAction() {
+	public RiteOfSpringAction() {
 		this.duration = Settings.ACTION_DUR_FAST;
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
 		this.player = AbstractDungeon.player;

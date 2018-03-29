@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DefensiveCrystalAction extends AbstractGameAction{
-	public DefensiveCrystalAction() {
+public class QuartzShieldAction extends AbstractGameAction{
+	public QuartzShieldAction() {
 		this.duration = 0.0f;
 	}
 

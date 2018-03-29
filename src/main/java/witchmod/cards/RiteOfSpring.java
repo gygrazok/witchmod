@@ -5,9 +5,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.actions.SpringRiteAction;
+import witchmod.actions.RiteOfSpringAction;
 
-public class SpringRite extends AbstractWitchCard {
+public class RiteOfSpring extends AbstractWitchCard {
 	public static final String ID = "SpringRite";
 	public static final	String NAME = "Spring Rite";
 	public static final	String IMG = "cards/placeholder_skill.png";
@@ -23,16 +23,16 @@ public class SpringRite extends AbstractWitchCard {
 
 
 	
-	public SpringRite() {
+	public RiteOfSpring() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new SpringRiteAction());
+		AbstractDungeon.actionManager.addToBottom(new RiteOfSpringAction());
 	}
 	
 	public AbstractCard makeCopy() {
-		return new SpringRite();
+		return new RiteOfSpring();
 	}
 	
 	public void upgrade() {

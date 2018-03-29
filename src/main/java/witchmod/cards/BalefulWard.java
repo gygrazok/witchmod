@@ -13,7 +13,7 @@ public class BalefulWard extends AbstractWitchCard{
 	public static final String ID = "BalefulWard";
 	public static final	String NAME = "Baleful Ward";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! Block. NL If your Block is broken by enemy attacks this turn, add a copy of this card to your hand.";
+	public static final	String DESCRIPTION = "Gain !B! Block. NL If your Block is broken this turn, add a copy of this card to your hand.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -33,7 +33,7 @@ public class BalefulWard extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BalefulWardPower(this)));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BalefulWardPower(this),1));
 	}
 
 	public AbstractCard makeCopy() {

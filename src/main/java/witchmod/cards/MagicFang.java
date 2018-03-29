@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class MagicFang extends AbstractWitchCard{
 	public static final String ID = "MagicFang";
-	public static final	String NAME = "MagicFang";
+	public static final	String NAME = "Magic Fang";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Gain !B! Block. NL Recurrent.";
+	public static final	String DESCRIPTION = "Deal !D! Damage. Gain !B! Block. NL Recurrent.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -17,7 +17,7 @@ public class SummonRavenFamiliar extends AbstractWitchCard {
 	public static final	String DESCRIPTION = "At the start of your turn, add a Raven to your hand. NL Limit 1 Familiar active.";
 	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, add an upgraded Raven to your hand. NL Limit 1 Familiar active.";
 	
-	private static final CardRarity RARITY = CardRarity.UNCOMMON;
+	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.POWER;
 	

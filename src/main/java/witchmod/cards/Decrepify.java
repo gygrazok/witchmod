@@ -34,7 +34,7 @@ public class Decrepify extends AbstractWitchCard {
 		int counter = magicNumber;
 		while (counter > 0) {
 			AbstractMonster monster = AbstractDungeon.getRandomMonster();
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new DecrepitPower(monster, 1),1, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new DecrepitPower(monster, 1, false),1, true));
 			counter--;
 		}
 	}

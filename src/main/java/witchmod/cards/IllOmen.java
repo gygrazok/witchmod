@@ -13,10 +13,10 @@ public class IllOmen extends AbstractWitchCard{
 	public static final String ID = "IllOmen";
 	public static final	String NAME = "Ill Omen";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Shuffle a random Curse into your draw pile. NL The next time you draw a curse deal !D! damage to ALL enemies.";
+	public static final	String DESCRIPTION = "Shuffle a random Curse into your draw pile. The next time you draw a curse deal !D! damage to ALL enemies.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
-	private static final CardTarget TARGET = CardTarget.ENEMY;
+	private static final CardTarget TARGET = CardTarget.NONE;
 	private static final CardType TYPE = CardType.SKILL;
 	
 	private static final int POOL = 1;

@@ -16,7 +16,7 @@ public class DecrepitPower extends AbstractPower {
 	public static final String[] DESCRIPTIONS = new String[]{ "All incoming damage increased by #b"," (calculated after Vulnerability)"};
 	public static final String IMG = "powers/rot.png";
     private boolean justApplied = false;
-	public DecrepitPower(AbstractCreature owner, int amount) {
+	public DecrepitPower(AbstractCreature owner, int amount, boolean justApplied) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -25,6 +25,7 @@ public class DecrepitPower extends AbstractPower {
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.isTurnBased = true;
 		this.type = PowerType.DEBUFF;
+		this.justApplied = true;
 	}
 
 	@Override

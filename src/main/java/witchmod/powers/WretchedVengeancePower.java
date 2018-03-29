@@ -12,7 +12,7 @@ import witchmod.WitchMod;
 public class WretchedVengeancePower extends AbstractPower {
     public static final String POWER_ID = "WretchedVengeancePower";
     public static final String NAME = "Wretched Vengeance";
-    public static final String[] DESCRIPTIONS = new String[]{ "When you are damaged apply #b"," Decrepit to the attacker."};
+    public static final String[] DESCRIPTIONS = new String[]{ "When you are attacked apply #b"," Decrepit to the attacker."};
     public static final String IMG = "powers/athamesoffering.png";
     public WretchedVengeancePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -29,7 +29,7 @@ public class WretchedVengeancePower extends AbstractPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner) {
             this.flash();
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, owner, new DecrepitPower(info.owner, amount), amount, true));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, owner, new DecrepitPower(info.owner, amount, true), amount, true));
         }
         return damageAmount;
     }

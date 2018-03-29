@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -38,6 +39,8 @@ public class IllOmenPower extends AbstractWitchPower {
     @Override
     public void onCardDraw(AbstractCard card) {
     	if (card.type == CardType.CURSE) {
+    		this.flash();
+    		AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, IllOmenPower.POWER_ID));
     		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.BLACK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY),0.1f));
     		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AttackEffect.POISON));
     	}

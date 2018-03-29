@@ -81,9 +81,9 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
 		retVal.add("Defend_Witch");
-		retVal.add("Hexdarts");
-		/*retVal.add("Bewitch");
-		retVal.add("Athame");
+		retVal.add("Hexguard");
+		retVal.add("ZombieSpit");
+		/*retVal.add("Athame");
 		retVal.add("CursedBlade");
 		retVal.add("Demonfyre");
 		retVal.add("DoomBlade");

@@ -17,6 +17,7 @@ public class DarkProcessionPower extends AbstractPower {
 	public DarkProcessionPower() {
 		this.name = NAME;
 		this.ID = POWER_ID;
+		this.owner = AbstractDungeon.player;
 		this.updateDescription();
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.type = PowerType.BUFF;

@@ -84,6 +84,7 @@ import witchmod.cards.SummonBatFamiliar;
 import witchmod.cards.SummonCatFamiliar;
 import witchmod.cards.SummonOwlFamiliar;
 import witchmod.cards.SummonRatFamiliar;
+import witchmod.cards.SummonRavenFamiliar;
 import witchmod.cards.SummonToadFamiliar;
 import witchmod.cards.TrollsBlood;
 import witchmod.cards.TwistedMind;
@@ -150,7 +151,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.subscribeToEditRelics(this);
 
 		BaseMod.subscribeToEditCards(this);
-		
+
 		BaseMod.subscribeToEditStrings(this);
 
 		BaseMod.subscribeToEditKeywords(this);
@@ -201,7 +202,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		//BASIC
 		BaseMod.addCard(new Strike_Witch());
 		BaseMod.addCard(new Defend_Witch());
-		BaseMod.addCard(new Hexdarts());
+		BaseMod.addCard(new ZombieSpit());
+		BaseMod.addCard(new Hexguard());
 		//COMMON (20)
 		//Attacks (10)
 		BaseMod.addCard(new Demonfyre());
@@ -211,9 +213,10 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new MercuryWand());
 		BaseMod.addCard(new HandOfAkelarre());
 		BaseMod.addCard(new BoneCarvedDagger());
-		BaseMod.addCard(new ZombieSpit());
 		BaseMod.addCard(new MagicFang());
 		BaseMod.addCard(new MementoMori());
+		BaseMod.addCard(new SoulStrike());
+		BaseMod.addCard(new Hexdarts());
 		//Skills (10)
 		BaseMod.addCard(new BlackShield());
 		BaseMod.addCard(new SaltCircle());
@@ -226,21 +229,19 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Decrepify());
 		BaseMod.addCard(new Atonement());
 
-		
-		//UNCOMMON (27)
-		//Attacks (9)
+
+		//UNCOMMON (26)
+		//Attacks (8)
 		BaseMod.addCard(new Athame());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
 		BaseMod.addCard(new EnfeeblingStrike());
-		BaseMod.addCard(new SoulStrike());
 		BaseMod.addCard(new MortusClaw());
 		BaseMod.addCard(new WindsOfPutrefaction());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new RiteOfSummer());
-		//Skills (13)
+		//Skills (12)
 		BaseMod.addCard(new Foresight());
-		BaseMod.addCard(new Hexguard());
 		BaseMod.addCard(new Shrooms());
 		BaseMod.addCard(new NighInvulnerability());
 		BaseMod.addCard(new Malady());
@@ -257,6 +258,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Schadenfreude());
 		BaseMod.addCard(new SummonOwlFamiliar());
 		BaseMod.addCard(new SummonRatFamiliar());
+		BaseMod.addCard(new SummonCatFamiliar());
 		BaseMod.addCard(new SummonBatFamiliar());
 		BaseMod.addCard(new WretchedVengeance());
 
@@ -284,7 +286,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		//Powers (6)
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
-		BaseMod.addCard(new SummonCatFamiliar());
+		BaseMod.addCard(new SummonRavenFamiliar());
 		BaseMod.addCard(new TrollsBlood());
 		BaseMod.addCard(new DarkProcession());
 		BaseMod.addCard(new IllusionOfStrength());
@@ -306,31 +308,31 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 		String[] cleanse = {"cleanse"};
 		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied at the end of your turn while it is in your hand.");
-		
+
 		String[] cardType = {"card type", "card types"};
 		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
-		
+
 		String[] rot = {"rot"};
 		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b2.");
-		
+
 		String[] decrepit = {"decrepit"};
 		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1.");
-	
+
 		String[] familiarCat = {"cat"};
 		BaseMod.addKeyword(familiarCat, "Slashes an enemy.");
-		
+
 		String[] familiarOwl = {"owl"};
 		BaseMod.addKeyword(familiarOwl, "Draws cards.");
-		
+
 		String[] familiarRat = {"rat"};
 		BaseMod.addKeyword(familiarRat, "Poisons an enemy.");
-		
+
 		String[] familiarBat = {"bat"};
 		BaseMod.addKeyword(familiarBat, "Weakens an enemy.");
-		
+
 		String[] familiarToad = {"toad"};
 		BaseMod.addKeyword(familiarToad, "Increases block and consumes a debuff.");
-		
+
 		String[] familiarRaven = {"raven"};
 		BaseMod.addKeyword(familiarRaven, "Upgrades a card in hand.");
 	}

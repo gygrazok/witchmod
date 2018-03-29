@@ -12,7 +12,7 @@ public class MementoMori extends AbstractWitchCard{
 	public static final String ID = "MementoMori";
 	public static final	String NAME = "Memento Mori";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Damage is increased by the percentage of target's health missing. NL Exhaust.";
+	public static final	String DESCRIPTION = "Deal !D! damage, increased by the percentage of target's health missing. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -27,25 +27,25 @@ public class MementoMori extends AbstractWitchCard{
 	public MementoMori() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
+		this.exhaust = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_HEAVY));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_HEAVY));
 	}
 
 	public AbstractCard makeCopy() {
 		return new MementoMori();
 	}
+
 	
 	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
-		super.calculateCardDamage(mo);
-		float percent = 0;
-		if (mo.maxHealth != 0) {
-			percent = 1 - mo.currentHealth/mo.maxHealth;
+	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+		if (mo == null || mo.maxHealth == 0) {
+			return tmp;
 		}
-		damage *= (1+percent);
-		
+		float percent = (float)mo.currentHealth/mo.maxHealth;
+		return tmp*(2f - percent);
 	}
 	
 

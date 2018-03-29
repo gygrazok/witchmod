@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -36,6 +37,13 @@ public class Atonement extends AbstractWitchCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractCard toExhaust = getRandomCurseOrStatusFromDeck();
 		if (toExhaust != null) {
+			toExhaust.current_y = -200.0f * Settings.scale;
+			toExhaust.target_x = Settings.WIDTH / 2.0f + 200;
+			toExhaust.target_y = Settings.HEIGHT / 2.0f;
+			toExhaust.targetAngle = 0.0f;
+			toExhaust.lighten(false);
+			toExhaust.drawScale = 0.12f;
+			toExhaust.targetDrawScale = 0.75f;
 			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(toExhaust, p.drawPile));
 		}
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
@@ -56,7 +64,7 @@ public class Atonement extends AbstractWitchCard{
 		if (candidates.size() == 0) {
 			return null;
 		}
-		return candidates.get(MathUtils.random(candidates.size()));
+		return candidates.get(MathUtils.random(candidates.size() - 1));
 		
 	}
 	

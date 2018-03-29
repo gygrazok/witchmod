@@ -16,7 +16,7 @@ public class Hexdarts extends AbstractWitchCard {
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "When drawn apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies.";
 	
-	private static final CardRarity RARITY = CardRarity.BASIC;
+	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	

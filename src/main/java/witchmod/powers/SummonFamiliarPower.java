@@ -13,6 +13,7 @@ import witchmod.cards.familiar.CatFamiliar;
 import witchmod.cards.familiar.FamiliarCardEnum;
 import witchmod.cards.familiar.OwlFamiliar;
 import witchmod.cards.familiar.RatFamiliar;
+import witchmod.cards.familiar.RavenFamiliar;
 import witchmod.cards.familiar.ToadFamiliar;
 
 public class SummonFamiliarPower extends AbstractPower {

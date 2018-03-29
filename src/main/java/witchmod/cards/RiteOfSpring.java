@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import witchmod.actions.RiteOfSpringAction;
 
 public class RiteOfSpring extends AbstractWitchCard {
-	public static final String ID = "SpringRite";
-	public static final	String NAME = "Spring Rite";
+	public static final String ID = "RiteOfSpring";
+	public static final	String NAME = "Rite of Spring";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Shuffle in your draw pile any number of cards in your hand and gain that much HP. Exhaust";
 	
@@ -25,6 +25,7 @@ public class RiteOfSpring extends AbstractWitchCard {
 	
 	public RiteOfSpring() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		this.exhaust = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 public class WickedInspiration extends AbstractWitchCard {
 	public static final String ID = "WickedInspiration";
-	public static final	String NAME = "WickedInspiration";
+	public static final	String NAME = "Wicked Inspiration";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Draw a card for each curse in your hand.";
 	public static final	String DESCRIPTION_UPGRADED = "Draw a card for each curse in your hand plus !M!.";

@@ -15,20 +15,21 @@ import witchmod.powers.DecrepitPower;
 public class Envy extends AbstractWitchCleansableCurse {
 	public static final String ID = "Envy";
 	public static final	String NAME = "Envy";
-	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: an enemy should have at least !M! of either Weak, Vulnerable or Decrepit.";
-	public static final	String DESCRIPTION_CLEANSED = "Each enemy loses health equal to the amount of Weak, Vulnerable and Decrepit it has.";
+	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: an enemy should have at least !M! of either Vulnerable, Weak or Decrepit.";
+	public static final	String DESCRIPTION_CLEANSED = "Each enemy loses health equal to the amount of Vulnerable, Weak or Decrepit it has.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	
-	private static final int COST = 1;
+	private static final int COST = 0;
 	
 	private static final int THRESHOLD = 3;
 	public Envy() {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.exhaust = true;
+		this.baseMagicNumber = this.magicNumber = THRESHOLD;
 	}
 	
     @Override
@@ -36,6 +37,8 @@ public class Envy extends AbstractWitchCleansableCurse {
     	super.cleanse();
     	type = TYPE;
     	cost = COST;
+    	costForTurn = COST;
+    	isCostModified = false;
     	target = TARGET;
     	rawDescription = DESCRIPTION_CLEANSED;
     	initializeDescription();

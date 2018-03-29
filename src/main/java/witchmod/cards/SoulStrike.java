@@ -17,7 +17,7 @@ public class SoulStrike extends AbstractWitchCard{
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "When drawn gain !M! Strength for 1 turn. NL Deal !D! damage.";
 	
-	private static final CardRarity RARITY = CardRarity.UNCOMMON;
+	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	

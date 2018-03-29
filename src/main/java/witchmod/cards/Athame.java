@@ -38,8 +38,8 @@ public class Athame extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if ((damage > m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL)
-			|| (damage > m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
+		if ((damage >= m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL)
+			|| (damage >= m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
 			//enemy will die due to this attack
 			exhaust = true;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AthamePower(AbstractDungeon.player,magicNumber), magicNumber));

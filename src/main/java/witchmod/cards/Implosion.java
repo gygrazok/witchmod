@@ -38,8 +38,8 @@ public class Implosion extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if ((damage > m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL)
-				|| (damage > m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
+		if ((damage >= m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL)
+				|| (damage >= m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
 			//enemy will die due to this attack
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
 			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AttackEffect.FIRE));

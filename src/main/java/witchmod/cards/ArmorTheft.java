@@ -12,8 +12,7 @@ public class ArmorTheft extends AbstractWitchCard {
 	public static final String ID = "ArmorTheft";
 	public static final	String NAME = "Armor Theft";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Steal up to !M! block from an enemy.";
-	public static final	String DESCRIPTION_UPGRADED = "Steal up to !M! block from an enemy. NL Persistent.";
+	public static final	String DESCRIPTION = "Steal up to !M! block from an enemy. NL Persistent.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -21,15 +20,16 @@ public class ArmorTheft extends AbstractWitchCard {
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 2;
-	private static final int POWER = 12;
+	private static final int COST = 1;
+	private static final int POWER = 8;
+	private static final int UPGRADE_BONUS = 4;
 
 
 	
 	public ArmorTheft() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
-		
+		this.retain = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,7 +46,7 @@ public class ArmorTheft extends AbstractWitchCard {
 	
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-		if (m.currentBlock == 0) {
+		if (m != null && m.currentBlock == 0) {
 			cantUseMessage = "That enemy doesn't have any Block to steal.";
 			return false;
 		}
@@ -55,15 +55,13 @@ public class ArmorTheft extends AbstractWitchCard {
 	
 	@Override
 	public void atTurnStart(){
-		if (upgraded) {
-			this.retain = true;
-		}
+		retain = true;
 	}
 	
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.retain = true;
+			upgradeMagicNumber(UPGRADE_BONUS);
 		}
 	}
 }

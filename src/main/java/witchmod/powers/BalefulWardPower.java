@@ -11,25 +11,28 @@ import witchmod.WitchMod;
 
 public class BalefulWardPower extends AbstractWitchPower {
     public static final String POWER_ID = "BalefulWardPower";
-    public static final String NAME = "BalefulWard Power";
+    public static final String NAME = "Baleful Ward";
     public static final String[] DESCRIPTIONS = new String[]{ "If your Block is broken add a Baleful Ward to your hand."};
     public static final String IMG = "powers/athamesoffering.png";
     private AbstractCard card;
     public BalefulWardPower(AbstractCard cardToCopy) {
         this.name = NAME;
         this.ID = POWER_ID;
+        this.owner = AbstractDungeon.player;
         this.card = cardToCopy;
         this.description = DESCRIPTIONS[0];
         this.img = new Texture(WitchMod.getResourcePath(IMG));
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
+        this.amount = 1;
     }
 
     @Override
     public void onDamageAbsorbedByBlock(int amount, int actualBlockLost, int currentBlock) {
     	if (currentBlock == 0) {
-    		 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
-    		 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, BalefulWardPower.POWER_ID));
+    		this.flash();
+    		 AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
+    		 AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, BalefulWardPower.POWER_ID));
     	}
     }
     

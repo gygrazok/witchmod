@@ -31,7 +31,7 @@ public class BleedOut extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, DamageType.HP_LOSS, AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageType.HP_LOSS, AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
 		
 	}
 

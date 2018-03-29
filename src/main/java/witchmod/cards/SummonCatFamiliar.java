@@ -17,7 +17,7 @@ public class SummonCatFamiliar extends AbstractWitchCard {
 	public static final	String DESCRIPTION = "At the start of your turn, add a Cat card to your hand. NL Limit 1 Familiar active.";
 	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, add an upgraded Cat card to your hand. NL Limit 1 Familiar active.";
 	
-	private static final CardRarity RARITY = CardRarity.RARE;
+	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.POWER;
 	

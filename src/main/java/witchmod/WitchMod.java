@@ -35,6 +35,8 @@ import witchmod.cards.BloodSabbath;
 import witchmod.cards.Boline;
 import witchmod.cards.BoneCarvedDagger;
 import witchmod.cards.BroomstickSmash;
+import witchmod.cards.ChosenOfTheMoon;
+import witchmod.cards.CorruptBlood;
 import witchmod.cards.CursedBlade;
 import witchmod.cards.DarkProcession;
 import witchmod.cards.Decrepify;
@@ -65,7 +67,7 @@ import witchmod.cards.MortusClaw;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
-import witchmod.cards.QuartzShield;
+import witchmod.cards.CrystalResonance;
 import witchmod.cards.RiteOfAutumn;
 import witchmod.cards.RiteOfSpring;
 import witchmod.cards.RiteOfSummer;
@@ -94,7 +96,7 @@ import witchmod.cards.UnnaturalEnergy;
 import witchmod.cards.VileEgg;
 import witchmod.cards.WalpurgisNight;
 import witchmod.cards.WickedInspiration;
-import witchmod.cards.WindsOfPutrefaction;
+import witchmod.cards.RottenWinds;
 import witchmod.cards.WretchedVengeance;
 import witchmod.cards.ZombieSpit;
 import witchmod.characters.WitchCharacter;
@@ -204,8 +206,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Defend_Witch());
 		BaseMod.addCard(new ZombieSpit());
 		BaseMod.addCard(new Hexguard());
-		//COMMON (20)
-		//Attacks (10)
+		//COMMON (21)
+		//Attacks (11)
 		BaseMod.addCard(new Demonfyre());
 		BaseMod.addCard(new BleedOut());
 		BaseMod.addCard(new BroomstickSmash());
@@ -230,17 +232,17 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Atonement());
 
 
-		//UNCOMMON (26)
+		//UNCOMMON (28)
 		//Attacks (8)
 		BaseMod.addCard(new Athame());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
 		BaseMod.addCard(new EnfeeblingStrike());
 		BaseMod.addCard(new MortusClaw());
-		BaseMod.addCard(new WindsOfPutrefaction());
+		BaseMod.addCard(new RottenWinds());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new RiteOfSummer());
-		//Skills (12)
+		//Skills (13)
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Shrooms());
 		BaseMod.addCard(new NighInvulnerability());
@@ -248,12 +250,13 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new ArmorTheft());
 		BaseMod.addCard(new BitterMemories());
 		BaseMod.addCard(new RiteOfAutumn());
-		BaseMod.addCard(new QuartzShield());
+		BaseMod.addCard(new CrystalResonance());
 		BaseMod.addCard(new IllOmen());
 		BaseMod.addCard(new RiteOfWinter());
 		BaseMod.addCard(new BalefulWard());
 		BaseMod.addCard(new Envy());
-		//Powers (6)
+		BaseMod.addCard(new CorruptBlood());
+		//Powers (7)
 		BaseMod.addCard(new TwistedMind());
 		BaseMod.addCard(new Schadenfreude());
 		BaseMod.addCard(new SummonOwlFamiliar());
@@ -263,7 +266,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new WretchedVengeance());
 
 
-		//RARE (23)
+		//RARE (24)
 		//Attacks (8)
 		BaseMod.addCard(new DoomBlade());
 		BaseMod.addCard(new Graveburst());
@@ -283,13 +286,14 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new RustWall());
 		BaseMod.addCard(new WalpurgisNight());
 		BaseMod.addCard(new VileEgg());
-		//Powers (6)
+		//Powers (7)
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
 		BaseMod.addCard(new SummonRavenFamiliar());
 		BaseMod.addCard(new TrollsBlood());
 		BaseMod.addCard(new DarkProcession());
 		BaseMod.addCard(new IllusionOfStrength());
+		BaseMod.addCard(new ChosenOfTheMoon());
 	}
 
 
@@ -304,16 +308,16 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(persistent, "Doesn't get discarded automatically at the end of the turn.");
 
 		String[] recurrent = {"recurrent"};
-		BaseMod.addKeyword(recurrent, "When played gets shuffled back into the deck instead of being discarded.");
+		BaseMod.addKeyword(recurrent, "Whenever this card would be discarded from hand or after it's played, it's shuffled in the draw pile instead of being discarded.");
 
 		String[] cleanse = {"cleanse"};
-		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied at the end of your turn while it is in your hand.");
+		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied when drawn, turning into a powerful card for the rest of the combat.");
 
 		String[] cardType = {"card type", "card types"};
 		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
 
 		String[] rot = {"rot"};
-		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b2.");
+		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b1.");
 
 		String[] decrepit = {"decrepit"};
 		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1.");

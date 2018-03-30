@@ -17,7 +17,7 @@ public class Envy extends AbstractWitchCleansableCurse {
 	public static final	String NAME = "Envy";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: an enemy should have at least !M! of either Vulnerable, Weak or Decrepit.";
-	public static final	String DESCRIPTION_CLEANSED = "Each enemy loses health equal to the amount of Vulnerable, Weak or Decrepit it has.";
+	public static final	String DESCRIPTION_CLEANSED = "Each enemy loses health equal to twice the amount of Vulnerable, Weak or Decrepit it has.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -52,7 +52,7 @@ public class Envy extends AbstractWitchCleansableCurse {
         } else {
         	for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
         		int effect = getStacks(mo, WeakPower.POWER_ID) + getStacks(mo, DecrepitPower.POWER_ID) + getStacks(mo, VulnerablePower.POWER_ID);
-        		AbstractDungeon.actionManager.addToTop(new DamageAction(mo, new DamageInfo(p, effect, DamageType.HP_LOSS), true));
+        		AbstractDungeon.actionManager.addToTop(new DamageAction(mo, new DamageInfo(p, effect*2, DamageType.HP_LOSS), true));
         	}
         }
     }

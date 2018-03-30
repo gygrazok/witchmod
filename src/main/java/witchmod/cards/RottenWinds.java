@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 
 import witchmod.powers.RotPower;
 
-public class WindsOfPutrefaction extends AbstractWitchCard{
-	public static final String ID = "WindsOfPutrefaction";
-	public static final	String NAME = "Winds Of Putrefaction";
+public class RottenWinds extends AbstractWitchCard{
+	public static final String ID = "RottenWinds";
+	public static final	String NAME = "Rotten Winds";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Apply !M! Rot and deal !D! damage to ALL enemies 2 times.";
 	
@@ -30,7 +30,7 @@ public class WindsOfPutrefaction extends AbstractWitchCard{
 	private static final int UPGRADE_BONUS = 2;
 	private static final int MAGIC = 1;
 
-	public WindsOfPutrefaction() {
+	public RottenWinds() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 		this.magicNumber = this.baseMagicNumber = MAGIC;
@@ -50,7 +50,7 @@ public class WindsOfPutrefaction extends AbstractWitchCard{
 	}
 
 	public AbstractCard makeCopy() {
-		return new WindsOfPutrefaction();
+		return new RottenWinds();
 	}
 
 	public void upgrade() {

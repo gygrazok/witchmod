@@ -1,6 +1,7 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,7 +14,7 @@ public class BroomstickSmash extends AbstractWitchCard{
 	public static final String ID = "BroomstickSmash";
 	public static final	String NAME = "Broomstick Smash";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 25%.";
+	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 50% and Weak is increased by 1.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -22,8 +23,8 @@ public class BroomstickSmash extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 7;
-	private static final int UPGRADE_BONUS = 3;
+	private static final int POWER = 8;
+	private static final int UPGRADE_BONUS = 4;
 
 	public BroomstickSmash() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -31,6 +32,9 @@ public class BroomstickSmash extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		if (m.hasPower(WeakPower.POWER_ID)) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1, false),1)); 
+		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage),AttackEffect.BLUNT_HEAVY));      
 	}
 	

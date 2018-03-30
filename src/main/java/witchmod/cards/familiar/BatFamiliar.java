@@ -16,7 +16,7 @@ public class BatFamiliar extends AbstractWitchCard{
 	public static final String ID = "BatFamiliar";
 	public static final	String NAME = "Bat";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Apply 1 weak. Reduce Strength by !M! for 1 turn. NL Exhaust. NL Ethereal.";
+	public static final	String DESCRIPTION = "Apply 1 Weak. Reduce Strength by !M! for 1 turn. NL Exhaust. NL Ethereal.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

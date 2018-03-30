@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.actions.QuartzShieldAction;
+import witchmod.actions.CrystalResonanceAction;
 
-public class QuartzShield extends AbstractWitchCard{
-	public static final String ID = "QuartzShield";
-	public static final	String NAME = "Quartz Shield";
+public class CrystalResonance extends AbstractWitchCard{
+	public static final String ID = "CrystalResonance";
+	public static final	String NAME = "Crystal Resonance";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "When drawn reduce by !M! the cost of all Skills in your hand for this turn. NL Gain !B! Block.";
 	
@@ -26,7 +26,7 @@ public class QuartzShield extends AbstractWitchCard{
 	
 	private static final int MAGIC = 1;
 
-	public QuartzShield() {
+	public CrystalResonance() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
@@ -37,13 +37,13 @@ public class QuartzShield extends AbstractWitchCard{
 	}
 
 	public AbstractCard makeCopy() {
-		return new QuartzShield();
+		return new CrystalResonance();
 	}
 	
 	@Override
 	public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
-        AbstractDungeon.actionManager.addToBottom(new QuartzShieldAction());
+        AbstractDungeon.actionManager.addToBottom(new CrystalResonanceAction());
 	}
 
 	public void upgrade() {

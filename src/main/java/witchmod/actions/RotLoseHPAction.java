@@ -46,7 +46,7 @@ public class RotLoseHPAction extends AbstractGameAction {
             if (rotPower != null) {
                 int potency = rotPower.amount;
                 if (contagious && !this.target.isPlayer && target.currentHealth <= this.amount) {
-                	//spread to anothe random monster
+                	//spread to another random monster
                     AbstractMonster newTarget = AbstractDungeon.getRandomMonster((AbstractMonster) target);
                     if (newTarget != null) {
                     	if (newTarget.hasPower(RotPower.POWER_ID)) {
@@ -61,7 +61,7 @@ public class RotLoseHPAction extends AbstractGameAction {
                     target.tint.color = Color.BROWN.cpy();
                     target.tint.changeColor(Color.WHITE.cpy());
                     target.damage(new DamageInfo(source, amount, DamageInfo.DamageType.HP_LOSS));
-                    rotPower.amount += 2;
+                    rotPower.amount += 1;
                     rotPower.updateDescription();
                 }
 

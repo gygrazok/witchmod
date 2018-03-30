@@ -1,5 +1,9 @@
 package witchmod.cards;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import witchmod.actions.CleanseAction;
+
 public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	public boolean cleansed = false;
 	
@@ -14,7 +18,7 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	@Override
 	public void triggerWhenDrawn() {
 		if (cleansed == false && cleanseCheck()) {
-			cleanse();
+			AbstractDungeon.actionManager.addToTop(new CleanseAction(this));
 		}
 	}
 	

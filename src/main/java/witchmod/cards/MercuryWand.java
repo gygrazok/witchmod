@@ -23,9 +23,9 @@ public class MercuryWand extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int DAMAGE = 6;
-	private static final int BLOCK = 6;
-	private static final int UPGRADE_BONUS = 2;
+	private static final int DAMAGE = 8;
+	private static final int BLOCK = 8;
+	private static final int UPGRADE_BONUS = 4;
 
 	public MercuryWand() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

@@ -19,9 +19,9 @@ public class Bewitch extends AbstractWitchCard {
 	private static final CardType TYPE = CardType.SKILL;
 
 	private static final int POOL = 1;
-	private static final int COST = 0;
+	private static final int COST = 1;
 
-	private static final int POWER = 1;
+	private static final int POWER = 2;
 	private static final int UPGRADED_BONUS = 1;
 
 

@@ -20,6 +20,10 @@ public class RotPower extends AbstractPower {
     public static final String IMG = "powers/rot.png";
     private AbstractCreature source;
     public boolean contagious;
+    public RotPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        this(owner,source,amount,false);
+    }
+    
     public RotPower(AbstractCreature owner, AbstractCreature source, int amount, boolean contagious) {
         this.name = NAME;
         this.ID = POWER_ID;

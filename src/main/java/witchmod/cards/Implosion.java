@@ -1,22 +1,20 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import witchmod.actions.KillMonsterAction;
 
 public class Implosion extends AbstractWitchCard{
 	public static final String ID = "Implosion";
 	public static final	String NAME = "Implosion";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage.";
-	public static final	String DESCRIPTION_EXTENDED[] = new String[] {"If this kills an enemy, other enemies are dealt ", "half", " damage"};
+	public static final	String DESCRIPTION = "Kill an enemy if it has !M! HP or less. If successful, other enemies are dealt !D! damage.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -25,26 +23,27 @@ public class Implosion extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 3;
-	private static final int POWER = 24;
-	private static final int UPGRADED_BONUS = 6;
+	private static final int POWER = 15;
+	private static final int UPGRADED_BONUS = 5;
+	private static final int DAMAGE = 12;
+	private static final int UPGRADED_BONUS_DAMAGE = 4;
 
 
 	public Implosion() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseDamage = POWER;
-		this.rawDescription = DESCRIPTION + " "+DESCRIPTION_EXTENDED[0]+DESCRIPTION_EXTENDED[1]+DESCRIPTION_EXTENDED[2];
-		this.initializeDescription();
+		this.magicNumber = this.baseMagicNumber = POWER;
+		this.baseDamage = DAMAGE;
 		this.isMultiDamage = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if ((damage >= m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL)
-				|| (damage >= m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
-			//enemy will die due to this attack
-			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
-			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AttackEffect.FIRE));
+		if (m.currentHealth > magicNumber) {
+			//should never happen
+			return;
 		}
-		AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_HEAVY));
+		AbstractDungeon.actionManager.addToTop(new KillMonsterAction(m));
+		AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25f));
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AttackEffect.FIRE));
 	}
 
 	public AbstractCard makeCopy() {
@@ -54,30 +53,23 @@ public class Implosion extends AbstractWitchCard{
     @Override
     public void applyPowers() {
         super.applyPowers();
-        calcCardDamage();
     }
 	
-
     @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-		calcCardDamage();
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    	if (m.currentHealth > magicNumber) {
+    		cantUseMessage = "The enemy must have #b"+magicNumber+" health or less.";
+    		return false;
+    	}
+    	return super.canUse(p, m);
     }
-    
-    private void calcCardDamage(){
-        int[] halfMultidamage = new int[multiDamage.length];
-        for (int i = 0; i < multiDamage.length; i++) {
-        	halfMultidamage[i] = Math.floorDiv(multiDamage[i],2);
-        }
-        multiDamage = halfMultidamage;
-		rawDescription = DESCRIPTION + " "+DESCRIPTION_EXTENDED[0]+Math.floorDiv(damage,2)+DESCRIPTION_EXTENDED[2];
-		initializeDescription();
-    }
+
 	
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADED_BONUS);
+			upgradeMagicNumber(UPGRADED_BONUS);
+			upgradeDamage(UPGRADED_BONUS_DAMAGE);
 		}
 	}
 }

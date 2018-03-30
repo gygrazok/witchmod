@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class QuartzShieldAction extends AbstractGameAction{
-	public QuartzShieldAction() {
+public class CrystalResonanceAction extends AbstractGameAction{
+	public CrystalResonanceAction() {
 		this.duration = 0.0f;
 	}
 

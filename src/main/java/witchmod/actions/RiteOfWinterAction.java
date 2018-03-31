@@ -30,10 +30,12 @@ public class RiteOfWinterAction extends AbstractGameAction{
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
         	if (AbstractDungeon.handCardSelectScreen.selectedCards.group.size() > 0) {
+        		int count = 0;
                 for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                     player.hand.moveToDeck(c, false);
+                    count++;
                 }
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, amount));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, amount*count));
         	}
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }

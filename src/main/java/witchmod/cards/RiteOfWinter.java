@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import witchmod.actions.RiteOfWinterAction;
 
 public class RiteOfWinter extends AbstractWitchCard {
-	public static final String ID = "WinterRite";
-	public static final	String NAME = "Winter Rite";
+	public static final String ID = "RiteOfWinter";
+	public static final	String NAME = "Rite Of Winter";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Place any number of cards in your hand on top of your draw pile and gain !B! Block for each of them.";
 	

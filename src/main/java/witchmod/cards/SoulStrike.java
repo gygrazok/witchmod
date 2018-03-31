@@ -24,8 +24,7 @@ public class SoulStrike extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 6;
-	private static final int UPGRADE_BONUS = 2;
+	private static final int POWER = 5;
 	
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UPGRADE_BONUS = 2;
@@ -51,9 +50,8 @@ public class SoulStrike extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_BONUS);
 			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);
 		}
 	}

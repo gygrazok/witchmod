@@ -14,7 +14,7 @@ public class BroomstickSmash extends AbstractWitchCard{
 	public static final String ID = "BroomstickSmash";
 	public static final	String NAME = "Broomstick Smash";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 50% and Weak is increased by 1.";
+	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 50% and apply 1 Weak.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -26,7 +26,12 @@ public class DarkProcessionPower extends AbstractPower {
 
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0]+DESCRIPTIONS[1]+card.name;
+		if (card != null) {
+			description = DESCRIPTIONS[0]+DESCRIPTIONS[1]+card.name;
+		} else {
+			description = DESCRIPTIONS[0];
+		}
+
 	}
 
 	@Override

@@ -15,16 +15,16 @@ public class MercuryWand extends AbstractWitchCard{
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "If you have 0 block gain !B! Block, otherwise deal !D! Damage.";
 	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL Will gain !B! Block"," NL Will deal !D! Damage"};
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
-	private static final int DAMAGE = 8;
-	private static final int BLOCK = 8;
+	private static final int DAMAGE = 9;
+	private static final int BLOCK = 9;
 	private static final int UPGRADE_BONUS = 4;
 
 	public MercuryWand() {
@@ -41,26 +41,26 @@ public class MercuryWand extends AbstractWitchCard{
 		}
 	}
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        this.rawDescription = DESCRIPTION;
-        if (AbstractDungeon.player.currentBlock == 0) {
-        	rawDescription += EXTENDED_DESCRIPTION[0];
-        	target = CardTarget.SELF;
-        } else {
-        	rawDescription += EXTENDED_DESCRIPTION[1];
-        	target = CardTarget.ENEMY;
-        }
-        this.initializeDescription();
-    }
-    
-    @Override
-    public void onMoveToDiscard() {
-        this.rawDescription = DESCRIPTION;
-        this.initializeDescription();
-    }
-	
+	@Override
+	public void applyPowers() {
+		super.applyPowers();
+		this.rawDescription = DESCRIPTION;
+		if (AbstractDungeon.player.currentBlock == 0) {
+			rawDescription += EXTENDED_DESCRIPTION[0];
+			target = CardTarget.SELF;
+		} else {
+			rawDescription += EXTENDED_DESCRIPTION[1];
+			target = CardTarget.ENEMY;
+		}
+		this.initializeDescription();
+	}
+
+	@Override
+	public void onMoveToDiscard() {
+		this.rawDescription = DESCRIPTION;
+		this.initializeDescription();
+	}
+
 	public AbstractCard makeCopy() {
 		return new MercuryWand();
 	}

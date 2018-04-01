@@ -1,13 +1,16 @@
 package witchmod.cards;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.CollectorStakeEffect;
 
 import witchmod.characters.WitchCharacter;
 
@@ -33,10 +36,16 @@ public class HandOfAkelarre extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		int cardsDrawn = ((WitchCharacter)AbstractDungeon.player).cardsDrawnThisTurn;
 		if (upgraded) {
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
 			//the bonus damage from drawing this card is already included in the calcBaseDamage function
+			cardsDrawn++;
 		}
+		for (int i = 0; i < cardsDrawn; i++) {
+			AbstractDungeon.effectsQueue.add(new CollectorStakeEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale));
+		}
+		//TODO add delay
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SMASH));
 	}
 

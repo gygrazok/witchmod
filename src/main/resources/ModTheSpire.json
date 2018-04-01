@@ -1,0 +1,9 @@
+{
+  "modid": "witchmod",
+  "name": "The Witch",
+  "author_list": ["gygrazok"],
+  "description": "Adds the Witch character.",
+  "version": "0.1",
+  "sts_version": "03-30-2018",
+  "mts_version": "2.6.0"
+}

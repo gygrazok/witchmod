@@ -43,6 +43,7 @@ public class CrystalResonance extends AbstractWitchCard{
 	@Override
 	public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
+		flash();
         AbstractDungeon.actionManager.addToBottom(new CrystalResonanceAction());
 	}
 

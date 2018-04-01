@@ -22,7 +22,7 @@ public class SummonBatFamiliar extends AbstractWitchCard {
 	private static final CardType TYPE = CardType.POWER;
 	
 	private static final int POOL = 1;
-	private static final int COST = 2;
+	private static final int COST = 0;
 
 
 	

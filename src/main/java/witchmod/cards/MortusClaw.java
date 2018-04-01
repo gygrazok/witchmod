@@ -13,7 +13,7 @@ public class MortusClaw extends AbstractWitchCard{
 	public static final String ID = "MortusClaw";
 	public static final	String NAME = "Mortus Claw";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Half of this damage (rounded down) ignores block.";
+	public static final	String DESCRIPTION = "Deal !D! damage, then the enemy loses !D! HP.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -22,8 +22,8 @@ public class MortusClaw extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 3;
-	private static final int POWER = 24;
-	private static final int UPGRADE_BONUS = 10;
+	private static final int POWER = 12;
+	private static final int UPGRADE_BONUS = 5;
 
 	public MortusClaw() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -31,9 +31,8 @@ public class MortusClaw extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		int halfDamage = Math.floorDiv(damage, 2);
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage - halfDamage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, halfDamage, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.NONE));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.NONE));
 	}
 
 	public AbstractCard makeCopy() {

@@ -42,6 +42,7 @@ public class SoulBurst extends AbstractWitchCard{
 	@Override
 	public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
+		flash();
 		applyPowers();
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
 	}

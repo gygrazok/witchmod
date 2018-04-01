@@ -13,8 +13,8 @@ public class WickedInspiration extends AbstractWitchCard {
 	public static final String ID = "WickedInspiration";
 	public static final	String NAME = "Wicked Inspiration";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Draw a card for each curse in your hand.";
-	public static final	String DESCRIPTION_UPGRADED = "Draw a card for each curse in your hand plus !M!.";
+	public static final	String DESCRIPTION = "Draw a card for each curse in your hand. NL Persistent.";
+	public static final	String DESCRIPTION_UPGRADED = "Draw a card for each curse in your hand plus !M!. NL Persistent.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -28,6 +28,7 @@ public class WickedInspiration extends AbstractWitchCard {
 	public WickedInspiration() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
+		this.retain = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -48,12 +49,19 @@ public class WickedInspiration extends AbstractWitchCard {
 		return new WickedInspiration();
 	}
 	
+	@Override
+	public void atTurnStart() {
+		super.atTurnStart();
+		retain = true;
+	}
+	
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_BONUS);
 			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();
+			retain = true;
 		}
 	}
 }

@@ -58,7 +58,7 @@ public class Implosion extends AbstractWitchCard{
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
     	if (m != null && m.currentHealth > magicNumber) {
-    		cantUseMessage = "The enemy must have #b"+magicNumber+" health or less.";
+    		cantUseMessage = "The enemy must have #y"+magicNumber+" health or less.";
     		return false;
     	}
     	return super.canUse(p, m);

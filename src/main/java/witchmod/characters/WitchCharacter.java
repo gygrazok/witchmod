@@ -122,7 +122,7 @@ public class WitchCharacter extends CustomPlayer{
 	}
 	
 	public static CharSelectInfo getLoadout() {
-		return new CharSelectInfo("The Witch", "A cackling sorceress specialized in dealing with curses.",
+		return new CharSelectInfo("The Witch", "A cackling sorceress specialized NL in dealing with curses.",
 				70, 70, 99, 5,
 			WitchEnum.WITCH, getStartingRelics(), getStartingDeck(), false);
 	}

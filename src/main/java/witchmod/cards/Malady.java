@@ -14,15 +14,15 @@ import witchmod.powers.RotPower;
 public class Malady extends AbstractWitchCard{
 	public static final String ID = "Malady";
 	public static final	String NAME = "Malady";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage and apply !M! Rot. NL Exhaust.";
-	
+
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
 	private static final int DAMAGE = 9;
 	private static final int DAMAGE_BONUS = 3;
@@ -40,7 +40,7 @@ public class Malady extends AbstractWitchCard{
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new RotPower(m,p, magicNumber), magicNumber));
 	}
-	
+
 
 	public AbstractCard makeCopy() {
 		return new Malady();

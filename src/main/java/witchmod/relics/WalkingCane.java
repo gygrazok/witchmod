@@ -34,6 +34,15 @@ public class WalkingCane extends AbstractWitchRelic {
 		}
 	}
 	
+	@Override
+	public void atTurnStart() {
+		for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			setNonTurnBased(m.getPower(WeakPower.POWER_ID));
+			setNonTurnBased(m.getPower(VulnerablePower.POWER_ID));
+			setNonTurnBased(m.getPower(DecrepitPower.POWER_ID));
+		}
+	}
+	
 	private void setNonTurnBased(AbstractPower power) {
 		if (power != null) {
 			//justApplied gets resetted every turn and determines if the debuff should decrease or not

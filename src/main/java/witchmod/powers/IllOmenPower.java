@@ -21,6 +21,7 @@ public class IllOmenPower extends AbstractWitchPower {
     public static final String NAME = "Ill Omen";
     public static final String[] DESCRIPTIONS = new String[]{ "The next time you draw a curse deal #b"," damage to ALL enemies."};
     public static final String IMG = "powers/athamesoffering.png";
+    private boolean triggered = false;
     public IllOmenPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -38,8 +39,9 @@ public class IllOmenPower extends AbstractWitchPower {
     
     @Override
     public void onCardDraw(AbstractCard card) {
-    	if (card.type == CardType.CURSE) {
-    		this.flash();
+    	if (card.type == CardType.CURSE && triggered == false) {
+    		flash();
+    		triggered = true;
     		AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, IllOmenPower.POWER_ID));
     		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.BLACK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY),0.1f));
     		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AttackEffect.POISON));

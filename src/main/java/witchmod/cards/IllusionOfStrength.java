@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 
 public class IllusionOfStrength extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrength";
-	public static final	String NAME = "IllusionOfStrength";
+	public static final	String NAME = "Illusion of Strength";
 	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "Gain !M! Strength. Shuffle 3 Delusion of Strength Curse cards in your draw pile.";
+	public static final	String DESCRIPTION = "Gain !M! Strength. Shuffle a Delusion of Strength Curse in your draw pile.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -32,7 +32,7 @@ public class IllusionOfStrength extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new IllusionOfStrengthCurse(), 3, true, false));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new IllusionOfStrengthCurse(), 1, true, false));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainStrengthPower(p, magicNumber),magicNumber));
 	}
 	

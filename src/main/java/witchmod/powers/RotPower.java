@@ -14,7 +14,7 @@ public class RotPower extends AbstractPower {
     public static final String POWER_ID = "Rot";
     public static final String NAME = "Rot";
     public static final String[] DESCRIPTIONS = new String[]{ "At the start of its turn, loses #b",
-													    		" HP, then Rot increases by 2.",
+													    		" HP, then Rot increases by 1.",
 													    		" NL When it dies, spread to another monster.",
 													    		"Contagious"};
     public static final String IMG = "powers/rot.png";
@@ -42,9 +42,9 @@ public class RotPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0]+amount+DESCRIPTIONS[1];
         if (contagious) {
-        	this.description += DESCRIPTIONS[2];
+        	description += DESCRIPTIONS[2];
         }
     }
     
@@ -52,7 +52,7 @@ public class RotPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flashWithoutSound();
+            flashWithoutSound();
             AbstractDungeon.actionManager.addToBottom(new RotLoseHPAction(owner, source, amount, contagious, AbstractGameAction.AttackEffect.POISON));
         }
     }

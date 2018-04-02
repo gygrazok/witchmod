@@ -38,7 +38,7 @@ public class Atonement extends AbstractWitchCard{
 		AbstractCard toExhaust = getRandomCurseOrStatusFromDeck();
 		if (toExhaust != null) {
 			toExhaust.current_y = -200.0f * Settings.scale;
-			toExhaust.target_x = Settings.WIDTH / 2.0f + 200;
+			toExhaust.target_x = Settings.WIDTH / 2.0f;
 			toExhaust.target_y = Settings.HEIGHT / 2.0f;
 			toExhaust.targetAngle = 0.0f;
 			toExhaust.lighten(false);

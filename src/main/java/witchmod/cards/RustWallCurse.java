@@ -17,7 +17,7 @@ public class RustWallCurse extends CustomCard{
 	public static final String ID = "RustWallCurse";
 	public static final	String NAME = "Curse of Rust";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose half of your block. NL Exhausts after consuming !M! Block.";
+	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose half of your block and exhaust if it has consumed at least !M! Block in total.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.NONE;

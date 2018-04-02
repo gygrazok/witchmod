@@ -18,7 +18,7 @@ public class IllusionOfStrengthCurse extends CustomCard {
 	public static final String ID = "IllusionOfStrengthCurse";
 	public static final	String NAME = "Delusion of Strength";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose !M! Strength. NL Etheral";
+	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose !M! Strength and exhaust this if you have Strength 0 or less.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.NONE;
@@ -33,7 +33,6 @@ public class IllusionOfStrengthCurse extends CustomCard {
 	public IllusionOfStrengthCurse() {
 		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,AbstractCardEnum.WITCH,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
-		this.isEthereal = true;
 	}
 	
 	
@@ -51,9 +50,15 @@ public class IllusionOfStrengthCurse extends CustomCard {
     public void triggerOnEndOfTurnForPlayingCard() {
     	this.dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
-        AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        //
+        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount <= magicNumber) {
+            AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        }
+
     }
 
+    
+    
 	
 	public AbstractCard makeCopy() {
 		return new IllusionOfStrengthCurse();

@@ -17,11 +17,26 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 
 	@Override
 	public void triggerWhenDrawn() {
+		doCleanseCheck();
+	}
+	
+	@Override
+	public void applyPowers() {
+		super.applyPowers();
+		doCleanseCheck();
+	}
+	
+	@Override
+	public void triggerOnEndOfPlayerTurn() {
+		super.triggerOnEndOfPlayerTurn();
+		doCleanseCheck();
+	}
+	
+	private void doCleanseCheck() {
 		if (cleansed == false && cleanseCheck()) {
 			AbstractDungeon.actionManager.addToTop(new CleanseAction(this));
 		}
 	}
-	
 	
 	public void cleanse() {
 		cleansed = true;

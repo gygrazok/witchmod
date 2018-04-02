@@ -14,7 +14,7 @@ public class MysticUnburial extends AbstractWitchCard {
 	public static final	String DESCRIPTION = "Choose and play a card from your discard pile, playing its play cost.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
-	private static final CardTarget TARGET = CardTarget.NONE;
+	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
 
 	private static final int POOL = 1;
@@ -29,7 +29,7 @@ public class MysticUnburial extends AbstractWitchCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new MysticUnburialAction(AbstractDungeon.getRandomMonster()));
 	}
-	
+
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		//if there is at least 1 card that can be played, you can use this card
@@ -40,7 +40,7 @@ public class MysticUnburial extends AbstractWitchCard {
 		}
 		cantUseMessage = "I don't have any playable card in my discard pile.";
 		return false;
-		
+
 	}
 
 	public AbstractCard makeCopy() {

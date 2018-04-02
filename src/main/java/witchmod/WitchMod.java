@@ -51,7 +51,7 @@ import witchmod.cards.FatalRay;
 import witchmod.cards.Foresight;
 import witchmod.cards.GnarledBody;
 import witchmod.cards.Graveburst;
-import witchmod.cards.HandOfAkelarre;
+import witchmod.cards.WretchedNails;
 import witchmod.cards.Hexdarts;
 import witchmod.cards.Hexguard;
 import witchmod.cards.IllOmen;
@@ -213,7 +213,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new BroomstickSmash());
 		BaseMod.addCard(new BlackBolt());
 		BaseMod.addCard(new MercuryWand());
-		BaseMod.addCard(new HandOfAkelarre());
+		BaseMod.addCard(new WretchedNails());
 		BaseMod.addCard(new BoneCarvedDagger());
 		BaseMod.addCard(new MagicFang());
 		BaseMod.addCard(new MementoMori());
@@ -311,7 +311,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(recurrent, "Whenever this card would be discarded from hand or after it's played, it's shuffled in the draw pile instead of being discarded.");
 
 		String[] cleanse = {"cleanse"};
-		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied when drawn, turning into a powerful card for the rest of the combat.");
+		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied while in hand, turning into a powerful card for the rest of the combat.");
 
 		String[] cardType = {"card type", "card types"};
 		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");

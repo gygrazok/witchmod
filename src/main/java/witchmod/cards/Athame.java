@@ -15,7 +15,7 @@ import witchmod.powers.AthamePower;
 public class Athame extends AbstractWitchCard{
 	public static final String ID = "Athame";
 	public static final	String NAME = "Athame";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/athame.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. If this kills an enemy, double the chance of receiving rare cards and Exhaust this card.";
 	public static final	String DESCRIPTION_UPGRADED = "Deal !D! damage. If this kills an enemy, triple the chance of receiving rare cards and Exhaust this card.";
 	

@@ -16,7 +16,7 @@ import witchmod.powers.DecrepitPower;
 public class BloodSabbath extends AbstractWitchCard{
 	public static final String ID = "BloodSabbath";
 	public static final	String NAME = "Blood Sabbath";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/bloodsabbath.png";
 	public static final	String DESCRIPTION = "Deal !D! damage and apply !M! Decrepit to ALL enemies.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;

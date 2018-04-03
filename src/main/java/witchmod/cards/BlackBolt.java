@@ -3,6 +3,7 @@ package witchmod.cards;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,7 +16,7 @@ import witchmod.effects.DarkboltEffect;
 public class BlackBolt extends AbstractWitchCard{
 	public static final String ID = "BlackBolt";
 	public static final	String NAME = "Black Bolt";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/blackbolt.png";
 	public static final	String DESCRIPTION = "Deal !D! Damage. Apply !M! Weak if you have at least a Curse in hand.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
@@ -38,6 +39,7 @@ public class BlackBolt extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToBottom(new SFXAction("GHOST_ORB_IGNITE_1", 0.3f));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DarkboltEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
 		boolean hasCurse = false;

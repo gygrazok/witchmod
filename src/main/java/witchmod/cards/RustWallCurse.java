@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.GenericSmokeEffect;
 
 import basemod.abstracts.CustomCard;
 import witchmod.WitchMod;
@@ -42,6 +43,7 @@ public class RustWallCurse extends CustomCard{
         } else {
         	int blockToConsume = Math.floorDiv(p.currentBlock,2);
         	blockConsumed += blockToConsume;
+        	AbstractDungeon.effectsQueue.add(new GenericSmokeEffect(p.hb.cX, p.hb.cY));
             AbstractDungeon.actionManager.addToTop(new ReduceBlockAction(p, p, blockToConsume));
             AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
             if (blockConsumed >= magicNumber) {

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Boline extends AbstractWitchCard{
 	public static final String ID = "Boline";
 	public static final	String NAME = "Boline";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/boline.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. If this kills an enemy, obtain a random potion and Exhaust this card.";
 	public static final	String DESCRIPTION_UPGRADED = "Deal !D! damage. If this kills an enemy, obtain a random potion and Exhaust this card. NL Persistent.";
 	

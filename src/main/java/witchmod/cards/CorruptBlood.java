@@ -11,7 +11,7 @@ public class CorruptBlood extends AbstractWitchCard{
 	public static final String ID = "CorruptBlood";
 	public static final	String NAME = "Corrupt Blood";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "If the target is Poisoned turn all Poison into Rot, otherwise apply !M! Poison. NL Recurrent.";
+	public static final	String DESCRIPTION = "If the enemy is Poisoned turn all Poison into Rot, otherwise apply !M! Poison. NL Recurrent.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -26,6 +26,7 @@ public class CorruptBlood extends AbstractWitchCard{
 	public CorruptBlood() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
+		this.reshuffleOnUse = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

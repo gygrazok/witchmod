@@ -12,7 +12,7 @@ import witchmod.powers.BalefulWardPower;
 public class BalefulWard extends AbstractWitchCard{
 	public static final String ID = "BalefulWard";
 	public static final	String NAME = "Baleful Ward";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/balefulward.png";
 	public static final	String DESCRIPTION = "Gain !B! Block. NL If your Block is broken this turn, add a copy of this card to your hand.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

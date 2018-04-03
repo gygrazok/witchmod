@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class BlackShield extends AbstractWitchCard{
 	public static final String ID = "BlackShield";
 	public static final	String NAME = "Black Shield";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/blackshield.png";
 	public static final	String DESCRIPTION = "Gain !B! block, + !M! if you have at least a Curse in hand.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;

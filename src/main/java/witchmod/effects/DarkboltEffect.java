@@ -36,7 +36,7 @@ public class DarkboltEffect extends AbstractGameEffect {
     }
     
     public DarkboltEffect(float startX, float startY, float targetX, float targetY) {
-        this(startX,startY,targetX,targetY,new Color(0.8f, 0.0f, 0.8f, 1.0f));
+        this(startX,startY,targetX,targetY,new Color(0.8f, 0.0f, 0.8f, 0.5f));
     }
 
     @Override

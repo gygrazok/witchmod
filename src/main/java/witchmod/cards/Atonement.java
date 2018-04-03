@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Atonement extends AbstractWitchCard{
 	public static final String ID = "Atonement";
 	public static final	String NAME = "Atonement";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/atonement.png";
 	public static final	String DESCRIPTION = "Exhaust a random Curse or Status card in your draw pile. NL Gain !B! Block.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;

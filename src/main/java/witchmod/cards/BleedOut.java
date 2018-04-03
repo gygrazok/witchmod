@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class BleedOut extends AbstractWitchCard{
 	public static final String ID = "BleedOut";
 	public static final	String NAME = "Bleed Out";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/bleedout.png";
 	public static final	String DESCRIPTION = "Each enemy loses !D! health.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;

@@ -13,9 +13,11 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 
+import witchmod.effects.SkullFlaskEffect;
+
 public class SkullFlask extends AbstractWitchCard{
-	public static final String ID = "SoulStrike";
-	public static final	String NAME = "Soul Strike";
+	public static final String ID = "SkullFlask";
+	public static final	String NAME = "Skull Flask";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "When drawn gain !M! Strength for 1 turn. NL Deal !D! damage.";
 
@@ -38,8 +40,8 @@ public class SkullFlask extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new PotionBounceEffect(p.hb.cY, p.hb.cX, m.hb.cX, m.hb.cY), 0.3f));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p,damage,damageTypeForTurn),AttackEffect.SLASH_HEAVY));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new SkullFlaskEffect(p.hb.cY, p.hb.cX, m.hb.cX, m.hb.cY), 0.3f));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p,damage,damageTypeForTurn),AttackEffect.NONE));
 	}
 
 	public AbstractCard makeCopy() {

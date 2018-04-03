@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 public class Bewitch extends AbstractWitchCard {
 	public static final String ID = "Bewitch";
 	public static final	String NAME = "Bewitch";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/bewitch.png";
 	public static final	String DESCRIPTION = "Applies !M! Weak and !M! Vulnerable to all enemies.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;

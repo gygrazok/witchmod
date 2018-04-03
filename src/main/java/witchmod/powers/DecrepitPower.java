@@ -14,7 +14,7 @@ public class DecrepitPower extends AbstractPower {
 	public static final String POWER_ID = "Decrepit";
 	public static final String NAME = "Decrepit";
 	public static final String[] DESCRIPTIONS = new String[]{ "All incoming damage increased by #b"," (calculated after Vulnerability)"};
-	public static final String IMG = "powers/rot.png";
+	public static final String IMG = "powers/decrepit.png";
     private boolean justApplied = false;
 	public DecrepitPower(AbstractCreature owner, int amount, boolean justApplied) {
 		this.name = NAME;

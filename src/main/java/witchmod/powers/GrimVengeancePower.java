@@ -9,12 +9,12 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class WretchedVengeancePower extends AbstractPower {
-    public static final String POWER_ID = "WretchedVengeancePower";
-    public static final String NAME = "Wretched Vengeance";
+public class GrimVengeancePower extends AbstractPower {
+    public static final String POWER_ID = "GrimVengeancePower";
+    public static final String NAME = "Grim Vengeance";
     public static final String[] DESCRIPTIONS = new String[]{ "When you are attacked apply #b"," Decrepit to the attacker."};
-    public static final String IMG = "powers/athamesoffering.png";
-    public WretchedVengeancePower(AbstractCreature owner, int amount) {
+    public static final String IMG = "powers/grimvengeance.png";
+    public GrimVengeancePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

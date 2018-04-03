@@ -20,7 +20,7 @@ public class SummonFamiliarPower extends AbstractPower {
 	public static final String POWER_ID = "SummonFamiliar";
 	public static final String NAME = "Summon Familiar";
 	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn, add ", "  card to your hand" };
-	public static final String IMG = "powers/athamesoffering.png";
+	public static final String IMG = "powers/summonfamiliar.png";
 	private FamiliarCardEnum card;
 	private boolean upgraded;
 	public SummonFamiliarPower(AbstractCreature owner, FamiliarCardEnum card, boolean upgraded) {

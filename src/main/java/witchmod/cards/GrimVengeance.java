@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.powers.WretchedVengeancePower;
+import witchmod.powers.GrimVengeancePower;
 
 public class GrimVengeance extends AbstractWitchCard {
 	public static final String ID = "GrimVengeance";
@@ -32,7 +32,7 @@ public class GrimVengeance extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WretchedVengeancePower(p,magicNumber),magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GrimVengeancePower(p,magicNumber),magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {

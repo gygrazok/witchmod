@@ -13,7 +13,7 @@ public class ChosenOfTheMoonPower extends AbstractPower {
 	public static final String POWER_ID = "ChosenOfTheMoonPower";
 	public static final String NAME = "Chosen of the Moon";
 	public static final String[] DESCRIPTIONS = new String[]{ "Gain #b"," Artifact when your turn begins if you have none."};
-	public static final String IMG = "powers/athamesoffering.png";
+	public static final String IMG = "powers/chosenofthemoon.png";
 	public ChosenOfTheMoonPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;

@@ -27,7 +27,6 @@ public class PlagueSpreader extends AbstractWitchCard{
 	public PlagueSpreader() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
-		this.isMultiDamage = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

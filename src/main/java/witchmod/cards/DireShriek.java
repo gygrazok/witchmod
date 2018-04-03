@@ -7,9 +7,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SoulBurst extends AbstractWitchCard{
-	public static final String ID = "SoulBurst";
-	public static final	String NAME = "Soul Burst";
+public class DireShriek extends AbstractWitchCard{
+	public static final String ID = "DireShriek";
+	public static final	String NAME = "Dire Shriek";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "When drawn deal !D! damage to all enemies. NL Deal !D! damage to all enemies.";
 	
@@ -20,11 +20,11 @@ public class SoulBurst extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 2;
-	private static final int POWER = 6;
+	private static final int POWER = 7;
 	private static final int UPGRADE_BONUS = 2;
 	
 
-	public SoulBurst() {
+	public DireShriek() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 		this.isMultiDamage = true;
@@ -36,7 +36,7 @@ public class SoulBurst extends AbstractWitchCard{
 	}
 
 	public AbstractCard makeCopy() {
-		return new SoulBurst();
+		return new DireShriek();
 	}
 	
 	@Override

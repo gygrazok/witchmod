@@ -11,7 +11,7 @@ import witchmod.WitchMod;
 public class DarkProcessionPower extends AbstractPower {
 	public static final String POWER_ID = "DarkProcessionPower";
 	public static final String NAME = "Dark Procession";
-	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add a copy of the last non-exhausted played card to your hand.", "NL Last played card: " };
+	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add a copy of the last played card to your hand.", "NL Last played card: " };
 	public static final String IMG = "powers/athamesoffering.png";
 	private AbstractCard card;
 	public DarkProcessionPower() {
@@ -45,9 +45,7 @@ public class DarkProcessionPower extends AbstractPower {
 	
 	@Override
 	public void onAfterCardPlayed(AbstractCard usedCard) {
-		if (!usedCard.exhaust) {
-			card = usedCard;
-		}
+		card = usedCard;
 	}
 
 	

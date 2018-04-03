@@ -1,5 +1,6 @@
 package witchmod.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,6 +9,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
+
+import witchmod.effects.DarkboltEffect;
 
 public class BlackBolt extends AbstractWitchCard{
 	public static final String ID = "BlackBolt";
@@ -35,6 +38,7 @@ public class BlackBolt extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new DarkboltEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
 		boolean hasCurse = false;
 		for (AbstractCard c : p.hand.group) {

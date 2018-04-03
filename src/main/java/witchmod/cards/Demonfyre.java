@@ -15,7 +15,7 @@ public class Demonfyre extends AbstractWitchCard{
 	public static final String ID = "Demonfyre";
 	public static final	String NAME = "Demonfyre";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Increases the damage of the next Demonfyre by !M!";
+	public static final	String DESCRIPTION = "Deal !D! damage. Increases the damage of the next Demonfyre by !M!. NL Recurrent.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -32,6 +32,7 @@ public class Demonfyre extends AbstractWitchCard{
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
+		this.reshuffleOnUse = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

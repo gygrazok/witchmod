@@ -60,7 +60,7 @@ public class MysticUnburialAction extends AbstractGameAction {
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             isDone = true;
-        } else if (AbstractDungeon.gridSelectScreen.cancelWasOn) {
+        } else if (AbstractDungeon.gridSelectScreen.cancelWasOn) {//does this work?
         	isDone = true;
         }
         p.discardPile.refreshHandLayout();

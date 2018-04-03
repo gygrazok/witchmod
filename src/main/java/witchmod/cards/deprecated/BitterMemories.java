@@ -1,4 +1,4 @@
-package witchmod.cards;
+package witchmod.cards.deprecated;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import witchmod.actions.BitterMemoriesAction;
+import witchmod.cards.AbstractWitchCard;
 
 public class BitterMemories extends AbstractWitchCard{
 	public static final String ID = "BitterMemories";

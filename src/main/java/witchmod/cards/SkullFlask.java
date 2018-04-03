@@ -1,6 +1,7 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,8 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 
-public class SoulStrike extends AbstractWitchCard{
+public class SkullFlask extends AbstractWitchCard{
 	public static final String ID = "SoulStrike";
 	public static final	String NAME = "Soul Strike";
 	public static final	String IMG = "cards/placeholder_attack.png";
@@ -29,18 +31,19 @@ public class SoulStrike extends AbstractWitchCard{
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UPGRADE_BONUS = 2;
 
-	public SoulStrike() {
+	public SkullFlask() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new PotionBounceEffect(p.hb.cY, p.hb.cX, m.hb.cX, m.hb.cY), 0.3f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p,damage,damageTypeForTurn),AttackEffect.SLASH_HEAVY));
 	}
 
 	public AbstractCard makeCopy() {
-		return new SoulStrike();
+		return new SkullFlask();
 	}
 
 	@Override

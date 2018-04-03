@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import witchmod.actions.ReduceBlockAction;
 
-public class ArmorTheft extends AbstractWitchCard {
-	public static final String ID = "ArmorTheft";
-	public static final	String NAME = "Armor Theft";
+public class Raze extends AbstractWitchCard {
+	public static final String ID = "Raze";
+	public static final	String NAME = "Raze";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Steal up to !M! block from an enemy. NL Persistent.";
 	
@@ -26,7 +26,7 @@ public class ArmorTheft extends AbstractWitchCard {
 
 
 	
-	public ArmorTheft() {
+	public Raze() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 		this.retain = true;
@@ -41,7 +41,7 @@ public class ArmorTheft extends AbstractWitchCard {
 	}
 	
 	public AbstractCard makeCopy() {
-		return new ArmorTheft();
+		return new Raze();
 	}
 	
 	@Override

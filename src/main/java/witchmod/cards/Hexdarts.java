@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 
 public class Hexdarts extends AbstractWitchCard {
 	public static final String ID = "Hexdarts";
@@ -37,6 +38,7 @@ public class Hexdarts extends AbstractWitchCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			if (!monster.isDeadOrEscaped() && monster.hasPower(WeakPower.POWER_ID)) {
+				AbstractDungeon.effectsQueue.add(new FireballEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY));
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.SLASH_HORIZONTAL,true));
 			}
 		}

@@ -50,8 +50,9 @@ public class IllusionOfStrengthCurse extends CustomCard {
     public void triggerOnEndOfTurnForPlayingCard() {
     	this.dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
-        //
-        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount <= magicNumber) {
+        //if the player has strength <= 0 or if she doesn't have any strength
+        if ((AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount <= magicNumber) ||
+        		!(AbstractDungeon.player.hasPower(StrengthPower.POWER_ID))) {
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
 

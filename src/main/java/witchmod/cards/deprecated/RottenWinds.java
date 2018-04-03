@@ -1,4 +1,4 @@
-package witchmod.cards;
+package witchmod.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 
+import witchmod.cards.AbstractWitchCard;
 import witchmod.powers.RotPower;
 
 public class RottenWinds extends AbstractWitchCard{

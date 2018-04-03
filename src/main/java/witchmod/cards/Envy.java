@@ -16,7 +16,7 @@ public class Envy extends AbstractWitchCleansableCurse {
 	public static final String ID = "Envy";
 	public static final	String NAME = "Envy";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: an enemy should have at least !M! of either Vulnerable, Weak or Decrepit.";
+	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: an enemy should have at least !M! of Vulnerable, Weak or Decrepit in total.";
 	public static final	String DESCRIPTION_CLEANSED = "Each enemy loses health equal to twice the amount of Vulnerable, Weak or Decrepit it has.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -63,19 +63,14 @@ public class Envy extends AbstractWitchCleansableCurse {
 			if (m.isDeadOrEscaped()) {
 				continue;
 			}
-			if (envyCheck(m, WeakPower.POWER_ID) || 
-					envyCheck(m, VulnerablePower.POWER_ID) || 
-					envyCheck(m, DecrepitPower.POWER_ID)) {
-				return true;
-			}
+			int effect = getStacks(m, WeakPower.POWER_ID) + getStacks(m, DecrepitPower.POWER_ID) + getStacks(m, VulnerablePower.POWER_ID);
+			return effect >= THRESHOLD;
 		}
 		return false;
 	}
 
 
-	private boolean envyCheck(AbstractMonster m, String power) {
-		return m.hasPower(power) && m.getPower(power).amount >= THRESHOLD;
-	}
+
 
 	private int getStacks(AbstractMonster m, String power) {
 		if (m.hasPower(power)) {

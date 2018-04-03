@@ -20,7 +20,7 @@ public class CorruptBlood extends AbstractWitchCard{
 	private static final int POOL = 1;
 
 	private static final int COST = 1;
-	private static final int POWER = 2;
+	private static final int POWER = 3;
 	private static final int UPGRADE_BONUS = 2;
 
 	public CorruptBlood() {

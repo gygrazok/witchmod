@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import witchmod.actions.EnfeeblingStrikeAction;
 
-public class EnfeeblingStrike extends AbstractWitchCard{
-	public static final String ID = "EnfeeblingStrike";
-	public static final	String NAME = "Enfeebling Strike";
+public class Enfeeble extends AbstractWitchCard{
+	public static final String ID = "Enfeeble";
+	public static final	String NAME = "Enfeeble";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage, then enemy loses Strength for 1 turn equal to the unblocked damage dealt.";
 	
@@ -24,7 +24,7 @@ public class EnfeeblingStrike extends AbstractWitchCard{
 	private static final int POWER = 9;
 	private static final int UPGRADE_BONUS = 3;
 
-	public EnfeeblingStrike() {
+	public Enfeeble() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 	}
@@ -34,7 +34,7 @@ public class EnfeeblingStrike extends AbstractWitchCard{
 	}
 	
 	public AbstractCard makeCopy() {
-		return new EnfeeblingStrike();
+		return new Enfeeble();
 	}
 
 	public void upgrade() {

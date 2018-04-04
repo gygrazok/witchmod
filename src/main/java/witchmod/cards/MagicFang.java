@@ -13,7 +13,7 @@ public class MagicFang extends AbstractWitchCard{
 	public static final String ID = "MagicFang";
 	public static final	String NAME = "Magic Fang";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! Damage two times. Gain !B! Block. NL Recurrent.";
+	public static final	String DESCRIPTION = "Deal !D! Damage two times. Gain !B! Block.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -31,7 +31,6 @@ public class MagicFang extends AbstractWitchCard{
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = DAMAGE;
 		this.baseBlock = BLOCK;
-		this.reshuffleOnUse = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

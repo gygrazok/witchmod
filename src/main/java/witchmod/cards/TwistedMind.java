@@ -30,7 +30,7 @@ public class TwistedMind extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TwistedMindPower(p)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TwistedMindPower(p,1),1));
 	}
 	
 	public AbstractCard makeCopy() {

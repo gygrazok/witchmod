@@ -26,10 +26,10 @@ public class CorruptBlood extends AbstractWitchCard{
 	public CorruptBlood() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
-		this.reshuffleOnUse = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		reshuffleOnUse = true;
 		AbstractDungeon.actionManager.addToBottom(new CorruptBloodAction(m,p,magicNumber));
 	}
 

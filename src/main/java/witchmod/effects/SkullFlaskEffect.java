@@ -49,7 +49,7 @@ extends AbstractGameEffect {
 	public void update() {
 		if (!this.playedSfx) {
 			this.playedSfx = true;
-			CardCrawlGame.sound.play("BLOOD_SPLAT");
+			CardCrawlGame.sound.play("BLOOD_SPLAT",0.3f);
 		}
 		this.cX = Interpolation.linear.apply(this.dX, this.sX, this.duration / 0.6f);
 		this.cY = Interpolation.linear.apply(this.dY, this.sY, this.duration / 0.6f);

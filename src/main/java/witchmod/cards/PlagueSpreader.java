@@ -31,6 +31,7 @@ public class PlagueSpreader extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+		     if (m.isDead || m.isDying) continue;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new RotPower(mo,p, magicNumber, false), magicNumber, true));
 		}
 	}

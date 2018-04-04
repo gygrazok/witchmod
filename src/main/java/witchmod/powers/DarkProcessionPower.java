@@ -40,6 +40,7 @@ public class DarkProcessionPower extends AbstractPower {
 			this.flash();
 			AbstractCard toCreate = card.makeStatEquivalentCopy();
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate, 1, false));
+			toCreate.triggerWhenDrawn();
 		}
 	}
 	

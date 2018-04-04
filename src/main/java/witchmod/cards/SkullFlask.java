@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 
 import witchmod.effects.SkullFlaskEffect;
 
@@ -40,8 +40,9 @@ public class SkullFlask extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new SkullFlaskEffect(p.hb.cY, p.hb.cX, m.hb.cX, m.hb.cY), 0.3f));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p,damage,damageTypeForTurn),AttackEffect.NONE));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new SkullFlaskEffect(p.hb.cY, p.hb.cX, m.hb.cX, m.hb.cY), 0.6f));
+		AbstractDungeon.actionManager.addToBottom(new SFXAction("BLOOD_SPLAT"));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p,damage,damageTypeForTurn),AttackEffect.BLUNT_LIGHT));
 	}
 
 	public AbstractCard makeCopy() {

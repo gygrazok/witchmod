@@ -1,6 +1,7 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,6 +33,7 @@ public class ChosenOfTheMoon extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToBottom(new SFXAction("VO_AWAKENEDONE_1",0.3f));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChosenOfTheMoonPower(p,magicNumber),magicNumber));
 	}
 

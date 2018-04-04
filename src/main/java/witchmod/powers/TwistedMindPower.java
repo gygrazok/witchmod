@@ -17,24 +17,32 @@ import witchmod.WitchMod;
 public class TwistedMindPower extends AbstractPower {
     public static final String POWER_ID = "TwistedMindPower";
     public static final String NAME = "Twisted Mind";
-    public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card."," NL Used for this turn."};
+    public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card",
+    		" times.",
+    		" NL Used for this turn."};
     public static final String IMG = "powers/athamesoffering.png";
     private boolean used = false;
-    public TwistedMindPower(AbstractCreature owner) {
+    public TwistedMindPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.updateDescription();
         this.img = new Texture(WitchMod.getResourcePath(IMG));
         this.type = PowerType.BUFF;
-        
+        this.amount = amount;
+        this.isTurnBased = false;
     }
 
     @Override
     public void updateDescription() {
-    	this.description = DESCRIPTIONS[0];
+    	description = DESCRIPTIONS[0];
+    	if (amount > 1) {
+    		description += " "+amount+DESCRIPTIONS[1];
+    	} else {
+    		description += ".";
+    	}
     	if (used) {
-    		this.description += DESCRIPTIONS[1];
+    		description += DESCRIPTIONS[2];
     	}
     }
     
@@ -52,9 +60,10 @@ public class TwistedMindPower extends AbstractPower {
     		} else {
     			finalDamage = card.cost;
     		}
+    		finalDamage *= amount;
     		if (finalDamage > 0) {
     			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(finalDamage, true), DamageType.HP_LOSS, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
-        		this.flash();	
+        		flash();	
     		}
     		used = true;
     		updateDescription();

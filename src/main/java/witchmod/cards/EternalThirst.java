@@ -29,7 +29,6 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 	public EternalThirst() {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseDamage = POWER;
-		this.exhaust = true;
 	}
 
 	@Override

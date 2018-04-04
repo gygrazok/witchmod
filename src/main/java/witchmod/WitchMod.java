@@ -44,7 +44,7 @@ import witchmod.cards.Demonfyre;
 import witchmod.cards.DireShriek;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.Enfeeble;
-import witchmod.cards.Envy;
+import witchmod.cards.Harmlessness;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
 import witchmod.cards.FatalRay;
@@ -253,7 +253,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new IllOmen());
 		BaseMod.addCard(new RiteOfWinter());
 		BaseMod.addCard(new BalefulWard());
-		BaseMod.addCard(new Envy());
+		BaseMod.addCard(new Harmlessness());
 		BaseMod.addCard(new CorruptBlood());
 		BaseMod.addCard(new PlagueSpreader());
 		//Powers (7)

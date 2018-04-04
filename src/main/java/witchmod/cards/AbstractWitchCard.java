@@ -13,7 +13,8 @@ import witchmod.WitchMod;
 import witchmod.patches.AbstractCardEnum;
 
 public abstract class AbstractWitchCard extends CustomCard{
-	public boolean reshuffleOnUse = false;
+	public boolean reshuffleOnUse = false; //if true -> don't discard on next use, has to be reset in the "use" method
+	public boolean neverDiscard = false; //if true -> never discard while in hand, not used atm
 
 	public AbstractWitchCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardRarity rarity, CardTarget target, int cardPool){
 		super(id, name, WitchMod.getResourcePath(img), cost, rawDescription, type, AbstractCardEnum.WITCH, rarity, target, cardPool);
@@ -76,8 +77,6 @@ public abstract class AbstractWitchCard extends CustomCard{
 			renderTitleMethod.setAccessible(true);
 			Method renderTypeMethod = AbstractCard.class.getDeclaredMethod("renderType",SpriteBatch.class);
 			renderTypeMethod.setAccessible(true);
-			Method renderDescriptionMethod = AbstractCard.class.getDeclaredMethod("renderDescription",SpriteBatch.class);
-			renderDescriptionMethod.setAccessible(true);
 			Method renderTintMethod = AbstractCard.class.getDeclaredMethod("renderTint",SpriteBatch.class);
 			renderTintMethod.setAccessible(true);
 			Method renderEnergyMethod = AbstractCard.class.getDeclaredMethod("renderEnergy",SpriteBatch.class);

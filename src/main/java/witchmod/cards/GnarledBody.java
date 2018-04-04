@@ -19,8 +19,8 @@ public class GnarledBody extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 8;
-	private static final int POWER = 12;
-	private static final int UPGRADE_BONUS = 4;
+	private static final int POWER = 13;
+	private static final int UPGRADE_BONUS = 5;
 
 	public GnarledBody() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

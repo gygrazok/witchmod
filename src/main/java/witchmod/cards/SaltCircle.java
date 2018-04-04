@@ -32,7 +32,7 @@ public class SaltCircle extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
 	
 	public AbstractCard makeCopy() {
@@ -41,7 +41,7 @@ public class SaltCircle extends AbstractWitchCard {
 	
 	@Override
 	public void atTurnStart(){
-		this.retain = true;
+		retain = true;
 	}
 	
 	public void upgrade() {

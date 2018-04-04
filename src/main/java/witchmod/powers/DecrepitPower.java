@@ -25,7 +25,7 @@ public class DecrepitPower extends AbstractPower {
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.isTurnBased = true;
 		this.type = PowerType.DEBUFF;
-		this.justApplied = true;
+		this.justApplied = justApplied;
 	}
 
 	@Override
@@ -35,11 +35,11 @@ public class DecrepitPower extends AbstractPower {
 	
     @Override
     public void atEndOfRound() {
-        if (this.justApplied) {
-            this.justApplied = false;
+        if (justApplied) {
+            justApplied = false;
             return;
         }
-        if (this.amount == 0) {
+        if (amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, DecrepitPower.POWER_ID));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, DecrepitPower.POWER_ID, 1));

@@ -11,8 +11,7 @@ public class RiteOfAutumn extends AbstractWitchCard {
 	public static final String ID = "RiteOfAutumn";
 	public static final	String NAME = "Rite of Autumn";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Exhaust any number of cards in your hand and draw that many cards.";
-	public static final	String DESCRIPTION_UPGRADED = "Exhaust any number of cards in your hand and draw that many cards. NL Recurrent.";
+	public static final	String DESCRIPTION = "Exhaust any number of cards in your hand and draw that many cards. NL Recurrent.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -20,6 +19,7 @@ public class RiteOfAutumn extends AbstractWitchCard {
 	
 	private static final int POOL = 1;
 	private static final int COST = 1;
+	private static final int COST_UPGRADED = 0;
 
 
 	
@@ -28,6 +28,7 @@ public class RiteOfAutumn extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		reshuffleOnUse = true;
 		AbstractDungeon.actionManager.addToBottom(new RiteOfAutumnAction());
 	}
 	
@@ -36,11 +37,9 @@ public class RiteOfAutumn extends AbstractWitchCard {
 	}
 	
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
-			reshuffleOnUse = true;
-			this.rawDescription = DESCRIPTION_UPGRADED;
-			initializeDescription();
+			upgradeBaseCost(COST_UPGRADED);
 		}
 	}
 }

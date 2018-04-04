@@ -17,7 +17,10 @@ public class WitchCardGroup extends CardGroup{
 			AbstractWitchCard witchCard = (AbstractWitchCard) c;
 			if (witchCard.reshuffleOnUse) {
 				super.moveToDeck(witchCard, true);
+				witchCard.reshuffleOnUse = false;
 				return;
+			} else if (witchCard.neverDiscard) {
+				super.moveToDeck(witchCard, true);
 			}
 		}
 		super.moveToDiscardPile(c);

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.FireBurstParticleEffect;
 import com.megacrit.cardcrawl.vfx.GhostlyWeakFireEffect;
-import com.megacrit.cardcrawl.vfx.combat.GhostIgniteEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightFlareParticleEffect;
 
 public class DarkboltEffect extends AbstractGameEffect {
@@ -52,7 +51,7 @@ public class DarkboltEffect extends AbstractGameEffect {
         this.duration -= Gdx.graphics.getDeltaTime();
         if (this.duration < 0.0f) {
             this.isDone = true;
-            AbstractDungeon.effectsQueue.add(new GhostIgniteEffect(this.x, this.y));
+            AbstractDungeon.effectsQueue.add(new IgniteEffect(this.x, this.y, color, 25));
             AbstractDungeon.effectsQueue.add(new GhostlyWeakFireEffect(this.x, this.y));
         }
     }

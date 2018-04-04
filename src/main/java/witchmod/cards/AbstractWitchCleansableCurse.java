@@ -15,8 +15,9 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 		return false;
 	}
 
+	
 	@Override
-	public void triggerWhenDrawn() {
+	public void atTurnStart() {
 		doCleanseCheck();
 	}
 	

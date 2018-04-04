@@ -13,7 +13,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	public static final	String NAME = "Harmlessness";
 	public static final	String NAME_CLEANSED = "\"Harmlessness\"";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: have no Attack cards in hand and in discard pile.";
+	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: play no attack cards this turn.";
 	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage to a random enemy 6 times.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -26,6 +26,8 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	public Harmlessness() {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.baseDamage = DAMAGE;
+		this.checkAtTurnStart = false;
+		this.checkDuringTurn = false;
 	}
 
 	@Override
@@ -55,13 +57,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 
 	@Override
 	protected boolean cleanseCheck() {
-		AbstractPlayer p = AbstractDungeon.player;
-		for (AbstractCard c : p.hand.group) {
-			if (c.type == CardType.ATTACK) {
-				return false;
-			}
-		}
-		for (AbstractCard c : p.discardPile.group) {
+		for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
 			if (c.type == CardType.ATTACK) {
 				return false;
 			}

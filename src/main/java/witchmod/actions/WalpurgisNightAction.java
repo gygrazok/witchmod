@@ -22,7 +22,7 @@ public class WalpurgisNightAction extends AbstractGameAction {
 		AbstractPlayer player = AbstractDungeon.player;
 		List<AbstractCard> cardsToReshuffle = new ArrayList<>();
 		for (AbstractCard card : player.exhaustPile.group) {
-			if (card.type != CardType.STATUS && card.cardID.equals(WalpurgisNight.ID)) {
+			if (card.type != CardType.STATUS && !card.cardID.equals(WalpurgisNight.ID)) {
 				//throws concurrentmodificationexception if i move them to deck here
 				cardsToReshuffle.add(card);
 			}

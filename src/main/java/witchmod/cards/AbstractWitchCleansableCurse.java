@@ -6,6 +6,9 @@ import witchmod.actions.CleanseAction;
 
 public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	public boolean cleansed = false;
+	public boolean checkAtTurnStart = true;
+	public boolean checkAtTurnEnd = true;
+	public boolean checkDuringTurn = true;
 	
 	public AbstractWitchCleansableCurse(String id, String name, String img, String rawDescription, CardRarity rarity) {
 		super(id, name, img, -2, rawDescription, CardType.CURSE, rarity, CardTarget.NONE, 1);
@@ -18,19 +21,26 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	
 	@Override
 	public void atTurnStart() {
-		doCleanseCheck();
+		if (checkAtTurnStart) {
+			doCleanseCheck();
+		}
+
 	}
 	
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
-		doCleanseCheck();
+		if (checkDuringTurn) {
+			doCleanseCheck();
+		}
 	}
 	
 	@Override
 	public void triggerOnEndOfPlayerTurn() {
 		super.triggerOnEndOfPlayerTurn();
-		doCleanseCheck();
+		if (checkAtTurnEnd) {
+			doCleanseCheck();
+		}
 	}
 	
 	private void doCleanseCheck() {

@@ -53,7 +53,7 @@ extends AbstractGameEffect {
         this.rotation = Interpolation.elasticIn.apply(this.targetAngle, this.startingAngle, this.duration);
         if (this.duration > 0.5f) {
             this.scale = Interpolation.elasticIn.apply(this.targetScale, this.targetScale * 10.0f, (this.duration - 0.5f) * 2.0f) * Settings.scale;
-            this.color.a = Interpolation.fade.apply(0.6f, 0.0f, (this.duration - 0.5f) * 2.0f);
+            this.color.a = Interpolation.fade.apply(0.8f, 0.1f, (this.duration - 0.5f) * 2.0f);
         } else {
             this.x = Interpolation.exp10Out.apply(this.tX, this.sX, this.duration * 2.0f);
             this.y = Interpolation.exp10Out.apply(this.tY, this.sY, this.duration * 2.0f);

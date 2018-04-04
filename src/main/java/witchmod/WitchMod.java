@@ -308,7 +308,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(persistent, "Doesn't get discarded automatically at the end of the turn.");
 
 		String[] recurrent = {"recurrent"};
-		BaseMod.addKeyword(recurrent, "Whenever this card would be discarded from hand or after it's played, it's shuffled in the draw pile instead of being discarded.");
+		BaseMod.addKeyword(recurrent, "When this card is played it's shuffled in the draw pile instead of being discarded.");
 
 		String[] cleanse = {"cleanse"};
 		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied while in hand, turning into a powerful card for the rest of the combat.");

@@ -40,7 +40,7 @@ public class Puncture extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (int i = 0; i < magicNumber; i++) {
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new PunctureEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale), 0.1f));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new PunctureEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale), 0.02f));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.NONE));
 		}
 	}

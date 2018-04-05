@@ -30,7 +30,7 @@ public class FastShockWaveEffect extends AbstractGameEffect {
 
 	@Override
     public void update() {
-        float speed = MathUtils.random(6000.0f, 8000.0f) * Settings.scale;
+        float speed = MathUtils.random(2000.0f, 3000.0f) * Settings.scale;
         switch (this.type) {
             case ADDITIVE: {
                 for (int i = 0; i < 40; ++i) {

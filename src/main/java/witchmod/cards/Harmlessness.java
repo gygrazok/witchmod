@@ -27,6 +27,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	public Harmlessness() {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.baseDamage = DAMAGE;
+		this.checkAtTurnStart = false;
 	}
 
 	@Override

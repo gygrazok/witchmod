@@ -13,7 +13,7 @@ public class PlagueSpreader extends AbstractWitchCard{
 	public static final	String NAME = "Plague Spreader";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Apply !M! Rot to ALL enemies. NL Exhaust.";
-	public static final	String DESCRIPTION_UPGRADED = "Apply !M! Rot to ALL enemies. NL Exhaust. NL Innate.";
+	public static final	String DESCRIPTION_UPGRADED = "Innate. NL Apply !M! Rot to ALL enemies. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -27,11 +27,12 @@ public class PlagueSpreader extends AbstractWitchCard{
 	public PlagueSpreader() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
+		this.exhaust = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-		     if (m.isDead || m.isDying) continue;
+		     if (mo.isDead || mo.isDying) continue;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new RotPower(mo,p, magicNumber, false), magicNumber, true));
 		}
 	}
@@ -43,6 +44,8 @@ public class PlagueSpreader extends AbstractWitchCard{
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
+			rawDescription = DESCRIPTION_UPGRADED;
+			initializeDescription();
 			isInnate = true;
 		}
 	}

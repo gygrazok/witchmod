@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -43,7 +44,7 @@ public class Implosion extends AbstractWitchCard{
 		}
 		AbstractDungeon.actionManager.addToTop(new KillMonsterAction(m));
 		AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25f));
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AttackEffect.FIRE));
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageType.THORNS, AttackEffect.FIRE));
 	}
 
 	public AbstractCard makeCopy() {

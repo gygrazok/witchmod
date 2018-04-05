@@ -44,7 +44,6 @@ import witchmod.cards.Demonfyre;
 import witchmod.cards.DireShriek;
 import witchmod.cards.DoomBlade;
 import witchmod.cards.Enfeeble;
-import witchmod.cards.Harmlessness;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
 import witchmod.cards.FatalRay;
@@ -52,6 +51,7 @@ import witchmod.cards.Foresight;
 import witchmod.cards.GnarledBody;
 import witchmod.cards.Graveburst;
 import witchmod.cards.GrimVengeance;
+import witchmod.cards.Harmlessness;
 import witchmod.cards.Hexdarts;
 import witchmod.cards.Hexguard;
 import witchmod.cards.IllOmen;
@@ -96,7 +96,7 @@ import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
 import witchmod.cards.VileEgg;
 import witchmod.cards.WalpurgisNight;
-import witchmod.cards.WickedInspiration;
+import witchmod.cards.WickedThoughts;
 import witchmod.cards.WretchedNails;
 import witchmod.cards.ZombieSpit;
 import witchmod.characters.WitchCharacter;
@@ -146,17 +146,9 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	}
 
 	public WitchMod() {
-		BaseMod.subscribeToPostInitialize(this);
+		BaseMod.subscribe(this);
+		
 
-		BaseMod.subscribeToEditCharacters(this);
-
-		BaseMod.subscribeToEditRelics(this);
-
-		BaseMod.subscribeToEditCards(this);
-
-		BaseMod.subscribeToEditStrings(this);
-
-		BaseMod.subscribeToEditKeywords(this);
 
 
 		BaseMod.addColor(AbstractCardEnum.WITCH.toString(),
@@ -223,7 +215,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new BlackShield());
 		BaseMod.addCard(new SaltCircle());
 		BaseMod.addCard(new KarmaDrain());
-		BaseMod.addCard(new WickedInspiration());
+		BaseMod.addCard(new WickedThoughts());
 		BaseMod.addCard(new SoulBarrier());
 		BaseMod.addCard(new Bewitch());
 		BaseMod.addCard(new GnarledBody());
@@ -329,16 +321,16 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addKeyword(familiarOwl, "Draws cards.");
 
 		String[] familiarRat = {"rat"};
-		BaseMod.addKeyword(familiarRat, "Poisons an enemy.");
+		BaseMod.addKeyword(familiarRat, "Applies Poison and Decrepit.");
 
 		String[] familiarBat = {"bat"};
-		BaseMod.addKeyword(familiarBat, "Weakens an enemy.");
+		BaseMod.addKeyword(familiarBat, "Weakens and temporarily reduces Strength.");
 
 		String[] familiarToad = {"toad"};
-		BaseMod.addKeyword(familiarToad, "Increases block and consumes a debuff.");
+		BaseMod.addKeyword(familiarToad, "Provides block and consumes debuffs.");
 
 		String[] familiarRaven = {"raven"};
-		BaseMod.addKeyword(familiarRaven, "Upgrades a card in hand.");
+		BaseMod.addKeyword(familiarRaven, "Upgrades and reduces the cost of a card in hand.");
 	}
 
 }

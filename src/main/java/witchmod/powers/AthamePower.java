@@ -23,7 +23,7 @@ public class AthamePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0]+amount+DESCRIPTIONS[1];
     }
 }
 

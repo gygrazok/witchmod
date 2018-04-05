@@ -22,7 +22,7 @@ public class WalkingCane extends AbstractWitchRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
 	@Override
@@ -46,7 +46,7 @@ public class WalkingCane extends AbstractWitchRelic {
 	private void setNonTurnBased(AbstractPower power) {
 		if (power != null) {
 			//justApplied gets resetted every turn and determines if the debuff should decrease or not
-			this.flash();
+			flash();
 			ReflectionHacks.setPrivate(power, AbstractPower.class, "justApplied", true);
 		}
 	}

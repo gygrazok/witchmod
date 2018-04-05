@@ -19,8 +19,8 @@ public class RiteOfWinter extends AbstractWitchCard {
 	
 	private static final int POOL = 1;
 	private static final int COST = 1;
-	private static final int BLOCK = 3;
-	private static final int BLOCK_UPGRADED = 2;
+	private static final int BLOCK = 4;
+	private static final int BLOCK_UPGRADED = 3;
 
 	
 	public RiteOfWinter() {

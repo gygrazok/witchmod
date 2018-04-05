@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
-public class WickedInspiration extends AbstractWitchCard {
-	public static final String ID = "WickedInspiration";
-	public static final	String NAME = "Wicked Inspiration";
+public class WickedThoughts extends AbstractWitchCard {
+	public static final String ID = "WickedThoughts";
+	public static final	String NAME = "Wicked Thoughts";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Draw a card for each curse in your hand. NL Persistent.";
 	public static final	String DESCRIPTION_UPGRADED = "Draw a card for each curse in your hand plus !M!. NL Persistent.";
@@ -25,7 +25,7 @@ public class WickedInspiration extends AbstractWitchCard {
 	private static final int POWER = 0;
 	private static final int UPGRADED_BONUS = 1;
 
-	public WickedInspiration() {
+	public WickedThoughts() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 		this.retain = true;
@@ -46,7 +46,7 @@ public class WickedInspiration extends AbstractWitchCard {
 	}
 	
 	public AbstractCard makeCopy() {
-		return new WickedInspiration();
+		return new WickedThoughts();
 	}
 	
 	@Override

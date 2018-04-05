@@ -6,15 +6,18 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
-import witchmod.actions.ReduceRandomDebuffAction;
+import witchmod.actions.ReduceSpecificDebuffAction;
 import witchmod.cards.AbstractWitchCard;
 
 public class ToadFamiliar extends AbstractWitchCard{
 	public static final String ID = "ToadFamiliar";
 	public static final	String NAME = "Toad";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. Remove up to !M! stacks of Vulnerable, Weak or Frail. NL Exhaust. Ethereal.";
+	public static final	String DESCRIPTION = "Gain !B! block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust. Ethereal.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -38,7 +41,9 @@ public class ToadFamiliar extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-		AbstractDungeon.actionManager.addToBottom(new ReduceRandomDebuffAction(p, p, magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ReduceSpecificDebuffAction(p, p, WeakPower.POWER_ID, magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ReduceSpecificDebuffAction(p, p, VulnerablePower.POWER_ID, magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ReduceSpecificDebuffAction(p, p, FrailPower.POWER_ID, magicNumber));
 	}
 
 	public AbstractCard makeCopy() {

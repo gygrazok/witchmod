@@ -9,12 +9,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import witchmod.cards.AbstractWitchCard;
+import witchmod.powers.DecrepitPower;
 
 public class RatFamiliar extends AbstractWitchCard{
 	public static final String ID = "RatFamiliar";
 	public static final	String NAME = "Rat";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Apply !M! Poison. NL Exhaust. NL Ethereal.";
+	public static final	String DESCRIPTION = "Apply !M! Poison and !M! Decrepit. NL Exhaust. NL Ethereal.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -34,7 +35,8 @@ public class RatFamiliar extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber), magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, true), magicNumber));
 	}
 
 	public AbstractCard makeCopy() {

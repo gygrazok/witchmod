@@ -1,11 +1,15 @@
 package witchmod.cards;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import witchmod.effects.FastShockWaveEffect;
 
 public class DireShriek extends AbstractWitchCard{
 	public static final String ID = "DireShriek";
@@ -31,6 +35,7 @@ public class DireShriek extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new FastShockWaveEffect(p.hb.cX, p.hb.cY, Color.YELLOW, FastShockWaveEffect.ShockWaveType.CHAOTIC), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
 		
 	}

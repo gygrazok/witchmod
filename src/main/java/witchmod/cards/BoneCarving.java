@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class BoneCarvedDagger extends AbstractWitchCard {
-	public static final String ID = "BoneCarvedDagger";
-	public static final	String NAME = "Bone Carved Dagger";
+public class BoneCarving extends AbstractWitchCard {
+	public static final String ID = "BoneCarving";
+	public static final	String NAME = "Bone Carving";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage.";
 	
@@ -28,7 +28,7 @@ public class BoneCarvedDagger extends AbstractWitchCard {
 	
 	private static final int MAGIC = 3;
 	
-	public BoneCarvedDagger() {
+	public BoneCarving() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
 		baseDamage = POWER;
@@ -39,7 +39,7 @@ public class BoneCarvedDagger extends AbstractWitchCard {
 	}
 	
 	public AbstractCard makeCopy() {
-		return new BoneCarvedDagger();
+		return new BoneCarving();
 	}
 	
 	@Override

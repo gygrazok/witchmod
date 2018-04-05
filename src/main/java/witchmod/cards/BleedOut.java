@@ -12,7 +12,7 @@ public class BleedOut extends AbstractWitchCard{
 	public static final String ID = "BleedOut";
 	public static final	String NAME = "Bleed Out";
 	public static final	String IMG = "cards/bleedout.png";
-	public static final	String DESCRIPTION = "Each enemy loses !D! health.";
+	public static final	String DESCRIPTION = "ALL enemies lose !D! health.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

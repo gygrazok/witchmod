@@ -31,7 +31,7 @@ import witchmod.cards.BlackShield;
 import witchmod.cards.BleedOut;
 import witchmod.cards.BloodSabbath;
 import witchmod.cards.Boline;
-import witchmod.cards.BoneCarvedDagger;
+import witchmod.cards.BoneCarving;
 import witchmod.cards.BroomstickSmash;
 import witchmod.cards.ChosenOfTheMoon;
 import witchmod.cards.CorruptBlood;
@@ -42,7 +42,7 @@ import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DireShriek;
-import witchmod.cards.DoomBlade;
+import witchmod.cards.ImpendingDoom;
 import witchmod.cards.Enfeeble;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
@@ -206,7 +206,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new BlackBolt());
 		BaseMod.addCard(new MercuryWand());
 		BaseMod.addCard(new WretchedNails());
-		BaseMod.addCard(new BoneCarvedDagger());
+		BaseMod.addCard(new BoneCarving());
 		BaseMod.addCard(new MagicFang());
 		BaseMod.addCard(new MementoMori());
 		BaseMod.addCard(new SkullFlask());
@@ -260,7 +260,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 		//RARE (24)
 		//Attacks (8)
-		BaseMod.addCard(new DoomBlade());
+		BaseMod.addCard(new ImpendingDoom());
 		BaseMod.addCard(new Graveburst());
 		BaseMod.addCard(new EternalThirst());
 		BaseMod.addCard(new DireShriek());

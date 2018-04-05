@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import witchmod.powers.ImpendingDoomPower;
 
-public class DoomBlade extends AbstractWitchCard{
+public class ImpendingDoom extends AbstractWitchCard{
 	public static final String ID = "DoomBlade";
 	public static final	String NAME = "Doom Blade";
 	public static final	String IMG = "cards/placeholder_attack.png";
@@ -27,7 +27,7 @@ public class DoomBlade extends AbstractWitchCard{
 	private static final int POWER = 8;
 	private static final int UPGRADE_BONUS = 3;
 
-	public DoomBlade() {
+	public ImpendingDoom() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 	}
@@ -38,7 +38,7 @@ public class DoomBlade extends AbstractWitchCard{
 	}
 
 	public AbstractCard makeCopy() {
-		return new DoomBlade();
+		return new ImpendingDoom();
 	}
 
 	public void upgrade() {

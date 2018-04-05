@@ -37,7 +37,7 @@ public class DarkProcessionPower extends AbstractPower {
 	@Override
 	public void atStartOfTurn() {
 		if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-			this.flash();
+			flash();
 			AbstractCard toCreate = card.makeStatEquivalentCopy();
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate, 1, false));
 			toCreate.triggerWhenDrawn();

@@ -43,7 +43,7 @@ import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DireShriek;
 import witchmod.cards.ImpendingDoom;
-import witchmod.cards.Enfeeble;
+import witchmod.cards.GhoulTouch;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
 import witchmod.cards.FatalRay;
@@ -229,7 +229,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Athame());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
-		BaseMod.addCard(new Enfeeble());
+		BaseMod.addCard(new GhoulTouch());
 		BaseMod.addCard(new MortusClaw());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new RiteOfSummer());

@@ -3,7 +3,6 @@ package witchmod.cards;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -19,22 +18,22 @@ public class WretchedNails extends AbstractWitchCard{
 	public static final String ID = "WretchedNails";
 	public static final	String NAME = "Wretched Nails";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "When drawn, draw a card. Deal damage equal to twice the number of cards you have drawn this turn.";
-	public static final	String DESCRIPTION_UPGRADED = "When drawn, draw !M! cards. Deal damage equal to twice the number of cards you have drawn this turn.";
-	public static final String EXTENDED_DESCRIPTION = " NL (Current damage !D!)";
+	public static final	String DESCRIPTION = "Deal damage equal to the number of cards you have drawn this turn.";
+	public static final	String DESCRIPTION_UPGRADED = "Deal damage equal to twice the number of cards you have drawn this turn.";
+	public static final String EXTENDED_DESCRIPTION[] = new String[] {" NL (Total ",")"};
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	
 	private static final int POOL = 1;
+	private static final int COST = 1;
 	
-	private static final int COST = 2;
 	private static final int MAGIC = 1;
 	private static final int MAGIC_UPGRADE_BONUS = 1;
 
 	public WretchedNails() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseMagicNumber = this.magicNumber = MAGIC;
+		this.magicNumber = this.baseMagicNumber = MAGIC;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -50,18 +49,11 @@ public class WretchedNails extends AbstractWitchCard{
 		return new WretchedNails();
 	}
 	
-	@Override
-	public void triggerWhenDrawn() {
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-		flash();
-	}
-	
     @Override
     public void applyPowers() {
-    	calcBaseDamage();
         super.applyPowers();
         rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
-        rawDescription = rawDescription + EXTENDED_DESCRIPTION;
+        rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 
@@ -73,23 +65,24 @@ public class WretchedNails extends AbstractWitchCard{
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		calcBaseDamage();
 		super.calculateCardDamage(mo);	
         rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
-        rawDescription = rawDescription + EXTENDED_DESCRIPTION;
+        rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
         initializeDescription();
 	}
 	
-	private void calcBaseDamage() {
-		baseDamage = ((WitchCharacter)AbstractDungeon.player).cardsDrawnThisTurn*2;
+	@Override
+	public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+		return ((WitchCharacter)player).cardsDrawnThisTurn * magicNumber;
 	}
+	
 	
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			rawDescription = DESCRIPTION_UPGRADED;
 			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);
+			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();
 		}
 	}

@@ -15,7 +15,7 @@ public class Bewitch extends AbstractWitchCard {
 	public static final String ID = "Bewitch";
 	public static final	String NAME = "Bewitch";
 	public static final	String IMG = "cards/bewitch.png";
-	public static final	String DESCRIPTION = "Applies !M! Weak and !M! Vulnerable to ALL enemies.";
+	public static final	String DESCRIPTION = "Apply !M! Weak and !M! Vulnerable to ALL enemies.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -25,7 +25,7 @@ public class Bewitch extends AbstractWitchCard {
 	private static final int COST = 1;
 
 	private static final int POWER = 2;
-	private static final int UPGRADED_BONUS = 1;
+	private static final int UPGRADED_BONUS = 2;
 
 
 	public Bewitch() {

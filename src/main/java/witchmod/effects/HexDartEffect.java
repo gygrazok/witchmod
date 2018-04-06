@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.effects;
 
 import com.badlogic.gdx.Gdx;

@@ -18,7 +18,7 @@ public class BlackBolt extends AbstractWitchCard{
 	public static final String ID = "BlackBolt";
 	public static final	String NAME = "Black Bolt";
 	public static final	String IMG = "cards/blackbolt.png";
-	public static final	String DESCRIPTION = "Deal !D! Damage. Apply !M! Weak if you have at least a Curse in hand.";
+	public static final	String DESCRIPTION = "Deal !D! damage. Apply !M! Weak if you have at least a Curse in hand.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

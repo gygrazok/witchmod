@@ -13,7 +13,7 @@ import witchmod.WitchMod;
 public class DecrepitPower extends AbstractPower {
 	public static final String POWER_ID = "Decrepit";
 	public static final String NAME = "Decrepit";
-	public static final String[] DESCRIPTIONS = new String[]{ "All incoming damage increased by #b"," (calculated after Vulnerability)"};
+	public static final String[] DESCRIPTIONS = new String[]{ "All incoming damage increased by #b"};
 	public static final String IMG = "powers/decrepit.png";
     private boolean justApplied = false;
 	public DecrepitPower(AbstractCreature owner, int amount, boolean justApplied) {
@@ -30,7 +30,7 @@ public class DecrepitPower extends AbstractPower {
 
 	@Override
 	public void updateDescription() {
-		description = DESCRIPTIONS[0]+amount+DESCRIPTIONS[1];
+		description = DESCRIPTIONS[0]+amount+".";
 	}
 	
     @Override

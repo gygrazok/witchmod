@@ -12,7 +12,7 @@ import witchmod.WitchMod;
 public class BalefulWardPower extends AbstractWitchPower {
     public static final String POWER_ID = "BalefulWardPower";
     public static final String NAME = "Baleful Ward";
-    public static final String[] DESCRIPTIONS = new String[]{ "If your Block is broken add a Baleful Ward to your hand."};
+    public static final String[] DESCRIPTIONS = new String[]{ "If Block is broken add a Baleful Ward to your hand."};
     public static final String IMG = "powers/balefulward.png";
     private AbstractCard card;
     public BalefulWardPower(AbstractCard cardToCopy) {

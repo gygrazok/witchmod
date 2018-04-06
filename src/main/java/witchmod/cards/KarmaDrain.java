@@ -13,7 +13,7 @@ public class KarmaDrain extends AbstractWitchCard{
 	public static final String ID = "KarmaDrain";
 	public static final	String NAME = "Karma Drain";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Applies X Weak. Gain !B! block X times.";
+	public static final	String DESCRIPTION = "Apply X Weak. Gain !B! Block X times.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import witchmod.actions.CleanseAction;
 
 public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
+	
 	public boolean cleansed = false;
 	public boolean checkAtTurnStart = true;
 	public boolean checkAtTurnEnd = true;
@@ -12,6 +13,7 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	
 	public AbstractWitchCleansableCurse(String id, String name, String img, String rawDescription, CardRarity rarity) {
 		super(id, name, img, -2, rawDescription, CardType.CURSE, rarity, CardTarget.NONE, 1);
+
 	}
 	
 	protected boolean cleanseCheck() {

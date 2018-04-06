@@ -13,7 +13,7 @@ public class Decrepify extends AbstractWitchCard {
 	public static final String ID = "Decrepify";
 	public static final	String NAME = "Decrepify";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Applies 1 Decrepit to a random enemy X + !M! times.";
+	public static final	String DESCRIPTION = "Apply 1 Decrepit to a random enemy X + !M! times.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

@@ -12,7 +12,7 @@ public class MementoMori extends AbstractWitchCard{
 	public static final String ID = "MementoMori";
 	public static final	String NAME = "Memento Mori";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage, increased by the percentage of target's health missing. NL Exhaust.";
+	public static final	String DESCRIPTION = "Deal !D! damage, increased by the percentage of target's missing health. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -22,7 +22,7 @@ public class MementoMori extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 12;
-	private static final int UPGRADE_BONUS = 6;
+	private static final int UPGRADE_BONUS = 5;
 
 	public MementoMori() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

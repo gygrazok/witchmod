@@ -34,7 +34,7 @@ extends AbstractGameEffect {
         float randomAngle = 0.017453292f * MathUtils.random(-50.0f, 230.0f);
         this.x = MathUtils.cos(randomAngle) * MathUtils.random(200.0f, 600.0f) * Settings.scale + x;
         this.y = MathUtils.sin(randomAngle) * MathUtils.random(200.0f, 500.0f) * Settings.scale + y;
-        this.duration = 0.5f;
+        this.duration = 1.0f;
         this.scale = 0.01f;
         this.targetScale = MathUtils.random(0.1f, 0.5f);
         this.targetAngle = MathUtils.atan2(y - this.y, x - this.x) * 57.295776f + 90.0f;
@@ -45,7 +45,7 @@ extends AbstractGameEffect {
         this.sY = this.y;
         this.tX = x - (float)(PunctureEffect.img.packedWidth / 2);
         this.tY = y - (float)(PunctureEffect.img.packedHeight / 2);
-        this.color = new Color(0.2f,0.2f,0.2f,0.0f);
+        this.color = new Color(0.2f,0.2f,0.2f,1.0f);
     }
 
     @Override

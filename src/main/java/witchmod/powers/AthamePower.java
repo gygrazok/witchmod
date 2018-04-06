@@ -9,7 +9,7 @@ import witchmod.WitchMod;
 public class AthamePower extends AbstractPower {
     public static final String POWER_ID = "AthamesOffering";
     public static final String NAME = "Athame's Offering";
-    public static final String[] DESCRIPTIONS = new String[]{ "Chance to obtain a rare card increased by #b", " times." };
+    public static final String[] DESCRIPTIONS = new String[]{ "Chance to obtain a rare card increased by #b", "%." };
     public static final String IMG = "powers/athame.png";
     public AthamePower(AbstractCreature owner, int amount) {
         this.name = NAME;

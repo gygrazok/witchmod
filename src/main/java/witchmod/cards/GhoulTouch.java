@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import witchmod.actions.EnfeeblingStrikeAction;
+import witchmod.actions.GhoulTouchAction;
 
-public class Enfeeble extends AbstractWitchCard{
-	public static final String ID = "Enfeeble";
-	public static final	String NAME = "Enfeeble";
+public class GhoulTouch extends AbstractWitchCard{
+	public static final String ID = "GhoulTouch";
+	public static final	String NAME = "Ghoul Touch";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage, then enemy loses Strength for 1 turn equal to the unblocked damage dealt.";
 	
@@ -24,17 +24,17 @@ public class Enfeeble extends AbstractWitchCard{
 	private static final int POWER = 9;
 	private static final int UPGRADE_BONUS = 3;
 
-	public Enfeeble() {
+	public GhoulTouch() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new EnfeeblingStrikeAction(m,new DamageInfo(p, this.damage)));      
+		AbstractDungeon.actionManager.addToBottom(new GhoulTouchAction(m,new DamageInfo(p, this.damage)));      
 	}
 	
 	public AbstractCard makeCopy() {
-		return new Enfeeble();
+		return new GhoulTouch();
 	}
 
 	public void upgrade() {

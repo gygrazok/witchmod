@@ -8,10 +8,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class EnfeeblingStrikeAction extends AbstractGameAction {
+public class GhoulTouchAction extends AbstractGameAction {
 	private DamageInfo info;
 
-	public EnfeeblingStrikeAction(AbstractCreature target, DamageInfo info) {
+	public GhoulTouchAction(AbstractCreature target, DamageInfo info) {
 		this.info = info;
 		this.setValues(target, info);
 		this.actionType = AbstractGameAction.ActionType.DAMAGE;

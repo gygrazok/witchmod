@@ -91,7 +91,13 @@ public abstract class AbstractWitchCard extends CustomCard{
 				if (!this.isFlipped) {
 					updateGlowMethod.invoke(this);
 					renderGlowMethod.invoke(this, sb);
+					if (type == CardType.CURSE) { //workaround to have curses with black background
+						color = CardColor.CURSE;
+					}
 					renderImageMethod.invoke(this, sb, hovered, selected);
+					if (type == CardType.CURSE) {
+						color = AbstractCardEnum.WITCH;
+					}
 					renderTypeMethod.invoke(this, sb);
 					renderTitleMethod.invoke(this, sb);
 					if (Settings.lineBreakViaCharacter) {

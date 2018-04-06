@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 public class BoneCarving extends AbstractWitchCard {
 	public static final String ID = "BoneCarving";
 	public static final	String NAME = "Bone Carving";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/bonecarving.png";
 	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;

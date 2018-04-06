@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import witchmod.WitchMod;
 
 public class SchadenfreudePower extends AbstractPower {
-    public static final String POWER_ID = "EvilEyePower";
-    public static final String NAME = "Evil Eye";
+    public static final String POWER_ID = "SchadenfreudePower";
+    public static final String NAME = "Schadenfreude";
     public static final String[] DESCRIPTIONS = new String[]{ "Whenever you apply a Debuff to an enemy, gain #b"," Block"};
-    public static final String IMG = "powers/athamesoffering.png";
+    public static final String IMG = "powers/schadenfreude.png";
 
     public SchadenfreudePower(AbstractCreature owner, int amount) {
         this.name = NAME;

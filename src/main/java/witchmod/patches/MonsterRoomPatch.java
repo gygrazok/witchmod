@@ -19,7 +19,7 @@ public class MonsterRoomPatch {
 		logger.info("Calling insert patch "+roll+"vs  "+rareRate+" "+AbstractDungeon.player.hasPower(AthamePower.POWER_ID));
 		if (AbstractDungeon.player.hasPower("AthamesOffering") && AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount > 0){
 			logger.info("If executed: "+AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount);
-			rareRate *= AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount;
+			rareRate += AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount;
 		}
 		logger.info("Final rate = "+rareRate);
 	}

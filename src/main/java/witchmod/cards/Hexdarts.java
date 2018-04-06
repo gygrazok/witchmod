@@ -26,7 +26,7 @@ public class Hexdarts extends AbstractWitchCard {
 	private static final int POOL = 0;
 	
 	private static final int COST = 2;
-	private static final int POWER = 9;
+	private static final int POWER = 10;
 	private static final int UPGRADED_BONUS = 3;
 	
 	private static final int MAGIC = 1;

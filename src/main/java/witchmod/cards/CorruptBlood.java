@@ -10,7 +10,7 @@ import witchmod.actions.CorruptBloodAction;
 public class CorruptBlood extends AbstractWitchCard{
 	public static final String ID = "CorruptBlood";
 	public static final	String NAME = "Corrupt Blood";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/corruptblood.png";
 	public static final	String DESCRIPTION = "If the enemy is Poisoned turn all Poison into Rot, otherwise apply !M! Poison. NL Recurrent.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class IllusionOfStrength extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrength";
-	public static final	String NAME = "Illusion of Strength";
+	public static final	String NAME = "Illusory Strength";
 	public static final	String IMG = "cards/placeholder_power.png";
 	public static final	String DESCRIPTION = "Gain !M! Strength. Shuffle a Delusion of Strength Curse in your draw pile.";
 	

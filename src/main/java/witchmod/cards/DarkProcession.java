@@ -11,7 +11,7 @@ import witchmod.powers.DarkProcessionPower;
 public class DarkProcession extends AbstractWitchCard {
 	public static final String ID = "DarkProcession";
 	public static final	String NAME = "Dark Procession";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/darkprocession.png";
 	public static final	String DESCRIPTION = "At the start of your turn add a copy of the last played card to your hand.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;

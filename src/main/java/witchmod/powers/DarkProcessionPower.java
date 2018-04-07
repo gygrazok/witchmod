@@ -12,7 +12,7 @@ public class DarkProcessionPower extends AbstractPower {
 	public static final String POWER_ID = "DarkProcessionPower";
 	public static final String NAME = "Dark Procession";
 	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add a copy of the last played card to your hand.", "NL Last played card: " };
-	public static final String IMG = "powers/athamesoffering.png";
+	public static final String IMG = "powers/darkprocession.png";
 	private AbstractCard card;
 	public DarkProcessionPower() {
 		this.name = NAME;

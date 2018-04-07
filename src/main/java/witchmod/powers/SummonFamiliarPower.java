@@ -46,8 +46,8 @@ public class SummonFamiliarPower extends AbstractPower {
 			this.flash();
 			AbstractCard toCreate = familiarFactory(card);
 			if (upgraded) {
-				toCreate.upgraded = true;
 				toCreate.upgrade();
+				toCreate.upgraded = true;
 			}
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate, 1, false));
 		}

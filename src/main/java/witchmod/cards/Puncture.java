@@ -17,7 +17,7 @@ public class Puncture extends AbstractWitchCard{
 	public static final String ID = "Puncture";
 	public static final	String NAME = "Puncture";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage !M! times. NL Persistent. NL Exhaust.";
+	public static final	String DESCRIPTION = "Deal !D! damage !M! times. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -35,12 +35,11 @@ public class Puncture extends AbstractWitchCard{
 		this.baseDamage = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 		this.exhaust = true;
-		this.retain = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (int i = 0; i < magicNumber; i++) {
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new PunctureEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale), 0.01f));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new PunctureEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale), 0.0075f));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.NONE));
 		}
 	}
@@ -49,10 +48,6 @@ public class Puncture extends AbstractWitchCard{
 		return new Puncture();
 	}
 
-	@Override
-	public void atTurnStart(){
-		retain = true;
-	}
 	
 	public void upgrade() {
 		if (!this.upgraded) {

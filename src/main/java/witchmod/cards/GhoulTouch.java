@@ -11,7 +11,7 @@ import witchmod.actions.GhoulTouchAction;
 public class GhoulTouch extends AbstractWitchCard{
 	public static final String ID = "GhoulTouch";
 	public static final	String NAME = "Ghoul Touch";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/ghoultouch.png";
 	public static final	String DESCRIPTION = "Deal !D! damage, then enemy loses Strength for 1 turn equal to the unblocked damage dealt.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -10,11 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import basemod.abstracts.CustomCard;
-import witchmod.WitchMod;
-import witchmod.patches.AbstractCardEnum;
-
-public class IllusionOfStrengthCurse extends CustomCard {
+public class IllusionOfStrengthCurse extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrengthCurse";
 	public static final	String NAME = "Delusion of Strength";
 	public static final	String IMG = "cards/placeholder_skill.png";
@@ -31,24 +27,24 @@ public class IllusionOfStrengthCurse extends CustomCard {
 
 	
 	public IllusionOfStrengthCurse() {
-		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,AbstractCardEnum.WITCH,RARITY,TARGET,POOL);
+		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 	}
 	
 	
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
+        if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+            useBlueCandle(p);
         } else {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, -magicNumber), -magicNumber));
             AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
         }
     }
     
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
-    	this.dontTriggerOnUseCard = true;
+    	dontTriggerOnUseCard = true;
         //if the player has strength <= 0 or if she doesn't have any strength
         if ((AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount <= magicNumber) ||
         		!(AbstractDungeon.player.hasPower(StrengthPower.POWER_ID))) {

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class MementoMori extends AbstractWitchCard{
 	public static final String ID = "MementoMori";
 	public static final	String NAME = "Memento Mori";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/mementomori.png";
 	public static final	String DESCRIPTION = "Deal !D! damage, increased by the percentage of target's missing health. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;

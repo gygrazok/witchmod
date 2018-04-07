@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Graveburst extends AbstractWitchCard{
 	public static final String ID = "Graveburst";
 	public static final	String NAME = "Graveburst";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/graveburst.png";
 	public static final	String DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile.";
 	public static final	String UPGRADE_DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile. NL Persistent.";
 	public static final	String EXTENDED_DESCRIPTION[] = new String[] {" NL (Deals !D! damage.)"};

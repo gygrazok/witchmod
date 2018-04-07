@@ -9,12 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GenericSmokeEffect;
 
-import basemod.abstracts.CustomCard;
-import witchmod.WitchMod;
 import witchmod.actions.ReduceBlockAction;
-import witchmod.patches.AbstractCardEnum;
 
-public class RustWallCurse extends CustomCard{
+public class RustWallCurse extends AbstractWitchCard{
 	public static final String ID = "RustWallCurse";
 	public static final	String NAME = "Curse of Rust";
 	public static final	String IMG = "cards/placeholder_skill.png";
@@ -31,15 +28,15 @@ public class RustWallCurse extends CustomCard{
 
 	private int blockConsumed = 0;
 	public RustWallCurse() {
-		super(ID,NAME,WitchMod.getResourcePath(IMG),COST,DESCRIPTION,TYPE,AbstractCardEnum.WITCH,RARITY,TARGET,POOL);
+		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 	}
 	
 	
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            this.useBlueCandle(p);
+        if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+            useBlueCandle(p);
         } else {
         	int blockToConsume = Math.floorDiv(p.currentBlock,2);
         	blockConsumed += blockToConsume;
@@ -54,7 +51,7 @@ public class RustWallCurse extends CustomCard{
     
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
-    	this.dontTriggerOnUseCard = true;
+    	dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
     }
 

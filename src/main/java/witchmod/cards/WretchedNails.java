@@ -51,6 +51,7 @@ public class WretchedNails extends AbstractWitchCard{
 	
     @Override
     public void applyPowers() {
+		baseDamage = (int)calculateModifiedCardDamage(AbstractDungeon.player, 0);
         super.applyPowers();
         rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
         rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
@@ -65,6 +66,7 @@ public class WretchedNails extends AbstractWitchCard{
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
+		baseDamage = (int)calculateModifiedCardDamage(AbstractDungeon.player, 0);
 		super.calculateCardDamage(mo);	
         rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
         rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];

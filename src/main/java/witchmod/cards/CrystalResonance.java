@@ -11,7 +11,7 @@ import witchmod.actions.CrystalResonanceAction;
 public class CrystalResonance extends AbstractWitchCard{
 	public static final String ID = "CrystalResonance";
 	public static final	String NAME = "Crystal Resonance";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/crystalresonance.png";
 	public static final	String DESCRIPTION = "When drawn reduce by !M! the cost of all Skills in your hand for this turn. NL Gain !B! Block.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

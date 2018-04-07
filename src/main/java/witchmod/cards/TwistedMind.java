@@ -13,7 +13,7 @@ public class TwistedMind extends AbstractWitchCard {
 	public static final	String NAME = "Twisted Mind";
 	public static final	String IMG = "cards/placeholder_power.png";
 	public static final	String DESCRIPTION = "When you play the first card each turn, all enemies lose health equal to the cost of that card.";
-	public static final	String DESCRIPTION_UPGRADED = "When you play the first card each turn, all enemies lose health equal to the cost of that card. Innate.";
+	public static final	String DESCRIPTION_UPGRADED = " Innate. When you play the first card each turn, all enemies lose health equal to the cost of that card.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;

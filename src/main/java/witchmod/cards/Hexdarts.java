@@ -23,7 +23,7 @@ public class Hexdarts extends AbstractWitchCard {
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	
-	private static final int POOL = 0;
+	private static final int POOL = 1;
 	
 	private static final int COST = 2;
 	private static final int POWER = 10;

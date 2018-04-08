@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import witchmod.powers.SummonFamiliarPower;
 
-public class PetCage extends AbstractWitchRelic {
+public class BirdCage extends AbstractWitchRelic {
     public static final String ID = "PetCage";
     private static final RelicTier TIER = RelicTier.RARE;
-    private static final String IMG = "relics/blackcat.png";
+    private static final String IMG = "relics/birdcage.png";
     private static final LandingSound SOUND = LandingSound.CLINK;
 
-    public PetCage() {
+    public BirdCage() {
         super(ID, IMG, TIER, SOUND);
     }
 
@@ -32,7 +32,7 @@ public class PetCage extends AbstractWitchRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new PetCage();
+        return new BirdCage();
     }
 }
 

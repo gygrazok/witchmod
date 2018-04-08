@@ -22,9 +22,9 @@ public class MagicFang extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int DAMAGE = 3;
+	private static final int DAMAGE = 4;
 	private static final int DAMAGE_UPGRADED_BONUS = 2;
-	private static final int BLOCK = 3;
+	private static final int BLOCK = 4;
 	private static final int BLOCK_UPGRADED_BONUS = 2;
 
 	public MagicFang() {

@@ -123,7 +123,7 @@ public class WitchCharacter extends CustomPlayer{
 	
 	public static CharSelectInfo getLoadout() {
 		return new CharSelectInfo("The Witch", "A cackling sorceress specialized NL in dealing with curses.",
-				70, 70, 99, 5,
+				77, 77, 99, 5,
 			WitchEnum.WITCH, getStartingRelics(), getStartingDeck(), false);
 	}
 	
@@ -165,6 +165,13 @@ public class WitchCharacter extends CustomPlayer{
                 continue;
             }
         }
+	}
+	
+	@Override
+	public void applyStartOfCombatLogic() {
+		super.applyStartOfCombatLogic();
+		cardsDrawnTotal = 0;
+		cursesDrawnTotal = 0;
 	}
 	
 	@Override

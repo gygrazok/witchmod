@@ -23,7 +23,7 @@ public class Schadenfreude extends AbstractWitchCard {
 	
 	private static final int COST = 1;
 	private static final int POWER = 2;
-	private static final int UPGRADED_BONUS = 1;
+	private static final int UPGRADED_BONUS = 2;
 	
 	public Schadenfreude() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -31,7 +31,7 @@ public class Schadenfreude extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SchadenfreudePower(p,this.magicNumber)));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new SchadenfreudePower(p,magicNumber)));
 	}
 	
 	public AbstractCard makeCopy() {

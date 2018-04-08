@@ -15,7 +15,7 @@ public class HexguardPower extends AbstractPower {
     public static final String POWER_ID = "HexguardPower";
     public static final String NAME = "Hexguard";
     public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Artifact."};
-    public static final String IMG = "powers/skullflask.png";
+    public static final String IMG = "powers/hexguard.png";
 
     public HexguardPower(AbstractCreature owner, int amount) {
         this.name = NAME;

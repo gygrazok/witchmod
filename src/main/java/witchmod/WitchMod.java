@@ -42,12 +42,11 @@ import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DireShriek;
-import witchmod.cards.ImpendingDoom;
-import witchmod.cards.GhoulTouch;
 import witchmod.cards.EternalThirst;
 import witchmod.cards.EvilEye;
 import witchmod.cards.FatalRay;
 import witchmod.cards.Foresight;
+import witchmod.cards.GhoulTouch;
 import witchmod.cards.GnarledBody;
 import witchmod.cards.Graveburst;
 import witchmod.cards.GrimVengeance;
@@ -56,6 +55,7 @@ import witchmod.cards.Hexdarts;
 import witchmod.cards.Hexguard;
 import witchmod.cards.IllOmen;
 import witchmod.cards.IllusionOfStrength;
+import witchmod.cards.ImpendingDoom;
 import witchmod.cards.Implosion;
 import witchmod.cards.Intelligence;
 import witchmod.cards.KarmaDrain;
@@ -103,8 +103,7 @@ import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
 import witchmod.relics.BlackCat;
-import witchmod.relics.PetCage;
-import witchmod.relics.WalkingCane;
+import witchmod.relics.BirdCage;
 
 
 @SpireInitializer
@@ -188,8 +187,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	public void receiveEditRelics() {
 		RelicLibrary.add(new BlackCat());
-		RelicLibrary.add(new PetCage());
-		RelicLibrary.add(new WalkingCane());
+		RelicLibrary.add(new BirdCage());
+		//RelicLibrary.add(new WalkingCane()); //doesn't work, needs a patch
 	}
 
 	public void receiveEditCards() {

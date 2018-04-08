@@ -26,8 +26,8 @@ public class Malady extends AbstractWitchCard{
 	private static final int COST = 1;
 	private static final int DAMAGE = 9;
 	private static final int DAMAGE_BONUS = 3;
-	private static final int MAGIC = 1;
-	private static final int MAGIC_BONUS = 1;
+	private static final int MAGIC = 2;
+	private static final int MAGIC_BONUS = 2;
 
 	public Malady() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

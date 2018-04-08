@@ -34,7 +34,7 @@ extends AbstractGameEffect {
         float randomAngle = 0.017453292f * MathUtils.random(-50.0f, 230.0f);
         this.x = MathUtils.cos(randomAngle) * MathUtils.random(200.0f, 400.0f) * Settings.scale + x;
         this.y = MathUtils.sin(randomAngle) * MathUtils.random(200.0f, 400.0f) * Settings.scale + y;
-        this.duration = 0.75f;
+        this.duration = 0.5f;
         this.scale = 0.01f;
         this.targetScale = MathUtils.random(0.1f, 0.5f);
         this.targetAngle = MathUtils.atan2(y - this.y, x - this.x) * 57.295776f + 90.0f;
@@ -53,7 +53,7 @@ extends AbstractGameEffect {
         this.rotation = Interpolation.elasticIn.apply(this.targetAngle, this.startingAngle, this.duration);
         if (this.duration > 0.5f) {
             this.scale = Interpolation.elasticIn.apply(this.targetScale, this.targetScale * 10.0f, (this.duration - 0.5f) * 2.0f) * Settings.scale;
-            this.color.a = Interpolation.fade.apply(1.0f, 0.35f, (this.duration - 0.5f) * 2.0f);
+            this.color.a = Interpolation.fade.apply(1.0f, 0.5f, (this.duration - 0.5f) * 2.0f);
         } else {
             this.x = Interpolation.exp10Out.apply(this.tX, this.sX, this.duration * 2.0f);
             this.y = Interpolation.exp10Out.apply(this.tY, this.sY, this.duration * 2.0f);

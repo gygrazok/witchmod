@@ -11,7 +11,7 @@ import witchmod.powers.RotPower;
 public class PlagueSpreader extends AbstractWitchCard{
 	public static final String ID = "PlagueSpreader";
 	public static final	String NAME = "Plague Spreader";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/plaguespreader.png";
 	public static final	String DESCRIPTION = "Apply !M! Rot to ALL enemies. NL Exhaust.";
 	public static final	String DESCRIPTION_UPGRADED = "Innate. NL Apply !M! Rot to ALL enemies. NL Exhaust.";
 	

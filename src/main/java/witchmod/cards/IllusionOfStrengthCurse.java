@@ -2,9 +2,9 @@ package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.PlayWithoutDiscardingAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -50,9 +50,15 @@ public class IllusionOfStrengthCurse extends AbstractWitchCard {
         		!(AbstractDungeon.player.hasPower(StrengthPower.POWER_ID))) {
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         } else {
-            AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, null));
+            AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
         }
 
+    }
+
+    
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
 
     

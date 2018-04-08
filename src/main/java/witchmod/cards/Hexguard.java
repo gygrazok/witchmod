@@ -12,14 +12,14 @@ import witchmod.powers.HexguardPower;
 public class Hexguard extends AbstractWitchCard {
 	public static final String ID = "Hexguard";
 	public static final	String NAME = "Hexguard";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/hexguard.png";
 	public static final	String DESCRIPTION = "Gain !B! block and !M! Artifact for 1 turn.";
 	
 	private static final CardRarity RARITY = CardRarity.BASIC;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
 	
-	private static final int POOL = 1;
+	private static final int POOL = 0;
 	
 	private static final int COST = 2;
 	private static final int POWER = 12;

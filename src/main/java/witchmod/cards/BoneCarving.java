@@ -17,16 +17,17 @@ public class BoneCarving extends AbstractWitchCard {
 	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
-	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
 	
-	private static final int POOL = 0;
+	private static final int POOL = 1;
 	
 	private static final int COST = 1;
 	private static final int POWER = 6;
 	private static final int UPGRADED_BONUS = 3;
 	
-	private static final int MAGIC = 3;
+	private static final int MAGIC = 2;
+	private static final int MAGIC_UPGRADE_BONUS = 2;
 	
 	public BoneCarving() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -57,6 +58,7 @@ public class BoneCarving extends AbstractWitchCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADED_BONUS);
+			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);
 		}
 	}
 }

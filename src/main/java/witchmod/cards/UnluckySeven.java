@@ -1,5 +1,8 @@
 package witchmod.cards;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -28,9 +31,15 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseMagicNumber = this.magicNumber = POWER;
 		this.exhaust = true;
-		this.getCustomTooltips().add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy and draw 7 cards, exhaust."));
 	}
 
+	@Override
+	public List<TooltipInfo> getCustomTooltips() {
+		List<TooltipInfo> out = new ArrayList<>();
+		out.add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy and draw 7 cards, exhaust."));
+		return out;
+	}
+	
 	@Override
 	public void cleanse() {
 		super.cleanse();

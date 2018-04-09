@@ -1,5 +1,8 @@
 package witchmod.cards;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -30,9 +33,15 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.baseDamage = DAMAGE;
 		this.checkAtTurnStart = false;
-		this.getCustomTooltips().add(new TooltipInfo("Cleansed", "Attack, cost 1, deal "+DAMAGE+" damage to a random enemy 6 times."));
 	}
 
+	@Override
+	public List<TooltipInfo> getCustomTooltips() {
+		List<TooltipInfo> out = new ArrayList<>();
+		out.add(new TooltipInfo("Cleansed", "Attack, cost 1, deal "+DAMAGE+" damage to a random enemy 6 times."));
+		return out;
+	}
+	
 	@Override
 	public void cleanse() {
 		super.cleanse();

@@ -32,7 +32,7 @@ public class MortusClaw extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.NONE));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.POISON));
 	}
 
 	public AbstractCard makeCopy() {

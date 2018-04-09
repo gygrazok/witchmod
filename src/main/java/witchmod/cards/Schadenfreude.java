@@ -31,7 +31,7 @@ public class Schadenfreude extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new SchadenfreudePower(p,magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SchadenfreudePower(p,magicNumber)));
 	}
 	
 	public AbstractCard makeCopy() {

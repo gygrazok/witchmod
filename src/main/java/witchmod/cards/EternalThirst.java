@@ -1,6 +1,10 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,7 +35,13 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 	public EternalThirst() {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseDamage = POWER;
-		this.getCustomTooltips().add(new TooltipInfo("Cleansed", "Attack, cost 1, deal 10 damage, then heal for the unblocked damage dealt."));
+	}
+	
+	@Override
+	public List<TooltipInfo> getCustomTooltips() {
+		List<TooltipInfo> out = new ArrayList<>();
+		out.add(new TooltipInfo("Cleansed", "Attack, cost 1, deal 10 damage, then heal for the unblocked damage dealt."));
+		return out;
 	}
 
 	@Override

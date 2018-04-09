@@ -35,7 +35,7 @@ public class SchadenfreudePower extends AbstractWitchPower {
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && source == owner && target != owner && !target.hasPower("Artifact")) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, target, amount));
+            AbstractDungeon.actionManager.addToTop(new GainBlockAction(owner, target, amount));
         }
     }
 }

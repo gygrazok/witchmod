@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class BoneCarving extends AbstractWitchCard {
 	public static final String ID = "BoneCarving";
@@ -48,7 +48,7 @@ public class BoneCarving extends AbstractWitchCard {
 		int counter = magicNumber;
 		while (counter > 0) {
 			AbstractMonster monster = AbstractDungeon.getRandomMonster();
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, AbstractDungeon.player, new WeakPower(monster, 1, false),1, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, AbstractDungeon.player, new VulnerablePower(monster, 1, false),1, true));
 			counter--;
 		}
 		flash();

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
@@ -32,7 +33,7 @@ public class ForesightAction extends AbstractGameAction{
 		}
 		AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
-		if (card.type == AbstractCard.CardType.CURSE) {
+		if (card.type == CardType.CURSE || card.type == CardType.STATUS) {
 			card.current_y = -200.0f * Settings.scale;
 			card.target_x = Settings.WIDTH / 2.0f + 200;
 			card.target_y = Settings.HEIGHT / 2.0f;

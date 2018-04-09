@@ -35,7 +35,7 @@ public class DarkProcessionPower extends AbstractWitchPower {
 
 	@Override
 	public void atStartOfTurn() {
-		if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+		if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && card != null) {
 			flash();
 			AbstractCard toCreate = card.makeStatEquivalentCopy();
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate, 1, false));

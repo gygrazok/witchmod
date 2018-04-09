@@ -35,7 +35,7 @@ public class KarmaDrain extends AbstractWitchCard{
         if (effect > 0) {
         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, effect, false), effect));
         	for (int i = 0; i < effect; i++) {
-        		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         	}
         }
 		p.energy.use(effect);
@@ -47,7 +47,7 @@ public class KarmaDrain extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_BONUS);
 		}

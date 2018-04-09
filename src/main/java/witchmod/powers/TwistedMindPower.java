@@ -1,5 +1,6 @@
 package witchmod.powers;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -19,7 +20,7 @@ public class TwistedMindPower extends AbstractWitchPower {
     public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card",
     		" times.",
     		" NL Used for this turn."};
-    public static final String IMG = "powers/athamesoffering.png";
+    public static final String IMG = "powers/twistedmind.png";
     private boolean used = false;
     public TwistedMindPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -41,7 +42,10 @@ public class TwistedMindPower extends AbstractWitchPower {
     		description += ".";
     	}
     	if (used) {
+    		renderColor = Color.GRAY;
     		description += DESCRIPTIONS[2];
+    	} else {
+    		renderColor = null;
     	}
     }
     

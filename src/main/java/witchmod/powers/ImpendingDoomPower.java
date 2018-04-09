@@ -16,7 +16,7 @@ public class ImpendingDoomPower extends AbstractWitchPower {
     public static final String POWER_ID = "ImpendingDoom";
     public static final String NAME = "Impending Doom";
     public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b"," health."};
-    public static final String IMG = "powers/athamesoffering.png";
+    public static final String IMG = "powers/impendingdoom.png";
     private AbstractCreature source;
     public ImpendingDoomPower(AbstractCreature owner, AbstractCreature source, int amount) {
         this.name = NAME;

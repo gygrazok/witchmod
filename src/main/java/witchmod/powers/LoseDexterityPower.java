@@ -1,5 +1,6 @@
 package witchmod.powers;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,6 +18,7 @@ public class LoseDexterityPower extends AbstractWitchPower {
         this.owner = owner;
         this.amount = newAmount;
         this.updateDescription();
+        this.renderColor = Color.CHARTREUSE;
         this.loadRegion("flex");
     }
 

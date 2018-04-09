@@ -12,14 +12,19 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import basemod.ReflectionHacks;
 
 public abstract class AbstractWitchPower extends AbstractPower {
-
+	protected Color renderColor = null;
 	public void onCardDraw(AbstractCard card) {}
 
 	public void onDamageAbsorbedByBlock(int amount, int actualBlockLost, int currentBlock) { }
 	
 	@Override
 	public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
-        sb.setColor(c);
+		if (renderColor == null) {
+	        sb.setColor(c);
+		} else {
+	        sb.setColor(renderColor);
+		}
+
         if (img != null) {
             sb.draw(img, x - 12.0f, y - 12.0f, 16.0f, 16.0f, 32.0f, 32.0f, Settings.scale, Settings.scale, 0.0f, 0, 0, 32, 32, false, false);
         } else {

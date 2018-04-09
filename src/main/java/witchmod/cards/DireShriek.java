@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -50,6 +51,7 @@ public class DireShriek extends AbstractWitchCard{
 		super.triggerWhenDrawn();
 		flash();
 		applyPowers();
+		CardCrawlGame.sound.play("BYRD_DEATH");
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
 	}
 

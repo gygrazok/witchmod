@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class SchadenfreudePower extends AbstractPower {
+public class SchadenfreudePower extends AbstractWitchPower {
     public static final String POWER_ID = "SchadenfreudePower";
     public static final String NAME = "Schadenfreude";
     public static final String[] DESCRIPTIONS = new String[]{ "Whenever you apply a Debuff to an enemy, gain #b"," Block"};
@@ -27,14 +27,14 @@ public class SchadenfreudePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-    	this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    	description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
     
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && source == this.owner && target != this.owner && !target.hasPower("Artifact")) {
-            this.flash();
+        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && source == owner && target != owner && !target.hasPower("Artifact")) {
+            flash();
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, target, amount));
         }
     }

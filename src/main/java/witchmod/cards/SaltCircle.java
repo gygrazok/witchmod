@@ -10,7 +10,7 @@ public class SaltCircle extends AbstractWitchCard {
 	public static final String ID = "SaltCircle";
 	public static final	String NAME = "Salt Circle";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. Persistent.";
+	public static final	String DESCRIPTION = "Gain !B! Block. Persistent.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;

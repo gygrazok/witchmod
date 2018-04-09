@@ -5,11 +5,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class GrimVengeancePower extends AbstractPower {
+public class GrimVengeancePower extends AbstractWitchPower {
     public static final String POWER_ID = "GrimVengeancePower";
     public static final String NAME = "Grim Vengeance";
     public static final String[] DESCRIPTIONS = new String[]{ "When you are attacked apply #b"," Decrepit to the attacker."};
@@ -28,7 +27,7 @@ public class GrimVengeancePower extends AbstractPower {
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner) {
-            this.flash();
+            flash();
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, owner, new DecrepitPower(info.owner, amount, true), amount, true));
         }
         return damageAmount;

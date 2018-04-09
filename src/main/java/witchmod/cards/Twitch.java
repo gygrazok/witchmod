@@ -24,7 +24,7 @@ public class Twitch extends AbstractWitchCard{
 	
 	private static final int COST = 2;
 	private static final int POWER = 14;
-	private static final int UPGRADE_BONUS = 4;
+	private static final int UPGRADE_BONUS = 3;
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UPGRADE_BONUS = 1;
 

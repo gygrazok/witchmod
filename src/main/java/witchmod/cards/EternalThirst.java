@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.helpers.TooltipInfo;
+
 public class EternalThirst extends AbstractWitchCleansableCurse {
 	public static final String ID = "EternalThirst";
 	public static final	String NAME = "Eternal Thirst";
@@ -29,6 +31,7 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 	public EternalThirst() {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseDamage = POWER;
+		this.getCustomTooltips().add(new TooltipInfo("Cleansed", "Attack, cost 1, deal 10 damage, then heal for the unblocked damage dealt."));
 	}
 
 	@Override
@@ -46,8 +49,8 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-			this.useBlueCandle(p);
+		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+			useBlueCandle(p);
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));   
 		}

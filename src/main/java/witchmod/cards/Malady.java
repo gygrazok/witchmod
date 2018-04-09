@@ -47,7 +47,7 @@ public class Malady extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(DAMAGE_BONUS);
 			upgradeMagicNumber(MAGIC_BONUS);

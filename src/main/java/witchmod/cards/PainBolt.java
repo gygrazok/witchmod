@@ -21,7 +21,7 @@ public class PainBolt extends AbstractWitchCard{
 	public static final String ID = "PainBolt";
 	public static final	String NAME = "Pain Bolt";
 	public static final	String IMG = "cards/painbolt.png";
-	public static final	String DESCRIPTION = "Applies X Vulnerable THEN deal !D! multiplied by X damage in a single attack.";
+	public static final	String DESCRIPTION = "Applies X Vulnerable, then deal !D! multiplied by X damage.";
 	public static final	String[] EXTENDED_DESCRIPTION = new String[] { " NL Current damage: "};
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

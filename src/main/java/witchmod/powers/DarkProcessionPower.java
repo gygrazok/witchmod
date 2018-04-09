@@ -4,11 +4,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class DarkProcessionPower extends AbstractPower {
+public class DarkProcessionPower extends AbstractWitchPower {
 	public static final String POWER_ID = "DarkProcessionPower";
 	public static final String NAME = "Dark Procession";
 	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add a copy of the last played card to your hand.", "NL Last played card: " };

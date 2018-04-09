@@ -10,11 +10,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class TwistedMindPower extends AbstractPower {
+public class TwistedMindPower extends AbstractWitchPower {
     public static final String POWER_ID = "TwistedMindPower";
     public static final String NAME = "Twisted Mind";
     public static final String[] DESCRIPTIONS = new String[]{ "When you play the first card each turn, all enemies lose health equal to the cost of that card",

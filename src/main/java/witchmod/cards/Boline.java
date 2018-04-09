@@ -24,7 +24,7 @@ public class Boline extends AbstractWitchCard{
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 1;
+	private static final int COST = 0;
 	private static final int POWER = 6;
 	private static final int POWER_UPGRADED_BONUS = 3;
 
@@ -34,8 +34,8 @@ public class Boline extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if ((damage >= m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL)
-			|| (damage >= m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
+		if ((damage >= m.currentHealth+m.currentBlock && damageTypeForTurn == DamageType.NORMAL) ||
+			(damage >= m.currentHealth && damageTypeForTurn == DamageType.HP_LOSS)) {
 			//enemy will die due to this attack
 			exhaust = true;
 			AbstractDungeon.actionManager.addToBottom(new ObtainPotionAction(PotionHelper.getRandomPotion()));
@@ -55,12 +55,12 @@ public class Boline extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(POWER_UPGRADED_BONUS);
-			this.rawDescription = DESCRIPTION_UPGRADED;
+			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();
-			this.retain = true;
+			retain = true;
 		}
 	}
 }

@@ -11,14 +11,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class RavenAction extends AbstractGameAction{
 	private AbstractPlayer player;
 	public static final String TEXT = "Pick a card";
-	private boolean upgraded;
 	private ArrayList<AbstractCard> eligible = new ArrayList<>();
     private ArrayList<AbstractCard> oldHand;
-	public RavenAction(boolean upgraded) {
+	public RavenAction() {
 		this.duration = Settings.ACTION_DUR_FAST;
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
 		this.player = AbstractDungeon.player;
-		this.upgraded = upgraded;
 	}
 
 	 @Override
@@ -67,11 +65,7 @@ public class RavenAction extends AbstractGameAction{
                 c.upgrade();
             }
             if (c.costForTurn > 0) {
-            	if (upgraded) {
-            		c.modifyCostForCombat(-1);
-            	} else {
-            		c.modifyCostForTurn(-1);
-            	}
+           		c.modifyCostForCombat(-1);
             }
 	    }
 }

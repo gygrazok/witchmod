@@ -2,11 +2,10 @@ package witchmod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class AthamePower extends AbstractPower {
+public class AthamePower extends AbstractWitchPower {
     public static final String POWER_ID = "AthamesOffering";
     public static final String NAME = "Athame's Offering";
     public static final String[] DESCRIPTIONS = new String[]{ "Chance to obtain a rare card increased by #b", "%." };

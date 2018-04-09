@@ -25,7 +25,7 @@ public class RatFamiliar extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 2;
-	private static final int UPGRADE_BONUS = 2;
+	private static final int UPGRADE_BONUS = 1;
 
 	public RatFamiliar() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

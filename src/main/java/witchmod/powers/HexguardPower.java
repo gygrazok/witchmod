@@ -6,12 +6,11 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 import witchmod.WitchMod;
 
-public class HexguardPower extends AbstractPower {
+public class HexguardPower extends AbstractWitchPower {
     public static final String POWER_ID = "HexguardPower";
     public static final String NAME = "Hexguard";
     public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Artifact."};

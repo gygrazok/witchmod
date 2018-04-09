@@ -31,7 +31,7 @@ public class TrollsBlood extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegeneratePower(p,this.magicNumber),this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegeneratePower(p,magicNumber),magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {
@@ -39,10 +39,9 @@ public class TrollsBlood extends AbstractWitchCard {
 	}
 	
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBaseCost(UPGRADED_COST);
-			upgradedCost = true;
 		}
 	}
 }

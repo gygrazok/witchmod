@@ -22,7 +22,7 @@ public class BalefulWard extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 7;
+	private static final int POWER = 8;
 	private static final int UPGRADE_BONUS = 3;
 	
 

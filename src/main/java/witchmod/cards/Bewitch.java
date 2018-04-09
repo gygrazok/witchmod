@@ -47,7 +47,7 @@ public class Bewitch extends AbstractWitchCard {
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_BONUS);
 		}

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.helpers.TooltipInfo;
+
 public class Harmlessness extends AbstractWitchCleansableCurse {
 	public static final String ID = "Harmlessness";
 	public static final	String NAME = "Harmlessness";
@@ -28,6 +30,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.baseDamage = DAMAGE;
 		this.checkAtTurnStart = false;
+		this.getCustomTooltips().add(new TooltipInfo("Cleansed", "Attack, cost 1, deal "+DAMAGE+" damage to a random enemy 6 times."));
 	}
 
 	@Override
@@ -46,8 +49,8 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-			this.useBlueCandle(p);
+		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+			useBlueCandle(p);
 		} else {
 			for (int i = 0; i < 6; i++) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getRandomMonster(), new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL, true));

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 import witchmod.cards.familiar.BatFamiliar;
@@ -16,7 +15,7 @@ import witchmod.cards.familiar.RatFamiliar;
 import witchmod.cards.familiar.RavenFamiliar;
 import witchmod.cards.familiar.ToadFamiliar;
 
-public class SummonFamiliarPower extends AbstractPower {
+public class SummonFamiliarPower extends AbstractWitchPower {
 	public static final String POWER_ID = "SummonFamiliar";
 	public static final String NAME = "Summon Familiar";
 	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn, add ", "  card to your hand" };
@@ -37,13 +36,13 @@ public class SummonFamiliarPower extends AbstractPower {
 
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0]+getCardName(card)+DESCRIPTIONS[1];
+		description = DESCRIPTIONS[0]+getCardName(card)+DESCRIPTIONS[1];
 	}
 
 	@Override
 	public void atStartOfTurn() {
 		if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-			this.flash();
+			flash();
 			AbstractCard toCreate = familiarFactory(card);
 			if (upgraded) {
 				toCreate.upgrade();

@@ -8,12 +8,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import witchmod.WitchMod;
 
-public class ImpendingDoomPower extends AbstractPower {
+public class ImpendingDoomPower extends AbstractWitchPower {
     public static final String POWER_ID = "ImpendingDoom";
     public static final String NAME = "Impending Doom";
     public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b"," health."};
@@ -42,7 +41,7 @@ public class ImpendingDoomPower extends AbstractPower {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new DamageAction(owner,new DamageInfo(source, amount, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, "ImpendingDoom"));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, "ImpendingDoom"));
         }
     }
 }

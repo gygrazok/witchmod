@@ -10,7 +10,7 @@ public class SoulBarrier extends AbstractWitchCard{
 	public static final String ID = "SoulBarrier";
 	public static final	String NAME = "Soul Barrier";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "When drawn gain !M! block. NL Gain !B! block. NL Exhaust.";
+	public static final	String DESCRIPTION = "When drawn gain !M! Block. NL Gain !B! Block. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;

@@ -17,7 +17,7 @@ public class ToadFamiliar extends AbstractWitchCard{
 	public static final String ID = "ToadFamiliar";
 	public static final	String NAME = "Toad";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust. Ethereal.";
+	public static final	String DESCRIPTION = "Gain !B! Block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust. Ethereal.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -27,7 +27,7 @@ public class ToadFamiliar extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 4;
-	private static final int UPGRADE_BONUS = 3;
+	private static final int UPGRADE_BONUS = 2;
 	private static final int MAGIC = 1;
 	private static final int UPGRADE_MAGIC_BONUS = 1;
 

@@ -26,7 +26,7 @@ public class Athame extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 1;
-	private static final int POWER = 7;
+	private static final int POWER = 8;
 	private static final int POWER_UPGRADED_BONUS = 4;
 	private static final int MAGIC_NUMBER = 15;
 	private static final int MAGIC_NUMBER_UPGRADED_BONUS = 15;

@@ -22,7 +22,7 @@ public class CursedBlade extends AbstractWitchCard{
 	private static final int POOL = 1;
 
 	private static final int COST = 1;
-	private static final int POWER = 14;
+	private static final int POWER = 13;
 	private static final int UPGRADE_BONUS = 4;
 
 	public CursedBlade() {

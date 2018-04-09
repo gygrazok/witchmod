@@ -33,10 +33,10 @@ public class Shrooms extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		for (int i = 0; i < this.magicNumber; i++) {
+		for (int i = 0; i < magicNumber; i++) {
 			AbstractDungeon.actionManager.addToBottom(new ShroomsAction());
 		}
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PINK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), (float)0.1*this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PINK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), (float)0.1*magicNumber));
 
 	}
 	
@@ -45,10 +45,9 @@ public class Shrooms extends AbstractWitchCard {
 	}
 	
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_BONUS);
-			upgradedMagicNumber = true;
 		}
 	}
 }

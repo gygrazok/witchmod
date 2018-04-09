@@ -6,11 +6,10 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import witchmod.WitchMod;
 
-public class DecrepitPower extends AbstractPower {
+public class DecrepitPower extends AbstractWitchPower {
 	public static final String POWER_ID = "Decrepit";
 	public static final String NAME = "Decrepit";
 	public static final String[] DESCRIPTIONS = new String[]{ "All incoming damage increased by #b"};

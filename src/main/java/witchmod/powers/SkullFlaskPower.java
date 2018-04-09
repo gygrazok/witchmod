@@ -6,12 +6,11 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import witchmod.WitchMod;
 
-public class SkullFlaskPower extends AbstractPower {
+public class SkullFlaskPower extends AbstractWitchPower {
     public static final String POWER_ID = "SkullFlaskPower";
     public static final String NAME = "Skull Flask";
     public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Strength."};

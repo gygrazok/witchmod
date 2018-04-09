@@ -20,7 +20,7 @@ public class BlackShield extends AbstractWitchCard{
 	
 	private static final int COST = 1;
 	private static final int POWER = 6;
-	private static final int UPGRADE_BONUS = 3;
+	private static final int UPGRADE_BONUS = 2;
 
 
 	public BlackShield() {

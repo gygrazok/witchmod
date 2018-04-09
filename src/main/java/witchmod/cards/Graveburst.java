@@ -51,7 +51,7 @@ public class Graveburst extends AbstractWitchCard{
         super.applyPowers();
         rawDescription = upgraded?UPGRADE_DESCRIPTION:DESCRIPTION;
         rawDescription += EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
+        initializeDescription();
     }
 	
 
@@ -60,11 +60,11 @@ public class Graveburst extends AbstractWitchCard{
         super.calculateCardDamage(mo);
         rawDescription = upgraded?UPGRADE_DESCRIPTION:DESCRIPTION;
         rawDescription += EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
+        initializeDescription();
     }
     
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			rawDescription = UPGRADE_DESCRIPTION;
 			initializeDescription();

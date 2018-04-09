@@ -14,7 +14,7 @@ public class IllusionOfStrengthCurse extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrengthCurse";
 	public static final	String NAME = "Delusion of Strength";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose !M! Strength. Exhaust this if you have Strength 0 or less.";
+	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose !M! Strength or exhaust this if you have Strength !M! or less.";
 	
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.NONE;
@@ -45,7 +45,7 @@ public class IllusionOfStrengthCurse extends AbstractWitchCard {
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
     	dontTriggerOnUseCard = true;
-        //if the player has strength <= 0 or if she doesn't have any strength
+        //if the player has strength <= 2 or if she doesn't have any strength
         if ((AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount <= magicNumber) ||
         		!(AbstractDungeon.player.hasPower(StrengthPower.POWER_ID))) {
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));

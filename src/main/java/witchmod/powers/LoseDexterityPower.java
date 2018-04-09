@@ -4,10 +4,9 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class LoseDexterityPower extends AbstractPower {
+public class LoseDexterityPower extends AbstractWitchPower {
     public static final String POWER_ID = "Twitch";
     public static final String NAME = "Twitch";
     public static final String[] DESCRIPTIONS = new String[] { "Temporarily gained #b"," #yDexterity."};

@@ -10,7 +10,7 @@ public class RoilingBarrier extends AbstractWitchCard{
 	public static final String ID = "RoilingBarrier";
 	public static final	String NAME = "Roiling Barrier";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Gain !B! block. This value is increased by !M! everytime you draw this card. NL Recurrent.";
+	public static final	String DESCRIPTION = "Gain !B! Block. This value is increased by !M! everytime you draw this card. NL Recurrent.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;

@@ -4,13 +4,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import witchmod.WitchMod;
 import witchmod.actions.RotLoseHPAction;
 
-public class RotPower extends AbstractPower {
+public class RotPower extends AbstractWitchPower {
     public static final String POWER_ID = "Rot";
     public static final String NAME = "Rot";
     public static final String[] DESCRIPTIONS = new String[]{ "At the start of its turn, loses #b",

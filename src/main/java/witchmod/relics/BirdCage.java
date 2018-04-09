@@ -18,7 +18,7 @@ public class BirdCage extends AbstractWitchRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
 
     

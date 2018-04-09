@@ -10,7 +10,7 @@ public class GnarledBody extends AbstractWitchCard{
 	public static final String ID = "GnarledBody";
 	public static final	String NAME = "Gnarled Body";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Costs 1 less for each card in hand. NL Gain !B! block.";
+	public static final	String DESCRIPTION = "Costs 1 less for each card in hand. NL Gain !B! Block.";
 	
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -18,8 +18,8 @@ public class GnarledBody extends AbstractWitchCard{
 	
 	private static final int POOL = 1;
 	
-	private static final int COST = 8;
-	private static final int POWER = 13;
+	private static final int COST = 7;
+	private static final int POWER = 10;
 	private static final int UPGRADE_BONUS = 5;
 
 	public GnarledBody() {
@@ -38,18 +38,16 @@ public class GnarledBody extends AbstractWitchCard{
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
-		setCostForTurn(COST - AbstractDungeon.player.hand.group.size());
-		
+		setCostForTurn(Math.max(0, COST - AbstractDungeon.player.hand.group.size()));
 	}
 	
 	@Override
 	public void triggerOnOtherCardPlayed(AbstractCard c) {
-		super.triggerOnOtherCardPlayed(c);
-		setCostForTurn(COST - AbstractDungeon.player.hand.group.size());
+		setCostForTurn(Math.max(0, COST - AbstractDungeon.player.hand.group.size()));
 	}
 	
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_BONUS);
 		}

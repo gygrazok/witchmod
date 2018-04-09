@@ -15,7 +15,7 @@ public class ImpendingDoom extends AbstractWitchCard{
 	public static final String ID = "DoomBlade";
 	public static final	String NAME = "Doom Blade";
 	public static final	String IMG = "cards/placeholder_attack.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Next turn the target loses !D! life.";
+	public static final	String DESCRIPTION = "Deal !D! damage. Next turn the enemy loses !D! life.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -42,7 +42,7 @@ public class ImpendingDoom extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 		}

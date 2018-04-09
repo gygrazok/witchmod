@@ -50,7 +50,7 @@ public class Puncture extends AbstractWitchCard{
 
 	
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_MAGIC_BONUS);
 		}

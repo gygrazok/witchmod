@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.helpers.TooltipInfo;
+
 public class UnluckySeven extends AbstractWitchCleansableCurse {
 	public static final String ID = "UnluckySeven";
 	public static final	String NAME = "Unlucky Seven";
@@ -26,6 +28,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseMagicNumber = this.magicNumber = POWER;
 		this.exhaust = true;
+		this.getCustomTooltips().add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy and draw 7 cards, exhaust."));
 	}
 
 	@Override

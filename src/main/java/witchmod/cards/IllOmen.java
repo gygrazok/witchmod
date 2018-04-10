@@ -12,7 +12,7 @@ import witchmod.powers.IllOmenPower;
 public class IllOmen extends AbstractWitchCard{
 	public static final String ID = "IllOmen";
 	public static final	String NAME = "Ill Omen";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/illomen.png";
 	public static final	String DESCRIPTION = "Shuffle a random Curse in your draw pile. The next time you draw a Curse deal !D! Damage to ALL enemies. Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

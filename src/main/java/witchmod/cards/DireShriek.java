@@ -16,7 +16,7 @@ import witchmod.effects.FastShockWaveEffect;
 public class DireShriek extends AbstractWitchCard{
 	public static final String ID = "DireShriek";
 	public static final	String NAME = "Dire Shriek";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/direshriek.png";
 	public static final	String DESCRIPTION = "When drawn deal !D! damage to all enemies. NL Deal !D! damage to all enemies.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;

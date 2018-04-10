@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 public class FatalRay extends AbstractWitchCard{
 	public static final String ID = "FatalRay";
 	public static final	String NAME = "Fatal Ray";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/fatalray.png";
 	public static final	String DESCRIPTION = "Can only be played if you have at least 7 cards in hand. Deal !D! damage.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;

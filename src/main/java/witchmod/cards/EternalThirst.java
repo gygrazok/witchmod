@@ -18,7 +18,7 @@ import basemod.helpers.TooltipInfo;
 public class EternalThirst extends AbstractWitchCleansableCurse {
 	public static final String ID = "EternalThirst";
 	public static final	String NAME = "Eternal Thirst";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/eternalthirst.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: suffer at least 20 damage in this fight.";
 	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage, then heal for the unblocked damage dealt.";
 

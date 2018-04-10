@@ -17,7 +17,7 @@ import witchmod.characters.WitchCharacter;
 public class EvilEye extends AbstractWitchCard{
 	public static final String ID = "EvilEye";
 	public static final	String NAME = "Evil Eye";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/evileye.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. NL Deals an additional !M! damage for each Curse drawn this combat.";
 	
 	private static final CardRarity RARITY = CardRarity.RARE;

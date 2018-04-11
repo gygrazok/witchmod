@@ -39,7 +39,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 		out.add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy and draw 7 cards, exhaust."));
 		return out;
 	}
-	
+
 	@Override
 	public void cleanse() {
 		super.cleanse();

@@ -42,7 +42,6 @@ public class MysticUnburial extends AbstractWitchCard {
 		}
 		cantUseMessage = "I don't have any playable card in my discard pile.";
 		return false;
-
 	}
 
 	public AbstractCard makeCopy() {
@@ -50,7 +49,7 @@ public class MysticUnburial extends AbstractWitchCard {
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBaseCost(COST_UPGRADED);
 		}

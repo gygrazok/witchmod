@@ -19,13 +19,13 @@ public class EvilEye extends AbstractWitchCard{
 	public static final	String NAME = "Evil Eye";
 	public static final	String IMG = "cards/evileye.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. NL Deals an additional !M! damage for each Curse drawn this combat.";
-	
+
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 6;
 	private static final int MAGIC = 2;
@@ -39,11 +39,11 @@ public class EvilEye extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.RED)));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new IronWaveEffect(p.hb.cX, p.hb.cY, m.hb.cX), 0.25f));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new IronWaveEffect(p.hb.cX, p.hb.cY, m.hb.cX), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-		
+
 	}
-	
+
 	@Override
 	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
 		return tmp + magicNumber*((WitchCharacter)player).cursesDrawnTotal;

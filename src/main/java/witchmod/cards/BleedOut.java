@@ -13,13 +13,13 @@ public class BleedOut extends AbstractWitchCard{
 	public static final	String NAME = "Bleed Out";
 	public static final	String IMG = "cards/bleedout.png";
 	public static final	String DESCRIPTION = "ALL enemies lose !D! health.";
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 0;
 	private static final int POWER = 4;
 	private static final int UPGRADE_BONUS = 3;
@@ -32,7 +32,7 @@ public class BleedOut extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageType.HP_LOSS, AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
-		
+
 	}
 
 	public AbstractCard makeCopy() {
@@ -40,7 +40,7 @@ public class BleedOut extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 		}

@@ -14,13 +14,13 @@ public class MortusClaw extends AbstractWitchCard{
 	public static final	String NAME = "Mortus Claw";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage, then the enemy loses !D! HP.";
-	
+
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 3;
 	private static final int POWER = 12;
 	private static final int UPGRADE_BONUS = 5;

@@ -16,13 +16,13 @@ public class RatFamiliar extends AbstractWitchCard{
 	public static final	String NAME = "Rat";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Apply !M! Poison and !M! Decrepit. NL Exhaust. NL Ethereal.";
-	
+
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 0;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 2;
 	private static final int UPGRADE_BONUS = 1;
@@ -36,21 +36,20 @@ public class RatFamiliar extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, true), magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, true), magicNumber));
 	}
 
 	public AbstractCard makeCopy() {
 		return new RatFamiliar();
 	}
-	
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-    }
 
+	@Override
+	public void triggerOnEndOfPlayerTurn() {
+		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
 		}

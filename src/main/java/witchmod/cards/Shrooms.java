@@ -15,23 +15,23 @@ public class Shrooms extends AbstractWitchCard {
 	public static final	String NAME = "'Shrooms";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Draw !M! cards. They have random costs for this turn.";
-	
+
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 1;
 	private static final int COST = 0;
 	private static final int POWER = 3;
 	private static final int UPGRADED_BONUS = 1;
 
 
-	
+
 	public Shrooms() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 	}
-	
+
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (int i = 0; i < magicNumber; i++) {
 			AbstractDungeon.actionManager.addToBottom(new ShroomsAction());
@@ -39,11 +39,11 @@ public class Shrooms extends AbstractWitchCard {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PINK, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), (float)0.1*magicNumber));
 
 	}
-	
+
 	public AbstractCard makeCopy() {
 		return new Shrooms();
 	}
-	
+
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();

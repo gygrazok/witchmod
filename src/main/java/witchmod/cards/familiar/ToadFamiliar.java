@@ -18,13 +18,13 @@ public class ToadFamiliar extends AbstractWitchCard{
 	public static final	String NAME = "Toad";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Gain !B! Block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust. Ethereal.";
-	
+
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 0;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 4;
 	private static final int UPGRADE_BONUS = 2;
@@ -49,15 +49,14 @@ public class ToadFamiliar extends AbstractWitchCard{
 	public AbstractCard makeCopy() {
 		return new ToadFamiliar();
 	}
-	
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-    }
 
+	@Override
+	public void triggerOnEndOfPlayerTurn() {
+		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_BONUS);
 			upgradeMagicNumber(UPGRADE_MAGIC_BONUS);

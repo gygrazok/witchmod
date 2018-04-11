@@ -136,5 +136,5 @@ public abstract class AbstractWitchCard extends CustomCard{
 			e.printStackTrace();
 		}
 	}
-	
+
 }

@@ -15,13 +15,13 @@ public class Twitch extends AbstractWitchCard{
 	public static final	String NAME = "Twitch";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "When drawn gain !M! Dexterity for 1 turn. NL Gain !B! block.";
-	
+
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 2;
 	private static final int POWER = 14;
 	private static final int UPGRADE_BONUS = 3;
@@ -35,23 +35,23 @@ public class Twitch extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
 
 	public AbstractCard makeCopy() {
 		return new Twitch();
 	}
-	
+
 	@Override
 	public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseDexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseDexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
 
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_BONUS);
 			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);

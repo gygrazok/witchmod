@@ -39,7 +39,7 @@ public class CorruptBlood extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
 		}

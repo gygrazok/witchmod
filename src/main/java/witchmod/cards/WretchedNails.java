@@ -24,10 +24,10 @@ public class WretchedNails extends AbstractWitchCard{
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
 	private static final int COST = 1;
-	
+
 	private static final int MAGIC = 1;
 	private static final int MAGIC_UPGRADE_BONUS = 1;
 
@@ -48,37 +48,35 @@ public class WretchedNails extends AbstractWitchCard{
 	public AbstractCard makeCopy() {
 		return new WretchedNails();
 	}
-	
-    @Override
-    public void applyPowers() {
-		baseDamage = (int)calculateModifiedCardDamage(AbstractDungeon.player, 0);
-        super.applyPowers();
-        rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
-        rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
-        initializeDescription();
-    }
 
-    @Override
-    public void onMoveToDiscard() {
-        rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
-        initializeDescription();
-    }
-	
+	@Override
+	public void applyPowers() {
+		baseDamage = (int)calculateModifiedCardDamage(AbstractDungeon.player, 0);
+		super.applyPowers();
+		rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
+		rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
+		initializeDescription();
+	}
+
+	@Override
+	public void onMoveToDiscard() {
+		rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
+		initializeDescription();
+	}
+
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
 		baseDamage = (int)calculateModifiedCardDamage(AbstractDungeon.player, 0);
 		super.calculateCardDamage(mo);	
-        rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
-        rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
-        initializeDescription();
+		rawDescription = upgraded?DESCRIPTION_UPGRADED:DESCRIPTION;
+		rawDescription = rawDescription + EXTENDED_DESCRIPTION[0] + damage + EXTENDED_DESCRIPTION[1];
+		initializeDescription();
 	}
-	
+
 	@Override
 	public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
 		return ((WitchCharacter)player).cardsDrawnThisTurn * magicNumber;
 	}
-	
-	
 
 	public void upgrade() {
 		if (!upgraded) {

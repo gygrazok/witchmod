@@ -36,7 +36,7 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseDamage = POWER;
 	}
-	
+
 	@Override
 	public List<TooltipInfo> getCustomTooltips() {
 		List<TooltipInfo> out = new ArrayList<>();
@@ -80,8 +80,6 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 		rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]+GameActionManager.damageReceivedThisCombat+EXTENDED_DESCRIPTION[1];
 		initializeDescription();
 	}
-
-
 
 	public AbstractCard makeCopy() {
 		return new EternalThirst();

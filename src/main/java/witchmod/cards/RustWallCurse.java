@@ -16,11 +16,11 @@ public class RustWallCurse extends AbstractWitchCard{
 	public static final	String NAME = "Curse of Rust";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose half of your Block and exhaust if it has consumed at least !M! Block in total.";
-	
+
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.NONE;
 	private static final CardType TYPE = CardType.CURSE;
-	
+
 	private static final int POOL = 2;
 	private static final int COST = -2;
 
@@ -31,42 +31,42 @@ public class RustWallCurse extends AbstractWitchCard{
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 	}
-	
-	
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
-            useBlueCandle(p);
-        } else {
-        	int blockToConsume = Math.floorDiv(p.currentBlock,2);
-        	blockConsumed += blockToConsume;
-        	AbstractDungeon.effectsQueue.add(new GenericSmokeEffect(p.hb.cX, p.hb.cY));
-            AbstractDungeon.actionManager.addToTop(new ReduceBlockAction(p, p, blockToConsume));
-            AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-            if (blockConsumed >= magicNumber) {
-                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-            }
-        }
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
-    }
-    
-    @Override
-    public void triggerOnEndOfTurnForPlayingCard() {
-    	dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
-    }
 
-	
+
+	@Override
+	public void use(AbstractPlayer p, AbstractMonster m) {
+		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+			useBlueCandle(p);
+		} else {
+			int blockToConsume = Math.floorDiv(p.currentBlock,2);
+			blockConsumed += blockToConsume;
+			AbstractDungeon.effectsQueue.add(new GenericSmokeEffect(p.hb.cX, p.hb.cY));
+			AbstractDungeon.actionManager.addToTop(new ReduceBlockAction(p, p, blockToConsume));
+			AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+			if (blockConsumed >= magicNumber) {
+				AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+			}
+		}
+	}
+
+	@Override
+	public void triggerWhenDrawn() {
+		AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
+	}
+
+	@Override
+	public void triggerOnEndOfTurnForPlayingCard() {
+		dontTriggerOnUseCard = true;
+		AbstractDungeon.actionManager.addToBottom(new PlayWithoutDiscardingAction(this));
+	}
+
+
 	public AbstractCard makeCopy() {
 		return new RustWallCurse();
 	}
-	
-	
+
+
 	public void upgrade() {
-		
+
 	}
 }

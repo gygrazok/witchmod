@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import witchmod.WitchMod;
+import witchmod.relics.WalkingCane;
 
 public class DecrepitPower extends AbstractWitchPower {
 	public static final String POWER_ID = "Decrepit";
@@ -36,6 +37,10 @@ public class DecrepitPower extends AbstractWitchPower {
 	public void atEndOfRound() {
 		if (justApplied) {
 			justApplied = false;
+			return;
+		}
+		if (AbstractDungeon.player.hasRelic(WalkingCane.ID)) {
+			AbstractDungeon.player.getRelic(WalkingCane.ID).flash();
 			return;
 		}
 		if (amount == 0) {

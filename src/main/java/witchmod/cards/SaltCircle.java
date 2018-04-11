@@ -11,39 +11,39 @@ public class SaltCircle extends AbstractWitchCard {
 	public static final	String NAME = "Salt Circle";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Gain !B! Block. Persistent.";
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 7;
 	private static final int UPGRADE_BONUS = 3;
 
 
-	
+
 	public SaltCircle() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
 		this.retain = true;
-		
+
 	}
-	
+
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
-	
+
 	public AbstractCard makeCopy() {
 		return new SaltCircle();
 	}
-	
+
 	@Override
 	public void atTurnStart(){
 		retain = true;
 	}
-	
+
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();

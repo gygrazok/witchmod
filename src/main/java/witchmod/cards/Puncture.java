@@ -48,7 +48,7 @@ public class Puncture extends AbstractWitchCard{
 		return new Puncture();
 	}
 
-	
+
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();

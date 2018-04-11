@@ -16,13 +16,13 @@ public class Implosion extends AbstractWitchCard{
 	public static final	String NAME = "Implosion";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Kill an enemy if it has !M! HP or less. If successful, other enemies are dealt !D! damage.";
-	
+
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 3;
 	private static final int POWER = 15;
 	private static final int UPGRADED_BONUS = 5;
@@ -51,23 +51,23 @@ public class Implosion extends AbstractWitchCard{
 		return new Implosion();
 	}
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-    }
-	
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-    	if (m != null && m.currentHealth > magicNumber) {
-    		cantUseMessage = "The enemy must have #y"+magicNumber+" health or less.";
-    		return false;
-    	}
-    	return super.canUse(p, m);
-    }
+	@Override
+	public void applyPowers() {
+		super.applyPowers();
+	}
 
-	
+	@Override
+	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+		if (m != null && m.currentHealth > magicNumber) {
+			cantUseMessage = "The enemy must have #y"+magicNumber+" health or less.";
+			return false;
+		}
+		return super.canUse(p, m);
+	}
+
+
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_BONUS);
 			upgradeDamage(UPGRADED_BONUS_DAMAGE);

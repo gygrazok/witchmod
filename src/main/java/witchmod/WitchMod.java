@@ -51,7 +51,7 @@ import witchmod.cards.GnarledBody;
 import witchmod.cards.Graveburst;
 import witchmod.cards.GrimVengeance;
 import witchmod.cards.Harmlessness;
-import witchmod.cards.Hexdarts;
+import witchmod.cards.Thundercloud;
 import witchmod.cards.Hexguard;
 import witchmod.cards.IllOmen;
 import witchmod.cards.IllusionOfStrength;
@@ -209,7 +209,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new MagicFang());
 		BaseMod.addCard(new MementoMori());
 		BaseMod.addCard(new SkullFlask());
-		BaseMod.addCard(new Hexdarts());
+		BaseMod.addCard(new Thundercloud());
 		//Skills (10)
 		BaseMod.addCard(new BlackShield());
 		BaseMod.addCard(new SaltCircle());

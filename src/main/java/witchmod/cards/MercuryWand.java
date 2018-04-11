@@ -44,7 +44,7 @@ public class MercuryWand extends AbstractWitchCard{
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
-		this.rawDescription = DESCRIPTION;
+		rawDescription = DESCRIPTION;
 		if (AbstractDungeon.player.currentBlock == 0) {
 			rawDescription += EXTENDED_DESCRIPTION[0];
 			target = CardTarget.SELF;
@@ -52,13 +52,13 @@ public class MercuryWand extends AbstractWitchCard{
 			rawDescription += EXTENDED_DESCRIPTION[1];
 			target = CardTarget.ENEMY;
 		}
-		this.initializeDescription();
+		initializeDescription();
 	}
 
 	@Override
 	public void onMoveToDiscard() {
-		this.rawDescription = DESCRIPTION;
-		this.initializeDescription();
+		rawDescription = DESCRIPTION;
+		initializeDescription();
 	}
 
 	public AbstractCard makeCopy() {
@@ -66,7 +66,7 @@ public class MercuryWand extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 			upgradeBlock(UPGRADE_BONUS);

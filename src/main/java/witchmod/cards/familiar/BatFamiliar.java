@@ -17,13 +17,13 @@ public class BatFamiliar extends AbstractWitchCard{
 	public static final	String NAME = "Bat";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Apply 1 Weak. Reduce Strength by !M! for 1 turn. NL Exhaust. NL Ethereal.";
-	
+
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 0;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 2;
 	private static final int UPGRADE_BONUS = 1;
@@ -36,25 +36,24 @@ public class BatFamiliar extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1,false), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
-        if (!m.hasPower("Artifact")) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber));
-        }
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1,false), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
+		if (!m.hasPower("Artifact")) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber));
+		}
 	}
 
 	public AbstractCard makeCopy() {
 		return new BatFamiliar();
 	}
-	
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-    }
 
+	@Override
+	public void triggerOnEndOfPlayerTurn() {
+		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
 		}

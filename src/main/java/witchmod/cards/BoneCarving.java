@@ -15,34 +15,34 @@ public class BoneCarving extends AbstractWitchCard {
 	public static final	String NAME = "Bone Carving";
 	public static final	String IMG = "cards/bonecarving.png";
 	public static final	String DESCRIPTION = "When drawn apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage.";
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 6;
 	private static final int UPGRADED_BONUS = 3;
-	
+
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UPGRADE_BONUS = 2;
-	
+
 	public BoneCarving() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
 		baseDamage = POWER;
 	}
-	
+
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.SLASH_HORIZONTAL));
 	}
-	
+
 	public AbstractCard makeCopy() {
 		return new BoneCarving();
 	}
-	
+
 	@Override
 	public void triggerWhenDrawn() {
 		int counter = magicNumber;
@@ -53,9 +53,9 @@ public class BoneCarving extends AbstractWitchCard {
 		}
 		flash();
 	}
-	
+
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADED_BONUS);
 			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);

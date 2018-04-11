@@ -18,13 +18,13 @@ public class Demonfyre extends AbstractWitchCard{
 	public static final	String NAME = "Demonfyre";
 	public static final	String IMG = "cards/demonfyre.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. Increases the damage of the next Demonfyre by !M!. NL Recurrent.";
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 5;
 	private static final int MAGIC = 1;
@@ -40,19 +40,19 @@ public class Demonfyre extends AbstractWitchCard{
 		reshuffleOnUse = true;
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.FIRE));
 		AbstractDungeon.effectsQueue.add(new IgniteEffect(m.hb.cX, m.hb.cY, Color.PURPLE, 35));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DemonfyrePower(p, magicNumber), magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DemonfyrePower(p, magicNumber), magicNumber));
 	}
 
 	public AbstractCard makeCopy() {
 		return new Demonfyre();
 	}
-	
+
 	@Override
 	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
 		int bonus = AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID) == null?0:AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID).amount;
 		return tmp + bonus;
 	}
-	
+
 
 	public void upgrade() {
 		if (!upgraded) {

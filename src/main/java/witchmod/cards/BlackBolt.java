@@ -41,7 +41,7 @@ public class BlackBolt extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new SFXAction("GHOST_ORB_IGNITE_1", 0.3f));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new DarkboltEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY, Color.BLACK), 0.25f));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new DarkboltEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY, Color.BLACK), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
 		boolean hasCurse = false;
 		for (AbstractCard c : p.hand.group) {
@@ -60,7 +60,7 @@ public class BlackBolt extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_BONUS);
 			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);

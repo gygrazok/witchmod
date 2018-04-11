@@ -15,13 +15,13 @@ public class VileEgg extends AbstractWitchCard{
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Heal !M! HP. NL Add a random Familiar to your hand. NL Exhaust";
 	public static final	String DESCRIPTION_UPGRADED = "Heal !M! HP. NL Add a random upgraded Familiar to your hand. NL Exhaust";
-	
+
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 0;
 	private static final int POWER = 3;
 	private static final int UPGRADE_BONUS = 2;
@@ -38,7 +38,7 @@ public class VileEgg extends AbstractWitchCard{
 		if (upgraded) {
 			toCreate.upgrade();
 		}
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate,1));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate,1));
 	}
 
 	public AbstractCard makeCopy() {
@@ -46,7 +46,7 @@ public class VileEgg extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
 		}

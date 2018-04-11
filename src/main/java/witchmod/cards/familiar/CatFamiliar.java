@@ -16,13 +16,13 @@ public class CatFamiliar extends AbstractWitchCard{
 	public static final	String NAME = "Cat Familiar";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Deal !D! damage !M! times. NL Exhaust. NL Ethereal.";
-	
+
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;
-	
+
 	private static final int POOL = 0;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 3;
 	private static final int MAGIC = 2;
@@ -37,25 +37,24 @@ public class CatFamiliar extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        }
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+		if (upgraded) {
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+		}
 	}
 
 	public AbstractCard makeCopy() {
 		return new CatFamiliar();
 	}
-	
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-    }
 
+	@Override
+	public void triggerOnEndOfPlayerTurn() {
+		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_MAGIC_BONUS);
 		}

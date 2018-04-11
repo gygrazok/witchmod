@@ -10,7 +10,7 @@ import witchmod.actions.ForesightAction;
 public class Foresight extends AbstractWitchCard {
 	public static final String ID = "Foresight";
 	public static final	String NAME = "Foresight";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/foresight.png";
 	public static final	String DESCRIPTION = "Draw a card. If it's a Curse or a Status, exhaust it. Otherwise draw a copy of it. Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -44,7 +44,7 @@ public class ForesightAction extends AbstractGameAction{
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
 			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
 		} else {
-			AbstractDungeon.player.drawPile.addToTop(card);
+			AbstractDungeon.player.drawPile.addToTop(card.makeStatEquivalentCopy());
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PURPLE, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5f));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
 		}

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import basemod.ReflectionHacks;
 import witchmod.relics.WalkingCane;
@@ -13,10 +12,10 @@ import witchmod.relics.WalkingCane;
 @SpirePatch(cls="com.megacrit.cardcrawl.powers.VulnerablePower", method="atEndOfRound")
 public class VulnerablePowerPatch {
 
-	public static void Replace(WeakPower __instance) {
-		boolean justApplied = (boolean) ReflectionHacks.getPrivate(__instance, WeakPower.class, "justApplied");
+	public static void Replace(VulnerablePower __instance) {
+		boolean justApplied = (boolean) ReflectionHacks.getPrivate(__instance, VulnerablePower.class, "justApplied");
 		if (justApplied) {
-			ReflectionHacks.setPrivate(__instance, WeakPower.class, "justApplied", false);
+			ReflectionHacks.setPrivate(__instance, VulnerablePower.class, "justApplied", false);
 			return;
 		}
 		if (AbstractDungeon.player.hasRelic(WalkingCane.ID)) {

@@ -20,7 +20,6 @@ public class DarkProcessionPower extends AbstractWitchPower {
 		this.updateDescription();
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.type = PowerType.BUFF;
-
 	}
 
 	@Override
@@ -30,7 +29,6 @@ public class DarkProcessionPower extends AbstractWitchPower {
 		} else {
 			description = DESCRIPTIONS[0];
 		}
-
 	}
 
 	@Override
@@ -42,12 +40,11 @@ public class DarkProcessionPower extends AbstractWitchPower {
 			toCreate.triggerWhenDrawn();
 		}
 	}
-	
+
 	@Override
 	public void onAfterCardPlayed(AbstractCard usedCard) {
 		card = usedCard;
+		updateDescription();
 	}
-
-	
 }
 

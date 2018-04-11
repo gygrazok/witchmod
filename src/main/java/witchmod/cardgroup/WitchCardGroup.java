@@ -15,11 +15,11 @@ public class WitchCardGroup extends CardGroup{
     public void moveToDiscardPile(AbstractCard c) {
 		if (c instanceof AbstractWitchCard) {
 			AbstractWitchCard witchCard = (AbstractWitchCard) c;
-			if (witchCard.reshuffleOnUse) {
+			if (witchCard.reshuffleOnUse) { //this is set by the "use" method of the card
 				super.moveToDeck(witchCard, true);
 				witchCard.reshuffleOnUse = false;
 				return;
-			} else if (witchCard.neverDiscard) {
+			} else if (witchCard.reshuffleOnDiscardFromHand) {
 				super.moveToDeck(witchCard, true);
 			}
 		}

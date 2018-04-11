@@ -14,7 +14,7 @@ import witchmod.patches.AbstractCardEnum;
 
 public abstract class AbstractWitchCard extends CustomCard{
 	public boolean reshuffleOnUse = false; //if true -> don't discard on next use, has to be reset in the "use" method
-	public boolean neverDiscard = false; //if true -> never discard while in hand, not used atm
+	public boolean reshuffleOnDiscardFromHand = false; //if true -> reshuffle in draw pile if discarded while in hand, not used atm
 
 	public AbstractWitchCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardRarity rarity, CardTarget target, int cardPool){
 		super(id, name, WitchMod.getResourcePath(img), cost, rawDescription, type, AbstractCardEnum.WITCH, rarity, target, cardPool);
@@ -91,7 +91,7 @@ public abstract class AbstractWitchCard extends CustomCard{
 				if (!this.isFlipped) {
 					updateGlowMethod.invoke(this);
 					renderGlowMethod.invoke(this, sb);
-					if (type == CardType.CURSE) { //workaround to have curses with black background
+					if (type == CardType.CURSE) { //workaround to have witch curses with black background
 						color = CardColor.CURSE;
 					}
 					renderImageMethod.invoke(this, sb, hovered, selected);
@@ -101,15 +101,15 @@ public abstract class AbstractWitchCard extends CustomCard{
 					renderTypeMethod.invoke(this, sb);
 					renderTitleMethod.invoke(this, sb);
 					if (Settings.lineBreakViaCharacter) {
-						this.renderDescriptionCN(sb);
+						renderDescriptionCN(sb);
 					} else {
-						this.renderDescription(sb);
+						renderDescription(sb);
 					}
 					renderTintMethod.invoke(this, sb);
 					renderEnergyMethod.invoke(this, sb);
 				} else {
 					renderBackMethod.invoke(this, sb, hovered, selected);
-					this.hb.render(sb);
+					hb.render(sb);
 				}
 			}
 		} catch (NoSuchMethodException | SecurityException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {

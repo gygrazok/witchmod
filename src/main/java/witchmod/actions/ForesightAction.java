@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.Settings;
@@ -22,13 +22,13 @@ public class ForesightAction extends AbstractGameAction{
 	@Override
 	public void update() {
 		if (AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size() == 0) {
-			this.isDone = true;
+			isDone = true;
 			return;
 		}
 		if (AbstractDungeon.player.drawPile.isEmpty()) {
 			AbstractDungeon.actionManager.addToTop(new ForesightAction());
 			AbstractDungeon.actionManager.addToTop(new EmptyDeckShuffleAction());
-			this.isDone = true;
+			isDone = true;
 			return;
 		}
 		AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
@@ -41,13 +41,13 @@ public class ForesightAction extends AbstractGameAction{
 			card.lighten(false);
 			card.drawScale = 0.12f;
 			card.targetDrawScale = 0.75f;
+			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
 			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
 		} else {
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, card.makeStatEquivalentCopy(), 1, false, false));
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PURPLE, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 1.0f));			
+			AbstractDungeon.player.drawPile.addToTop(card);
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new VerticalAuraEffect(Color.PURPLE, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5f));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
-			
 		}
-		this.isDone = true;
+		isDone = true;
 	}
 }

@@ -56,7 +56,7 @@ import witchmod.cards.Hexguard;
 import witchmod.cards.IllOmen;
 import witchmod.cards.IllusionOfStrength;
 import witchmod.cards.ImpendingDoom;
-import witchmod.cards.Implosion;
+import witchmod.cards.LivingBomb;
 import witchmod.cards.Intelligence;
 import witchmod.cards.KarmaDrain;
 import witchmod.cards.MagicFang;
@@ -103,6 +103,7 @@ import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
 import witchmod.relics.BlackCat;
+import witchmod.relics.WalkingCane;
 import witchmod.relics.BirdCage;
 
 
@@ -188,7 +189,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditRelics() {
 		RelicLibrary.add(new BlackCat());
 		RelicLibrary.add(new BirdCage());
-		//RelicLibrary.add(new WalkingCane()); //doesn't work, needs a patch
+		RelicLibrary.add(new WalkingCane());
 	}
 
 	public void receiveEditCards() {
@@ -224,27 +225,27 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 
 		//UNCOMMON (28)
-		//Attacks (8)
+		//Attacks (10)
 		BaseMod.addCard(new Athame());
 		BaseMod.addCard(new PainBolt());
 		BaseMod.addCard(new CursedBlade());
 		BaseMod.addCard(new GhoulTouch());
 		BaseMod.addCard(new MortusClaw());
-		BaseMod.addCard(new Implosion());
+		BaseMod.addCard(new LivingBomb());
 		BaseMod.addCard(new RiteOfSummer());
 		BaseMod.addCard(new Puncture());
-		//Skills (13)
+		BaseMod.addCard(new Harmlessness());
+		BaseMod.addCard(new Malady());
+		//Skills (11)
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Shrooms());
 		BaseMod.addCard(new NighInvulnerability());
-		BaseMod.addCard(new Malady());
 		BaseMod.addCard(new Raze());
 		BaseMod.addCard(new RiteOfAutumn());
 		BaseMod.addCard(new CrystalResonance());
 		BaseMod.addCard(new IllOmen());
 		BaseMod.addCard(new RiteOfWinter());
 		BaseMod.addCard(new BalefulWard());
-		BaseMod.addCard(new Harmlessness());
 		BaseMod.addCard(new CorruptBlood());
 		BaseMod.addCard(new PlagueSpreader());
 		//Powers (7)

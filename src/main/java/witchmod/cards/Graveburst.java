@@ -13,7 +13,6 @@ public class Graveburst extends AbstractWitchCard{
 	public static final	String NAME = "Graveburst";
 	public static final	String IMG = "cards/graveburst.png";
 	public static final	String DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile.";
-	public static final	String UPGRADE_DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile. NL Persistent.";
 	public static final	String EXTENDED_DESCRIPTION[] = new String[] {" NL (Deals !D! damage.)"};
 	
 	private static final CardRarity RARITY = CardRarity.RARE;
@@ -23,6 +22,7 @@ public class Graveburst extends AbstractWitchCard{
 	private static final int POOL = 1;
 	
 	private static final int COST = 2;
+	private static final int COST_UPGRADED = 1;
 	private static final int POWER = 2;
 
 	public Graveburst() {
@@ -49,7 +49,7 @@ public class Graveburst extends AbstractWitchCard{
         }
         baseDamage = count*POWER;
         super.applyPowers();
-        rawDescription = upgraded?UPGRADE_DESCRIPTION:DESCRIPTION;
+        rawDescription = DESCRIPTION;
         rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
@@ -58,7 +58,7 @@ public class Graveburst extends AbstractWitchCard{
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        rawDescription = upgraded?UPGRADE_DESCRIPTION:DESCRIPTION;
+        rawDescription = DESCRIPTION;
         rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
@@ -66,17 +66,10 @@ public class Graveburst extends AbstractWitchCard{
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
-			rawDescription = UPGRADE_DESCRIPTION;
-			initializeDescription();
-			retain = true;
+			upgradeBaseCost(COST_UPGRADED);
 		}
 	}
 	
-	@Override
-	public void atTurnStart(){
-		if (upgraded) {
-			retain = true;
-		}
-	}
+
 	
 }

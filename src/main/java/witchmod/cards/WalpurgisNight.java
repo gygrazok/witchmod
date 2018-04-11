@@ -44,7 +44,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();

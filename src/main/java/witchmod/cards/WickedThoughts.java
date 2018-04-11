@@ -15,11 +15,11 @@ public class WickedThoughts extends AbstractWitchCard {
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Draw a card for each curse in your hand. NL Persistent.";
 	public static final	String DESCRIPTION_UPGRADED = "Draw a card for each curse in your hand plus !M!. NL Persistent.";
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 1;
 	private static final int COST = 0;
 	private static final int POWER = 0;
@@ -30,7 +30,7 @@ public class WickedThoughts extends AbstractWitchCard {
 		this.magicNumber = this.baseMagicNumber = POWER;
 		this.retain = true;
 	}
-	
+
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int effect = 0;
 		for (AbstractCard c : p.hand.group) {
@@ -44,19 +44,19 @@ public class WickedThoughts extends AbstractWitchCard {
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new VerticalAuraEffect(Color.BLACK, p.hb.cX, p.hb.cY), 0.2f));
 		}
 	}
-	
+
 	public AbstractCard makeCopy() {
 		return new WickedThoughts();
 	}
-	
+
 	@Override
 	public void atTurnStart() {
 		super.atTurnStart();
 		retain = true;
 	}
-	
+
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADED_BONUS);
 			rawDescription = DESCRIPTION_UPGRADED;

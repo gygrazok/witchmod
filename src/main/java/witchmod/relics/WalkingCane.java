@@ -12,7 +12,7 @@ import witchmod.powers.DecrepitPower;
 
 public class WalkingCane extends AbstractWitchRelic {
     public static final String ID = "WalkingCane";
-    private static final RelicTier TIER = RelicTier.COMMON;
+    private static final RelicTier TIER = RelicTier.SHOP;
     private static final String IMG = "relics/blackcat.png";
     private static final LandingSound SOUND = LandingSound.SOLID;
 

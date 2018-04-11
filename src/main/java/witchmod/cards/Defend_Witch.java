@@ -30,7 +30,7 @@ public class Defend_Witch extends AbstractWitchCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
 	
 	public AbstractCard makeCopy() {
@@ -38,7 +38,7 @@ public class Defend_Witch extends AbstractWitchCard {
 	}
 	
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(UPGRADE_BONUS);
 		}

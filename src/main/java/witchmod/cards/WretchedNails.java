@@ -81,7 +81,7 @@ public class WretchedNails extends AbstractWitchCard{
 	
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(MAGIC_UPGRADE_BONUS);
 			rawDescription = DESCRIPTION_UPGRADED;

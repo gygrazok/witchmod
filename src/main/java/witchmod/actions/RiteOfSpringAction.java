@@ -17,25 +17,25 @@ public class RiteOfSpringAction extends AbstractGameAction{
 	}
 
 	@Override
-    public void update() {
-        if (duration == Settings.ACTION_DUR_FAST) {
-            if (player.hand.size() == 0) {
-                isDone = true;
-                return;
-            }
-            AbstractDungeon.handCardSelectScreen.open(TEXT, player.hand.size(), true, true);
-            tickDuration();
-            return;
-        }
-        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-        	if (AbstractDungeon.handCardSelectScreen.selectedCards.group.size() > 0) {
-                for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                    player.hand.moveToDeck(c,true);
-                }
-                AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()));
-        	}
-            AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
-        }
-        tickDuration();
-    }
+	public void update() {
+		if (duration == Settings.ACTION_DUR_FAST) {
+			if (player.hand.size() == 0) {
+				isDone = true;
+				return;
+			}
+			AbstractDungeon.handCardSelectScreen.open(TEXT, player.hand.size(), true, true);
+			tickDuration();
+			return;
+		}
+		if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+			if (AbstractDungeon.handCardSelectScreen.selectedCards.group.size() > 0) {
+				for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+					player.hand.moveToDeck(c,true);
+				}
+				AbstractDungeon.actionManager.addToBottom(new HealAction(player, player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*2));
+			}
+			AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+		}
+		tickDuration();
+	}
 }

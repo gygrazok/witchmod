@@ -30,7 +30,7 @@ public class GhoulTouch extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GhoulTouchAction(m,new DamageInfo(p, this.damage)));      
+		AbstractDungeon.actionManager.addToBottom(new GhoulTouchAction(m,new DamageInfo(p, damage)));      
 	}
 	
 	public AbstractCard makeCopy() {
@@ -38,7 +38,7 @@ public class GhoulTouch extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 		}

@@ -38,7 +38,7 @@ public class ZombieSpit extends AbstractWitchCard {
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p,damage,damageTypeForTurn), AttackEffect.POISON));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, false),magicNumber, true));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, false), magicNumber, true));
 	}
 
 	public AbstractCard makeCopy() {
@@ -46,7 +46,7 @@ public class ZombieSpit extends AbstractWitchCard {
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADED_BONUS);
 			upgradeMagicNumber(UPGRADED_MAGIC);

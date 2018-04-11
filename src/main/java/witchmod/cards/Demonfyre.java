@@ -39,7 +39,7 @@ public class Demonfyre extends AbstractWitchCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		reshuffleOnUse = true;
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.FIRE));
-		AbstractDungeon.effectsQueue.add(new IgniteEffect(m.hb.cX, m.hb.cY, Color.PURPLE, 25));
+		AbstractDungeon.effectsQueue.add(new IgniteEffect(m.hb.cX, m.hb.cY, Color.PURPLE, 35));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DemonfyrePower(p, magicNumber), magicNumber));
 	}
 
@@ -55,7 +55,7 @@ public class Demonfyre extends AbstractWitchCard{
 	
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
 		}

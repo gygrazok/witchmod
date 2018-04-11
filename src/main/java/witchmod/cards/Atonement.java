@@ -17,18 +17,18 @@ public class Atonement extends AbstractWitchCard{
 	public static final	String NAME = "Atonement";
 	public static final	String IMG = "cards/atonement.png";
 	public static final	String DESCRIPTION = "Exhaust a random Curse or Status card in your draw pile. NL Gain !B! Block.";
-	
+
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
-	
+
 	private static final int POOL = 1;
-	
+
 	private static final int COST = 1;
 	private static final int POWER = 7;
 	private static final int POWER_UPGRADED = 4;
 
-	
+
 	public Atonement() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
@@ -48,12 +48,12 @@ public class Atonement extends AbstractWitchCard{
 		}
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
 	}
-	
-	
+
+
 	public AbstractCard makeCopy() {
 		return new Atonement();
 	}
-	
+
 	private AbstractCard getRandomCurseOrStatusFromDeck() {
 		List<AbstractCard> candidates = new ArrayList<>();
 		for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
@@ -65,14 +65,14 @@ public class Atonement extends AbstractWitchCard{
 			return null;
 		}
 		return candidates.get(MathUtils.random(candidates.size() - 1));
-		
+
 	}
-	
+
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
 			upgradeBlock(POWER_UPGRADED);
 		}
 	}
-	
+
 }

@@ -41,7 +41,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 		out.add(new TooltipInfo("Cleansed", "Attack, cost 1, deal "+DAMAGE+" damage to a random enemy 6 times."));
 		return out;
 	}
-	
+
 	@Override
 	public void cleanse() {
 		super.cleanse();

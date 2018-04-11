@@ -32,7 +32,7 @@ import witchmod.cards.BleedOut;
 import witchmod.cards.BloodSabbath;
 import witchmod.cards.Boline;
 import witchmod.cards.BoneCarving;
-import witchmod.cards.BroomstickSmash;
+import witchmod.cards.Broomstick;
 import witchmod.cards.ChosenOfTheMoon;
 import witchmod.cards.CorruptBlood;
 import witchmod.cards.CrystalResonance;
@@ -201,7 +201,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		//Attacks (11)
 		BaseMod.addCard(new Demonfyre());
 		BaseMod.addCard(new BleedOut());
-		BaseMod.addCard(new BroomstickSmash());
+		BaseMod.addCard(new Broomstick());
 		BaseMod.addCard(new BlackBolt());
 		BaseMod.addCard(new MercuryWand());
 		BaseMod.addCard(new WretchedNails());

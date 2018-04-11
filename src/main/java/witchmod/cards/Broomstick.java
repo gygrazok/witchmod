@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class BroomstickSmash extends AbstractWitchCard{
-	public static final String ID = "BroomstickSmash";
-	public static final	String NAME = "Broomstick Smash";
+public class Broomstick extends AbstractWitchCard{
+	public static final String ID = "Broomstick";
+	public static final	String NAME = "Broomstick";
 	public static final	String IMG = "cards/broomsticksmash.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 50% and apply 1 Weak.";
 	
@@ -26,7 +26,7 @@ public class BroomstickSmash extends AbstractWitchCard{
 	private static final int POWER = 8;
 	private static final int UPGRADE_BONUS = 4;
 
-	public BroomstickSmash() {
+	public Broomstick() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 	}
@@ -39,7 +39,7 @@ public class BroomstickSmash extends AbstractWitchCard{
 	}
 	
 	public AbstractCard makeCopy() {
-		return new BroomstickSmash();
+		return new Broomstick();
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class BroomstickSmash extends AbstractWitchCard{
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 		}

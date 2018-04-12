@@ -12,8 +12,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 	public static final String ID = "WalpurgisNight";
 	public static final	String NAME = "Walpurgis Night";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Shuffle ALL your Exhausted non-Status cards into your draw pile. NL Exhaust";
-	public static final	String DESCRIPTION_UPGRADED = "Shuffle ALL your Exhausted non-Status cards into your draw pile, then draw !M! cards. NL Exhaust";
+	public static final	String DESCRIPTION = "Shuffle ALL your Exhausted non-Status cards into your draw pile, then draw !M! of those cards. NL Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.NONE;
@@ -22,7 +21,8 @@ public class WalpurgisNight extends AbstractWitchCard {
 	private static final int POOL = 1;
 
 	private static final int COST = 0;
-	private static final int POWER = 2;
+	private static final int POWER = 1;
+	private static final int UPGRADE_BONUS = 2;
 
 	public WalpurgisNight() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -31,9 +31,19 @@ public class WalpurgisNight extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new WalpurgisNightAction());
-		if (upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new WalpurgisNightAction(magicNumber));
+		int cardsToDraw = 0;
+		for (AbstractCard c : p.exhaustPile.group) {
+			if (c.type != CardType.STATUS) {
+				cardsToDraw++;
+				if (cardsToDraw >= magicNumber) {
+					cardsToDraw = magicNumber;
+					break;
+				}
+			}
+		}
+		if (cardsToDraw > 0) {
+			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, cardsToDraw));
 		}
 	}
 
@@ -46,8 +56,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
-			rawDescription = DESCRIPTION_UPGRADED;
-			initializeDescription();
+			upgradeMagicNumber(UPGRADE_BONUS);
 		}
 	}
 }

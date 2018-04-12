@@ -12,7 +12,7 @@ public class Graveburst extends AbstractWitchCard{
 	public static final String ID = "Graveburst";
 	public static final	String NAME = "Graveburst";
 	public static final	String IMG = "cards/graveburst.png";
-	public static final	String DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile.";
+	public static final	String DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile. Persistent.";
 	public static final	String EXTENDED_DESCRIPTION[] = new String[] {" NL (Deals !D! damage.)"};
 
 	private static final CardRarity RARITY = CardRarity.RARE;
@@ -29,6 +29,7 @@ public class Graveburst extends AbstractWitchCard{
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 		this.isMultiDamage = true;
+		this.retain = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,6 +38,11 @@ public class Graveburst extends AbstractWitchCard{
 
 	public AbstractCard makeCopy() {
 		return new Graveburst();
+	}
+	
+	@Override
+	public void atTurnStart() {
+		retain = true;
 	}
 
 	@Override

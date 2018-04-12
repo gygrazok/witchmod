@@ -12,31 +12,32 @@ public class Raze extends AbstractWitchCard {
 	public static final String ID = "Raze";
 	public static final	String NAME = "Raze";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Steal up to !M! block from an enemy. NL Persistent.";
+	public static final	String DESCRIPTION = "Remove up to !M! Block from an enemy. Gain Block equal to the amount removed plus !B!.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
-	private static final CardTarget TARGET = CardTarget.ENEMY;
+	private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
 	private static final CardType TYPE = CardType.SKILL;
 
 	private static final int POOL = 1;
 
 	private static final int COST = 1;
-	private static final int POWER = 10;
+	private static final int POWER = 8;
 	private static final int UPGRADE_BONUS = 5;
-
+	private static final int BLOCK = 5;
+	private static final int UPGRADE_BLOCK_BONUS = 3;
 
 
 	public Raze() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
-		this.retain = true;
+		this.baseBlock = BLOCK;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int stealableBlock = Math.min(m.currentBlock,magicNumber);
 		if (stealableBlock > 0) {
 			AbstractDungeon.actionManager.addToBottom(new ReduceBlockAction(m, p, stealableBlock));
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, stealableBlock));
+			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, stealableBlock+block));
 		}
 	}
 
@@ -44,24 +45,12 @@ public class Raze extends AbstractWitchCard {
 		return new Raze();
 	}
 
-	@Override
-	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-		if (m != null && m.currentBlock == 0) {
-			cantUseMessage = "That enemy doesn't have any Block to steal.";
-			return false;
-		}
-		return super.canUse(p, m);
-	}
-
-	@Override
-	public void atTurnStart(){
-		retain = true;
-	}
 
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
+			upgradeBlock(UPGRADE_BLOCK_BONUS);
 		}
 	}
 }

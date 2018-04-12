@@ -3,7 +3,10 @@ A new character for **Slay The Spire**
 
 The Witch mod features 75+ new cards and 3 new relics.
 Her main theme is **Curses**: her starting relic (Black Cat) adds a temporary random curse to the draw pile at the beginning of each combat, but grants 1 energy everytime you draw a curse. This means that adding a curse to the deck is not always a bad thing, and many other cards in her set interact with curses in interesting ways.
-I think it's probably a bit on the weaker side compared to the Ironclad or the Silent, expecially in the early stages, and it will take some practice to understand how to play and deckbuild her at the fullest of her potential. Feel free to write your opinions and suggestions to make her more balanced and fun to play.
+
+I think she's probably a bit on the weaker side compared to the Ironclad or the Silent, expecially in the early stages, and it will take some practice to understand how to play and deckbuild her at the fullest of her potential. Feel free to write your opinions and suggestions to make her more balanced and fun to play.
+
+A list of the cards can be found [here](https://docs.google.com/spreadsheets/d/19tAd2g6CMNSAXdArFp2ZNpAosv3Rltb3qv1Cnc40RSk/edit?usp=sharing).
 
 ## New mechanics ##
 * **Persistent**: a Persistent card doesn't get discarded at the end of your turn. This means that, after you have drawn it, it will remain in your hand until you play it.

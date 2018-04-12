@@ -36,7 +36,6 @@ public class GhoulTouchAction extends AbstractGameAction {
 	}
 	
 	private int getUnblockedDamage(){
-		info.applyPowers(AbstractDungeon.player, target);
 		int baseDamage = info.output;
 		baseDamage -= target.currentBlock;
 		if (baseDamage > 0) {

@@ -2,6 +2,7 @@ package witchmod.relics;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardRarity;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -34,7 +35,7 @@ public class Scissors extends AbstractWitchRelic {
 			}
 			if (toRemove != null) {
 				flash();
-                AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(toRemove, Settings.WIDTH / 2, Settings.HEIGHT / 2));
+				CardCrawlGame.sound.play("CARD_BURN");
                 AbstractDungeon.player.masterDeck.removeCard(toRemove);
 			}
 		}

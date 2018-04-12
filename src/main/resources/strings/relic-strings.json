@@ -18,5 +18,10 @@
 		"NAME": "Scissors",
 		"FLAVOUR": "Let's take just a couple inches off...",
 		"DESCRIPTIONS":["Whenever you add a rare card to your deck, remove a random Strike or Defend."]
+	},
+	"ToyHorse":{
+		"NAME": "Toy Horse",
+		"FLAVOUR": "It reminds you of your childhood.",
+		"DESCRIPTIONS":["Upon pickup, choose a Starter card of any character to add to your deck."]
 	}
 }

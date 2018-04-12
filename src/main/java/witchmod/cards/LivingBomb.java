@@ -13,7 +13,7 @@ import witchmod.actions.KillMonsterAction;
 
 public class LivingBomb extends AbstractWitchCard{
 	public static final String ID = "LivingBomb";
-	public static final	String NAME = "LivingBomb";
+	public static final	String NAME = "Livin Bomb";
 	public static final	String IMG = "cards/placeholder_attack.png";
 	public static final	String DESCRIPTION = "Kill an enemy if it has !M! HP or less. If successful, other enemies are dealt !D! damage.";
 

@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.relics;
 
 import java.util.List;
@@ -15,8 +12,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-public class ToyHorse
-extends AbstractRelic {
+public class ToyHorse extends AbstractWitchRelic {
     public static final String ID = "ToyHorse";
 	private static final RelicTier TIER = RelicTier.COMMON;
 	private static final String IMG = "relics/birdcage.png";

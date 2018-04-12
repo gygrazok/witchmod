@@ -28,6 +28,7 @@ public class MortusClaw extends AbstractWitchCard{
 	public MortusClaw() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
+		this.retain = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,6 +38,11 @@ public class MortusClaw extends AbstractWitchCard{
 
 	public AbstractCard makeCopy() {
 		return new MortusClaw();
+	}
+	
+	@Override
+	public void atTurnStart() {
+		retain = true;
 	}
 
 	public void upgrade() {

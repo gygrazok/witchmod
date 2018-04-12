@@ -3,17 +3,21 @@ A new character for **Slay The Spire**
 
 The Witch mod features 75+ new cards and 3 new relics.
 Her main theme is **Curses**: her starting relic (Black Cat) adds a temporary random curse to the draw pile at the beginning of each combat, but grants 1 energy everytime you draw a curse. This means that adding a curse to the deck is not always a bad thing, and many other cards in her set interact with curses in interesting ways.
+I think it's probably a bit on the weaker side compared to the Ironclad or the Silent, expecially in the early stages, and it will take some practice to understand how to play and deckbuild her at the fullest of her potential. Feel free to write your opinions and suggestions to make her more balanced and fun to play.
 
 ## New mechanics ##
 * **Persistent**: a Persistent card doesn't get discarded at the end of your turn. This means that, after you have drawn it, it will remain in your hand until you play it.
-* **Recurrent**: When a Recurrent card is played it's shuffled in the draw pile instead of being discarded.
-* **Cleanse**: among the card set there are some special cleansable Curses, which normally are unplayable. Each of them can be Cleansed by achieving a certain objective during the fight, and therefore turn into a powerful card. Note that the Curse will be cleansed only for the current fight.
+* **Recurrent**: when a Recurrent card is played it's shuffled in the draw pile instead of being discarded.
+* **Cleanse**: there are some special cleansable Curses, which normally are unplayable. Each of them can be Cleansed by achieving a certain objective during the fight, unlocking its hidden power. Note that the Curse will be cleansed only for the current fight.
 
 ## New status effects ##
-* **Rot**: similar to Poison, in that this debuff deal damage to the enemy each turn. Unlike Poison though, Rot ** increases ** by 1 each turn, instead of decreasing.
+* **Rot**: similar to Poison, in that this debuff deal damage to the enemy each turn. Unlike Poison though, Rot **increases** by 1 each turn, instead of decreasing.
 * **Decrepit**: creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. Each turn Decrepit is decreased by 1.
 
 # How to install
+The following guide is basically a copy paste of the one found here: https://github.com/gskleres/FruityMod-StS
+Since it's so well written and clear I felt no reason to rewrite it :)
+
 ## Requirements ##
 * Java 8 (JRE). Currently only Java 8 should be used, issues with Java 9 are being looked into.
 * BaseMod v.1.8.0+ (https://github.com/daviscook477/BaseMod/releases)
@@ -31,11 +35,11 @@ Her main theme is **Curses**: her starting relic (Black Cat) adds a temporary ra
 9. Your modded version of **Slay The Spire** can now be launched by double-clicking on `ModTheSpire.jar`
 10. This will open a mod select menu where you need to make sure that both `BaseMod` and `WitchMod` are checked before clicking **play**
 
-## Credits ##
+# Credits #
 1. Thanks to the [devs](https://www.megacrit.com/) of **SlayTheSpire** for making such and awesome game, allowing us to mod it, and allowing us to use recolored versions of their art assets in our mod
-2. Thanks to test447 and contributors (https://github.com/daviscook477) for BaseMod!!
-3. Thanks to kiooeht and contributors (https://github.com/kiooeht) for ModTheSpire!!
+2. Thanks to test447 and contributors (https://github.com/daviscook477) for BaseMod
+3. Thanks to kiooeht and contributors (https://github.com/kiooeht) for ModTheSpire
 
 ## Art Assets ##
-Except for the recolored STS assets, all other (crappy) art has been made by me, sometimes by modifying existing CC0 (public domain) assets by various authors. If you want to use these assets in your own mod, feel free to do so, although it would be nice to credit me.
-If you want to submit new, better art for this mod, feel free to do so. Probably whatever you can come up with is going to be better than the current stuff.
+Except for the recolored STS assets, all other (crappy) art has been made by me, sometimes by modifying existing CC0 (public domain) assets by various authors. If you want to use these assets in your own mod, feel free to do so, although it would be nice to credit this mod as the source.
+If you want to submit new, better art for this mod, you are more than welcome.

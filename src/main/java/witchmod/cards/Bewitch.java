@@ -2,6 +2,7 @@ package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -15,7 +16,7 @@ public class Bewitch extends AbstractWitchCard {
 	public static final String ID = "Bewitch";
 	public static final	String NAME = "Bewitch";
 	public static final	String IMG = "cards/bewitch.png";
-	public static final	String DESCRIPTION = "Apply !M! Weak and !M! Vulnerable to ALL enemies.";
+	public static final	String DESCRIPTION = "Apply !M! Weak and !M! Vulnerable to ALL enemies. Draw a card.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -24,7 +25,7 @@ public class Bewitch extends AbstractWitchCard {
 	private static final int POOL = 1;
 	private static final int COST = 1;
 
-	private static final int POWER = 2;
+	private static final int POWER = 1;
 	private static final int UPGRADED_BONUS = 2;
 
 
@@ -39,6 +40,7 @@ public class Bewitch extends AbstractWitchCard {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false),magicNumber, true));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false),magicNumber, true));
 		}
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
 	}
 
 

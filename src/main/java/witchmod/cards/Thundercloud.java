@@ -56,7 +56,7 @@ public class Thundercloud extends AbstractWitchCard {
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADED_BONUS);
 		}

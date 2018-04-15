@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
-import witchmod.powers.DecrepitPower;
+import witchmod.powers.RotPower;
 
 public class CorruptBloodAction extends AbstractGameAction {
 
@@ -22,7 +22,7 @@ public class CorruptBloodAction extends AbstractGameAction {
 		if (target.hasPower(PoisonPower.POWER_ID)) {
 			int poisonStacks = target.getPower(PoisonPower.POWER_ID).amount;
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, PoisonPower.POWER_ID));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DecrepitPower(target, poisonStacks, true), poisonStacks, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new RotPower(target, source, poisonStacks), poisonStacks, true));
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new PoisonPower(target, source, amount), amount, true));
 		}

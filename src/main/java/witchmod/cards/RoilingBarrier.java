@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class RoilingBarrier extends AbstractWitchCard{
 	public static final String ID = "RoilingBarrier";
 	public static final	String NAME = "Roiling Barrier";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/roilingbarrier.png";
 	public static final	String DESCRIPTION = "Gain !B! Block. When drawn increase this card's Block by !M!. NL Recurrent.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;

@@ -10,7 +10,7 @@ import witchmod.actions.RiteOfAutumnAction;
 public class RiteOfAutumn extends AbstractWitchCard {
 	public static final String ID = "RiteOfAutumn";
 	public static final	String NAME = "Rite of Autumn";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/riteofautumn.png";
 	public static final	String DESCRIPTION = "Exhaust any number of cards in your hand and draw that many cards. NL Recurrent.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

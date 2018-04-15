@@ -10,7 +10,7 @@ import witchmod.actions.RiteOfSpringAction;
 public class RiteOfSpring extends AbstractWitchCard {
 	public static final String ID = "RiteOfSpring";
 	public static final	String NAME = "Rite of Spring";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/riteofspring.png";
 	public static final	String DESCRIPTION = "Shuffle in your draw pile any number of cards in your hand and gain twice that much HP. Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;

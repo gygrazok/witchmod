@@ -13,7 +13,7 @@ import witchmod.actions.ShroomsAction;
 public class Shrooms extends AbstractWitchCard {
 	public static final String ID = "Shrooms";
 	public static final	String NAME = "'Shrooms";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/shrooms.png";
 	public static final	String DESCRIPTION = "Draw !M! cards. They have random costs for this turn.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

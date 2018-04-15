@@ -13,7 +13,7 @@ public class RavenFamiliar extends AbstractWitchCard{
 	public static final String ID = "RavenFamiliar";
 	public static final	String NAME = "Raven";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Upgrade a card in your hand and reduce its cost by 1 for the rest of the combat. NL Exhaust. NL Ethereal.";
+	public static final	String DESCRIPTION = "Ethereal. NL Upgrade a card in your hand and reduce its cost by 1 for the rest of the combat. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.NONE;

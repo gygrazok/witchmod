@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class UnnaturalEnergy extends AbstractWitchCard {
 	public static final String ID = "UnnaturalEnergy";
 	public static final	String NAME = "Unnatural Energy";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/unnaturalenergy.png";
 	public static final	String DESCRIPTION = "Gain [B]. NL Recurrent.";
 	public static final	String DESCRIPTION_UPGRADED = "Gain [B] [B]. NL Recurrent.";
 

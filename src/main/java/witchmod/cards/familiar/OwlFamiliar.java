@@ -13,7 +13,7 @@ public class OwlFamiliar extends AbstractWitchCard{
 	public static final String ID = "OwlFamiliar";
 	public static final	String NAME = "Owl Familiar";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Draw !M! cards. NL Exhaust. NL Ethereal.";
+	public static final	String DESCRIPTION = "Ethereal. NL Draw !M! cards. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.SELF;

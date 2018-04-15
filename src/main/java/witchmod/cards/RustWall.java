@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RustWall extends AbstractWitchCard{
 	public static final String ID = "RustWall";
-	public static final	String NAME = "Rust Wall";
+	public static final	String NAME = "Wall of Rust";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Gain !B! block. Shuffle a Curse of Rust in your draw pile.";
 

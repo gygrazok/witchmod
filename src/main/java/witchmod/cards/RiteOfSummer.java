@@ -11,7 +11,7 @@ import witchmod.actions.RiteOfSummerAction;
 public class RiteOfSummer extends AbstractWitchCard {
 	public static final String ID = "RiteOfSummer";
 	public static final	String NAME = "Rite of Summer";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/riteofsummer.png";
 	public static final	String DESCRIPTION = "Discard any number of cards and deal !D! damage to a random enemy for each card discarded.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

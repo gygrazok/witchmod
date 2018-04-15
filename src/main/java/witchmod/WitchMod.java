@@ -193,7 +193,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		RelicLibrary.add(new BirdCage());
 		RelicLibrary.add(new WalkingCane());
 		RelicLibrary.add(new Scissors());
-		RelicLibrary.add(new ToyHorse());
+		//RelicLibrary.add(new ToyHorse());
 	}
 
 	public void receiveEditCards() {

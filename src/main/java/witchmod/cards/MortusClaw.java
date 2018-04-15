@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class MortusClaw extends AbstractWitchCard{
 	public static final String ID = "MortusClaw";
 	public static final	String NAME = "Mortus Claw";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/mortusclaw.png";
 	public static final	String DESCRIPTION = "Deal !D! damage, then the enemy loses !D! HP. Persistent.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

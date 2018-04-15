@@ -17,7 +17,7 @@ import witchmod.powers.SkullFlaskPower;
 public class SkullFlask extends AbstractWitchCard{
 	public static final String ID = "SkullFlask";
 	public static final	String NAME = "Skull Flask";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/skullflask.png";
 	public static final	String DESCRIPTION = "When drawn gain !M! Strength for 1 turn. NL Deal !D! damage.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;

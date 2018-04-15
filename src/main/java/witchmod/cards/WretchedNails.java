@@ -18,7 +18,7 @@ import witchmod.characters.WitchCharacter;
 public class WretchedNails extends AbstractWitchCard{
 	public static final String ID = "WretchedNails";
 	public static final	String NAME = "Wretched Nails";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/wretchednails.png";
 	public static final	String DESCRIPTION = "Draw 1 card, then deal damage equal to the number of cards you have drawn this turn.";
 	public static final	String DESCRIPTION_UPGRADED = "Draw !M! cards, then deal damage equal to the number of cards you have drawn this turn.";
 	public static final String EXTENDED_DESCRIPTION[] = new String[] {" NL (Total ",")"};

@@ -19,7 +19,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	public static final	String NAME_CLEANSED = "\"Harmlessness\"";
 	public static final	String IMG = "cards/harmlessness.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: play 3 skills this turn.";
-	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage to a random enemy 6 times.";
+	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage to a random enemy 5 times.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -28,7 +28,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	private static final int COST = 1;
 	private static final int THRESHOLD = 3;
 
-	private static final int DAMAGE = 4;
+	private static final int DAMAGE = 5;
 	public Harmlessness() {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.baseDamage = DAMAGE;
@@ -38,7 +38,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	@Override
 	public List<TooltipInfo> getCustomTooltips() {
 		List<TooltipInfo> out = new ArrayList<>();
-		out.add(new TooltipInfo("Cleansed", "Attack, cost 1, deal "+DAMAGE+" damage to a random enemy 6 times."));
+		out.add(new TooltipInfo("Cleansed", "Attack, cost 1, deal "+DAMAGE+" damage to a random enemy 5 times."));
 		return out;
 	}
 

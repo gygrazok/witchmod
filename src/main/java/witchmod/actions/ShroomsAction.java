@@ -28,7 +28,7 @@ public class ShroomsAction extends AbstractGameAction{
 		int newCost = AbstractDungeon.cardRandomRng.random(3);
         if (c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && c.cost != newCost) {
             c.costForTurn = newCost;
-            c.isCostModified = true;
+            c.isCostModifiedForTurn = true;
         }
 		AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
 		this.isDone = true;

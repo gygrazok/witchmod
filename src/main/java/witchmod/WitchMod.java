@@ -105,7 +105,6 @@ import witchmod.patches.WitchEnum;
 import witchmod.relics.BirdCage;
 import witchmod.relics.BlackCat;
 import witchmod.relics.Scissors;
-import witchmod.relics.ToyHorse;
 import witchmod.relics.WalkingCane;
 
 

@@ -1,6 +1,7 @@
 package witchmod.characters;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import witchmod.WitchMod;
 import witchmod.cardgroup.WitchCardGroup;
@@ -86,6 +88,7 @@ public class WitchCharacter extends CustomPlayer{
 		retVal.add("Hexguard");
 		retVal.add("ZombieSpit");
 		return retVal;
+		//return getAllCards();
 	}
 	
 	public static ArrayList<String> getStartingRelics() {
@@ -167,6 +170,14 @@ public class WitchCharacter extends CustomPlayer{
         return out;
 	}
 
+	//for debug
+	private static ArrayList<String> getAllCards() {
+		ArrayList<String> out = new ArrayList<String>();
+		for (AbstractCard card : BaseMod.getCustomCardsToAdd()) {
+			out.add(card.cardID);
+		}
+		return out;
+	}
 	
 
 }

@@ -28,7 +28,7 @@ public class BloodSabbath extends AbstractWitchCard{
 	private static final int COST = 3;
 	private static final int POWER = 15;
 	private static final int UPGRADE_BONUS = 5;
-	private static final int MAGIC = 5;
+	private static final int MAGIC = 4;
 	private static final int UPGRADE_MAGIC_BONUS = 3;
 
 	public BloodSabbath() {

@@ -27,7 +27,7 @@ public class Puncture extends AbstractWitchCard{
 
 	private static final int COST = 1;
 	private static final int POWER = 1;
-	private static final int MAGIC = 6;
+	private static final int MAGIC = 5;
 	private static final int UPGRADE_MAGIC_BONUS = 2;
 
 	public Puncture() {

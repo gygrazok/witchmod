@@ -16,7 +16,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 	public static final String ID = "UnluckySeven";
 	public static final	String NAME = "Unlucky Seven";
 	public static final	String NAME_CLEANSED = "Lucky Seven";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/unluckyseven.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: have your current health ending with 7.";
 	public static final	String DESCRIPTION_CLEANSED = "Gain !M! [B]. NL Draw !M! cards. NL Exhaust.";
 	private static final CardRarity RARITY = CardRarity.RARE;

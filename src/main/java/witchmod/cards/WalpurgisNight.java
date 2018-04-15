@@ -12,7 +12,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 	public static final String ID = "WalpurgisNight";
 	public static final	String NAME = "Walpurgis Night";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Shuffle ALL your Exhausted non-Status, non-Ethereal cards into your draw pile, then draw !M! of those cards. NL Exhaust";
+	public static final	String DESCRIPTION = "Shuffle ALL your Exhausted non-Status, non-Ethereal cards into your draw pile, then draw !M! of those cards. Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.NONE;

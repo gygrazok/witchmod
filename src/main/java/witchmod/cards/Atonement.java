@@ -6,6 +6,7 @@ import java.util.List;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -44,6 +45,7 @@ public class Atonement extends AbstractWitchCard{
 			toExhaust.lighten(false);
 			toExhaust.drawScale = 0.12f;
 			toExhaust.targetDrawScale = 0.75f;
+			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.5f));
 			AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(toExhaust, p.drawPile));
 		}
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));

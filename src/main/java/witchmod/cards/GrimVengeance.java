@@ -11,7 +11,7 @@ import witchmod.powers.GrimVengeancePower;
 public class GrimVengeance extends AbstractWitchCard {
 	public static final String ID = "GrimVengeance";
 	public static final	String NAME = "Grim Vengeance";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/grimvengeance.png";
 	public static final	String DESCRIPTION = "When you are attacked apply !M! Decrepit to the attacker.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class GnarledBody extends AbstractWitchCard{
 	public static final String ID = "GnarledBody";
 	public static final	String NAME = "Gnarled Body";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/gnarledbody.png";
 	public static final	String DESCRIPTION = "Costs 1 less for each card in hand. NL Gain !B! Block.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;

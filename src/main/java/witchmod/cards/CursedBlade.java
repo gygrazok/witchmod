@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class CursedBlade extends AbstractWitchCard{
 	public static final String ID = "CursedBlade";
 	public static final	String NAME = "Cursed Blade";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/cursedblade.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. Add a random Curse to your discard pile.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

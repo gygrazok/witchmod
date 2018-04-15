@@ -17,7 +17,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	public static final String ID = "Harmlessness";
 	public static final	String NAME = "Harmlessness";
 	public static final	String NAME_CLEANSED = "\"Harmlessness\"";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/harmlessness.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: play 3 skills this turn.";
 	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage to a random enemy 6 times.";
 

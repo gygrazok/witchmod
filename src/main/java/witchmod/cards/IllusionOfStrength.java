@@ -1,5 +1,8 @@
 package witchmod.cards;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -7,6 +10,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+
+import basemod.helpers.TooltipInfo;
 
 public class IllusionOfStrength extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrength";
@@ -34,6 +39,13 @@ public class IllusionOfStrength extends AbstractWitchCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new IllusionOfStrengthCurse(), 1, true, false));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber),magicNumber));
+	}
+	
+	@Override
+	public List<TooltipInfo> getCustomTooltips() {
+		List<TooltipInfo> out = new ArrayList<>();
+		out.add(new TooltipInfo("Delusion of Strength", "Reduces your Strength at the end of the turn while in hand."));
+		return out;
 	}
 
 	public AbstractCard makeCopy() {

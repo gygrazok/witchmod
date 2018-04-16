@@ -1,9 +1,14 @@
 prerelease v0.4
-Rite of autumn: cost increased from 1/0 to 2/1
+A bunch of nerfs:
 Roiling barrier: base block decreased from 6 to 5
-Schadenfreude: block obtained from debuffs decreased from 3/5 to 2/4
+Schadenfreude: block decreased from 3/5 to 2/4
 Puncture: number of hits decreased from 6/8 to 5/7
 Blood Sabbath: amount of decrepit decreased from 5/8 to 4/7
 Bone carving: damage decreased from 6/8 to 5/7
+Ghoul Touch: damage decreased from 9/12 to 8/11
 Harmlessness (cleansed): damage changed from 4x6 to 5x5
+Athame: bonus rare find reduced from 15/30% to 10/20%
+Dire shriek: changed damage from 7/9 on draw and on play, to 5/7 on draw and 9/11 on play
+Raven familiar: now you can only upgrade attacks, skills and powers from hand
 Clarified the description on decrepit
+Fixed interaction with cleansed curses and blue candle

@@ -29,7 +29,7 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
-		if (checkDuringTurn) {
+		if (checkDuringTurn && AbstractDungeon.player.hand.contains(this)) {
 			doCleanseCheck();
 		}
 	}

@@ -11,7 +11,7 @@ public class MysticUnburial extends AbstractWitchCard {
 	public static final String ID = "MysticUnburial";
 	public static final	String NAME = "Mystic Unburial";
 	public static final	String IMG = "cards/placeholder_skill.png";
-	public static final	String DESCRIPTION = "Choose and play a card from your discard pile, playing its play cost.";
+	public static final	String DESCRIPTION = "Choose and play a card from your discard pile, paying its play cost.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

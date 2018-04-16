@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,7 +18,7 @@ public class DireShriek extends AbstractWitchCard{
 	public static final String ID = "DireShriek";
 	public static final	String NAME = "Dire Shriek";
 	public static final	String IMG = "cards/direshriek.png";
-	public static final	String DESCRIPTION = "When drawn deal !D! damage to all enemies. NL Deal !D! damage to all enemies.";
+	public static final	String DESCRIPTION = "When drawn deal !M! damage to all enemies. NL Deal !D! damage to all enemies.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -26,13 +27,16 @@ public class DireShriek extends AbstractWitchCard{
 	private static final int POOL = 1;
 
 	private static final int COST = 2;
-	private static final int POWER = 7;
+	private static final int POWER = 9;
 	private static final int UPGRADE_BONUS = 2;
+	
+	private static final int MAGIC = 5;
 
 
 	public DireShriek() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
+		this.baseMagicNumber = MAGIC;
 		this.isMultiDamage = true;
 	}
 
@@ -52,7 +56,7 @@ public class DireShriek extends AbstractWitchCard{
 		flash();
 		applyPowers();
 		CardCrawlGame.sound.play("BYRD_DEATH");
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(magicNumber, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
 	}
 
 	public void upgrade() {

@@ -59,7 +59,7 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle") && !cleansed) {
 			useBlueCandle(p);
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL));   

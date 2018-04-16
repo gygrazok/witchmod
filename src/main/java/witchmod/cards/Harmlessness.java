@@ -29,9 +29,11 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	private static final int THRESHOLD = 3;
 
 	private static final int DAMAGE = 5;
+	private static final int MAGIC = 5;
 	public Harmlessness() {
 		super(ID,NAME,IMG,DESCRIPTION,RARITY);
 		this.baseDamage = DAMAGE;
+		this.baseMagicNumber = MAGIC;
 		this.checkAtTurnStart = false;
 	}
 
@@ -58,10 +60,10 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
+		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle") && !cleansed) {
 			useBlueCandle(p);
 		} else {
-			for (int i = 0; i < 6; i++) {
+			for (int i = 0; i < magicNumber; i++) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getRandomMonster(), new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL, true));
 			}
 		}

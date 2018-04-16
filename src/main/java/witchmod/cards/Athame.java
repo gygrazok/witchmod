@@ -16,8 +16,8 @@ public class Athame extends AbstractWitchCard{
 	public static final String ID = "Athame";
 	public static final	String NAME = "Athame";
 	public static final	String IMG = "cards/athame.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. If this kills an enemy, increase the chance of receiving rare cards by 15% and Exhaust this card.";
-	public static final	String DESCRIPTION_UPGRADED = "Deal !D! damage. If this kills an enemy, increase the chance of receiving rare cards by 30% and Exhaust this card.";
+	public static final	String DESCRIPTION = "Deal !D! damage. If this kills an enemy, increase the chance of receiving rare cards by !M!% and Exhaust this card.";
+	public static final	String DESCRIPTION_UPGRADED = "Deal !D! damage. If this kills an enemy, increase the chance of receiving rare cards by !M!% and Exhaust this card.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

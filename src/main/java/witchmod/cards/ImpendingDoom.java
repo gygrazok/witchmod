@@ -13,8 +13,8 @@ import witchmod.powers.ImpendingDoomPower;
 
 public class ImpendingDoom extends AbstractWitchCard{
 	public static final String ID = "DoomBlade";
-	public static final	String NAME = "Doom Blade";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String NAME = "Impending Doom";
+	public static final	String IMG = "cards/impendingdoom.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. Next turn the enemy loses !D! life.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;

@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 public class Thundercloud extends AbstractWitchCard {
 	public static final String ID = "Thundercloud";
 	public static final	String NAME = "Thundercloud";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/thundercloud.png";
 	public static final	String DESCRIPTION = "When drawn apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;

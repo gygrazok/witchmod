@@ -1,3 +1,10 @@
+prerelease v0.5
+Strike: base damage increased from 5 to 6
+Decrepify: changed from "apply 1 Decrepit X+2/4 times" to "apply 2 Decrepit X/X+1 times"
+Unlucky seven: now also deals 7 damage when used (although this damage can be blocked as normal)
+Ill Omen: increased damage from 13/18 to 14/18
+Added a couple of new card art
+
 prerelease v0.4
 A bunch of nerfs:
 Roiling barrier: base block decreased from 6 to 5

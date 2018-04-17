@@ -13,7 +13,8 @@ public class Decrepify extends AbstractWitchCard {
 	public static final String ID = "Decrepify";
 	public static final	String NAME = "Decrepify";
 	public static final	String IMG = "cards/decrepify.png";
-	public static final	String DESCRIPTION = "Apply 1 Decrepit to a random enemy X + !M! times.";
+	public static final	String DESCRIPTION = "Apply !M! Decrepit to a random enemy X times.";
+	public static final	String DESCRIPTION_UPGRADED = "Apply !M! Decrepit to a random enemy X+1 times.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -23,7 +24,6 @@ public class Decrepify extends AbstractWitchCard {
 	private static final int COST = -1;
 
 	private static final int POWER = 2;
-	private static final int UPGRADED_BONUS = 2;
 
 
 	public Decrepify() {
@@ -33,10 +33,10 @@ public class Decrepify extends AbstractWitchCard {
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int energy = EnergyPanel.getCurrentEnergy();
-		int counter = magicNumber + energy;
+		int counter = upgraded?energy+1:energy;
 		while (counter > 0) {
 			AbstractMonster monster = AbstractDungeon.getRandomMonster();
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new DecrepitPower(monster, 1, false),1, true));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new DecrepitPower(monster, magicNumber, false),magicNumber, true));
 			counter--;
 		}
 		p.energy.use(energy);
@@ -49,7 +49,8 @@ public class Decrepify extends AbstractWitchCard {
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
-			upgradeMagicNumber(UPGRADED_BONUS);
+			rawDescription = DESCRIPTION_UPGRADED;
+			initializeDescription();
 		}
 	}
 }

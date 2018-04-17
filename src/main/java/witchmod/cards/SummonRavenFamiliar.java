@@ -13,7 +13,7 @@ import witchmod.powers.SummonFamiliarPower;
 public class SummonRavenFamiliar extends AbstractWitchCard {
 	public static final String ID = "SummonRavenFamiliar";
 	public static final	String NAME = "Raven Familiar";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/summonraven.png";
 	public static final	String DESCRIPTION = "At the start of your turn, add a Raven to your hand. NL Removes other Familiar powers.";
 	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, add an upgraded Raven to your hand. Removes other Familiar powers.";
 

@@ -16,7 +16,7 @@ import witchmod.cards.AbstractWitchCard;
 public class ToadFamiliar extends AbstractWitchCard{
 	public static final String ID = "ToadFamiliar";
 	public static final	String NAME = "Toad";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/frog.png";
 	public static final	String DESCRIPTION = "Ethereal. NL Gain !B! Block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;

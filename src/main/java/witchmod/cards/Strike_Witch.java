@@ -21,7 +21,7 @@ public class Strike_Witch extends AbstractWitchCard{
 	private static final int POOL = 0;
 
 	private static final int COST = 1;
-	private static final int POWER = 5;
+	private static final int POWER = 6;
 	private static final int UPGRADE_BONUS = 3;
 
 	public Strike_Witch() {

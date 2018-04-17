@@ -13,7 +13,7 @@ import witchmod.powers.SummonFamiliarPower;
 public class SummonBatFamiliar extends AbstractWitchCard {
 	public static final String ID = "SummonBatFamiliar";
 	public static final	String NAME = "Bat Familiar";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/summonbat.png";
 	public static final	String DESCRIPTION = "At the start of your turn, add a Bat to your hand. NL Removes other Familiar powers.";
 	public static final	String DESCRIPTION_UPGRADED = "At the start of your turn, add an upgraded Bat to your hand. Removes other Familiar powers.";
 

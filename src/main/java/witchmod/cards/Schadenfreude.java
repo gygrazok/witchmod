@@ -12,7 +12,7 @@ import witchmod.powers.SchadenfreudePower;
 public class Schadenfreude extends AbstractWitchCard {
 	public static final String ID = "Schadenfreude";
 	public static final	String NAME = "Schadenfreude";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/schadenfreude.png";
 	public static final	String DESCRIPTION = "Whenever you apply a Debuff to an enemy gain !M! block.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

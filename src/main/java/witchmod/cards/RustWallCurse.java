@@ -40,7 +40,11 @@ public class RustWallCurse extends AbstractWitchCard{
 		} else {
 			int blockToConsume = Math.floorDiv(p.currentBlock,2);
 			blockConsumed += blockToConsume;
-			AbstractDungeon.effectsQueue.add(new GenericSmokeEffect(p.hb.cX, p.hb.cY));
+			for (int i = 0; i < 10; i++) {
+				float dx = (float) (Math.random()*30 - 15);
+				float dy = (float) (Math.random()*30 - 15);
+				AbstractDungeon.effectsQueue.add(new GenericSmokeEffect(p.hb.cX + dx, p.hb.cY + dy));
+			}
 			AbstractDungeon.actionManager.addToTop(new ReduceBlockAction(p, p, blockToConsume));
 			AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
 			if (blockConsumed >= magicNumber) {

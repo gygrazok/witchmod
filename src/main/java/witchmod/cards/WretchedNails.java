@@ -43,7 +43,7 @@ public class WretchedNails extends AbstractWitchCard{
 			AbstractDungeon.effectsQueue.add(new CollectorStakeEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale));
 		}
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new WaitAction(0.9f));
+		AbstractDungeon.actionManager.addToBottom(new WaitAction(0.8f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SMASH));
 	}
 

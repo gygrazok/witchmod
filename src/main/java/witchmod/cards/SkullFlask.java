@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import witchmod.effects.SkullFlaskEffect;
 import witchmod.powers.SkullFlaskPower;
@@ -50,6 +51,7 @@ public class SkullFlask extends AbstractWitchCard{
 
 	@Override
 	public void triggerWhenDrawn() {
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, magicNumber), magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SkullFlaskPower(AbstractDungeon.player, magicNumber), magicNumber));
 	}
 

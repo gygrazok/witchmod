@@ -13,7 +13,7 @@ public class MortusClaw extends AbstractWitchCard{
 	public static final String ID = "MortusClaw";
 	public static final	String NAME = "Mortus Claw";
 	public static final	String IMG = "cards/mortusclaw.png";
-	public static final	String DESCRIPTION = "Deal !D! damage, then the enemy loses !D! HP. Persistent.";
+	public static final	String DESCRIPTION = "Retain. NL Deal !D! damage, then the enemy loses !D! HP.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -37,8 +37,8 @@ public class Raze extends AbstractWitchCard {
 		int stealableBlock = Math.min(m.currentBlock,magicNumber);
 		if (stealableBlock > 0) {
 			AbstractDungeon.actionManager.addToBottom(new ReduceBlockAction(m, p, stealableBlock));
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, stealableBlock+block));
 		}
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, stealableBlock+block));
 	}
 
 	public AbstractCard makeCopy() {

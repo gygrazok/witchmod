@@ -299,8 +299,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 
 	public void receiveEditKeywords() {
-		String[] persistent = {"persistent"};
-		BaseMod.addKeyword(persistent, "Doesn't get discarded automatically at the end of the turn.");
+		//String[] persistent = {"persistent"};
+		//BaseMod.addKeyword(persistent, "Doesn't get discarded automatically at the end of the turn.");
 
 		String[] recurrent = {"recurrent"};
 		BaseMod.addKeyword(recurrent, "When this card is played it's shuffled in the draw pile instead of being discarded.");

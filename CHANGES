@@ -1,3 +1,10 @@
+prerelease v0.6
+Wicked Thoughts: upgraded card changed from "Draw 1 card for each curse in your hand plus 1" to "Draw 2 cards for each curse in your hand"
+Skull Flask: fixed the +strength bonus not stacking
+Raze: fixed block gain if the target has no block to steal
+Atonement: now the exhaust prioritizes statuses, then normal curses, then cleansable curses
+Renamed "Persistent" in "Retain" since it's the same mechanic.
+
 prerelease v0.5
 Strike: base damage increased from 5 to 6
 Decrepify: changed from "apply 1 Decrepit X+2/4 times" to "apply 2 Decrepit X/X+1 times"

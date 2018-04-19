@@ -12,7 +12,7 @@ public class Graveburst extends AbstractWitchCard{
 	public static final String ID = "Graveburst";
 	public static final	String NAME = "Graveburst";
 	public static final	String IMG = "cards/graveburst.png";
-	public static final	String DESCRIPTION = "Deal damage to all enemies equal to twice the number of Attacks in your discard pile. Persistent.";
+	public static final	String DESCRIPTION = "Retain. Deal damage to all enemies equal to twice the number of Attacks in your discard pile.";
 	public static final	String EXTENDED_DESCRIPTION[] = new String[] {" NL (Deals !D! damage.)"};
 
 	private static final CardRarity RARITY = CardRarity.RARE;

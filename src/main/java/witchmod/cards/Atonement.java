@@ -17,7 +17,7 @@ public class Atonement extends AbstractWitchCard{
 	public static final String ID = "Atonement";
 	public static final	String NAME = "Atonement";
 	public static final	String IMG = "cards/atonement.png";
-	public static final	String DESCRIPTION = "Exhaust a random Curse or Status card in your draw pile. NL Gain !B! Block.";
+	public static final	String DESCRIPTION = "Exhaust a random Status or Curse card in your draw pile. NL Gain !B! Block.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -58,9 +58,26 @@ public class Atonement extends AbstractWitchCard{
 
 	private AbstractCard getRandomCurseOrStatusFromDeck() {
 		List<AbstractCard> candidates = new ArrayList<>();
+		//prioritizes status...
 		for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-			if (c.type == CardType.CURSE || c.type == CardType.STATUS) {
+			if (c.type == CardType.STATUS) {
 				candidates.add(c);
+			}
+		}
+		//then normal curses...
+		if (candidates.size() == 0) {
+			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+				if (c.type == CardType.CURSE && !(c instanceof AbstractWitchCleansableCurse)) {
+					candidates.add(c);
+				}
+			}
+		}
+		//then cleansable curses
+		if (candidates.size() == 0) {
+			for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+				if (c.type == CardType.CURSE) {
+					candidates.add(c);
+				}
 			}
 		}
 		if (candidates.size() == 0) {

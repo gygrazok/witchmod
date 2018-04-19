@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class MercuryWand extends AbstractWitchCard{
 	public static final String ID = "MercuryWand";
 	public static final	String NAME = "Mercury Wand";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/mercurywand.png";
 	public static final	String DESCRIPTION = "If you have 0 block gain !B! Block, otherwise deal !D! damage.";
 	public static final	String[] EXTENDED_DESCRIPTION = new String[] {" NL Will gain !B! Block"," NL Will deal !D! damage"};
 

@@ -9,7 +9,6 @@ I think she's probably a bit on the weaker side compared to the Ironclad or the 
 A list of the cards can be found [here](https://docs.google.com/spreadsheets/d/19tAd2g6CMNSAXdArFp2ZNpAosv3Rltb3qv1Cnc40RSk/edit?usp=sharing).
 
 ## New mechanics ##
-* **Persistent**: a Persistent card doesn't get discarded at the end of your turn. This means that, after you have drawn it, it will remain in your hand until you play it.
 * **Recurrent**: when a Recurrent card is played it's shuffled in the draw pile instead of being discarded.
 * **Cleanse**: there are some special cleansable Curses, which normally are unplayable. Each of them can be Cleansed by achieving a certain objective during the fight, unlocking its hidden power. Note that the Curse will be cleansed only for the current fight.
 

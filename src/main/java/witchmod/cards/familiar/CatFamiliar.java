@@ -14,7 +14,7 @@ import witchmod.cards.AbstractWitchCard;
 public class CatFamiliar extends AbstractWitchCard{
 	public static final String ID = "CatFamiliar";
 	public static final	String NAME = "Cat Familiar";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/cat.png";
 	public static final	String DESCRIPTION = "Ethereal. NL Deal !D! damage !M! times. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;

@@ -50,5 +50,6 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 
 	public void cleanse() {
 		cleansed = true;
+		applyPowers();
 	}
 }

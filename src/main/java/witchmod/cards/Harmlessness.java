@@ -19,7 +19,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 	public static final	String NAME_CLEANSED = "\"Harmlessness\"";
 	public static final	String IMG = "cards/harmlessness.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: play 3 skills this turn.";
-	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage to a random enemy 5 times.";
+	public static final	String DESCRIPTION_CLEANSED = "Deal !D! damage to a random enemy !M! times.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

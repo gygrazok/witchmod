@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RavenAction extends AbstractGameAction{
 	private AbstractPlayer player;
-	public static final String TEXT = "Pick a card";
+	public static final String TEXT = "ravenize";
 	private ArrayList<AbstractCard> eligible = new ArrayList<>();
     private ArrayList<AbstractCard> oldHand;
 	public RavenAction() {

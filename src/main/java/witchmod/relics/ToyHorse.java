@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 public class ToyHorse extends AbstractWitchRelic {
     public static final String ID = "ToyHorse";
 	private static final RelicTier TIER = RelicTier.COMMON;
-	private static final String IMG = "relics/birdcage.png";
+	private static final String IMG = "relics/toyhorse.png";
 	private static final LandingSound SOUND = LandingSound.CLINK;
 	public boolean cardSelected = false;
     public ToyHorse() {

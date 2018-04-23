@@ -1,3 +1,7 @@
+prerelease v0.7
+Harmlessness: fixed damage calculation
+
+
 prerelease v0.6
 Wicked Thoughts: upgraded card changed from "Draw 1 card for each curse in your hand plus 1" to "Draw 2 cards for each curse in your hand"
 Skull Flask: fixed the +strength bonus not stacking

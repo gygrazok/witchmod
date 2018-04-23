@@ -1,27 +1,27 @@
 {
 	"BlackCat":{
 		"NAME": "Black Cat",
-		"FLAVOUR": "Meow",
+		"FLAVOR": "Meow",
 		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight. Gain [B] whenever you draw a Curse."]
 	},
 	"PetCage":{
 		"NAME": "Pet Cage",
-		"FLAVOUR": "It makes strange noises.",
+		"FLAVOR": "It makes strange noises.",
 		"DESCRIPTIONS":["Add a random Familiar in your hand at the beginning of each turn."]
 	},
 	"WalkingCane":{
 		"NAME": "Walking Cane",
-		"FLAVOUR": "Kids these days...",
+		"FLAVOR": "Kids these days...",
 		"DESCRIPTIONS":["Weak, Vulnerable and Decrepit no longer decrease each turn."]
 	},
 	"Scissors":{
 		"NAME": "Scissors",
-		"FLAVOUR": "Let's take just a couple inches off...",
-		"DESCRIPTIONS":["Whenever you add a rare card to your deck, remove a random Strike or Defend."]
+		"FLAVOR": "Let's take just a couple inches off...",
+		"DESCRIPTIONS":["Whenever you add a rare card to your deck, remove a random Basic Strike or Defend."]
 	},
 	"ToyHorse":{
 		"NAME": "Toy Horse",
-		"FLAVOUR": "It reminds you of your childhood.",
-		"DESCRIPTIONS":["Upon pickup, choose a Starter card of any character to add to your deck."]
+		"FLAVOR": "It reminds you of your childhood.",
+		"DESCRIPTIONS":["Upon pickup, choose a Basic card of any character to add to your deck."]
 	}
 }

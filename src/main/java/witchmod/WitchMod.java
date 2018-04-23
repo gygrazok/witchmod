@@ -105,6 +105,7 @@ import witchmod.patches.WitchEnum;
 import witchmod.relics.BirdCage;
 import witchmod.relics.BlackCat;
 import witchmod.relics.Scissors;
+import witchmod.relics.ToyHorse;
 import witchmod.relics.WalkingCane;
 
 
@@ -192,7 +193,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		RelicLibrary.add(new BirdCage());
 		RelicLibrary.add(new WalkingCane());
 		RelicLibrary.add(new Scissors());
-		//RelicLibrary.add(new ToyHorse());
+		RelicLibrary.add(new ToyHorse());
 	}
 
 	public void receiveEditCards() {

@@ -1,7 +1,6 @@
 package witchmod.characters;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;

@@ -17,7 +17,7 @@ public class Demonfyre extends AbstractWitchCard{
 	public static final String ID = "Demonfyre";
 	public static final	String NAME = "Demonfyre";
 	public static final	String IMG = "cards/demonfyre.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Increases the damage of Demonfyre by !M!. NL Recurrent.";
+	public static final	String DESCRIPTION = "Deal !D! damage. All Demonfyre cards deal !M! additional damage this combat. NL Recurrent.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;

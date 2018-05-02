@@ -1,7 +1,7 @@
 # The Witch
 A new character for **Slay The Spire**
 
-The Witch mod features 75+ new cards and 3 new relics.
+The Witch mod features 75+ new cards and 4 new relics.
 Her main theme is **Curses**: her starting relic (Black Cat) adds a temporary random curse to the draw pile at the beginning of each combat, but grants 1 energy everytime you draw a curse. This means that adding a curse to the deck is not always a bad thing, and many other cards in her set interact with curses in interesting ways.
 
 I think she's probably a bit on the weaker side compared to the Ironclad or the Silent, expecially in the early stages, and it will take some practice to understand how to play and deckbuild her at the fullest of her potential. Feel free to write your opinions and suggestions to make her more balanced and fun to play.
@@ -22,7 +22,7 @@ Since it's so well written and clear I felt no reason to rewrite it :)
 
 ## Requirements ##
 * Java 8 (JRE). Currently only Java 8 should be used, issues with Java 9 are being looked into.
-* BaseMod v.2.5.0+ (https://github.com/daviscook477/BaseMod/releases)
+* BaseMod v.2.6.0+ (https://github.com/daviscook477/BaseMod/releases)
 * ModTheSpire v2.6.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##

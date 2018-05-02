@@ -14,7 +14,7 @@ import witchmod.powers.RotPower;
 public class Malady extends AbstractWitchCard{
 	public static final String ID = "Malady";
 	public static final	String NAME = "Malady";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/malady.png";
 	public static final	String DESCRIPTION = "Deal !D! damage and apply !M! Rot. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -24,7 +24,7 @@ public class BirdCage extends AbstractWitchRelic {
 	@Override
 	public void atTurnStart() {
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(SummonFamiliarPower.getRandomFamiliarCard()));
-		AbstractDungeon.player.getRelic(ID).flash();
+		flash();
 	}
 
 	@Override

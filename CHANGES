@@ -1,8 +1,12 @@
+prerelease v0.8
+Support for patch 22 (Defect beta)
+Minor wording fixes.
+Added card art for Malady and Soul Barrier
+
 prerelease v0.7
 New relic! Toy Horse: upon pickup, add a Basic card of any character to your deck.
 Harmlessness: fixed damage calculation
 Added a couple of card art
-
 
 prerelease v0.6
 Wicked Thoughts: upgraded card changed from "Draw 1 card for each curse in your hand plus 1" to "Draw 2 cards for each curse in your hand"

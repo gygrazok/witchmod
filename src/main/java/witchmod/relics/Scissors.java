@@ -26,7 +26,7 @@ public class Scissors extends AbstractWitchRelic {
 		if (c.rarity == CardRarity.RARE) {
 			AbstractCard toRemove = null;
 			for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-				if (card.rarity == CardRarity.BASIC && card.pool == 0) {
+				if (card.rarity == CardRarity.BASIC && (!c.cardID.contains("Defend") && !c.cardID.contains("Strike"))) {
 					toRemove = card;
 					break;
 				}

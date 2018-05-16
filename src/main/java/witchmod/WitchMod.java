@@ -190,10 +190,10 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	public void receiveEditRelics() {
 		RelicLibrary.add(new BlackCat());
-		RelicLibrary.add(new BirdCage());
-		RelicLibrary.add(new WalkingCane());
-		RelicLibrary.add(new Scissors());
-		RelicLibrary.add(new ToyHorse());
+		BaseMod.addRelicToCustomPool(new BirdCage(),WitchEnum.WITCH.toString());
+		BaseMod.addRelicToCustomPool(new WalkingCane(),WitchEnum.WITCH.toString());
+		BaseMod.addRelicToCustomPool(new Scissors(),WitchEnum.WITCH.toString());
+		BaseMod.addRelicToCustomPool(new ToyHorse(),WitchEnum.WITCH.toString());
 	}
 
 	public void receiveEditCards() {

@@ -4,12 +4,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.FairyPotion;
+import com.megacrit.cardcrawl.potions.SmokeBomb;
 
 public class StrangeBrew extends AbstractWitchCard {
 	public static final String ID = "StrangeBrew";
 	public static final	String NAME = "Strange Brew";
 	public static final	String IMG = "cards/strangebrew.png";
-	public static final	String DESCRIPTION = "Apply on yourself the effect of all your drinkable potions, without consuming them. NL Exhaust";
+	public static final	String DESCRIPTION = "Apply on yourself the effect of all your drinkable potions (except Smoke Bomb), without consuming them. NL Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -28,7 +30,7 @@ public class StrangeBrew extends AbstractWitchCard {
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for (AbstractPotion potion : p.potions) {
-			if (potion.isThrown == false) {
+			if (potion.isThrown == false && !(isRestricted(potion))) {
 				potion.use(p);
 			}
 		}
@@ -38,7 +40,7 @@ public class StrangeBrew extends AbstractWitchCard {
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		int usable = 0;
 		for (AbstractPotion potion : p.potions) {
-			if (potion.isThrown == false) {
+			if (potion.isThrown == false && !(isRestricted(potion))) {
 				usable++;
 			}
 		}
@@ -47,6 +49,11 @@ public class StrangeBrew extends AbstractWitchCard {
 			return false;
 		}
 		return true;
+	}
+
+	protected boolean isRestricted(AbstractPotion potion) {
+		return potion.ID.equals(SmokeBomb.POTION_ID)
+				|| potion.ID.equals(FairyPotion.POTION_ID);
 	}
 
 	public AbstractCard makeCopy() {

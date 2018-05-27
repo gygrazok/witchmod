@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.powers.RegeneratePower;
 public class TrollsBlood extends AbstractWitchCard {
 	public static final String ID = "TrollsBlood";
 	public static final	String NAME = "Troll's Blood";
-	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "Recover !M! health at the end of each turn.";
+	public static final	String IMG = "cards/trollsblood.png";
+	public static final	String DESCRIPTION = "Recover !M! health at the end of each turn in which you played at least an attack.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

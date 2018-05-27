@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 public class WickedThoughts extends AbstractWitchCard {
 	public static final String ID = "WickedThoughts";
 	public static final	String NAME = "Wicked Thoughts";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/wickedthoughts.png";
 	public static final	String DESCRIPTION = "Retain. Draw !M! card for each curse in your hand.";
 	public static final	String DESCRIPTION_UPGRADED = "Retain. NL Draw !M! cards for each curse in your hand.";
 

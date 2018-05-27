@@ -68,7 +68,7 @@ import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
 import witchmod.cards.PlagueSpreader;
 import witchmod.cards.Puncture;
-import witchmod.cards.Raze;
+import witchmod.cards.Pillage;
 import witchmod.cards.RiteOfAutumn;
 import witchmod.cards.RiteOfSpring;
 import witchmod.cards.RiteOfSummer;
@@ -244,7 +244,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Foresight());
 		BaseMod.addCard(new Shrooms());
 		BaseMod.addCard(new NighInvulnerability());
-		BaseMod.addCard(new Raze());
+		BaseMod.addCard(new Pillage());
 		BaseMod.addCard(new RiteOfAutumn());
 		BaseMod.addCard(new CrystalResonance());
 		BaseMod.addCard(new IllOmen());

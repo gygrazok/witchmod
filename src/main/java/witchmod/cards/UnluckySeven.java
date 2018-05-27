@@ -45,7 +45,6 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 
 	@Override
 	public void cleanse() {
-		super.cleanse();
 		type = TYPE;
 		cost = COST;
 		costForTurn = COST;
@@ -54,6 +53,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 		name = NAME_CLEANSED;
 		rawDescription = DESCRIPTION_CLEANSED;
 		initializeDescription();
+		super.cleanse();
 	}
 
 	@Override

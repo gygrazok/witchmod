@@ -46,7 +46,6 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 
 	@Override
 	public void cleanse() {
-		super.cleanse();
 		type = TYPE;
 		cost = COST;
 		costForTurn = COST;
@@ -54,6 +53,7 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 		target = TARGET;
 		rawDescription = DESCRIPTION_CLEANSED;
 		initializeDescription();
+		super.cleanse();
 	}
 
 

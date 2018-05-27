@@ -1,7 +1,11 @@
 prerelease v0.9
 Black Shield: base block increased from 6 to 7
+Mystic Unburial: cost decreased from 1 to 0
+Mystic Unburial: upgraded: ignore the cost of the card played from the discard pile
 Strange Brew: now it doesn't activate smoke bomb
-
+Troll's Blood: now it regenerate health only if you play an attack that turn (to disincentivize turtling)
+Renamed Raze into Pillage (because it makes more sense)
+Added card art for Pillage, Troll's Blood and Wicked Thoughts
 
 prerelease v0.8
 Support for patch 24

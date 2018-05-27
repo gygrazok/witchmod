@@ -12,14 +12,14 @@ public class MysticUnburial extends AbstractWitchCard {
 	public static final	String NAME = "Mystic Unburial";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Choose and play a card from your discard pile, paying its play cost.";
+	public static final	String DESCRIPTION_UPGRADED = "Choose and play a card from your discard pile, ignoring its play cost.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
 
 	private static final int POOL = 1;
-	private static final int COST = 1;
-	private static final int COST_UPGRADED = 0;
+	private static final int COST = 0;
 
 
 	public MysticUnburial() {
@@ -27,7 +27,7 @@ public class MysticUnburial extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new MysticUnburialAction(AbstractDungeon.getRandomMonster()));
+		AbstractDungeon.actionManager.addToBottom(new MysticUnburialAction(AbstractDungeon.getRandomMonster(),upgraded));
 	}
 
 	@Override
@@ -51,7 +51,8 @@ public class MysticUnburial extends AbstractWitchCard {
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
-			upgradeBaseCost(COST_UPGRADED);
+			rawDescription = DESCRIPTION_UPGRADED;
+			initializeDescription();
 		}
 	}
 }

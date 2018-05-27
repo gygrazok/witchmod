@@ -13,11 +13,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class MysticUnburialAction extends AbstractGameAction {
     public static final String TEXT = "Select a card to play";
     private AbstractPlayer p = AbstractDungeon.player;
+    private Boolean ignoreCost = false;
 
-    public MysticUnburialAction(AbstractMonster target) {
+    public MysticUnburialAction(AbstractMonster target, Boolean ignoreCost) {
     	this.target = target;
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FASTER;
+        this.ignoreCost = ignoreCost;
     }
 
     @Override
@@ -55,7 +57,7 @@ public class MysticUnburialAction extends AbstractGameAction {
             	if (c.canUse(p, (AbstractMonster) target) ) {
             		playCard(c);
             	} else {
-            		AbstractDungeon.actionManager.addToTop(new MysticUnburialAction(AbstractDungeon.getRandomMonster()));
+            		AbstractDungeon.actionManager.addToTop(new MysticUnburialAction(AbstractDungeon.getRandomMonster(),ignoreCost));
             	}
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -68,6 +70,9 @@ public class MysticUnburialAction extends AbstractGameAction {
     }
     
     private void playCard(AbstractCard card) {
+    	if (ignoreCost) {
+            card.freeToPlayOnce = true;
+    	}
     	card.applyPowers();
     	AbstractDungeon.player.discardPile.removeCard(card);
         AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));

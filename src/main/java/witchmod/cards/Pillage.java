@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import witchmod.actions.ReduceBlockAction;
 
-public class Raze extends AbstractWitchCard {
-	public static final String ID = "Raze";
-	public static final	String NAME = "Raze";
+public class Pillage extends AbstractWitchCard {
+	public static final String ID = "Pillage";
+	public static final	String NAME = "Pillage";
 	public static final	String IMG = "cards/placeholder_skill.png";
 	public static final	String DESCRIPTION = "Remove up to !M! Block from an enemy. Gain Block equal to the amount removed plus !B!.";
 
@@ -27,7 +27,7 @@ public class Raze extends AbstractWitchCard {
 	private static final int UPGRADE_BLOCK_BONUS = 3;
 
 
-	public Raze() {
+	public Pillage() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
 		this.baseBlock = BLOCK;
@@ -42,7 +42,7 @@ public class Raze extends AbstractWitchCard {
 	}
 
 	public AbstractCard makeCopy() {
-		return new Raze();
+		return new Pillage();
 	}
 
 

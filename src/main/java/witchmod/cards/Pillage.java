@@ -11,7 +11,7 @@ import witchmod.actions.ReduceBlockAction;
 public class Pillage extends AbstractWitchCard {
 	public static final String ID = "Pillage";
 	public static final	String NAME = "Pillage";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/pillage.png";
 	public static final	String DESCRIPTION = "Remove up to !M! Block from an enemy. Gain Block equal to the amount removed plus !B!.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

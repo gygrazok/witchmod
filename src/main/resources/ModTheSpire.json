@@ -3,7 +3,7 @@
   "name": "The Witch",
   "author_list": ["gygrazok"],
   "description": "Adds the Witch character.",
-  "version": "0.8",
-  "sts_version": "04-27-2018",
-  "mts_version": "2.6.0"
+  "version": "0.9",
+  "sts_version": "Patch 25",
+  "mts_version": "2.10.0"
 }

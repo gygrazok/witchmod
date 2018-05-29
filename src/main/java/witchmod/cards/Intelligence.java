@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.DrawPower;
 public class Intelligence extends AbstractWitchCard {
 	public static final String ID = "Intelligence";
 	public static final	String NAME = "Intelligence";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/intelligence.png";
 	public static final	String DESCRIPTION = "Draw !M! additional card each turn.";
 	public static final	String DESCRIPTION_PLURAL = "Draw !M! additional cards each turn.";
 

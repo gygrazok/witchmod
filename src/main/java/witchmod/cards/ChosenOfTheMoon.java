@@ -11,7 +11,7 @@ import witchmod.powers.ChosenOfTheMoonPower;
 
 public class ChosenOfTheMoon extends AbstractWitchCard {
 	public static final String ID = "ChosenOfTheMoon";
-	public static final	String NAME = "Chosen of theMoon";
+	public static final	String NAME = "Moon Chosen";
 	public static final	String IMG = "cards/chosenofthemoon.png";
 	public static final	String DESCRIPTION = "Gain !M! Artifact when your turn begins if you have none.";
 

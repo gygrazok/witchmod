@@ -43,7 +43,7 @@ public class DecrepitPower extends AbstractWitchPower {
 			AbstractDungeon.player.getRelic(WalkingCane.ID).flash();
 			return;
 		}
-		if (amount == 0) {
+		if (amount <= 1) {
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, DecrepitPower.POWER_ID));
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, DecrepitPower.POWER_ID, 1));

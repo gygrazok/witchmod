@@ -36,7 +36,7 @@ public class RatFamiliar extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber), magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, true), magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DecrepitPower(m, magicNumber, false), magicNumber));
 	}
 
 	public AbstractCard makeCopy() {

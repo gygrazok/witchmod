@@ -21,7 +21,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 	public static final	String NAME_CLEANSED = "Lucky Seven";
 	public static final	String IMG = "cards/luckyseven.png";
 	public static final	String DESCRIPTION = "Unplayable. NL Cleanse: have your current health ending with 7.";
-	public static final	String DESCRIPTION_CLEANSED = "Gain !M! [B]. NL Draw !M! cards. NL Suffer !M! damage. NL Exhaust.";
+	public static final	String DESCRIPTION_CLEANSED = "Gain !M! [B]. NL Draw !M! cards. NL Lose !M! health. NL Exhaust.";
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
 	private static final CardType TYPE = CardType.SKILL;
@@ -39,7 +39,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 	@Override
 	public List<TooltipInfo> getCustomTooltips() {
 		List<TooltipInfo> out = new ArrayList<>();
-		out.add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy, draw 7 cards and suffer 7 damage, exhaust."));
+		out.add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy, draw 7 cards and lose 7 health, exhaust."));
 		return out;
 	}
 
@@ -63,7 +63,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 		} else {
 			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, magicNumber, DamageType.THORNS)));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, magicNumber, DamageType.HP_LOSS)));
 		}
 	}
 

@@ -25,7 +25,7 @@ public class MementoMori extends AbstractWitchCard{
 	private static final int POOL = 1;
 
 	private static final int COST = 1;
-	private static final int POWER = 12;
+	private static final int POWER = 11;
 	private static final int UPGRADE_BONUS = 5;
 
 	public MementoMori() {

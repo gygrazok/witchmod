@@ -14,7 +14,7 @@ import witchmod.powers.DecrepitPower;
 public class RatFamiliar extends AbstractWitchCard{
 	public static final String ID = "RatFamiliar";
 	public static final	String NAME = "Rat";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/rat.png";
 	public static final	String DESCRIPTION = "Ethereal. NL Apply !M! Poison and !M! Decrepit. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;

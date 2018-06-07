@@ -4,14 +4,14 @@ Dire Shriek: now the upgraded version also increases the on draw damage
 Memento Mori: base damage reduced from 12 to 11
 Mystic Unburial: cost decreased from 1 to 0
 Mystic Unburial: now the upgraded version ignores the cost of the card played from the discard pile
-Nigh Invulnerability (cleansed): rephrased text into "Gain !M! Intangible." 
+Nigh Invulnerability (cleansed): rephrased text into "Gain 1 Intangible." 
 Strange Brew: now it doesn't activate smoke bomb
 Troll's Blood: now it regenerate health only if you play an attack that turn (to disincentivize turtling)
 Unlucky Seven (cleansed): now the self-damage is life loss (unblockable)
 Curse of Rust: now always exhaust at the end of turn (changed "Exhaust if it has consumed at least 10 block" to "Ethereal")
 Renamed Chosen of the Moon into Moon Chosen (because it's shorter)
 Renamed Raze into Pillage (because it makes more sense)
-Added card art for Pillage, Troll's Blood, Wicked Thoughts, Summon Rat, Summon Raven, Summon Bat
+Added card art for Pillage, Troll's Blood, Wicked Thoughts, Summon Rat, Summon Raven, Summon Bat, Illusory Strength
 
 prerelease v0.8
 Support for patch 24

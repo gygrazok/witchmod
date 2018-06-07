@@ -4,14 +4,14 @@
   <groupId>witchmod</groupId>
   <artifactId>WitchMod</artifactId>
   <packaging>jar</packaging>
-  <version>0.8</version>
+  <version>0.9</version>
   <name>WitchMod</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.megacrit.cardcrawl</groupId>
 			<artifactId>slaythespire</artifactId>
-			<version>025</version>
+			<version>05-31-2018</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
 		</dependency>

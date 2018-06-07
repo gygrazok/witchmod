@@ -16,7 +16,7 @@ import basemod.helpers.TooltipInfo;
 public class IllusionOfStrength extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrength";
 	public static final	String NAME = "Illusory Strength";
-	public static final	String IMG = "cards/placeholder_power.png";
+	public static final	String IMG = "cards/illusionofstrength.png";
 	public static final	String DESCRIPTION = "Gain !M! Strength. Shuffle a Delusion of Strength in your draw pile.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;

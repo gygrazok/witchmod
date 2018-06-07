@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class IllusionOfStrengthCurse extends AbstractWitchCard {
 	public static final String ID = "IllusionOfStrengthCurse";
 	public static final	String NAME = "Delusion of Strength";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/delusionofstrength.png";
 	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose !M! Strength or exhaust this if you have Strength !M! or less.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;

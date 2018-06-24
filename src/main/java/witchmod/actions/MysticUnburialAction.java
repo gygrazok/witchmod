@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import witchmod.cards.MysticUnburial;
+
 public class MysticUnburialAction extends AbstractGameAction {
     public static final String TEXT = "Select a card to play";
     private AbstractPlayer p = AbstractDungeon.player;
@@ -39,7 +41,7 @@ public class MysticUnburialAction extends AbstractGameAction {
             } else {
             	CardGroup playableCards = new CardGroup(CardGroupType.UNSPECIFIED);
             	for (AbstractCard card : p.discardPile.group) {
-            		if (card.canUse(p,(AbstractMonster) target)) {
+            		if (card.canUse(p,(AbstractMonster) target) && !card.cardID.equals(MysticUnburial.ID)) {
                     	playableCards.group.add(card);
             		}
             	}

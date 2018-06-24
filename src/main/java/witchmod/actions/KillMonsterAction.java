@@ -15,7 +15,6 @@ public class KillMonsterAction extends AbstractGameAction {
 	@Override
 	public void update() {
 		monster.damage(new DamageInfo(monster, monster.currentHealth));
-		monster.currentHealth = 0;
 		monster.die();
         isDone = true;
 	}

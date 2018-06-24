@@ -37,7 +37,7 @@ public class IllusionOfStrength extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new IllusionOfStrengthCurse(), 1, true, false));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new IllusionOfStrengthCurse(), 1, true, false));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber),magicNumber));
 	}
 	

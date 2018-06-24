@@ -33,7 +33,7 @@ public class IllOmen extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IllOmenPower(p,magicNumber),magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, AbstractDungeon.returnRandomCurse(), 1, true, true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.returnRandomCurse(), 1, true, true));
 
 	}
 

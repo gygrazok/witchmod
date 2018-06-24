@@ -35,7 +35,7 @@ public class RustWall extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new RustWallCurse(), 1, true, false));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new RustWallCurse(), 1, true, false));
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
 	

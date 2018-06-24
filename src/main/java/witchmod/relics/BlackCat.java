@@ -33,7 +33,7 @@ public class BlackCat extends AbstractWitchRelic {
 
 	@Override
 	public void atBattleStartPreDraw() {
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player,null,getCurse(),1,true,true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(getCurse(),1,true,true));
 		AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 		flash();
 	}

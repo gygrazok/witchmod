@@ -19,7 +19,7 @@ public class DireShriek extends AbstractWitchCard{
 	public static final String ID = "DireShriek";
 	public static final	String NAME = "Dire Shriek";
 	public static final	String IMG = "cards/direshriek.png";
-	public static final	String DESCRIPTION = "When drawn deal !M! damage to all enemies. NL Deal !D! damage to all enemies.";
+	public static final	String DESCRIPTION = "When drawn deal !M! damage to ALL enemies. NL Deal !D! damage to ALL enemies.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

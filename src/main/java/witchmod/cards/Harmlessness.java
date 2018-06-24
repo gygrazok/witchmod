@@ -63,7 +63,7 @@ public class Harmlessness extends AbstractWitchCleansableCurse {
 		if (!dontTriggerOnUseCard && p.hasRelic("Blue Candle") && !cleansed) {
 			useBlueCandle(p);
 		} else {
-			for (int i = 0; i < magicNumber; i++) {
+			for (int i = 0; i < baseMagicNumber; i++) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getRandomMonster(), new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL, true));
 			}
 		}

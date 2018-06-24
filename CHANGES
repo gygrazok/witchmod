@@ -1,3 +1,7 @@
+prerelease v0.9.1
+Fixed crash with patch 30
+Fixed a bug with cleansed Harmlessness so that now it works also the first turn of combat
+
 prerelease v0.9
 Black Shield: base block increased from 6 to 7
 Dire Shriek: now the upgraded version also increases the on draw damage

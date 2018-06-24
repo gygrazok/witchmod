@@ -21,7 +21,7 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 
 	@Override
 	public void atTurnStart() {
-		if (checkAtTurnStart) {
+		if (checkAtTurnStart && AbstractDungeon.player.hand.contains(this)) {
 			doCleanseCheck();
 		}
 	}
@@ -37,7 +37,7 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	@Override
 	public void triggerOnEndOfPlayerTurn() {
 		super.triggerOnEndOfPlayerTurn();
-		if (checkAtTurnEnd) {
+		if (checkAtTurnEnd && AbstractDungeon.player.hand.contains(this)) {
 			doCleanseCheck();
 		}
 	}

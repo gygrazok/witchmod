@@ -13,7 +13,7 @@ import witchmod.actions.KillMonsterAction;
 
 public class LivingBomb extends AbstractWitchCard{
 	public static final String ID = "LivingBomb";
-	public static final	String NAME = "Livin Bomb";
+	public static final	String NAME = "Living Bomb";
 	public static final	String IMG = "cards/livingbomb.png";
 	public static final	String DESCRIPTION = "Kill an enemy if it has !M! HP or less. If successful, other enemies are dealt !D! damage.";
 
@@ -59,7 +59,7 @@ public class LivingBomb extends AbstractWitchCard{
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		if (m != null && m.currentHealth > magicNumber) {
-			cantUseMessage = "The enemy must have #y"+magicNumber+" health or less.";
+			cantUseMessage = "The enemy must have #r"+magicNumber+" health or less.";
 			return false;
 		}
 		return super.canUse(p, m);

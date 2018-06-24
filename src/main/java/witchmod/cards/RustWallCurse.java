@@ -15,7 +15,7 @@ public class RustWallCurse extends AbstractWitchCard{
 	public static final String ID = "RustWallCurse";
 	public static final	String NAME = "Curse of Rust";
 	public static final	String IMG = "cards/rustwallcurse.png";
-	public static final	String DESCRIPTION = "Unplayable. At the end of your turn, lose half of your Block. NL Ethereal.";
+	public static final	String DESCRIPTION = "Unplayable. At the end of your turn lose half of your Block. NL Ethereal.";
 
 	private static final CardRarity RARITY = CardRarity.SPECIAL;
 	private static final CardTarget TARGET = CardTarget.NONE;

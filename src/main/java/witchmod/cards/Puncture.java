@@ -16,7 +16,7 @@ import witchmod.effects.PunctureEffect;
 public class Puncture extends AbstractWitchCard{
 	public static final String ID = "Puncture";
 	public static final	String NAME = "Puncture";
-	public static final	String IMG = "cards/placeholder_attack.png";
+	public static final	String IMG = "cards/puncture.png";
 	public static final	String DESCRIPTION = "Deal !D! damage !M! times. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;

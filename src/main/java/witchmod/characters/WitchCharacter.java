@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.daily.DailyMods;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ConfusionPower;
@@ -62,7 +63,9 @@ public class WitchCharacter extends CustomPlayer{
 				WitchMod.getResourcePath(WitchMod.CHAR_CORPSE), 
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 		loadAnimation(WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_ATLAS), WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON), 1.0F); 
-
+		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {
+			masterMaxOrbs = 1;
+		}
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 	}
@@ -99,7 +102,7 @@ public class WitchCharacter extends CustomPlayer{
 	
 	public static CharSelectInfo getLoadout() {
 		return new CharSelectInfo("The Witch", "A cackling sorceress specialized NL in dealing with curses.",
-				77, 77, 0, 99, 5,
+				67, 67, 0, 99, 5,
 			WitchEnum.WITCH, getStartingRelics(), getStartingDeck(), false);
 	}
 	

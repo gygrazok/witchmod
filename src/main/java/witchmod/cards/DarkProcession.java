@@ -29,7 +29,7 @@ public class DarkProcession extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DarkProcessionPower()));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DarkProcessionPower(1),1));
 	}
 
 	public AbstractCard makeCopy() {

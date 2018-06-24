@@ -23,11 +23,11 @@ public class BoneCarving extends AbstractWitchCard {
 	private static final int POOL = 1;
 
 	private static final int COST = 1;
-	private static final int POWER = 5;
-	private static final int UPGRADED_BONUS = 2;
+	private static final int POWER = 6;
+	private static final int UPGRADED_BONUS = 3;
 
 	private static final int MAGIC = 2;
-	private static final int MAGIC_UPGRADE_BONUS = 2;
+	private static final int MAGIC_UPGRADE_BONUS = 1;
 
 	public BoneCarving() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);

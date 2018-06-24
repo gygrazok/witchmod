@@ -10,13 +10,14 @@ import witchmod.WitchMod;
 public class DarkProcessionPower extends AbstractWitchPower {
 	public static final String POWER_ID = "DarkProcessionPower";
 	public static final String NAME = "Dark Procession";
-	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add a copy of the last played card to your hand.", " NL Last played card: " };
+	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add "," copy "," copies "," of the last played card to your hand.", " NL Last played card: " };
 	public static final String IMG = "powers/darkprocession.png";
 	private AbstractCard card;
-	public DarkProcessionPower() {
+	public DarkProcessionPower(int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = AbstractDungeon.player;
+		this.amount = amount;
 		this.updateDescription();
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.type = PowerType.BUFF;
@@ -24,10 +25,17 @@ public class DarkProcessionPower extends AbstractWitchPower {
 
 	@Override
 	public void updateDescription() {
-		if (card != null) {
-			description = DESCRIPTIONS[0]+DESCRIPTIONS[1]+card.name;
+		String baseDescription;
+		if (amount == 1) {
+			baseDescription	= DESCRIPTIONS[0]+amount+DESCRIPTIONS[1]+DESCRIPTIONS[3];
 		} else {
-			description = DESCRIPTIONS[0];
+			baseDescription	= DESCRIPTIONS[0]+amount+DESCRIPTIONS[2]+DESCRIPTIONS[3];
+		}
+
+		if (card != null) {
+			description = baseDescription+DESCRIPTIONS[4]+card.name;
+		} else {
+			description = baseDescription;
 		}
 	}
 
@@ -36,7 +44,7 @@ public class DarkProcessionPower extends AbstractWitchPower {
 		if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && card != null) {
 			flash();
 			AbstractCard toCreate = card.makeStatEquivalentCopy();
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate, 1, false));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toCreate, amount, false));
 			toCreate.triggerWhenDrawn();
 		}
 	}

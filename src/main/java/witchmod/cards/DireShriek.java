@@ -2,7 +2,6 @@ package witchmod.cards;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -54,13 +53,9 @@ public class DireShriek extends AbstractWitchCard{
 	@Override
 	public void triggerWhenDrawn() {
 		super.triggerWhenDrawn();
-		if (GameActionManager.turn == 1) {
-			return;
-		}
 		flash();
-		applyPowers();
 		CardCrawlGame.sound.play("BYRD_DEATH");
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(magicNumber, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(baseMagicNumber, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
 	}
 
 	public void upgrade() {

@@ -21,7 +21,7 @@ public class WretchedNails extends AbstractWitchCard{
 	public static final	String IMG = "cards/wretchednails.png";
 	public static final	String DESCRIPTION = "Draw 1 card, then deal damage equal to the number of cards you have drawn this turn.";
 	public static final	String DESCRIPTION_UPGRADED = "Draw !M! cards, then deal damage equal to the number of cards you have drawn this turn.";
-	public static final String EXTENDED_DESCRIPTION[] = new String[] {" NL (Total ",")"};
+	public static final String EXTENDED_DESCRIPTION[] = new String[] {" (Total ",")"};
 	private static final CardRarity RARITY = CardRarity.COMMON;
 	private static final CardTarget TARGET = CardTarget.ENEMY;
 	private static final CardType TYPE = CardType.ATTACK;

@@ -11,9 +11,8 @@ import witchmod.powers.TwistedMindPower;
 public class TwistedMind extends AbstractWitchCard {
 	public static final String ID = "TwistedMind";
 	public static final	String NAME = "Twisted Mind";
-	public static final	String IMG = "cards/placeholder_power.png";
-	public static final	String DESCRIPTION = "When you play the first card each turn, all enemies lose health equal to the cost of that card.";
-	public static final	String DESCRIPTION_UPGRADED = "Innate. When you play the first card each turn, all enemies lose health equal to the cost of that card.";
+	public static final	String IMG = "cards/twistedmind.png";
+	public static final	String DESCRIPTION = "Whenever you play a card that costs 2 or more, ALL enemies lose !M! health.";
 
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -21,16 +20,18 @@ public class TwistedMind extends AbstractWitchCard {
 
 	private static final int POOL = 1;
 
-	private static final int COST = 0;
-
+	private static final int COST = 1;
+	private static final int POWER = 3;
+	private static final int UPGRADED_BONUS = 2;
 
 
 	public TwistedMind() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		this.baseMagicNumber = this.magicNumber = POWER;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TwistedMindPower(p,1),1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TwistedMindPower(p,magicNumber),magicNumber));
 	}
 
 	public AbstractCard makeCopy() {
@@ -38,11 +39,9 @@ public class TwistedMind extends AbstractWitchCard {
 	}
 
 	public void upgrade() {
-		if (!this.upgraded) {
+		if (!upgraded) {
 			upgradeName();
-			isInnate = true;
-			rawDescription = DESCRIPTION_UPGRADED;
-			initializeDescription();
+			upgradeMagicNumber(UPGRADED_BONUS);
 		}
 	}
 }

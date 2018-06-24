@@ -1,3 +1,7 @@
+release v1.0
+Reworked Twisted Mind: "Whenever you play a card that costs 2 or more, ALL enemies lose 3/5 health", cost 1.
+Added card art for Twisted Mind, Twitch, Walpurgis Night
+
 prerelease v0.9.1
 Fixed crash with patch 30
 Fixed a bug with cleansed Harmlessness so that now it works also the first turn of combat

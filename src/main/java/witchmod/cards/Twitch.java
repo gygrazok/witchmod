@@ -13,7 +13,7 @@ import witchmod.powers.LoseDexterityPower;
 public class Twitch extends AbstractWitchCard{
 	public static final String ID = "Twitch";
 	public static final	String NAME = "Twitch";
-	public static final	String IMG = "cards/placeholder_skill.png";
+	public static final	String IMG = "cards/twitch.png";
 	public static final	String DESCRIPTION = "When drawn gain !M! Dexterity for 1 turn. NL Gain !B! block.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;

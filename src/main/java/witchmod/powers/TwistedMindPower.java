@@ -37,7 +37,7 @@ public class TwistedMindPower extends AbstractWitchPower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
     	if (card.type == CardType.ATTACK || card.type == CardType.SKILL || card.type == CardType.POWER) {
-    		if (card.cost >= 2) {
+    		if (card.costForTurn >= 2) {
     			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.HP_LOSS, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
         		flash();	
     		} 

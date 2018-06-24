@@ -24,7 +24,7 @@ public class ZombieSpit extends AbstractWitchCard {
 	private static final int POOL = 1;
 	private static final int COST = 0;
 
-	private static final int POWER = 3;
+	private static final int POWER = 4;
 	private static final int UPGRADED_BONUS = 1;
 
 	private static final int MAGIC = 1;

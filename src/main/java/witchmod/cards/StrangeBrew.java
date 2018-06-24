@@ -11,7 +11,7 @@ public class StrangeBrew extends AbstractWitchCard {
 	public static final String ID = "StrangeBrew";
 	public static final	String NAME = "Strange Brew";
 	public static final	String IMG = "cards/strangebrew.png";
-	public static final	String DESCRIPTION = "Apply on yourself the effect of all your drinkable potions, without consuming them. NL Exhaust";
+	public static final	String DESCRIPTION = "Apply on yourself the effect of all your drinkable potions, without consuming them. Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

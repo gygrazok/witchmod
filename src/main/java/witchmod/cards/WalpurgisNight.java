@@ -12,7 +12,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 	public static final String ID = "WalpurgisNight";
 	public static final	String NAME = "Walpurgis Night";
 	public static final	String IMG = "cards/walpurgisnight.png";
-	public static final	String DESCRIPTION = "Shuffle ALL your Exhausted non-Status, non-Ethereal cards into your draw pile, then draw !M! of those cards. Exhaust";
+	public static final	String DESCRIPTION = "Shuffle ALL Exhausted non-Etheral Attacks and Skills into your draw pile, then draw !M! of those cards. Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.NONE;
@@ -34,7 +34,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 		AbstractDungeon.actionManager.addToBottom(new WalpurgisNightAction(magicNumber));
 		int cardsToDraw = 0;
 		for (AbstractCard c : p.exhaustPile.group) {
-			if (c.type != CardType.STATUS && c.isEthereal == false) {
+			if ((c.type == CardType.ATTACK || c.type == CardType.SKILL) && c.isEthereal == false && !c.cardID.equals(WalpurgisNight.ID)) {
 				cardsToDraw++;
 				if (cardsToDraw >= magicNumber) {
 					cardsToDraw = magicNumber;
@@ -54,7 +54,7 @@ public class WalpurgisNight extends AbstractWitchCard {
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		for (AbstractCard c : p.exhaustPile.group) {
-			if (c.type != CardType.STATUS && c.isEthereal == false) {
+			if ((c.type == CardType.ATTACK || c.type == CardType.SKILL) && c.isEthereal == false && !c.cardID.equals(WalpurgisNight.ID)) {
 				return super.canUse(p, m);
 			}
 		}

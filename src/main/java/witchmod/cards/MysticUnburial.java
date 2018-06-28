@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import witchmod.actions.MysticUnburialAction;
 
@@ -33,20 +34,27 @@ public class MysticUnburial extends AbstractWitchCard {
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		//if there is at least 1 card that can be played, you can use this card
+		int oldEnergy = EnergyPanel.totalCount;
+		if (upgraded) {
+			EnergyPanel.totalCount = 9;
+		}
 		for (AbstractCard card : p.discardPile.group) {
 			for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-				if (card.canUse(p, monster)) {
-					return true;
+				if (card.canUse(p, monster) && !card.cardID.equals(MysticUnburial.ID)) {
+					EnergyPanel.totalCount = oldEnergy;
+					return super.canUse(p, m);
 				}
 			}
 		}
 		cantUseMessage = "I don't have any playable card in my discard pile.";
+		EnergyPanel.totalCount = oldEnergy;
 		return false;
 	}
 
 	public AbstractCard makeCopy() {
 		return new MysticUnburial();
 	}
+	
 
 	public void upgrade() {
 		if (!upgraded) {

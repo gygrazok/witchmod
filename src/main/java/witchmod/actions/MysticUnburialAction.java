@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import witchmod.cards.MysticUnburial;
 
@@ -40,11 +41,16 @@ public class MysticUnburialAction extends AbstractGameAction {
                 playCard(tmp);
             } else {
             	CardGroup playableCards = new CardGroup(CardGroupType.UNSPECIFIED);
+        		int oldEnergy = EnergyPanel.totalCount;
+        		if (ignoreCost) {
+        			EnergyPanel.totalCount = 9;
+        		}
             	for (AbstractCard card : p.discardPile.group) {
             		if (card.canUse(p,(AbstractMonster) target) && !card.cardID.equals(MysticUnburial.ID)) {
                     	playableCards.group.add(card);
             		}
             	}
+            	EnergyPanel.totalCount = oldEnergy;
             	if (playableCards.isEmpty()) {
             		isDone = true;
             	} else {

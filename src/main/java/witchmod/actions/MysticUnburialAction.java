@@ -62,9 +62,15 @@ public class MysticUnburialAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+            	if (ignoreCost) {
+            		c.freeToPlayOnce = true;
+            	}
             	if (c.canUse(p, (AbstractMonster) target) ) {
             		playCard(c);
             	} else {
+            		if (ignoreCost) {
+            			c.freeToPlayOnce = false;
+            		}
             		AbstractDungeon.actionManager.addToTop(new MysticUnburialAction(AbstractDungeon.getRandomMonster(),ignoreCost));
             	}
             }

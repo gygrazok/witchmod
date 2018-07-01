@@ -11,7 +11,7 @@ public class IntelligencePower extends AbstractWitchPower {
 	public static final String POWER_ID = "Intelligence";
 	public static final String NAME = "Intelligence";
 	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn, draw", "random card from your discard pile.", "random cards from your discard pile." };
-	public static final String IMG = "powers/summonfamiliar.png";
+	public static final String IMG = "powers/intelligence.png";
 	public IntelligencePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;

@@ -49,6 +49,8 @@ public class VileEgg extends AbstractWitchCard{
 		if (!upgraded) {
 			upgradeName();
 			upgradeMagicNumber(UPGRADE_BONUS);
+			rawDescription = DESCRIPTION_UPGRADED;
+			initializeDescription();
 		}
 	}
 }

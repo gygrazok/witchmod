@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RiteOfSummerAction extends AbstractGameAction{
 	private AbstractPlayer player;
-	public static final String TEXT = "Pick any number of cards to discard.";
+	public static final String TEXT = "discard.";
 	private DamageInfo info;
 	public RiteOfSummerAction(DamageInfo info) {
 		this.info = info;

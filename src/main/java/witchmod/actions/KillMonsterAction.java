@@ -2,6 +2,7 @@ package witchmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class KillMonsterAction extends AbstractGameAction {
@@ -14,8 +15,7 @@ public class KillMonsterAction extends AbstractGameAction {
 
 	@Override
 	public void update() {
-		monster.damage(new DamageInfo(monster, monster.currentHealth));
-		monster.die();
+		monster.damage(new DamageInfo(monster, monster.currentHealth,DamageType.HP_LOSS));
         isDone = true;
 	}
 	

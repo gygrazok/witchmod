@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RiteOfWinterAction extends AbstractGameAction{
 	private AbstractPlayer player;
-	public static final String TEXT = "Pick any number of cards to put on your draw pile.";
+	public static final String TEXT = "put on your draw pile.";
 	public RiteOfWinterAction(int amount) {
 		this.amount = amount;
 		this.duration = Settings.ACTION_DUR_FAST;

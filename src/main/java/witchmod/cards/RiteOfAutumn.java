@@ -11,7 +11,7 @@ public class RiteOfAutumn extends AbstractWitchCard {
 	public static final String ID = "RiteOfAutumn";
 	public static final	String NAME = "Rite of Autumn";
 	public static final	String IMG = "cards/riteofautumn.png";
-	public static final	String DESCRIPTION = "Exhaust any number of cards in your hand and draw that many cards. NL Recurrent.";
+	public static final	String DESCRIPTION = "Exhaust any number of cards in your hand and draw that many cards. NL Exhaust.";
 	
 	private static final CardRarity RARITY = CardRarity.UNCOMMON;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -25,10 +25,10 @@ public class RiteOfAutumn extends AbstractWitchCard {
 	
 	public RiteOfAutumn() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		this.exhaust = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		reshuffleOnUse = true;
 		AbstractDungeon.actionManager.addToBottom(new RiteOfAutumnAction());
 	}
 	

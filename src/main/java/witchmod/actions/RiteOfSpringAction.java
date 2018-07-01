@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RiteOfSpringAction extends AbstractGameAction{
 	private AbstractPlayer player;
-	public static final String TEXT = "Pick any number of cards to shuffle in your draw pile.";
+	public static final String TEXT = "shuffle in your draw pile.";
 	public RiteOfSpringAction() {
 		this.duration = Settings.ACTION_DUR_FAST;
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;

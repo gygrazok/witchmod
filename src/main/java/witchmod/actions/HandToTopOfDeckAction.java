@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

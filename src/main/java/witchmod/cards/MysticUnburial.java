@@ -4,16 +4,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import witchmod.actions.MysticUnburialAction;
+import witchmod.actions.DrawFromDiscardPileAction;
 
 public class MysticUnburial extends AbstractWitchCard {
 	public static final String ID = "MysticUnburial";
 	public static final	String NAME = "Mystic Unburial";
 	public static final	String IMG = "cards/mysticunburial.png";
-	public static final	String DESCRIPTION = "Choose and play a card from your discard pile, paying its play cost.";
-	public static final	String DESCRIPTION_UPGRADED = "Choose and play a card from your discard pile, ignoring its play cost.";
+	public static final	String DESCRIPTION = "Draw a card from your discard pile. NL Exhaust.";
+	public static final	String DESCRIPTION_UPGRADED = "Draw a card from you discard pile. That card costs 0 for this turn. NL Exhaust.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -25,30 +24,20 @@ public class MysticUnburial extends AbstractWitchCard {
 
 	public MysticUnburial() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		this.exhaust = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new MysticUnburialAction(AbstractDungeon.getRandomMonster(),upgraded));
+		AbstractDungeon.actionManager.addToBottom(new DrawFromDiscardPileAction(1,false,upgraded));
 	}
 
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-		//if there is at least 1 card that can be played, you can use this card
-		int oldEnergy = EnergyPanel.totalCount;
-		if (upgraded) {
-			EnergyPanel.totalCount = 9;
+		if (p.discardPile.isEmpty()) {
+			cantUseMessage = "My discard pile is empty.";
+			return false;
 		}
-		for (AbstractCard card : p.discardPile.group) {
-			for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-				if (card.canUse(p, monster) && !card.cardID.equals(MysticUnburial.ID)) {
-					EnergyPanel.totalCount = oldEnergy;
-					return super.canUse(p, m);
-				}
-			}
-		}
-		cantUseMessage = "I don't have any playable card in my discard pile.";
-		EnergyPanel.totalCount = oldEnergy;
-		return false;
+		return true;
 	}
 
 	public AbstractCard makeCopy() {

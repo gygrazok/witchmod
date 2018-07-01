@@ -5,14 +5,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawPower;
+
+import witchmod.powers.IntelligencePower;
 
 public class Intelligence extends AbstractWitchCard {
 	public static final String ID = "Intelligence";
 	public static final	String NAME = "Intelligence";
 	public static final	String IMG = "cards/intelligence.png";
-	public static final	String DESCRIPTION = "Draw !M! additional card each turn.";
-	public static final	String DESCRIPTION_PLURAL = "Draw !M! additional cards each turn.";
+	public static final	String DESCRIPTION = "At the start of your turn, draw !M! random card from your discard pile.";
+	public static final	String DESCRIPTION_PLURAL = "At the start of your turn, draw !M! random cards from your discard pile";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -32,7 +33,8 @@ public class Intelligence extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawPower(p,magicNumber),magicNumber));
+		System.out.println("Magic = "+magicNumber+" "+baseMagicNumber);
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntelligencePower(p,magicNumber),magicNumber));
 	}
 
 	public AbstractCard makeCopy() {

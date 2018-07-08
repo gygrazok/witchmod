@@ -107,51 +107,6 @@ public class WitchCharacter extends CustomPlayer{
 			WitchEnum.WITCH, getStartingRelics(), getStartingDeck(), false);
 	}
 	
-	@Override
-	public void draw(int numCards) {
-        for (int i = 0; i < numCards; ++i) {
-            if (!drawPile.isEmpty()) {
-                int newCost;
-                AbstractCard c = drawPile.getTopCard();
-                c.current_x = CardGroup.DRAW_PILE_X;
-                c.current_y = CardGroup.DRAW_PILE_Y;
-                c.setAngle(0.0f, true);
-                c.lighten(false);
-                c.drawScale = 0.12f;
-                c.targetDrawScale = 0.75f;
-                if (hasConfusion() && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && c.cost != (newCost = AbstractDungeon.cardRandomRng.random(3))) {
-                    c.costForTurn = c.cost = newCost;
-                    c.isCostModified = true;
-                }
-                c.triggerWhenDrawn();
-                hand.addToHand(c);
-                drawPile.removeTopCard();
-                if (AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID) && c.type == AbstractCard.CardType.SKILL) {
-                    c.setCostForTurn(-9);
-                }
-                for (AbstractRelic r : relics) {
-                    r.onCardDraw(c);
-                }
-                //custom callback for card draw on powers
-                for (AbstractPower p : powers) {
-                	if (p instanceof AbstractWitchPower) {
-                		((AbstractWitchPower)p).onCardDraw(c);
-                	}
-                }
-                cardsDrawnThisTurn++;
-                cardsDrawnTotal++;
-                if (c.type == CardType.CURSE) {
-                	cursesDrawnTotal++;
-                }
-                continue;
-            }
-        }
-	}
-	
-	private boolean hasConfusion() {
-		return AbstractDungeon.player.hasPower(ConfusionPower.POWER_ID) || 
-				AbstractDungeon.player.hasPower("TPH_Confusion"); //from ReplayTheSpire mod
-	}
 	
 	@Override
 	public void applyStartOfCombatLogic() {

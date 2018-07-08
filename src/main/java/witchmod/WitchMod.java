@@ -9,10 +9,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
@@ -21,6 +26,7 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import witchmod.cards.Athame;
 import witchmod.cards.Atonement;
@@ -66,9 +72,9 @@ import witchmod.cards.MortusClaw;
 import witchmod.cards.MysticUnburial;
 import witchmod.cards.NighInvulnerability;
 import witchmod.cards.PainBolt;
+import witchmod.cards.Pillage;
 import witchmod.cards.PlagueSpreader;
 import witchmod.cards.Puncture;
-import witchmod.cards.Pillage;
 import witchmod.cards.RiteOfAutumn;
 import witchmod.cards.RiteOfSpring;
 import witchmod.cards.RiteOfSummer;
@@ -102,6 +108,7 @@ import witchmod.cards.ZombieSpit;
 import witchmod.characters.WitchCharacter;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
+import witchmod.powers.AbstractWitchPower;
 import witchmod.relics.BirdCage;
 import witchmod.relics.BlackCat;
 import witchmod.relics.Scissors;
@@ -110,7 +117,7 @@ import witchmod.relics.WalkingCane;
 
 
 @SpireInitializer
-public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber {
+public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber,PostDrawSubscriber {
 
 	public static final Logger logger = LogManager.getLogger(WitchMod.class);
 
@@ -335,6 +342,25 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 		String[] familiarRaven = {"raven"};
 		BaseMod.addKeyword(familiarRaven, "Upgrades and reduces the cost of a card in hand.");
+	}
+	
+	public void receivePostDraw(AbstractCard c) {
+		AbstractPlayer player = AbstractDungeon.player;
+		//custom callback for card draw on powers
+		if (player instanceof WitchCharacter) {
+			WitchCharacter witch = (WitchCharacter) player;
+	        for (AbstractPower p : witch.powers) {
+	        	if (p instanceof AbstractWitchPower) {
+	        		((AbstractWitchPower)p).onCardDraw(c);
+	        	}
+	        }
+	        witch.cardsDrawnThisTurn++;
+	        witch.cardsDrawnTotal++;
+	        if (c.type == CardType.CURSE) {
+	        	witch.cursesDrawnTotal++;
+	        }
+		}
+
 	}
 
 }

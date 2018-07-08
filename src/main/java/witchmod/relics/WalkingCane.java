@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class WalkingCane extends AbstractWitchRelic {
 	public static final String ID = "WalkingCane";
-	private static final RelicTier TIER = RelicTier.SHOP;
+	private static final RelicTier TIER = RelicTier.RARE;
 	private static final String IMG = "relics/walkingcane.png";
 	private static final LandingSound SOUND = LandingSound.SOLID;
 

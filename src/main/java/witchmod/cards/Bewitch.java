@@ -26,7 +26,7 @@ public class Bewitch extends AbstractWitchCard {
 	private static final int COST = 1;
 
 	private static final int POWER = 1;
-	private static final int UPGRADED_BONUS = 2;
+	private static final int UPGRADED_BONUS = 1;
 
 
 	public Bewitch() {

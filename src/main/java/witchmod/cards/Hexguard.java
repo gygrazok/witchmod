@@ -22,7 +22,7 @@ public class Hexguard extends AbstractWitchCard {
 	private static final int POOL = 0;
 
 	private static final int COST = 2;
-	private static final int POWER = 12;
+	private static final int POWER = 11;
 	private static final int UPGRADE_BONUS = 4;
 	private static final int MAGIC = 1;
 

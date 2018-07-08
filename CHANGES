@@ -1,20 +1,28 @@
-release v1.0
-Witch starting health lowered from 77 to 67.
-Bewitch: now the upgraded version applies 2 stacks of Vulnerable/Weak instead of 3.
+release v1.0 - RC1
+Changes:
 Bone Carving: damage increased from 5/7 to 6/9. Vulnerable application lowered from 2/4 to 2/3
 Dark Procession: now adds extra copies of the card if the power is applied more than once.
-Ghoul Touch: damage reduced from 8/11 to 7/10
 Intelligence: reworked: now draws 1/2 cards from discard pile instead of from draw pile.
 Mystic Unburial: reworked "Draw a card from your discard pile. Exhaust." (upgraded: "Draw a card from your discard pile. That card costs 0 this turn. Exhaust."). Cost 0
-Rite of Summer: damage increased from 5/7 to 6/9
-Rite of Autumn: now Exhausts after use.
-Twisted Mind: reworked "Whenever you play a card that costs 2 or more, ALL enemies lose 3/5 health", cost 1.
 Walpurgis Night: now only exhumes exhausted non-ethereal attacks and skills
-Zombie Spit: increased damage from 3/4 to 4/5
+Twisted Mind: reworked "Whenever you play a card that costs 2 or more, ALL enemies lose 3/5 health", cost 1.
 Walking Cane relic is now rare (it had shop rarity)
+
+Buffs:
+Rite of Summer: damage increased from 5/7 to 6/9
+Zombie Spit: increased damage from 3/4 to 4/5
+
+Nerfs:
+Witch starting health lowered from 77 to 67.
+Bewitch: now the upgraded version applies 2 stacks of Vulnerable/Weak instead of 3.
+Ghoul Touch: damage reduced from 8/11 to 7/10
+Hexguard: block reduced from 12/16 to 11/15
+Rite of Autumn: now Exhausts after use.
+
+Other:
 Now the witch starts with 1 orb if the diverse daily mod is active.
 Added card art for Mystic Unburial, Puncture, Twisted Mind, Twitch, Walpurgis Night
-Fixed Confusion effect from ReplayTheSpire mod not working with the Witch
+Fixed Confusion effect from ReplayTheSpire mod (and likely other on draw effects from other mods) not working with the Witch
 
 
 prerelease v0.9.1

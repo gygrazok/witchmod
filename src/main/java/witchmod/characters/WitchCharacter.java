@@ -1,5 +1,6 @@
 package witchmod.characters;
 
+import java.awt.ContainerOrderFocusTraversalPolicy;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.math.MathUtils;
@@ -118,7 +119,7 @@ public class WitchCharacter extends CustomPlayer{
                 c.lighten(false);
                 c.drawScale = 0.12f;
                 c.targetDrawScale = 0.75f;
-                if (AbstractDungeon.player.hasPower(ConfusionPower.POWER_ID) && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && c.cost != (newCost = AbstractDungeon.cardRandomRng.random(3))) {
+                if (hasConfusion() && c.cost > -1 && c.color != AbstractCard.CardColor.CURSE && c.type != AbstractCard.CardType.STATUS && c.cost != (newCost = AbstractDungeon.cardRandomRng.random(3))) {
                     c.costForTurn = c.cost = newCost;
                     c.isCostModified = true;
                 }
@@ -145,6 +146,11 @@ public class WitchCharacter extends CustomPlayer{
                 continue;
             }
         }
+	}
+	
+	private boolean hasConfusion() {
+		return AbstractDungeon.player.hasPower(ConfusionPower.POWER_ID) || 
+				AbstractDungeon.player.hasPower("TPH_Confusion"); //from ReplayTheSpire mod
 	}
 	
 	@Override

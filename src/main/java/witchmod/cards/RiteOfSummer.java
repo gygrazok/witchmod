@@ -32,7 +32,7 @@ public class RiteOfSummer extends AbstractWitchCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new RiteOfSummerAction(new DamageInfo(p, damage, damageTypeForTurn)));
+		AbstractDungeon.actionManager.addToBottom(new RiteOfSummerAction(new DamageInfo(p, baseDamage, damageTypeForTurn)));
 	}
 
 	public AbstractCard makeCopy() {

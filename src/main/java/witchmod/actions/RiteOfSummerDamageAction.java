@@ -34,7 +34,8 @@ public class RiteOfSummerDamageAction extends AbstractGameAction{
             target.damageFlash = true;
             target.damageFlashFrames = 4;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, attackEffect));
-            target.damage(this.info);
+            info.applyPowers(info.owner, target);
+            target.damage(info);
             if (amount > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             	amount--;
                 AbstractDungeon.actionManager.addToTop(new RiteOfSummerDamageAction(AbstractDungeon.getMonsters().getRandomMonster(true), info, amount));

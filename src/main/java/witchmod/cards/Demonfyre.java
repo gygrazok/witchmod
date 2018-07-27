@@ -16,7 +16,7 @@ import witchmod.powers.DemonfyrePower;
 public class Demonfyre extends AbstractWitchCard{
 	public static final String ID = "Demonfyre";
 	public static final	String NAME = "Demonfyre";
-	public static final	String IMG = "cards/demonfyre.png";
+	public static final	String IMG = "cards/demonfyre_by_mnmix.png";
 	public static final	String DESCRIPTION = "Deal !D! damage. All Demonfyre cards deal !M! additional damage this combat. NL Recurrent.";
 
 	private static final CardRarity RARITY = CardRarity.COMMON;

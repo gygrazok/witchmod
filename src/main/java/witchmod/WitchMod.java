@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.BaseMod;
+import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -160,7 +161,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 
 
-		BaseMod.addColor(AbstractCardEnum.WITCH.toString(),
+		BaseMod.addColor(AbstractCardEnum.WITCH,
 				WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR,
 				getResourcePath(ATTACK_CARD), getResourcePath(SKILL_CARD), getResourcePath(POWER_CARD),
 				getResourcePath(ENERGY_ORB),
@@ -173,11 +174,10 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		new WitchMod();
 	}
 
-	@SuppressWarnings("deprecation")
 	public void receivePostInitialize() {
 		Texture badgeTexture = new Texture(getResourcePath(BADGE_IMG));
 		ModPanel settingsPanel = new ModPanel();
-		settingsPanel.addLabel("No settings", 400.0f, 700.0f, (me) -> {});
+		settingsPanel.addUIElement(new ModLabel("No settings", 400.0f, 700.0f, settingsPanel, (me) -> {}));
 		BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
 		Settings.isDailyRun = false;
@@ -188,19 +188,19 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	public void receiveEditCharacters() {
 		BaseMod.addCharacter(WitchCharacter.class, "The Witch", "WitchCharacter",
-				AbstractCardEnum.WITCH.toString(), "The Witch",
+				AbstractCardEnum.WITCH, "The Witch",
 				getResourcePath(CHAR_BUTTON), 
 				getResourcePath(CHAR_PORTRAIT),
-				WitchEnum.WITCH.toString());
+				WitchEnum.WITCH);
 	}
 
 
 	public void receiveEditRelics() {
 		RelicLibrary.add(new BlackCat());
-		BaseMod.addRelicToCustomPool(new BirdCage(),WitchEnum.WITCH.toString());
-		BaseMod.addRelicToCustomPool(new WalkingCane(),WitchEnum.WITCH.toString());
-		BaseMod.addRelicToCustomPool(new Scissors(),WitchEnum.WITCH.toString());
-		BaseMod.addRelicToCustomPool(new ToyHorse(),WitchEnum.WITCH.toString());
+		BaseMod.addRelicToCustomPool(new BirdCage(),AbstractCardEnum.WITCH);
+		BaseMod.addRelicToCustomPool(new WalkingCane(),AbstractCardEnum.WITCH);
+		BaseMod.addRelicToCustomPool(new Scissors(),AbstractCardEnum.WITCH);
+		BaseMod.addRelicToCustomPool(new ToyHorse(),AbstractCardEnum.WITCH);
 	}
 
 	public void receiveEditCards() {

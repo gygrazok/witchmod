@@ -8,6 +8,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.helpers.BaseModTags;
+import basemod.helpers.CardTags;
+
 public class Strike_Witch extends AbstractWitchCard{
 	public static final String ID = "Strike_Witch";
 	public static final	String NAME = "Strike";
@@ -27,6 +30,7 @@ public class Strike_Witch extends AbstractWitchCard{
 	public Strike_Witch() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
+		CardTags.addTags(this, BaseModTags.BASIC_STRIKE, BaseModTags.STRIKE);
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -43,5 +47,10 @@ public class Strike_Witch extends AbstractWitchCard{
 			upgradeName();
 			upgradeDamage(UPGRADE_BONUS);
 		}
+	}
+	
+	@Override
+	public boolean isStrike() {
+		return true;
 	}
 }

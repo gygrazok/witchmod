@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import basemod.helpers.BaseModTags;
+import basemod.helpers.CardTags;
+
 public class Defend_Witch extends AbstractWitchCard {
 	public static final String ID = "Defend_Witch";
 	public static final	String NAME = "Defend";
@@ -27,6 +30,7 @@ public class Defend_Witch extends AbstractWitchCard {
 	public Defend_Witch() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
+		CardTags.addTags(this, BaseModTags.BASIC_DEFEND);
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

@@ -1,8 +1,5 @@
 package witchmod.cards;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -12,8 +9,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import basemod.helpers.TooltipInfo;
 
 public class UnluckySeven extends AbstractWitchCleansableCurse {
 	public static final String ID = "UnluckySeven";
@@ -30,21 +25,23 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 	private static final int POWER = 7;
 
 
-	public UnluckySeven() {
+	public UnluckySeven(boolean hasCardPreview) {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseMagicNumber = this.magicNumber = POWER;
 		this.exhaust = true;
+		if (hasCardPreview) {
+			UnluckySeven tmp = new UnluckySeven(false);
+			tmp.cleanse(false);
+			cardPreviewTooltip = tmp;
+		}
+	}
+
+	public UnluckySeven() {
+		this(true);
 	}
 
 	@Override
-	public List<TooltipInfo> getCustomTooltips() {
-		List<TooltipInfo> out = new ArrayList<>();
-		out.add(new TooltipInfo("Cleansed", "Skill, cost 0, gain 7 energy, draw 7 cards and lose 7 health, exhaust."));
-		return out;
-	}
-
-	@Override
-	public void cleanse() {
+	public void cleanse(boolean applyPowers) {
 		type = TYPE;
 		cost = COST;
 		costForTurn = COST;
@@ -53,7 +50,7 @@ public class UnluckySeven extends AbstractWitchCleansableCurse {
 		name = NAME_CLEANSED;
 		rawDescription = DESCRIPTION_CLEANSED;
 		initializeDescription();
-		super.cleanse();
+		super.cleanse(applyPowers);
 	}
 
 	@Override

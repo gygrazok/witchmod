@@ -316,32 +316,12 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] cleanse = {"cleanse"};
 		BaseMod.addKeyword(cleanse, "This card is cleansed if the condition is satisfied while in hand, turning into a powerful card for the rest of the combat.");
 
-		String[] cardType = {"card type", "card types"};
-		BaseMod.addKeyword(cardType, "Card types are Attack, Skill, Power, Status and Curse.");
-
 		String[] rot = {"rot"};
 		BaseMod.addKeyword(rot, "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b1.");
 
 		String[] decrepit = {"decrepit"};
 		BaseMod.addKeyword(decrepit, "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1.");
 
-		String[] familiarCat = {"cat"};
-		BaseMod.addKeyword(familiarCat, "Slashes an enemy.");
-
-		String[] familiarOwl = {"owl"};
-		BaseMod.addKeyword(familiarOwl, "Draws cards.");
-
-		String[] familiarRat = {"rat"};
-		BaseMod.addKeyword(familiarRat, "Applies Poison and Decrepit.");
-
-		String[] familiarBat = {"bat"};
-		BaseMod.addKeyword(familiarBat, "Weakens and temporarily reduces Strength.");
-
-		String[] familiarToad = {"toad"};
-		BaseMod.addKeyword(familiarToad, "Provides block and consumes debuffs.");
-
-		String[] familiarRaven = {"raven"};
-		BaseMod.addKeyword(familiarRaven, "Upgrades and reduces the cost of a card in hand.");
 	}
 	
 	public void receivePostDraw(AbstractCard c) {

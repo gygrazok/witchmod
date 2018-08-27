@@ -7,7 +7,9 @@ import java.lang.reflect.Method;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 import witchmod.WitchMod;
 import witchmod.patches.AbstractCardEnum;
@@ -15,7 +17,8 @@ import witchmod.patches.AbstractCardEnum;
 public abstract class AbstractWitchCard extends CustomCard{
 	public boolean reshuffleOnUse = false; //if true -> don't discard on next use, has to be reset in the "use" method
 	public boolean reshuffleOnDiscardFromHand = false; //if true -> reshuffle in draw pile if discarded while in hand, not used atm
-
+	protected AbstractCard cardPreviewTooltip;
+	
 	public AbstractWitchCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardRarity rarity, CardTarget target, int cardPool){
 		super(id, name, WitchMod.getResourcePath(img), cost, rawDescription, type, AbstractCardEnum.WITCH, rarity, target);
 	}
@@ -136,5 +139,26 @@ public abstract class AbstractWitchCard extends CustomCard{
 			e.printStackTrace();
 		}
 	}
-
+	
+	@Override
+	public void renderCardTip(SpriteBatch sb) {
+		super.renderCardTip(sb);
+		boolean renderTip = (boolean) ReflectionHacks.getPrivate(this, AbstractCard.class, "renderTip");
+		
+		if (cardPreviewTooltip != null && !Settings.hideCards && renderTip) {
+			if (AbstractDungeon.player != null && AbstractDungeon.player.isDraggingCard) {
+				return;
+			}
+			float dx = (AbstractCard.IMG_WIDTH / 1.2f + 16f) * drawScale;
+			float dy = (AbstractCard.IMG_WIDTH / 4f) * drawScale;
+			if (current_x > Settings.WIDTH * 0.75f) {
+				cardPreviewTooltip.current_x = current_x + dx;
+			} else {
+				cardPreviewTooltip.current_x = current_x - dx;
+			}
+			cardPreviewTooltip.current_y = current_y + dy;
+			cardPreviewTooltip.drawScale = drawScale/1.5f;
+			cardPreviewTooltip.render(sb);
+		}
+	}
 }

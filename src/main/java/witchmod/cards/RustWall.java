@@ -1,16 +1,11 @@
 package witchmod.cards;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import basemod.helpers.TooltipInfo;
 
 public class RustWall extends AbstractWitchCard{
 	public static final String ID = "RustWall";
@@ -32,6 +27,7 @@ public class RustWall extends AbstractWitchCard{
 	public RustWall() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseBlock = POWER;
+		cardPreviewTooltip = new RustWallCurse();
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -39,13 +35,6 @@ public class RustWall extends AbstractWitchCard{
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 	}
 	
-	@Override
-	public List<TooltipInfo> getCustomTooltips() {
-		List<TooltipInfo> out = new ArrayList<>();
-		out.add(new TooltipInfo("Curse of Rust", "Halves your block at the end of the turn while in hand."));
-		return out;
-	}
-
 	public AbstractCard makeCopy() {
 		return new RustWall();
 	}

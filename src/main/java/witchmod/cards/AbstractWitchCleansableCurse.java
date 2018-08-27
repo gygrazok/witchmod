@@ -48,8 +48,14 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 		}
 	}
 
-	public void cleanse() {
+	public void cleanse(boolean applyPowers) {
 		cleansed = true;
-		applyPowers();
+		if (applyPowers) {
+			applyPowers();
+		}
+	}
+	
+	public void cleanse() {
+		cleanse(true);
 	}
 }

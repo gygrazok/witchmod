@@ -1,10 +1,6 @@
 package witchmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,8 +8,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import basemod.helpers.TooltipInfo;
 
 public class EternalThirst extends AbstractWitchCleansableCurse {
 	public static final String ID = "EternalThirst";
@@ -32,20 +26,23 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 	private static final int POWER = 10;
 
 
-	public EternalThirst() {
+	public EternalThirst(boolean hasCardPreview) {
 		super(ID, NAME, IMG, DESCRIPTION, RARITY);
 		this.baseDamage = POWER;
+		if (hasCardPreview) {
+			EternalThirst tmp = new EternalThirst(false);
+			tmp.cleanse(false);
+			cardPreviewTooltip = tmp;
+		}
+	}
+	
+	public EternalThirst() {
+		this(true);
 	}
 
-	@Override
-	public List<TooltipInfo> getCustomTooltips() {
-		List<TooltipInfo> out = new ArrayList<>();
-		out.add(new TooltipInfo("Cleansed", "Attack, cost 1, deal 10 damage, then heal for the unblocked damage dealt."));
-		return out;
-	}
 
 	@Override
-	public void cleanse() {
+	public void cleanse(boolean applyPowers) {
 		type = TYPE;
 		cost = COST;
 		costForTurn = COST;
@@ -53,7 +50,7 @@ public class EternalThirst extends AbstractWitchCleansableCurse {
 		target = TARGET;
 		rawDescription = DESCRIPTION_CLEANSED;
 		initializeDescription();
-		super.cleanse();
+		super.cleanse(applyPowers);
 	}
 
 

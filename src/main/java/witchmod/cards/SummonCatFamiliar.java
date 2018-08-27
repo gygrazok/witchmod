@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import witchmod.cards.familiar.CatFamiliar;
 import witchmod.cards.familiar.FamiliarCardEnum;
 import witchmod.powers.SummonFamiliarPower;
 
@@ -28,6 +29,7 @@ public class SummonCatFamiliar extends AbstractWitchCard {
 
 	public SummonCatFamiliar() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		cardPreviewTooltip = new CatFamiliar();
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,6 +48,7 @@ public class SummonCatFamiliar extends AbstractWitchCard {
 			upgradeName();
 			rawDescription = DESCRIPTION_UPGRADED;
 			initializeDescription();
+			cardPreviewTooltip.upgrade();
 		}
 	}
 }

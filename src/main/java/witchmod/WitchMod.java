@@ -99,6 +99,7 @@ import witchmod.cards.Thundercloud;
 import witchmod.cards.TrollsBlood;
 import witchmod.cards.TwistedMind;
 import witchmod.cards.Twitch;
+import witchmod.cards.UnholyForm;
 import witchmod.cards.UnluckySeven;
 import witchmod.cards.UnnaturalEnergy;
 import witchmod.cards.VileEgg;
@@ -269,7 +270,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new GrimVengeance());
 
 
-		//RARE (24)
+		//RARE (25)
 		//Attacks (8)
 		BaseMod.addCard(new ImpendingDoom());
 		BaseMod.addCard(new Graveburst());
@@ -289,7 +290,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new RustWall());
 		BaseMod.addCard(new WalpurgisNight());
 		BaseMod.addCard(new VileEgg());
-		//Powers (7)
+		//Powers (8)
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
 		BaseMod.addCard(new SummonRavenFamiliar());
@@ -297,6 +298,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new DarkProcession());
 		BaseMod.addCard(new IllusionOfStrength());
 		BaseMod.addCard(new ChosenOfTheMoon());
+		BaseMod.addCard(new UnholyForm());
 	}
 
 

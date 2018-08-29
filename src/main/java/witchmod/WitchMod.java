@@ -47,6 +47,7 @@ import witchmod.cards.CursedBlade;
 import witchmod.cards.DarkProcession;
 import witchmod.cards.Decrepify;
 import witchmod.cards.Defend_Witch;
+import witchmod.cards.DeliriumForm;
 import witchmod.cards.Demonfyre;
 import witchmod.cards.DireShriek;
 import witchmod.cards.EternalThirst;
@@ -269,7 +270,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new GrimVengeance());
 
 
-		//RARE (24)
+		//RARE (25)
 		//Attacks (8)
 		BaseMod.addCard(new ImpendingDoom());
 		BaseMod.addCard(new Graveburst());
@@ -289,7 +290,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new RustWall());
 		BaseMod.addCard(new WalpurgisNight());
 		BaseMod.addCard(new VileEgg());
-		//Powers (7)
+		//Powers (8)
 		BaseMod.addCard(new Intelligence());
 		BaseMod.addCard(new SummonToadFamiliar());
 		BaseMod.addCard(new SummonRavenFamiliar());
@@ -297,6 +298,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new DarkProcession());
 		BaseMod.addCard(new IllusionOfStrength());
 		BaseMod.addCard(new ChosenOfTheMoon());
+		BaseMod.addCard(new DeliriumForm());
 	}
 
 

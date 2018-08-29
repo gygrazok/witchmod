@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.cards.curses.Doubt;
 import com.megacrit.cardcrawl.cards.curses.Injury;
 import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.cards.curses.Parasite;
+import com.megacrit.cardcrawl.cards.curses.Pride;
+import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.cards.curses.Writhe;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -50,7 +52,7 @@ public class BlackCat extends AbstractWitchRelic {
 	protected AbstractCard getCurse() {
 		//we don't want to spawn pain or regret as they are far too punishing in the early game
 		//maybe add them in higher floors?
-		AbstractCard[] pool = new AbstractCard[] { new Clumsy(), new Decay(), new Doubt(), new Injury(), new Normality(), new Parasite(), new Writhe()};
+		AbstractCard[] pool = new AbstractCard[] { new Clumsy(), new Decay(), new Doubt(), new Injury(), new Normality(), new Parasite(), new Pride(), new Shame(), new Writhe()};
 		return pool[MathUtils.random(0, pool.length - 1)];
 	}
 

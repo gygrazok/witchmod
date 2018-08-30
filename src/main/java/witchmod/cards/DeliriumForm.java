@@ -14,7 +14,6 @@ public class DeliriumForm extends AbstractWitchCard {
 	public static final	String NAME = "Delirium Form";
 	public static final	String IMG = "cards/deliriumform.png";
 	public static final	String DESCRIPTION = "Whenever you play a non-Cost 0 card, draw 1 card.";
-	public static final	String DESCRIPTION_PLURAL = "Whenever you play a non-Cost 0 card, draw !M! cards.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;
@@ -23,8 +22,8 @@ public class DeliriumForm extends AbstractWitchCard {
 	private static final int POOL = 1;
 
 	private static final int COST = 3;
+	private static final int COST_UPGRADED = 2;
 	private static final int POWER = 1;
-	private static final int UPGRADED_BONUS = 1;
 
 	public DeliriumForm() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
@@ -42,9 +41,7 @@ public class DeliriumForm extends AbstractWitchCard {
 	public void upgrade() {
 		if (!upgraded) {
 			upgradeName();
-			upgradeMagicNumber(UPGRADED_BONUS);
-			rawDescription = DESCRIPTION_PLURAL;
-			initializeDescription();
+			upgradeBaseCost(COST_UPGRADED);
 		}
 	}
 }

@@ -20,6 +20,7 @@ public class EvokeFamiliarAction extends AbstractGameAction {
             familiar.onEvoke();
             AbstractDungeon.player.energy.use(familiar.cost);
             familiar.used = true;
+            familiar.updateDescription();
         }
         this.tickDuration();
     }

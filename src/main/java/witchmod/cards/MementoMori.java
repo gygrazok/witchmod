@@ -35,10 +35,7 @@ public class MementoMori extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		float dy = 100;
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColoredSliceEffect(m.hb.cX - 20, m.hb.cY - dy, m.hb.cX - 20, m.hb.cY + dy, Color.RED.cpy()), 0.25f));
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColoredSliceEffect(m.hb.cX, m.hb.cY - dy, m.hb.cX, m.hb.cY + dy, Color.RED.cpy()), 0.25f));
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColoredSliceEffect(m.hb.cX + 20, m.hb.cY - dy, m.hb.cX + 20, m.hb.cY + dy, Color.RED.cpy()), 0.25f));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new ColoredSliceEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY, Color.RED.cpy()), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AttackEffect.POISON));
 	}
 

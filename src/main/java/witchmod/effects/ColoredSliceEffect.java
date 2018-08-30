@@ -30,7 +30,7 @@ public class ColoredSliceEffect extends AbstractGameEffect {
 		this.startingDuration = DUR;
 		this.duration = DUR;
 		this.scale = Settings.scale;
-		this.rotation = MathUtils.random(-3.0f, 3.0f);
+		this.rotation = 0;
 		this.color = color;
 	}
 

@@ -17,7 +17,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
 import basemod.ModLabel;
@@ -27,8 +29,10 @@ import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.PreMonsterTurnSubscriber;
 import witchmod.cards.Athame;
 import witchmod.cards.Atonement;
 import witchmod.cards.BalefulWard;
@@ -119,7 +123,7 @@ import witchmod.relics.WalkingCane;
 
 
 @SpireInitializer
-public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber,PostDrawSubscriber {
+public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber,PostDrawSubscriber,OnStartBattleSubscriber,PreMonsterTurnSubscriber {
 
 	public static final Logger logger = LogManager.getLogger(WitchMod.class);
 
@@ -151,6 +155,9 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	public static final String BADGE_IMG = "badge.png";
 
+	public static int cardsDrawnTotal = 0;
+	public static int cardsDrawnThisTurn = 0;
+	public static int cursesDrawnTotal = 0;
 
 	public static final String getResourcePath(String resource) {
 		return ASSETS_FOLDER + "/" + resource;
@@ -329,20 +336,28 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receivePostDraw(AbstractCard c) {
 		AbstractPlayer player = AbstractDungeon.player;
 		//custom callback for card draw on powers
-		if (player instanceof WitchCharacter) {
-			WitchCharacter witch = (WitchCharacter) player;
-	        for (AbstractPower p : witch.powers) {
-	        	if (p instanceof AbstractWitchPower) {
-	        		((AbstractWitchPower)p).onCardDraw(c);
-	        	}
-	        }
-	        witch.cardsDrawnThisTurn++;
-	        witch.cardsDrawnTotal++;
-	        if (c.type == CardType.CURSE) {
-	        	witch.cursesDrawnTotal++;
-	        }
-		}
+        for (AbstractPower p : player.powers) {
+        	if (p instanceof AbstractWitchPower) {
+        		((AbstractWitchPower)p).onCardDraw(c);
+        	}
+        }
+        cardsDrawnThisTurn++;
+        cardsDrawnTotal++;
+        if (c.type == CardType.CURSE) {
+        	cursesDrawnTotal++;
+        }
+	}
 
+	@Override
+	public boolean receivePreMonsterTurn(AbstractMonster m) {
+		cardsDrawnThisTurn = 0;
+		return true;
+	}
+
+	@Override
+	public void receiveOnBattleStart(AbstractRoom room) {
+		cardsDrawnTotal = 0;
+		cursesDrawnTotal = 0;
 	}
 
 }

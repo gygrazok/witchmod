@@ -42,9 +42,7 @@ public class WitchCharacter extends CustomPlayer{
 			"images/char/orb/layer5d.png"
 	};
 
-	public int cardsDrawnTotal = 0;
-	public int cardsDrawnThisTurn = 0;
-	public int cursesDrawnTotal = 0;
+
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
 		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON));
@@ -102,19 +100,7 @@ public class WitchCharacter extends CustomPlayer{
 	}
 	
 	
-	@Override
-	public void applyStartOfCombatLogic() {
-		super.applyStartOfCombatLogic();
-		cardsDrawnTotal = 0;
-		cursesDrawnTotal = 0;
-	}
-	
-	@Override
-	public void applyStartOfTurnCards() {
-		super.applyStartOfTurnCards();
-		cardsDrawnThisTurn = 0;
-	}
-	
+
 	@Override
 	protected int decrementBlock(DamageInfo info, int damageAmount) {
 		int actualBlockLost = Math.min(damageAmount, currentBlock);

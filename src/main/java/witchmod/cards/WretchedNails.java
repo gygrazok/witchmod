@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.CollectorStakeEffect;
 
-import witchmod.characters.WitchCharacter;
+import witchmod.WitchMod;
 
 public class WretchedNails extends AbstractWitchCard{
 	public static final String ID = "WretchedNails";
@@ -38,7 +38,7 @@ public class WretchedNails extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		int cardsDrawn = ((WitchCharacter)AbstractDungeon.player).cardsDrawnThisTurn + magicNumber;
+		int cardsDrawn = WitchMod.cardsDrawnThisTurn + magicNumber;
 		for (int i = 0; i < cardsDrawn; i++) {
 			AbstractDungeon.effectsQueue.add(new CollectorStakeEffect(m.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale, m.hb.cY + MathUtils.random(-60.0f, 60.0f) * Settings.scale));
 		}
@@ -77,7 +77,7 @@ public class WretchedNails extends AbstractWitchCard{
 
 	@Override
 	public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
-		return ((WitchCharacter)player).cardsDrawnThisTurn + magicNumber;
+		return WitchMod.cardsDrawnThisTurn + magicNumber;
 	}
 
 	public void upgrade() {

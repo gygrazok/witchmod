@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
 
-import witchmod.characters.WitchCharacter;
+import witchmod.WitchMod;
 
 public class EvilEye extends AbstractWitchCard{
 	public static final String ID = "EvilEye";
@@ -46,7 +46,7 @@ public class EvilEye extends AbstractWitchCard{
 
 	@Override
 	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-		return tmp + magicNumber*((WitchCharacter)player).cursesDrawnTotal;
+		return tmp + magicNumber*WitchMod.cursesDrawnTotal;
 	}
 
 	public AbstractCard makeCopy() {

@@ -1,6 +1,5 @@
 package witchmod.relics;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -53,7 +52,7 @@ public class BlackCat extends AbstractWitchRelic {
 		//we don't want to spawn pain or regret as they are far too punishing in the early game
 		//maybe add them in higher floors?
 		AbstractCard[] pool = new AbstractCard[] { new Clumsy(), new Decay(), new Doubt(), new Injury(), new Normality(), new Parasite(), new Pride(), new Shame(), new Writhe()};
-		return pool[AbstractDungeon.cardRng.random(pool.length)];
+		return pool[AbstractDungeon.cardRng.random(pool.length - 1)];
 	}
 
 	@Override

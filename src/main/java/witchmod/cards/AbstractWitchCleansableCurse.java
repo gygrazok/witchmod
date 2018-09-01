@@ -49,6 +49,7 @@ public abstract class AbstractWitchCleansableCurse extends AbstractWitchCard{
 	}
 
 	public void cleanse(boolean applyPowers) {
+		cardPreviewTooltip = null;
 		cleansed = true;
 		if (applyPowers) {
 			applyPowers();

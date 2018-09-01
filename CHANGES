@@ -1,8 +1,10 @@
 release v1.0 - RC3
+Added support for Mod The Spire and BaseMod v3.1
 Now every card that can create other cards has a little tooltip with that card's preview (idea borrowed from the Disciple mod by Tempus)
 New rare card: Delirium Form: cost 3 (2 upgraded), power, Whenever you play a non-Cost 0 card, draw 1 card.
 Vile Egg: now the familiar card created costs 0
-Black Cat (starting relic): now it can also add Shame and Pride curses.
+Black Cat (starting relic): now it can also add Shame and Pride curses, and the random is seeded.
+Now Wretched Nails and Evil Eye work also with other characters (known bug: Baleful Ward still doesn't work with other characters).
 
 release v1.0 - RC2
 Added support for Mod The Spire and BaseMod v3.0

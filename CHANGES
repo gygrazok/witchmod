@@ -1,3 +1,8 @@
+release v1.0 - FINAL
+Added new art for the character
+Troll's Blood: energy cost reduced from 2/1 to 1/0.
+Black Cat: corrected description: the curse is added to the **draw pile**, not the **deck**.
+
 release v1.0 - RC3
 Added support for Mod The Spire and BaseMod v3.1
 Now every card that can create other cards has a little tooltip with that card's preview (idea borrowed from the Disciple mod by Tempus)

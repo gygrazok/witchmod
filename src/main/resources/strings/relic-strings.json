@@ -2,7 +2,7 @@
 	"BlackCat":{
 		"NAME": "Black Cat",
 		"FLAVOR": "Meow",
-		"DESCRIPTIONS":["Shuffle a random Curse in your deck at the beginning of each fight. Gain [B] whenever you draw a Curse."]
+		"DESCRIPTIONS":["Shuffle a random Curse in your draw pile at the beginning of each fight. Gain [B] whenever you draw a Curse."]
 	},
 	"PetCage":{
 		"NAME": "Pet Cage",

@@ -43,5 +43,5 @@ Since it's so well written and clear I felt no reason to rewrite it :)
 3. Thanks to kiooeht and contributors (https://github.com/kiooeht) for ModTheSpire
 
 ## Art Assets ##
-Except for the recolored STS assets, all other (crappy) art has been made by me, sometimes by modifying existing CC0 (public domain) assets by various authors. If you want to use these assets in your own mod, feel free to do so, although it would be nice to credit this mod as the source.
+Except for the recolored STS assets, all other (crappy) art has been made by me (except for Demonfyre, submitted by mnmix), sometimes by modifying existing CC0 (public domain) assets by various authors. If you want to use these assets in your own mod, feel free to do so, although it would be nice to credit this mod as the source.
 If you want to submit new, better art for this mod, you are more than welcome.

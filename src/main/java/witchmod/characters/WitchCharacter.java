@@ -2,6 +2,7 @@ package witchmod.characters;
 
 import java.util.ArrayList;
 
+import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -45,7 +46,7 @@ public class WitchCharacter extends CustomPlayer{
 
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON));
+		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, new SpriterAnimation(WitchMod.getResourcePath("char/spriter/witch.scml")));
 		hand = new WitchCardGroup(CardGroup.CardGroupType.HAND);
 		
 		dialogX = drawX + 0.0f * Settings.scale;
@@ -55,12 +56,9 @@ public class WitchCharacter extends CustomPlayer{
 				WitchMod.getResourcePath(WitchMod.CHAR_SHOULDER_1),
 				WitchMod.getResourcePath(WitchMod.CHAR_CORPSE), 
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
-		loadAnimation(WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_ATLAS), WitchMod.getResourcePath(WitchMod.CHAR_SKELETON_JSON), 1.0F); 
 		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {
 			masterMaxOrbs = 1;
 		}
-        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
-        e.setTime(e.getEndTime() * MathUtils.random());
 	}
 	
 	@Override

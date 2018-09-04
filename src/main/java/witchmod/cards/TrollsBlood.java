@@ -21,8 +21,8 @@ public class TrollsBlood extends AbstractWitchCard {
 	private static final int POOL = 1;
 
 	private static final int POWER = 1;
-	private static final int COST = 2;
-	private static final int UPGRADED_COST = 1;
+	private static final int COST = 1;
+	private static final int UPGRADED_COST = 0;
 
 
 

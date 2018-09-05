@@ -129,7 +129,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	private static final String MODNAME = "WitchMod";
 	private static final String AUTHOR = "Gygrazok";
-	private static final String DESCRIPTION = "v0.9\n Adds The Witch character";
+	private static final String DESCRIPTION = "v1.0\n Adds The Witch character";
 
 	private static final Color WITCH_COLOR = CardHelper.getColor(90.0f, 90.0f, 100.0f);
 	private static final String ASSETS_FOLDER = "images";

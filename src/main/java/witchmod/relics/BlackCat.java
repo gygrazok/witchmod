@@ -1,21 +1,22 @@
 package witchmod.relics;
 
+import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.modthespire.ReflectionHelper;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
-import com.megacrit.cardcrawl.cards.curses.Clumsy;
-import com.megacrit.cardcrawl.cards.curses.Decay;
-import com.megacrit.cardcrawl.cards.curses.Doubt;
-import com.megacrit.cardcrawl.cards.curses.Injury;
-import com.megacrit.cardcrawl.cards.curses.Normality;
-import com.megacrit.cardcrawl.cards.curses.Parasite;
-import com.megacrit.cardcrawl.cards.curses.Pride;
-import com.megacrit.cardcrawl.cards.curses.Shame;
-import com.megacrit.cardcrawl.cards.curses.Writhe;
+import com.megacrit.cardcrawl.cards.curses.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class BlackCat extends AbstractWitchRelic {
 	public static final String ID = "BlackCat";
@@ -51,8 +52,27 @@ public class BlackCat extends AbstractWitchRelic {
 	protected AbstractCard getCurse() {
 		//we don't want to spawn pain or regret as they are far too punishing in the early game
 		//maybe add them in higher floors?
-		AbstractCard[] pool = new AbstractCard[] { new Clumsy(), new Decay(), new Doubt(), new Injury(), new Normality(), new Parasite(), new Pride(), new Shame(), new Writhe()};
-		return pool[AbstractDungeon.cardRng.random(pool.length - 1)];
+		HashMap<String, AbstractCard> curses = (HashMap<String, AbstractCard>) ReflectionHacks.getPrivateStatic(CardLibrary.class, "curses");
+		ArrayList<String> tmp = new ArrayList<>();
+		ArrayList<String> prohibitedCards = new ArrayList<>();
+		prohibitedCards.add(Necronomicurse.ID);
+		prohibitedCards.add(AscendersBane.ID);
+		prohibitedCards.add(Normality.ID);
+		prohibitedCards.add(Pain.ID);
+		prohibitedCards.add(Regret.ID);
+		for (Map.Entry<String, AbstractCard> c : curses.entrySet()) {
+			boolean ok = true;
+			for (String prohibitedCard : prohibitedCards) {
+				if (prohibitedCard.equals(c.getValue().cardID)) {
+					ok = false;
+					break;
+				}
+			}
+			if (ok) {
+				tmp.add(c.getKey());
+			}
+		}
+		return curses.get(tmp.get(AbstractDungeon.cardRng.random(0, tmp.size() - 1)));
 	}
 
 	@Override

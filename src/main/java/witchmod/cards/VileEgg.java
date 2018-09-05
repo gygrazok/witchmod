@@ -14,7 +14,7 @@ public class VileEgg extends AbstractWitchCard{
 	public static final	String NAME = "Vile Egg";
 	public static final	String IMG = "cards/vileegg.png";
 	public static final	String DESCRIPTION = "Heal !M! HP. NL Add a random Familiar to your hand. It costs 0 this turn. NL Exhaust";
-	public static final	String DESCRIPTION_UPGRADED = "Heal !M! HP. NL Add a random upgraded Familiar to your hand. It costs 0 this turn. NL Exhaust";
+	public static final	String DESCRIPTION_UPGRADED = "Heal !M! HP. NL Add a random upgraded Familiar to your hand. It costs 0 this turn. Exhaust";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

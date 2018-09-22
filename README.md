@@ -22,8 +22,8 @@ Since it's so well written and clear I felt no reason to rewrite it :)
 
 ## Requirements ##
 * Java 8 (JRE). Currently only Java 8 should be used, issues with Java 9 are being looked into.
-* BaseMod v.3.0.0+ (https://github.com/daviscook477/BaseMod/releases)
-* ModTheSpire v3.0.0+ (https://github.com/kiooeht/ModTheSpire/releases)
+* BaseMod v.3.3.0+ (https://github.com/daviscook477/BaseMod/releases)
+* ModTheSpire v3.1.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##
 1. If you have `ModTheSpire` already installed you can skip to step 5. Otherwise continue with step 2:
@@ -41,6 +41,7 @@ Since it's so well written and clear I felt no reason to rewrite it :)
 1. Thanks to the [devs](https://www.megacrit.com/) of **SlayTheSpire** for making such and awesome game, allowing us to mod it, and allowing us to use recolored versions of their art assets in our mod
 2. Thanks to test447 and contributors (https://github.com/daviscook477) for BaseMod
 3. Thanks to kiooeht and contributors (https://github.com/kiooeht) for ModTheSpire
+4. Thanks to anyone who reported bugs and provided useful ideas and balance tips!
 
 ## Art Assets ##
 Except for the recolored STS assets, all other (crappy) art has been made by me (except for Demonfyre, submitted by mnmix), sometimes by modifying existing CC0 (public domain) assets by various authors. If you want to use these assets in your own mod, feel free to do so, although it would be nice to credit this mod as the source.

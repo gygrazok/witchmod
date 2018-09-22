@@ -49,8 +49,4 @@ public class Strike_Witch extends AbstractWitchCard{
 		}
 	}
 	
-	@Override
-	public boolean isStrike() {
-		return true;
-	}
 }

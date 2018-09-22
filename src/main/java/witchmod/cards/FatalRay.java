@@ -35,7 +35,7 @@ public class FatalRay extends AbstractWitchCard{
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.SCARLET), 0.3f));
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.hb.cX, p.hb.cY), 0.3f));
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.hb.cX, p.hb.cY, false), 0.3f));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
 	}
 

@@ -15,7 +15,6 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import witchmod.WitchMod;
-import witchmod.cardgroup.WitchCardGroup;
 import witchmod.patches.WitchEnum;
 import witchmod.powers.AbstractWitchPower;
 
@@ -44,8 +43,6 @@ public class WitchCharacter extends CustomPlayer{
 	
 	public WitchCharacter(String name, PlayerClass setClass) {
 		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, new SpriterAnimation(WitchMod.getResourcePath("char/spriter/witch.scml")));
-		hand = new WitchCardGroup(CardGroup.CardGroupType.HAND);
-		
 		dialogX = drawX + 0.0f * Settings.scale;
 		dialogY = drawY + 220.0f * Settings.scale;
 		
@@ -92,18 +89,6 @@ public class WitchCharacter extends CustomPlayer{
 	}
 	
 	
-
-	@Override
-	protected int decrementBlock(DamageInfo info, int damageAmount) {
-		int actualBlockLost = Math.min(damageAmount, currentBlock);
-		int out = super.decrementBlock(info, damageAmount);
-        for (AbstractPower p : powers) {
-        	if (p instanceof AbstractWitchPower) {
-        		((AbstractWitchPower)p).onDamageAbsorbedByBlock(damageAmount,actualBlockLost,currentBlock);
-        	}
-        }
-        return out;
-	}
 
 	//for debug
 	private static ArrayList<String> getAllCards() {

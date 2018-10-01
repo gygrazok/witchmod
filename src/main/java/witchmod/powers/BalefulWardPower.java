@@ -32,12 +32,10 @@ public class BalefulWardPower extends AbstractWitchPower {
 	}
 	
 	@Override
-	public void onDamageAbsorbedByBlock(int amount, int actualBlockLost, int currentBlock) {
-		if (currentBlock == 0) {
-			flash();
-			AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(),this.amount));
-			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, BalefulWardPower.POWER_ID));
-		}
+	public void onBlockBreak() {
+		flash();
+		AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(),this.amount));
+		AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, BalefulWardPower.POWER_ID));
 	}
 
 	@Override

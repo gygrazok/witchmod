@@ -15,7 +15,7 @@ public abstract class AbstractWitchPower extends AbstractPower {
 	protected Color renderColor = null;
 	public void onCardDraw(AbstractCard card) {}
 
-	public void onDamageAbsorbedByBlock(int amount, int actualBlockLost, int currentBlock) { }
+	public void onBlockBreak() { }
 	
 	@Override
 	public void renderIcons(SpriteBatch sb, float x, float y, Color c) {

@@ -2,7 +2,7 @@
 	"BlackCat":{
 		"NAME": "Black Cat",
 		"FLAVOR": "Meow",
-		"DESCRIPTIONS":["Shuffle a random Curse in your draw pile at the beginning of each fight. NL Gain [B] whenever you draw a Curse."]
+		"DESCRIPTIONS":["At the beginning of each combat choose 1 of 3 random NL Curses to shuffle into your draw pile. NL Gain [B] whenever you draw a Curse."]
 	},
 	"PetCage":{
 		"NAME": "Pet Cage",

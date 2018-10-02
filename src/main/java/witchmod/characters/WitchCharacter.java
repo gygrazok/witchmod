@@ -3,8 +3,6 @@ package witchmod.characters;
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -16,7 +14,6 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import witchmod.WitchMod;
 import witchmod.patches.WitchEnum;
-import witchmod.powers.AbstractWitchPower;
 
 
 

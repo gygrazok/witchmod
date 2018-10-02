@@ -8,7 +8,8 @@ import witchmod.powers.AbstractWitchPower;
 
 @SpirePatch(
 		cls="com.megacrit.cardcrawl.core.AbstractCreature",
-		method="loseBlock"
+		method="brokeBlock",
+		paramtypez={}
 )
 public class BlockBreakPatch {
 	public static void Prefix(AbstractCreature __instance) {

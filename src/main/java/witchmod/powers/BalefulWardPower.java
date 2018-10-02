@@ -19,11 +19,11 @@ public class BalefulWardPower extends AbstractWitchPower {
 		this.ID = POWER_ID;
 		this.owner = AbstractDungeon.player;
 		this.card = cardToCopy;
-		this.description = DESCRIPTIONS[0];
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.type = PowerType.BUFF;
 		this.isTurnBased = true;
 		this.amount = 1;
+		this.updateDescription();
 	}
 
 	@Override

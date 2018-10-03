@@ -23,7 +23,7 @@ Since it's so well written and clear I felt no reason to rewrite it :)
 ## Requirements ##
 * Java 8 (JRE). Currently only Java 8 should be used, issues with Java 9 are being looked into.
 * BaseMod v.3.3.0+ (https://github.com/daviscook477/BaseMod/releases)
-* ModTheSpire v3.3.0+ (https://github.com/kiooeht/ModTheSpire/releases)
+* ModTheSpire v3.2.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##
 1. If you have `ModTheSpire` already installed you can skip to step 5. Otherwise continue with step 2:

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.helpers.BaseModTags;
-import basemod.helpers.CardTags;
 import witchmod.powers.DecrepitPower;
 
 public class ZombieSpit extends AbstractWitchCard {
@@ -36,7 +35,7 @@ public class ZombieSpit extends AbstractWitchCard {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseDamage = POWER;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
-		CardTags.addTags(this, BaseModTags.GREMLIN_MATCH);
+		basemod.helpers.CardTags.addTags(this, BaseModTags.GREMLIN_MATCH);
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

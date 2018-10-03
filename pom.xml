@@ -4,7 +4,7 @@
   <groupId>witchmod</groupId>
   <artifactId>WitchMod</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <name>WitchMod</name>
 
 	<dependencies>
@@ -18,14 +18,14 @@
 		<dependency>
 			<groupId>basemod</groupId>
 			<artifactId>basemod</artifactId>
-			<version>3.3.0</version>
+			<version>3.4.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>modthespire</groupId>
 			<artifactId>modthespire</artifactId>
-			<version>3.3.0</version>
+			<version>3.2.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
 		</dependency>

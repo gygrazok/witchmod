@@ -4,7 +4,7 @@
   <groupId>witchmod</groupId>
   <artifactId>WitchMod</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
   <name>WitchMod</name>
 
 	<dependencies>

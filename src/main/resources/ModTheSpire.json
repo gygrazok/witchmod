@@ -3,7 +3,7 @@
   "name": "The Witch",
   "author_list": ["gygrazok"],
   "description": "Adds the Witch character.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "mts_version": "3.2.0",
   "update_json": "https://api.github.com/repos/gygrazok/WitchMod/releases/latest"
 }

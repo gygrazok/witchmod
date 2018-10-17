@@ -13,7 +13,7 @@ public class DeliriumForm extends AbstractWitchCard {
 	public static final String ID = "DeliriumForm";
 	public static final	String NAME = "Delirium Form";
 	public static final	String IMG = "cards/deliriumform.png";
-	public static final	String DESCRIPTION = "Whenever you play a non-Cost 0 card, draw 1 card.";
+	public static final	String DESCRIPTION = "Whenever you play a non-zero Cost card, draw 1 card.";
 
 	private static final CardRarity RARITY = CardRarity.RARE;
 	private static final CardTarget TARGET = CardTarget.SELF;

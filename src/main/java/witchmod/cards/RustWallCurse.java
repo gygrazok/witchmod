@@ -29,7 +29,7 @@ public class RustWallCurse extends AbstractWitchCard{
 	public RustWallCurse() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.magicNumber = this.baseMagicNumber = POWER;
-		this.isEthereal = true;
+		this.exhaust = true;
 	}
 
 
@@ -58,7 +58,6 @@ public class RustWallCurse extends AbstractWitchCard{
 	public void triggerOnEndOfTurnForPlayingCard() {
 		dontTriggerOnUseCard = true;
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem((AbstractCard)this, true));
-		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
 	}
 
 

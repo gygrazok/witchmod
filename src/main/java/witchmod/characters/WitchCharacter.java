@@ -2,17 +2,29 @@ package witchmod.characters;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Prefs;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.screens.stats.CharStat;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import witchmod.WitchMod;
+import witchmod.cards.ZombieSpit;
 import witchmod.patches.WitchEnum;
 
 
@@ -38,8 +50,8 @@ public class WitchCharacter extends CustomPlayer{
 
 
 	
-	public WitchCharacter(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "images/char/orb/vfx.png", null, new SpriterAnimation(WitchMod.getResourcePath("char/spriter/witch.scml")));
+	public WitchCharacter(String name) {
+		super(name, WitchEnum.WITCH, orbTextures, "images/char/orb/vfx.png", null, new SpriterAnimation(WitchMod.getResourcePath("char/spriter/witch.scml")));
 		dialogX = drawX + 0.0f * Settings.scale;
 		dialogY = drawY + 220.0f * Settings.scale;
 		
@@ -56,7 +68,8 @@ public class WitchCharacter extends CustomPlayer{
 		}
 	}
 
-	public static ArrayList<String> getStartingDeck() {
+	@Override
+	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
 		retVal.add("Strike_Witch");
 		retVal.add("Strike_Witch");
@@ -72,21 +85,6 @@ public class WitchCharacter extends CustomPlayer{
 		//return getAllCards();
 	}
 	
-	public static ArrayList<String> getStartingRelics() {
-		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("BlackCat");
-		UnlockTracker.markRelicAsSeen("BlackCat");
-		return retVal;
-	}
-	
-	public static CharSelectInfo getLoadout() {
-		return new CharSelectInfo("The Witch", "A cackling sorceress specialized NL in dealing with curses.",
-				67, 67, 0, 99, 5,
-			WitchEnum.WITCH, getStartingRelics(), getStartingDeck(), false);
-	}
-	
-	
-
 	//for debug
 	private static ArrayList<String> getAllCards() {
 		ArrayList<String> out = new ArrayList<String>();
@@ -95,6 +93,87 @@ public class WitchCharacter extends CustomPlayer{
 		}
 		return out;
 	}
+	
+	@Override
+	public ArrayList<String> getStartingRelics() {
+		ArrayList<String> retVal = new ArrayList<>();
+		retVal.add("BlackCat");
+		UnlockTracker.markRelicAsSeen("BlackCat");
+		return retVal;
+	}
+	
+	
+	@Override
+	public CharSelectInfo getLoadout() {
+		return new CharSelectInfo("The Witch", "A cackling sorceress specialized NL in dealing with curses.",
+				67, 67, 0, 99, 5,
+			this, getStartingRelics(), getStartingDeck(), false);
+	}
+	
+	
+
+
+
+
+	@Override
+	public String getTitle(PlayerClass var1) {
+		return "The Witch";
+	}
+
+	@Override
+	public Color getCardColor() {
+		return Color.SLATE;
+	}
+
+
+	@Override
+	public AbstractCard getStartCardForEvent() {
+		return new ZombieSpit();
+	}
+
+	@Override
+	public Color getCardTrailColor() {
+		return Color.SLATE;
+	}
+
+	@Override
+	public String getLeaderboardCharacterName() {
+		return "The Witch";
+	}
+
+	@Override
+	public int getAscensionMaxHPLoss() {
+		return 4;
+	}
+
+
+	@Override
+	public void doCharSelectScreenSelectEffect() {
+		CardCrawlGame.sound.playA("BYRD_DEATH", MathUtils.random(-0.2f, 0.2f));
+	}
+
+	@Override
+	public String getCustomModeCharacterButtonSoundKey() {
+		return "BYRD_DEATH";
+	}
+
+
+	@Override
+	public String getLocalizedCharacterName() {
+		return "The Witch";
+	}
+
+
+	@Override
+	public AbstractPlayer newInstance() {
+		// TODO Auto-generated method stub
+		return new WitchCharacter(this.name);
+	}
+	
+	@Override
+    public BitmapFont getEnergyNumFont() {
+        return FontHelper.energyNumFontBlue;
+    }
 	
 
 }

@@ -30,6 +30,7 @@ public class VileEgg extends AbstractWitchCard{
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
 		this.baseMagicNumber = this.magicNumber = POWER;
 		this.exhaust = true;
+		this.tags.add(CardTags.HEALING);
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {

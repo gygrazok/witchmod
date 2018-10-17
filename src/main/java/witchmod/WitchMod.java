@@ -196,8 +196,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 
 	public void receiveEditCharacters() {
-		BaseMod.addCharacter(WitchCharacter.class, "The Witch", "WitchCharacter",
-				AbstractCardEnum.WITCH, "The Witch",
+		BaseMod.addCharacter(new WitchCharacter("The Witch"),
+				AbstractCardEnum.WITCH, 
 				getResourcePath(CHAR_BUTTON), 
 				getResourcePath(CHAR_PORTRAIT),
 				WitchEnum.WITCH);
@@ -359,6 +359,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveOnBattleStart(AbstractRoom room) {
 		cardsDrawnTotal = 0;
 		cursesDrawnTotal = 0;
+		cardsDrawnThisTurn = 0;
 	}
 	
 

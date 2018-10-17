@@ -36,7 +36,7 @@ public class CharSelectionScreenNewLineInRelicDescriptionPatch {
         } else {
             for (int i = 0; i < charInfo.relics.size(); ++i) {
                 AbstractRelic r = RelicLibrary.getRelic(charInfo.relics.get(i));
-                r.updateDescription(charInfo.color);
+                r.updateDescription(charInfo.player.chosenClass);
                 Hitbox relicHitbox = new Hitbox(80.0f * Settings.scale * (0.01f + (1.0f - 0.019f * (float)charInfo.relics.size())), 80.0f * Settings.scale);
                 relicHitbox.move(infoX + (float)i * 72.0f * Settings.scale * (0.01f + (1.0f - 0.019f * (float)charInfo.relics.size())), infoY - 60.0f * Settings.scale);
                 relicHitbox.render(sb);

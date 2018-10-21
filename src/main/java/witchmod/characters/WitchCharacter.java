@@ -3,21 +3,20 @@ package witchmod.characters;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.Prefs;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.screens.stats.CharStat;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
@@ -25,6 +24,7 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import witchmod.WitchMod;
 import witchmod.cards.ZombieSpit;
+import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
 
 
@@ -121,8 +121,8 @@ public class WitchCharacter extends CustomPlayer{
 	}
 
 	@Override
-	public Color getCardColor() {
-		return Color.SLATE;
+	public CardColor getCardColor() {
+		return AbstractCardEnum.WITCH;
 	}
 
 
@@ -166,14 +166,36 @@ public class WitchCharacter extends CustomPlayer{
 
 	@Override
 	public AbstractPlayer newInstance() {
-		// TODO Auto-generated method stub
 		return new WitchCharacter(this.name);
 	}
 	
 	@Override
     public BitmapFont getEnergyNumFont() {
-        return FontHelper.energyNumFontBlue;
+        return FontHelper.energyNumFontRed;
     }
 	
+	@Override
+	public Color getCardRenderColor() {
+		return Color.SLATE;
+	}
+	
+	@Override
+	public String getVampireText() {
+		 return Vampires.DESCRIPTIONS[5];
+	}
 
+	@Override
+	public Color getSlashAttackColor() {
+		return Color.SLATE;
+	}
+	
+	@Override
+	public String getSpireHeartText() {
+		return "NL You invoke an ominous curse...";
+	}
+	
+	@Override
+	public AttackEffect[] getSpireHeartSlashEffect() {
+        return new AbstractGameAction.AttackEffect[]{AbstractGameAction.AttackEffect.POISON, AbstractGameAction.AttackEffect.SMASH, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, AbstractGameAction.AttackEffect.POISON, AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.SLASH_VERTICAL};
+	}
 }

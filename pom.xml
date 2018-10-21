@@ -4,7 +4,7 @@
   <groupId>witchmod</groupId>
   <artifactId>WitchMod</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.2</version>
+  <version>1.1.3</version>
   <name>WitchMod</name>
 
 	<dependencies>
@@ -18,14 +18,14 @@
 		<dependency>
 			<groupId>basemod</groupId>
 			<artifactId>basemod</artifactId>
-			<version>4.0.0</version>
+			<version>5.0.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>modthespire</groupId>
 			<artifactId>modthespire</artifactId>
-			<version>3.2.0</version>
+			<version>3.4.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
 		</dependency>
@@ -56,6 +56,7 @@
 								<copy file="target/WitchMod.jar" tofile="../_ModTheSpire/mods/WitchMod.jar" />
 							</target>
 						</configuration>
+
 						<goals>
 							<goal>run</goal>
 						</goals>
@@ -63,5 +64,13 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.psd</exclude>
+				</excludes>
+			</resource>
+		</resources>
 	</build>
 </project>

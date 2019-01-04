@@ -35,23 +35,23 @@ public class WitchCharacter extends CustomPlayer{
     public static final int ENERGY_PER_TURN = 3;
 
 	public static final String[] orbTextures = {
-			"images/char/orb/layer1.png",
-			"images/char/orb/layer2.png",
-			"images/char/orb/layer3.png",
-			"images/char/orb/layer4.png",
-			"images/char/orb/layer5.png",
-			"images/char/orb/layer6.png",
-			"images/char/orb/layer1d.png",
-			"images/char/orb/layer2d.png",
-			"images/char/orb/layer3d.png",
-			"images/char/orb/layer4d.png",
-			"images/char/orb/layer5d.png"
+			WitchMod.getResourcePath("char/orb/layer1.png"),
+			WitchMod.getResourcePath("char/orb/layer2.png"),
+			WitchMod.getResourcePath("char/orb/layer3.png"),
+			WitchMod.getResourcePath("char/orb/layer4.png"),
+			WitchMod.getResourcePath("char/orb/layer5.png"),
+			WitchMod.getResourcePath("char/orb/layer6.png"),
+			WitchMod.getResourcePath("char/orb/layer1d.png"),
+			WitchMod.getResourcePath("char/orb/layer2d.png"),
+			WitchMod.getResourcePath("char/orb/layer3d.png"),
+			WitchMod.getResourcePath("char/orb/layer4d.png"),
+			WitchMod.getResourcePath("char/orb/layer5d.png")
 	};
 
 
 	
 	public WitchCharacter(String name) {
-		super(name, WitchEnum.WITCH, orbTextures, "images/char/orb/vfx.png", null, new SpriterAnimation(WitchMod.getResourcePath("char/spriter/witch.scml")));
+		super(name, WitchEnum.WITCH, orbTextures, WitchMod.getResourcePath("char/orb/vfx.png"), null, new SpriterAnimation(WitchMod.getResourcePath("char/spriter/witch.scml")));
 		dialogX = drawX + 0.0f * Settings.scale;
 		dialogY = drawY + 220.0f * Settings.scale;
 		

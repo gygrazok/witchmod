@@ -129,10 +129,10 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	private static final String MODNAME = "WitchMod";
 	private static final String AUTHOR = "Gygrazok";
-	private static final String DESCRIPTION = "v1.0\n Adds The Witch character";
+	private static final String DESCRIPTION = "v1.1.4\n Adds The Witch character";
 
 	private static final Color WITCH_COLOR = CardHelper.getColor(90.0f, 90.0f, 100.0f);
-	private static final String ASSETS_FOLDER = "images";
+	private static final String ASSETS_FOLDER = "witchmod_images";
 
 	private static final String ATTACK_CARD = "512/bg_attack_witch.png";
 	private static final String SKILL_CARD = "512/bg_skill_witch.png";
@@ -165,9 +165,6 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	public WitchMod() {
 		BaseMod.subscribe(this);
-		
-
-
 
 		BaseMod.addColor(AbstractCardEnum.WITCH,
 				WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR, WITCH_COLOR,
@@ -309,7 +306,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 
 	public void receiveEditStrings() {
-		String relicStrings = Gdx.files.internal("strings/relic-strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+		String relicStrings = Gdx.files.internal("witchmod_strings/relic-strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
 		BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
 	}
 

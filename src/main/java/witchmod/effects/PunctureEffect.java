@@ -13,8 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
 
-public class PunctureEffect
-extends AbstractGameEffect {
+public class PunctureEffect extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion img;
     private float x;
     private float y;
@@ -76,6 +75,11 @@ extends AbstractGameEffect {
         sb.draw(img, this.x, this.y, (float)PunctureEffect.img.packedWidth / 2.0f, (float)PunctureEffect.img.packedHeight / 2.0f, PunctureEffect.img.packedWidth, PunctureEffect.img.packedHeight, this.scale * MathUtils.random(1.0f, 1.2f), this.scale * MathUtils.random(1.0f, 1.2f), this.rotation);
         sb.draw(img, this.x, this.y, (float)PunctureEffect.img.packedWidth / 2.0f, (float)PunctureEffect.img.packedHeight / 2.0f, PunctureEffect.img.packedWidth, PunctureEffect.img.packedHeight, this.scale * MathUtils.random(0.9f, 1.1f), this.scale * MathUtils.random(0.9f, 1.1f), this.rotation);
         sb.setBlendFunction(770, 771);
+    }
+
+    @Override
+    public void dispose() {
+
     }
 }
 

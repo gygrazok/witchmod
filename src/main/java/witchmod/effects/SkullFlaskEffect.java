@@ -14,8 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-public class SkullFlaskEffect
-extends AbstractGameEffect {
+public class SkullFlaskEffect extends AbstractGameEffect {
 	private static TextureAtlas.AtlasRegion img;
 	private float sX;
 	private float sY;
@@ -81,6 +80,11 @@ extends AbstractGameEffect {
 		sb.draw(img, this.cX - (float)(SkullFlaskEffect.img.packedWidth / 2), this.cY - (float)(SkullFlaskEffect.img.packedHeight / 2) + this.yOffset, (float)SkullFlaskEffect.img.packedWidth / 2.0f, (float)SkullFlaskEffect.img.packedHeight / 2.0f, SkullFlaskEffect.img.packedWidth, SkullFlaskEffect.img.packedHeight, this.scale, this.scale, this.rotation);
 		sb.draw(img, this.cX - (float)(SkullFlaskEffect.img.packedWidth / 2), this.cY - (float)(SkullFlaskEffect.img.packedHeight / 2) + this.yOffset, (float)SkullFlaskEffect.img.packedWidth / 2.0f, (float)SkullFlaskEffect.img.packedHeight / 2.0f, SkullFlaskEffect.img.packedWidth, SkullFlaskEffect.img.packedHeight, this.scale, this.scale, this.rotation);
 		sb.setBlendFunction(770, 771);
+	}
+
+	@Override
+	public void dispose() {
+
 	}
 }
 

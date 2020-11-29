@@ -4,28 +4,28 @@
   <groupId>witchmod</groupId>
   <artifactId>WitchMod</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.4</version>
+  <version>1.2.0</version>
   <name>WitchMod</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.megacrit.cardcrawl</groupId>
 			<artifactId>slaythespire</artifactId>
-			<version>09-21-2018</version>
+			<version>07-30-2020</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>basemod</groupId>
 			<artifactId>basemod</artifactId>
-			<version>5.0.0</version>
+			<version>5.26.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>modthespire</groupId>
 			<artifactId>modthespire</artifactId>
-			<version>3.4.0</version>
+			<version>3.18.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
 		</dependency>

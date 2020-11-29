@@ -39,7 +39,7 @@ public class RottenWinds extends AbstractWitchCard{
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(), 0.0f));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(false), 0.0f));
 		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new RotPower(mo,p, magicNumber, false),magicNumber, true));
 		}

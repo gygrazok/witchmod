@@ -88,5 +88,10 @@ public class ColoredSliceEffect extends AbstractGameEffect {
 		sb.setBlendFunction(770, 771);
 
 	}
+
+	@Override
+	public void dispose() {
+
+	}
 }
 

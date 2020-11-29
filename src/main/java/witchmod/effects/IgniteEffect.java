@@ -32,5 +32,10 @@ public class IgniteEffect extends AbstractGameEffect {
     @Override
     public void render(SpriteBatch sb) {
     }
+
+    @Override
+    public void dispose() {
+
+    }
 }
 

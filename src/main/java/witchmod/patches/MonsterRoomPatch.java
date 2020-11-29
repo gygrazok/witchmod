@@ -3,33 +3,29 @@ package witchmod.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.NlothsGift;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
 import witchmod.powers.AthamePower;
 
+import java.util.Iterator;
 
-@SpirePatch(cls="com.megacrit.cardcrawl.rooms.MonsterRoom", method="getCardRarity")
+
+@SpirePatch(cls="com.megacrit.cardcrawl.rooms.AbstractRoom", method="alterCardRarityProbabilities")
 public class MonsterRoomPatch {
-	public static Object Replace(MonsterRoom __instance, int roll) {
-		boolean hasNlothsGift = AbstractDungeon.player.hasRelic(NlothsGift.ID);
-        int rareRate = 3;
-		if (AbstractDungeon.player.hasPower(AthamePower.POWER_ID) && AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount > 0){
-			rareRate += AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount;
-		}
-		int baseRate = rareRate;
-		if (hasNlothsGift) {
-			rareRate *= 3;
-		}
-        if (roll < rareRate) {
-            if (hasNlothsGift && roll > baseRate) {
-                AbstractDungeon.player.getRelic(NlothsGift.ID).flash();
-            }
-            return AbstractCard.CardRarity.RARE;
+	public static void Replace(AbstractRoom __instance) {
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            __instance.rareCardChance = r.changeRareCardRewardChance(__instance.rareCardChance);
         }
-        if (roll < 40) {
-            return AbstractCard.CardRarity.UNCOMMON;
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            __instance.uncommonCardChance = r.changeUncommonCardRewardChance(__instance.uncommonCardChance);
         }
-        return AbstractCard.CardRarity.COMMON;
+        //PATCH FOR ATHAME RARE BONUS
+        if (AbstractDungeon.player.hasPower(AthamePower.POWER_ID) && AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount > 0){
+            __instance.rareCardChance += AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount;
+        }
     }
+
 }

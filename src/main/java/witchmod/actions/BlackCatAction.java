@@ -36,7 +36,6 @@ public class BlackCatAction extends AbstractGameAction{
             ReflectionHacks.setPrivate(AbstractDungeon.cardRewardScreen, CardRewardScreen.class, "discovery", true);
             ((SingingBowlButton) ReflectionHacks.getPrivate(AbstractDungeon.cardRewardScreen, CardRewardScreen.class, "bowlButton")).hide();
             ((SkipCardButton) ReflectionHacks.getPrivate(AbstractDungeon.cardRewardScreen, CardRewardScreen.class, "skipButton")).hide();
-            AbstractDungeon.cardRewardScreen.onCardSelect = true;
             AbstractDungeon.topPanel.unhoverHitboxes();
             ArrayList<AbstractCard> derp = new ArrayList<AbstractCard>();
             while (derp.size() != 3) {

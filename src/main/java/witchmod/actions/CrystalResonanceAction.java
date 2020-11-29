@@ -14,7 +14,7 @@ public class CrystalResonanceAction extends AbstractGameAction{
 	public void update() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
         	if (c.type == CardType.SKILL) {
-        		c.modifyCostForTurn(-1);
+        		c.setCostForTurn(c.costForTurn-1);
         	}
         }
 		this.isDone = true;

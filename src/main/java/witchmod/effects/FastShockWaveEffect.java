@@ -59,6 +59,11 @@ public class FastShockWaveEffect extends AbstractGameEffect {
     public void render(SpriteBatch sb) {
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
     public static enum ShockWaveType {
         ADDITIVE,
         NORMAL,

@@ -2,7 +2,7 @@
 {
     "WitchMod:Athame": {
         "NAME": "Athame",
-        "DESCRIPTION": "Deal !D! damage. If Fatal increase the chance of receiving rare cards by !M!% and Exhaust this card."
+        "DESCRIPTION": "Deal !D! damage. If Fatal, increase the chance of receiving rare cards by !M!% and Exhaust this card."
     },
     "WitchMod:Atonement": {
         "NAME": "Atonement",
@@ -12,17 +12,21 @@
         "NAME": "Baleful Ward",
         "DESCRIPTION": "Gain !B! Block. NL If your Block is broken this turn, add a copy of this card to your hand."
     },
+    "WitchMod:BatFamiliar": {
+        "NAME": "Bat",
+        "DESCRIPTION": "Ethereal. NL Apply 1 Weak. Reduce Strength by !M! for 1 turn. NL Exhaust."
+    },
     "WitchMod:Bewitch": {
         "NAME": "Bewitch",
         "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies. NL Draw a card."
     },
     "WitchMod:BlackBolt": {
         "NAME": "Black Bolt",
-        "DESCRIPTION": "Deal !D! damage. Apply !M! Weak if you have at least a Curse in hand."
+        "DESCRIPTION": "Deal !D! damage. Apply !M! Weak if you have a Curse in hand."
     },
     "WitchMod:BlackShield": {
         "NAME": "Black Shield",
-        "DESCRIPTION": "Gain !B! Block, doubled if you have at least a Curse in hand."
+        "DESCRIPTION": "Gain !B! Block, doubled if you have a Curse in hand."
     },
     "WitchMod:BleedOut": {
         "NAME": "Bleed Out",
@@ -39,11 +43,15 @@
     },
     "WitchMod:BoneCarving": {
         "NAME": "Bone Carving",
-        "DESCRIPTION": "When drawn apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage."
+        "DESCRIPTION": "When drawn, apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage."
     },
     "WitchMod:Broomstick": {
         "NAME": "Broomstick",
-        "DESCRIPTION": "Deal !D! damage. If the target is Weak the damage is increased by 50% and apply 1 Weak."
+        "DESCRIPTION": "Deal !D! damage. If the target is Weak: damage is increased by 50% and apply 1 Weak."
+    },
+    "WitchMod:CatFamiliar": {
+        "NAME": "Cat",
+        "DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Exhaust."
     },
     "WitchMod:ChosenOfTheMoon": {
         "NAME": "Moon Chosen",
@@ -51,11 +59,11 @@
     },
     "WitchMod:CorruptBlood": {
         "NAME": "Corrupt Blood",
-        "DESCRIPTION": "If the enemy is Poisoned turn all Poison into Rot, otherwise apply !M! Poison. Recurrent."
+        "DESCRIPTION": "If the enemy is Poisoned, turn all Poison into Rot, otherwise apply !M! Poison. Recurrent."
     },
     "WitchMod:CrystalResonance": {
         "NAME": "Crystal Resonance",
-        "DESCRIPTION": "When drawn reduce by !M! the cost of all Skills in hand for this turn. NL Gain !B! Block."
+        "DESCRIPTION": "When drawn, reduce by !M! the cost of all Skills in hand for this turn. NL Gain !B! Block."
     },
     "WitchMod:CursedBlade": {
         "NAME": "Cursed Blade",
@@ -63,7 +71,7 @@
     },
     "WitchMod:DarkProcession": {
         "NAME": "Dark Procession",
-        "DESCRIPTION": "At the start of your turn add a copy of the last played card to your hand."
+        "DESCRIPTION": "At the start of your turn, add a copy of the last played card to your hand."
     },
     "WitchMod:Decrepify": {
         "NAME": "Decrepify",
@@ -92,7 +100,7 @@
     },
     "WitchMod:EternalThirst": {
         "NAME": "Eternal Thirst",
-        "DESCRIPTION": "Unplayable. NL Cleanse: suffer at least 20 damage in this fight.",
+        "DESCRIPTION": "Unplayable. NL Cleanse: Suffer at least 20 damage in this fight.",
         "UPGRADE_DESCRIPTION": "Deal !D! damage, then heal for the unblocked damage dealt.",
         "EXTENDED_DESCRIPTION": [
             " NL You have suffered ",
@@ -116,7 +124,7 @@
     },
     "WitchMod:GhoulTouch": {
         "NAME": "Ghoul Touch",
-        "DESCRIPTION": "Deal !D! damage, then enemy loses Strength for 1 turn equal to the unblocked damage dealt."
+        "DESCRIPTION": "Deal !D! damage, then enemy loses Strength this turn equal to unblocked damage."
     },
     "WitchMod:GnarledBody": {
         "NAME": "Gnarled Body",
@@ -135,7 +143,7 @@
     },
     "WitchMod:Harmlessness": {
         "NAME": "Harmlessness",
-        "DESCRIPTION": "Unplayable. NL Cleanse: play 3 skills this turn.",
+        "DESCRIPTION": "Unplayable. NL Cleanse: Play 3 skills this turn.",
         "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
         "EXTENDED_DESCRIPTION": [
             "\"Harmlessness\""
@@ -147,7 +155,7 @@
     },
     "WitchMod:IllOmen": {
         "NAME": "Ill Omen",
-        "DESCRIPTION": "Shuffle a random Curse in your draw pile. The next time you draw a Curse deal !M! damage to ALL enemies. Exhaust."
+        "DESCRIPTION": "Shuffle a random Curse in your draw pile. The next time you draw a Curse, deal !M! damage to ALL enemies. Exhaust."
     },
     "WitchMod:IllusionOfStrength": {
         "NAME": "Illusory Strength",
@@ -164,11 +172,11 @@
     },
     "WitchMod:KarmaDrain": {
         "NAME": "Karma Drain",
-        "DESCRIPTION": "Apply X Weak. Gain !B! Block X times."
+        "DESCRIPTION": "Apply X Weak. Gain !B!X block."
     },
     "WitchMod:LivingBomb": {
         "NAME": "Living Bomb",
-        "DESCRIPTION": "Kill an enemy if it has !M! HP or less. If successful, other enemies are dealt !D! damage.",
+        "DESCRIPTION": "If the enemy has less than !M! HP, set their HP to 0, then deal !D! damage to ALL enemies.",
         "EXTENDED_DESCRIPTION": [
             "The enemy must have #r",
             " HP or less."
@@ -188,7 +196,7 @@
     },
     "WitchMod:MercuryWand": {
         "NAME": "Mercury Wand",
-        "DESCRIPTION": "If you have 0 block gain !B! Block, otherwise deal !D! damage.",
+        "DESCRIPTION": "If you have 0 block: gain !B! Block, otherwise deal !D! damage.",
         "EXTENDED_DESCRIPTION": [
             " NL Will gain !B! Block",
             " NL Will deal !D! damage"
@@ -208,12 +216,16 @@
     },
     "WitchMod:NighInvulnerability": {
         "NAME": "Nigh Invulnerability",
-        "DESCRIPTION": "Unplayable. NL Cleanse: play 3 attacks this turn.",
+        "DESCRIPTION": "Unplayable. NL Cleanse: Play 3 attacks this turn.",
         "UPGRADE_DESCRIPTION": "Gain !M! Intangible."
+    },
+    "WitchMod:OwlFamiliar": {
+        "NAME": "Owl",
+        "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL Exhaust."
     },
     "WitchMod:PainBolt": {
         "NAME": "Pain Bolt",
-        "DESCRIPTION": "Applies X Vulnerable, then deal !D! multiplied by X damage.",
+        "DESCRIPTION": "Applies X Vulnerable, then deal !D!X damage.",
         "EXTENDED_DESCRIPTION": [
             " NL Current damage: "
         ]
@@ -230,6 +242,14 @@
     "WitchMod:Puncture": {
         "NAME": "Puncture",
         "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+    },
+    "WitchMod:RatFamiliar": {
+        "NAME": "Rat",
+        "DESCRIPTION": "Ethereal. NL Apply !M! Poison and !M! Decrepit. NL Exhaust."
+    },
+    "WitchMod:RavenFamiliar": {
+        "NAME": "Raven",
+        "DESCRIPTION": "Ethereal. NL Upgrade a card in your hand and reduce its cost by 1 for the rest of the combat. NL Exhaust."
     },
     "WitchMod:RiteOfAutumn": {
         "NAME": "Rite of Autumn",
@@ -249,7 +269,7 @@
     },
     "WitchMod:RoilingBarrier": {
         "NAME": "Roiling Barrier",
-        "DESCRIPTION": "Gain !B! Block. When drawn increase this card's Block by !M!. NL Recurrent."
+        "DESCRIPTION": "Gain !B! block. When drawn increase this card's Block by !M!. NL Recurrent."
     },
     "WitchMod:RustWall": {
         "NAME": "Wall of Rust",
@@ -257,11 +277,11 @@
     },
     "WitchMod:RustWallCurse": {
         "NAME": "Curse of Rust",
-        "DESCRIPTION": "Unplayable. At the end of your turn lose half of your Block. NL Ethereal."
+        "DESCRIPTION": "Unplayable. At the end of your turn lose half of your block. NL Ethereal."
     },
     "WitchMod:SaltCircle": {
         "NAME": "Salt Circle",
-        "DESCRIPTION": "Retain. NL Gain !B! Block."
+        "DESCRIPTION": "Retain. NL Gain !B! block."
     },
     "WitchMod:Schadenfreude": {
         "NAME": "Schadenfreude",
@@ -273,11 +293,11 @@
     },
     "WitchMod:SkullFlask": {
         "NAME": "Skull Flask",
-        "DESCRIPTION": "When drawn gain !M! Strength for 1 turn. NL Deal !D! damage."
+        "DESCRIPTION": "When drawn, gain !M! Strength for this turn. NL Deal !D! damage."
     },
     "WitchMod:SoulBarrier": {
         "NAME": "Soul Barrier",
-        "DESCRIPTION": "When drawn gain !M! Block. NL Gain !B! Block. NL Exhaust."
+        "DESCRIPTION": "When drawn, gain !M! block. NL Gain !B! block. NL Exhaust."
     },
     "WitchMod:StrangeBrew": {
         "NAME": "Strange Brew",
@@ -322,23 +342,27 @@
     },
     "WitchMod:Thundercloud": {
         "NAME": "Thundercloud",
-        "DESCRIPTION": "When drawn apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies."
+        "DESCRIPTION": "When drawn, apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies."
+    },
+    "WitchMod:ToadFamiliar": {
+        "NAME": "Toad",
+        "DESCRIPTION": "Ethereal. NL Gain !B! Block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust."
     },
     "WitchMod:TrollsBlood": {
         "NAME": "Troll's Blood",
-        "DESCRIPTION": "Recover !M! health at the end of each turn in which you played at least an attack."
+        "DESCRIPTION": "Recover !M! HP at the end of each turn in which you played at least an attack."
     },
     "WitchMod:TwistedMind": {
         "NAME": "Twisted Mind",
-        "DESCRIPTION": "Whenever you play a card that costs 2 or more, ALL enemies lose !M! health."
+        "DESCRIPTION": "Whenever you play a card that costs 2 or more, ALL enemies lose !M! HP."
     },
     "WitchMod:Twitch": {
         "NAME": "Twitch",
-        "DESCRIPTION": "When drawn gain !M! Dexterity for 1 turn. NL Gain !B! block."
+        "DESCRIPTION": "When drawn gain !M! Dexterity this turn. NL Gain !B! block."
     },
     "WitchMod:UnluckySeven": {
         "NAME": "Unlucky Seven",
-        "DESCRIPTION": "Unplayable. NL Cleanse: have your current health ending with 7.",
+        "DESCRIPTION": "Unplayable. NL Cleanse: Have your current health ending with 7.",
         "UPGRADE_DESCRIPTION": "Gain !M! [B]. NL Draw !M! cards. NL Lose !M! health. NL Exhaust.",
         "EXTENDED_DESCRIPTION": [
             "Lucky Seven"
@@ -376,30 +400,6 @@
     },
     "WitchMod:ZombieSpit": {
         "NAME": "Zombie Spit",
-        "DESCRIPTION": "Deal !D! damage and apply !M! Decrepit."
-    },
-    "WitchMod:BatFamiliar": {
-        "NAME": "Bat",
-        "DESCRIPTION": "Ethereal. NL Apply 1 Weak. Reduce Strength by !M! for 1 turn. NL Exhaust."
-    },
-    "WitchMod:CatFamiliar": {
-        "NAME": "Cat",
-        "DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Exhaust."
-    },
-    "WitchMod:OwlFamiliar": {
-        "NAME": "Owl",
-        "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL Exhaust."
-    },
-    "WitchMod:RatFamiliar": {
-        "NAME": "Rat",
-        "DESCRIPTION": "Ethereal. NL Apply !M! Poison and !M! Decrepit. NL Exhaust."
-    },
-    "WitchMod:RavenFamiliar": {
-        "NAME": "Raven",
-        "DESCRIPTION": "Ethereal. NL Upgrade a card in your hand and reduce its cost by 1 for the rest of the combat. NL Exhaust."
-    },
-    "WitchMod:ToadFamiliar": {
-        "NAME": "Toad",
-        "DESCRIPTION": "Ethereal. NL Gain !B! Block. Reduce your Vulnerable, Weak and Frail by !M!. NL Exhaust."
+        "DESCRIPTION": "Deal !D! damage. Apply !M! Decrepit."
     }
 }

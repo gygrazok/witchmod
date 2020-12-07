@@ -26,7 +26,7 @@ public class OwlFamiliar extends AbstractWitchCard{
 	private static final int UPGRADE_BONUS = 1;
 
 	public OwlFamiliar() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		super(ID,IMG,COST,TYPE,RARITY,TARGET);
 		this.magicNumber = this.baseMagicNumber = POWER;
 		this.exhaust = true;
 		this.isEthereal = true;

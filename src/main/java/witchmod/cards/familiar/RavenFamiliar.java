@@ -25,7 +25,7 @@ public class RavenFamiliar extends AbstractWitchCard{
 	private static final int COST_UPGRADED = 0;
 
 	public RavenFamiliar() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		super(ID,IMG,COST,TYPE,RARITY,TARGET);
 		this.exhaust = true;
 		this.isEthereal = true;
 	}

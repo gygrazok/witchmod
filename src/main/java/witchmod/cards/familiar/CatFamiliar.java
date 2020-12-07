@@ -29,7 +29,7 @@ public class CatFamiliar extends AbstractWitchCard{
 	private static final int UPGRADE_MAGIC_BONUS = 1;
 
 	public CatFamiliar() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		super(ID,IMG,COST,TYPE,RARITY,TARGET);
 		this.baseDamage = POWER;
 		this.magicNumber = this.baseMagicNumber = MAGIC;
 		this.exhaust = true;

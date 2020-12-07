@@ -8,49 +8,48 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import witchmod.powers.RotPower;
 
-public class Malady extends AbstractWitchCard{
-	public static final String ID = "Malady";
-	public static final	String NAME = "Malady";
-	public static final	String IMG = "cards/malady.png";
-	public static final	String DESCRIPTION = "Deal !D! damage and apply !M! Rot. NL Exhaust.";
+public class Malady extends AbstractWitchCard {
+    public static final String ID = "Malady";
+    public static final String NAME = "Malady";
+    public static final String IMG = "cards/malady.png";
+    public static final String DESCRIPTION = "Deal !D! damage and apply !M! Rot. NL Exhaust.";
 
-	private static final CardRarity RARITY = CardRarity.UNCOMMON;
-	private static final CardTarget TARGET = CardTarget.ENEMY;
-	private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
 
-	private static final int POOL = 1;
+    private static final int POOL = 1;
 
-	private static final int COST = 1;
-	private static final int DAMAGE = 9;
-	private static final int DAMAGE_BONUS = 3;
-	private static final int MAGIC = 2;
-	private static final int MAGIC_BONUS = 2;
+    private static final int COST = 1;
+    private static final int DAMAGE = 9;
+    private static final int DAMAGE_BONUS = 3;
+    private static final int MAGIC = 2;
+    private static final int MAGIC_BONUS = 2;
 
-	public Malady() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseDamage = DAMAGE;
-		this.magicNumber = this.baseMagicNumber = MAGIC;
-		this.exhaust = true;
-	}
+    public Malady() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.exhaust = true;
+    }
 
-	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new RotPower(m,p, magicNumber), magicNumber));
-	}
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new RotPower(m, p, magicNumber), magicNumber));
+    }
 
 
-	public AbstractCard makeCopy() {
-		return new Malady();
-	}
+    public AbstractCard makeCopy() {
+        return new Malady();
+    }
 
-	public void upgrade() {
-		if (!upgraded) {
-			upgradeName();
-			upgradeDamage(DAMAGE_BONUS);
-			upgradeMagicNumber(MAGIC_BONUS);
-		}
-	}
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(DAMAGE_BONUS);
+            upgradeMagicNumber(MAGIC_BONUS);
+        }
+    }
 }

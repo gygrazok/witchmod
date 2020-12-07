@@ -1,0 +1,43 @@
+Corrupt Blood
+"poisoned, "
+
+Thundercloud
+"when drawn, "
+
+Soul Barrier
+"when drawn, "
+
+Pain Bolt
+should be "Apply X Vulnerable, then deal 4X damage."
+
+Pet Cage (relic)
+"to your hand"
+
+Ghoul Touch
+"enemy loses Strength this turn equal to unblocked damage."
+
+Mercury Wand
+"If you have 0 block: "
+
+Broomstick
+"if the target is weak:"
+
+Living Bomb
+rewrite it based on the Watcher's "Judgment". "If the enemy has less than {number} HP, set their HP to 0, then deal 12 damage to ALL enemies."
+
+Zombie Spit
+"Deal 4 damage. Apply 1 Decrepit."
+
+
+
+General comments:
+* Reword cards to make use of Fatal keyword
+* All cards that say "health" should say "HP" instead
+* "if you have at least a curse in hand" should be "if you have a curse in your hand" (or something similar, I couldn't find any good examples.)
+* You could use a keyword for additional effects that apply if you have a curse in your hand. 
+* Other mods use a keyword for temporary buffs, like "Momentary" in Downfall mod. You should use a similar keyword. "For 1 turn" is too ambiguous.
+* You should capitalize the first word after each ":", so this is something you need to change on each Cleanse card.
+* You could use a keyword for Familiars. It would simplify each familiar card by a lot. Each card's text would say "Familiar - At the start of your turn, add 1 [card] to your hand." and the "Familiar" keyword would say something like "Lose this buff when you play another Familiar card".
+* You could use a keyword for effects that trigger when drawn. My suggestion would be "Cantrip - {effect}", and the description would be "Apply this effect when the card is drawn."
+
+* This suggestion is more of a gameplay suggestion, but I'll put it here to keep my thoughts in one place. It would be interesting if you could have multiple Familiars at one time. I'm not sure if your mod already HAS ways to do this, because it's possible I haven't seen everything yet, but if it doesn't, then I recommend the following: Add a keyword that means something like "Exclusive", and pair it with "Familiar", so for example, "Exclusive Familiar". Then, if you upgrade the card (or do something else), it could lose the "Exclusive" modifier, and let you play multiple familiars. I think a Familiar-oriented run would be interesting and unique, but it's currently impossible afaik because you're only able to have one.

@@ -1,10 +1,16 @@
 package witchmod.characters;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +28,9 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import org.lwjgl.Sys;
 import witchmod.WitchMod;
+import witchmod.cards.AbstractWitchCard;
 import witchmod.cards.ZombieSpit;
 import witchmod.patches.AbstractCardEnum;
 import witchmod.patches.WitchEnum;
@@ -71,16 +79,16 @@ public class WitchCharacter extends CustomPlayer{
 	@Override
 	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Strike_Witch");
-		retVal.add("Strike_Witch");
-		retVal.add("Strike_Witch");
-		retVal.add("Strike_Witch");
-		retVal.add("Defend_Witch");
-		retVal.add("Defend_Witch");
-		retVal.add("Defend_Witch");
-		retVal.add("Defend_Witch");
-		retVal.add("Hexguard");
-		retVal.add("ZombieSpit");
+		retVal.add("WitchMod:Strike_Witch");
+		retVal.add("WitchMod:Strike_Witch");
+		retVal.add("WitchMod:Strike_Witch");
+		retVal.add("WitchMod:Strike_Witch");
+		retVal.add("WitchMod:Defend_Witch");
+		retVal.add("WitchMod:Defend_Witch");
+		retVal.add("WitchMod:Defend_Witch");
+		retVal.add("WitchMod:Defend_Witch");
+		retVal.add("WitchMod:Hexguard");
+		retVal.add("WitchMod:ZombieSpit");
 		return retVal;
 		//return getAllCards();
 	}

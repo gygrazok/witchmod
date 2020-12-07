@@ -30,7 +30,7 @@ public class BitterMemories extends AbstractWitchCard{
 
 	
 	public BitterMemories() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		super(ID,IMG,COST,TYPE,RARITY,TARGET);
 		this.baseBlock = POWER;
 	}
 

@@ -2,6 +2,7 @@ package witchmod;
 
 import java.nio.charset.StandardCharsets;
 
+import com.megacrit.cardcrawl.localization.CardStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -129,7 +130,7 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
 	private static final String MODNAME = "WitchMod";
 	private static final String AUTHOR = "Gygrazok";
-	private static final String DESCRIPTION = "v1.1.4\n Adds The Witch character";
+	private static final String DESCRIPTION = "Adds The Witch character";
 
 	private static final Color WITCH_COLOR = CardHelper.getColor(90.0f, 90.0f, 100.0f);
 	private static final String ASSETS_FOLDER = "witchmod_images";
@@ -308,6 +309,8 @@ public class WitchMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditStrings() {
 		String relicStrings = Gdx.files.internal("witchmod_strings/relic-strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
 		BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+		String cardStrings = Gdx.files.internal("localization/eng/WitchMod-Card-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+		BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 	}
 
 

@@ -32,7 +32,7 @@ public class RottenWinds extends AbstractWitchCard{
 	private static final int MAGIC = 1;
 
 	public RottenWinds() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		super(ID,IMG,COST,TYPE,RARITY,TARGET);
 		this.baseDamage = POWER;
 		this.magicNumber = this.baseMagicNumber = MAGIC;
 		this.isMultiDamage = true;

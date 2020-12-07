@@ -10,51 +10,51 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class Broomstick extends AbstractWitchCard{
-	public static final String ID = "Broomstick";
-	public static final	String NAME = "Broomstick";
-	public static final	String IMG = "cards/broomsticksmash.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 50% and apply 1 Weak.";
+public class Broomstick extends AbstractWitchCard {
+    public static final String ID = "Broomstick";
+    public static final String NAME = "Broomstick";
+    public static final String IMG = "cards/broomsticksmash.png";
+    public static final String DESCRIPTION = "Deal !D! damage. If the target is Weak the damage is increased by 50% and apply 1 Weak.";
 
-	private static final CardRarity RARITY = CardRarity.COMMON;
-	private static final CardTarget TARGET = CardTarget.ENEMY;
-	private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
 
-	private static final int POOL = 1;
+    private static final int POOL = 1;
 
-	private static final int COST = 1;
-	private static final int POWER = 8;
-	private static final int UPGRADE_BONUS = 4;
+    private static final int COST = 1;
+    private static final int POWER = 8;
+    private static final int UPGRADE_BONUS = 4;
 
-	public Broomstick() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseDamage = POWER;
-	}
+    public Broomstick() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.baseDamage = POWER;
+    }
 
-	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (m.hasPower(WeakPower.POWER_ID)) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1, false),1)); 
-		}
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage),AttackEffect.BLUNT_HEAVY));      
-	}
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (m.hasPower(WeakPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
+        }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_HEAVY));
+    }
 
-	public AbstractCard makeCopy() {
-		return new Broomstick();
-	}
+    public AbstractCard makeCopy() {
+        return new Broomstick();
+    }
 
-	@Override
-	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-		if (mo == null) {
-			return tmp;
-		}
-		float bonus = mo.getPower(WeakPower.POWER_ID) == null?1f:1.25f;
-		return tmp*bonus;
-	}
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        if (mo == null) {
+            return tmp;
+        }
+        float bonus = mo.getPower(WeakPower.POWER_ID) == null ? 1f : 1.25f;
+        return tmp * bonus;
+    }
 
-	public void upgrade() {
-		if (!upgraded) {
-			upgradeName();
-			upgradeDamage(UPGRADE_BONUS);
-		}
-	}
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_BONUS);
+        }
+    }
 }

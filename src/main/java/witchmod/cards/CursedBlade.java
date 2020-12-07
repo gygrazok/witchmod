@@ -9,41 +9,41 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CursedBlade extends AbstractWitchCard{
-	public static final String ID = "CursedBlade";
-	public static final	String NAME = "Cursed Blade";
-	public static final	String IMG = "cards/cursedblade.png";
-	public static final	String DESCRIPTION = "Deal !D! damage. Add a random Curse to your discard pile.";
+public class CursedBlade extends AbstractWitchCard {
+    public static final String ID = "CursedBlade";
+    public static final String NAME = "Cursed Blade";
+    public static final String IMG = "cards/cursedblade.png";
+    public static final String DESCRIPTION = "Deal !D! damage. Add a random Curse to your discard pile.";
 
-	private static final CardRarity RARITY = CardRarity.UNCOMMON;
-	private static final CardTarget TARGET = CardTarget.ENEMY;
-	private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
 
-	private static final int POOL = 1;
+    private static final int POOL = 1;
 
-	private static final int COST = 1;
-	private static final int POWER = 13;
-	private static final int UPGRADE_BONUS = 4;
+    private static final int COST = 1;
+    private static final int POWER = 13;
+    private static final int UPGRADE_BONUS = 4;
 
-	public CursedBlade() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
-		this.baseDamage = POWER;
-	}
+    public CursedBlade() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.baseDamage = POWER;
+    }
 
-	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(AbstractDungeon.returnRandomCurse(),1));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(AbstractDungeon.returnRandomCurse(), 1));
 
-	}
+    }
 
-	public AbstractCard makeCopy() {
-		return new CursedBlade();
-	}
+    public AbstractCard makeCopy() {
+        return new CursedBlade();
+    }
 
-	public void upgrade() {
-		if (!upgraded) {
-			upgradeName();
-			upgradeDamage(UPGRADE_BONUS);
-		}
-	}
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_BONUS);
+        }
+    }
 }

@@ -32,7 +32,7 @@ public class ToadFamiliar extends AbstractWitchCard{
 	private static final int UPGRADE_MAGIC_BONUS = 1;
 
 	public ToadFamiliar() {
-		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,RARITY,TARGET,POOL);
+		super(ID,IMG,COST,TYPE,RARITY,TARGET);
 		this.magicNumber = this.baseMagicNumber = MAGIC;
 		this.baseBlock = POWER;
 		this.exhaust = true;

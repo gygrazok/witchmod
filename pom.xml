@@ -1,49 +1,74 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>witchmod</groupId>
-  <artifactId>WitchMod</artifactId>
-  <packaging>jar</packaging>
-  <version>1.2.0</version>
-  <name>WitchMod</name>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>witchmod</groupId>
+	<artifactId>WitchMod</artifactId>
+	<packaging>jar</packaging>
+	<version>1.2.1</version>
+	<name>WitchMod</name>
+	<description>Adds the Witch character.</description>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<SlayTheSpire.version>07-30-2020</SlayTheSpire.version>
+		<ModTheSpire.version>3.18.0</ModTheSpire.version>
+		<BaseMod.version>5.26.0</BaseMod.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<Steam.path>D:\Giochi\SteamLibrary\SteamApps</Steam.path>
 
+		<kotlin.version>1.4.20</kotlin.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.megacrit.cardcrawl</groupId>
 			<artifactId>slaythespire</artifactId>
-			<version>07-30-2020</version>
+			<version>${SlayTheSpire.version}</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
+			<systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.evacipated.cardcrawl</groupId>
+			<artifactId>modthespire</artifactId>
+			<version>${ModTheSpire.version}</version>
+			<scope>system</scope>
+			<systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>basemod</groupId>
 			<artifactId>basemod</artifactId>
-			<version>5.26.0</version>
+			<version>${BaseMod.version}</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>modthespire</groupId>
-			<artifactId>modthespire</artifactId>
-			<version>3.18.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
+			<systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
 		</dependency>
 	</dependencies>
-	
+
+	<!-- This is how your code is packaged into the jar file-->
 	<build>
-		<finalName>WitchMod</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<excludes>
+						<exclude>**/*.psd</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -53,10 +78,10 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<copy file="target/WitchMod.jar" tofile="../_ModTheSpire/mods/WitchMod.jar" />
+								<!-- This moves your mod into a common folder where all mods you make can go. -->
+								<copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
 							</target>
 						</configuration>
-
 						<goals>
 							<goal>run</goal>
 						</goals>
@@ -64,12 +89,24 @@
 				</executions>
 			</plugin>
 		</plugins>
+
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
 				<excludes>
-					<exclude>**/*.psd</exclude>
+					<exclude>ModTheSpire.json</exclude>
 				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>ModTheSpire.json</include>
+				</includes>
 			</resource>
 		</resources>
 	</build>

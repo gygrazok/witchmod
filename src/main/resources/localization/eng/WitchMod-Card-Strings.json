@@ -14,7 +14,7 @@
     },
     "WitchMod:BatFamiliar": {
         "NAME": "Bat",
-        "DESCRIPTION": "Ethereal. NL Apply 1 Weak. Reduce Strength by !M! for 1 turn. NL Exhaust."
+        "DESCRIPTION": "Ethereal. NL Apply 1 Weak. Enemy loses !M! Strength this turn. NL Exhaust."
     },
     "WitchMod:Bewitch": {
         "NAME": "Bewitch",
@@ -30,7 +30,7 @@
     },
     "WitchMod:BleedOut": {
         "NAME": "Bleed Out",
-        "DESCRIPTION": "ALL enemies lose !D! health."
+        "DESCRIPTION": "ALL enemies lose !D! HP."
     },
     "WitchMod:BloodSabbath": {
         "NAME": "Blood Sabbath",
@@ -124,7 +124,7 @@
     },
     "WitchMod:GhoulTouch": {
         "NAME": "Ghoul Touch",
-        "DESCRIPTION": "Deal !D! damage, then enemy loses Strength this turn equal to unblocked damage."
+        "DESCRIPTION": "Deal !D! damage, then enemy loses Strength this turn equal to unblocked damage dealt."
     },
     "WitchMod:GnarledBody": {
         "NAME": "Gnarled Body",
@@ -151,7 +151,7 @@
     },
     "WitchMod:Hexguard": {
         "NAME": "Hexguard",
-        "DESCRIPTION": "Gain !B! block and !M! Artifact for 1 turn."
+        "DESCRIPTION": "Gain !B! block and !M! temporary Artifact."
     },
     "WitchMod:IllOmen": {
         "NAME": "Ill Omen",
@@ -172,7 +172,7 @@
     },
     "WitchMod:KarmaDrain": {
         "NAME": "Karma Drain",
-        "DESCRIPTION": "Apply X Weak. Gain !B!X block."
+        "DESCRIPTION": "Apply X Weak. Gain !B! X block."
     },
     "WitchMod:LivingBomb": {
         "NAME": "Living Bomb",
@@ -192,7 +192,7 @@
     },
     "WitchMod:MementoMori": {
         "NAME": "Memento Mori",
-        "DESCRIPTION": "Deal !D! damage, increased by the percentage of target's missing health. NL Exhaust."
+        "DESCRIPTION": "Deal !D! damage, increased by the percentage of target's missing HP. NL Exhaust."
     },
     "WitchMod:MercuryWand": {
         "NAME": "Mercury Wand",
@@ -225,7 +225,7 @@
     },
     "WitchMod:PainBolt": {
         "NAME": "Pain Bolt",
-        "DESCRIPTION": "Applies X Vulnerable, then deal !D!X damage.",
+        "DESCRIPTION": "Applies X Vulnerable, then deal !D! X damage.",
         "EXTENDED_DESCRIPTION": [
             " NL Current damage: "
         ]
@@ -362,8 +362,8 @@
     },
     "WitchMod:UnluckySeven": {
         "NAME": "Unlucky Seven",
-        "DESCRIPTION": "Unplayable. NL Cleanse: Have your current health ending with 7.",
-        "UPGRADE_DESCRIPTION": "Gain !M! [B]. NL Draw !M! cards. NL Lose !M! health. NL Exhaust.",
+        "DESCRIPTION": "Unplayable. NL Cleanse: Have your current HP ending with 7.",
+        "UPGRADE_DESCRIPTION": "Gain !M! [B]. NL Draw !M! cards. NL Lose !M! HP. NL Exhaust.",
         "EXTENDED_DESCRIPTION": [
             "Lucky Seven"
         ]

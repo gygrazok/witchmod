@@ -12,7 +12,7 @@
 	"WalkingCane":{
 		"NAME": "Walking Cane",
 		"FLAVOR": "Kids these days...",
-		"DESCRIPTIONS":["Weak, Vulnerable and Decrepit no longer decrease each turn."]
+		"DESCRIPTIONS":["Weak, Vulnerable and Decrepit you apply no longer decrease each turn."]
 	},
 	"Scissors":{
 		"NAME": "Scissors",

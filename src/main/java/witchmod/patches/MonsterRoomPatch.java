@@ -15,13 +15,7 @@ import java.util.Iterator;
 
 @SpirePatch(cls="com.megacrit.cardcrawl.rooms.AbstractRoom", method="alterCardRarityProbabilities")
 public class MonsterRoomPatch {
-	public static void Replace(AbstractRoom __instance) {
-        for (AbstractRelic r : AbstractDungeon.player.relics) {
-            __instance.rareCardChance = r.changeRareCardRewardChance(__instance.rareCardChance);
-        }
-        for (AbstractRelic r : AbstractDungeon.player.relics) {
-            __instance.uncommonCardChance = r.changeUncommonCardRewardChance(__instance.uncommonCardChance);
-        }
+	public static void Postfix(AbstractRoom __instance) {
         //PATCH FOR ATHAME RARE BONUS
         if (AbstractDungeon.player.hasPower(AthamePower.POWER_ID) && AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount > 0){
             __instance.rareCardChance += AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount;

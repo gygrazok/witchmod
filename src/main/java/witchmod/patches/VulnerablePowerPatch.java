@@ -1,31 +1,38 @@
 package witchmod.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.ReflectionHacks;
+import javassist.CannotCompileException;
+import javassist.CtBehavior;
+import javassist.expr.ExprEditor;
+import javassist.expr.FieldAccess;
+import javassist.expr.MethodCall;
 import witchmod.relics.WalkingCane;
+
+import java.util.ArrayList;
 
 @SpirePatch(cls="com.megacrit.cardcrawl.powers.VulnerablePower", method="atEndOfRound")
 public class VulnerablePowerPatch {
 
-	public static void Replace(VulnerablePower __instance) {
-		boolean justApplied = (boolean) ReflectionHacks.getPrivate(__instance, VulnerablePower.class, "justApplied");
-		if (justApplied) {
-			ReflectionHacks.setPrivate(__instance, VulnerablePower.class, "justApplied", false);
-			return;
-		}
-		if (AbstractDungeon.player.hasRelic(WalkingCane.ID)) {
+	@SpireInsertPatch(locator=Locator.class)
+	public static SpireReturn<Void> Insert(VulnerablePower __instance) {
+		if (__instance.owner != AbstractDungeon.player && AbstractDungeon.player.hasRelic(WalkingCane.ID)) {
 			AbstractDungeon.player.getRelic(WalkingCane.ID).flash();
-			return;
+			return SpireReturn.Return(null);
 		}
-		if (__instance.amount == 0) {
-			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(__instance.owner, __instance.owner, VulnerablePower.POWER_ID));
-		} else {
-			AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(__instance.owner, __instance.owner, VulnerablePower.POWER_ID, 1));
+		return SpireReturn.Continue();
+	}
+
+	private static class Locator extends SpireInsertLocator {
+		public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+			Matcher amountCheckMatcher = new Matcher.FieldAccessMatcher(VulnerablePower.class, "amount");
+			return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), amountCheckMatcher);
 		}
 	}
 }

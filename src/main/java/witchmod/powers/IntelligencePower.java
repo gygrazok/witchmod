@@ -13,10 +13,8 @@ public class IntelligencePower extends AbstractWitchPower {
 	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn, draw", "random card from your discard pile.", "random cards from your discard pile." };
 	public static final String IMG = "powers/intelligence.png";
 	public IntelligencePower(AbstractCreature owner, int amount) {
-		this.name = NAME;
-		this.ID = POWER_ID;
+		super(POWER_ID);
 		this.owner = owner;
-
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
 		this.type = PowerType.BUFF;
 		this.amount = amount;

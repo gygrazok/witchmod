@@ -14,13 +14,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import witchmod.WitchMod;
 
 public class TwistedMindPower extends AbstractWitchPower {
-    public static final String POWER_ID = "TwistedMindPower";
-    public static final String NAME = "Twisted Mind";
-    public static final String[] DESCRIPTIONS = new String[]{ "Whenever you play a card that costs 2 or more, ALL enemies lose "," health."};
+    private static final String POWER_ID = "TwistedMindPower";
+    //public static final String NAME = "Twisted Mind";
+    //public static final String[] DESCRIPTIONS = new String[]{ "Whenever you play a card that costs 2 or more, ALL enemies lose "," health."};
     public static final String IMG = "powers/twistedmind.png";
     public TwistedMindPower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.img = new Texture(WitchMod.getResourcePath(IMG));
         this.type = PowerType.BUFF;

@@ -8,14 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import witchmod.WitchMod;
 
 public class DarkProcessionPower extends AbstractWitchPower {
-	public static final String POWER_ID = "DarkProcessionPower";
-	public static final String NAME = "Dark Procession";
-	public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add "," copy "," copies "," of the last played card to your hand.", " NL Last played card: " };
+	private static final String POWER_ID = "DarkProcessionPower";
+	//public static final String NAME = "Dark Procession";
+	//public static final String[] DESCRIPTIONS = new String[]{ "At the start of your turn add "," copy "," copies "," of the last played card to your hand.", " NL Last played card: " };
 	public static final String IMG = "powers/darkprocession.png";
 	private AbstractCard card;
 	public DarkProcessionPower(int amount) {
-		this.name = NAME;
-		this.ID = POWER_ID;
+		super(POWER_ID);
 		this.owner = AbstractDungeon.player;
 		this.amount = amount;
 		this.updateDescription();

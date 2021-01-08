@@ -1,6 +1,8 @@
 package witchmod.powers;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,13 +11,14 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import witchmod.WitchMod;
 import witchmod.actions.RotLoseHPAction;
 
-public class RotPower extends AbstractWitchPower {
-    public static final String POWER_ID = "Rot";
-    public static final String NAME = "Rot";
-    public static final String[] DESCRIPTIONS = new String[]{ "At the start of its turn, loses #b",
+public class RotPower extends AbstractWitchPower implements HealthBarRenderPower {
+    private static final String POWER_ID = "Rot";
+    public static final String POWER_ID_FULL = "WitchMod:Rot";
+    //public static final String NAME = "Rot";
+    /*public static final String[] DESCRIPTIONS = new String[]{ "At the start of its turn, loses #b",
 													    		" HP, then Rot increases by 1.",
 													    		" NL When it dies, spread to another monster.",
-													    		"Contagious"};
+													    		"Contagious"};*/
     public static final String IMG = "powers/rot.png";
     private AbstractCreature source;
     public boolean contagious;
@@ -24,8 +27,7 @@ public class RotPower extends AbstractWitchPower {
     }
     
     public RotPower(AbstractCreature owner, AbstractCreature source, int amount, boolean contagious) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.source = source;
         this.amount = amount;
@@ -55,7 +57,16 @@ public class RotPower extends AbstractWitchPower {
             AbstractDungeon.actionManager.addToBottom(new RotLoseHPAction(owner, source, amount, contagious, AbstractGameAction.AttackEffect.POISON));
         }
     }
-    
+
+    @Override
+    public int getHealthBarAmount() {
+        return amount;
+    }
+
+    @Override
+    public Color getColor() {
+        return Color.DARK_GRAY;
+    }
 }
 
 

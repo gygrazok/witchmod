@@ -13,8 +13,7 @@ public class LoseDexterityPower extends AbstractWitchPower {
     public static final String[] DESCRIPTIONS = new String[] { "Temporarily gained #b"," #yDexterity."};
 
     public LoseDexterityPower(AbstractCreature owner, int newAmount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.amount = newAmount;
         this.updateDescription();
@@ -31,7 +30,7 @@ public class LoseDexterityPower extends AbstractWitchPower {
     public void atEndOfTurn(boolean isPlayer) {
         flash();
 		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, DexterityPower.POWER_ID, amount));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
     }
 }
 

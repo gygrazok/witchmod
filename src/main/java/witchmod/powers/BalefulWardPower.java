@@ -9,14 +9,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import witchmod.WitchMod;
 
 public class BalefulWardPower extends AbstractWitchPower {
-	public static final String POWER_ID = "BalefulWardPower";
-	public static final String NAME = "Baleful Ward";
-	public static final String[] DESCRIPTIONS = new String[]{ "If Block is broken add #b", " Baleful Ward to your hand."};
+	private static final String POWER_ID = "BalefulWardPower";
+	//public static final String NAME = "Baleful Ward";
+	//public static final String[] DESCRIPTIONS = new String[]{ "If Block is broken add #b", " Baleful Ward to your hand."};
 	public static final String IMG = "powers/balefulward.png";
 	private AbstractCard card;
 	public BalefulWardPower(AbstractCard cardToCopy) {
-		this.name = NAME;
-		this.ID = POWER_ID;
+		super(POWER_ID);
 		this.owner = AbstractDungeon.player;
 		this.card = cardToCopy;
 		this.img = new Texture(WitchMod.getResourcePath(IMG));
@@ -35,12 +34,12 @@ public class BalefulWardPower extends AbstractWitchPower {
 	public void onBlockBreak() {
 		flash();
 		AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(),this.amount));
-		AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, BalefulWardPower.POWER_ID));
+		AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
 	}
 
 	@Override
 	public void atEndOfRound() {
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, BalefulWardPower.POWER_ID));
+		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
 	}
 
 

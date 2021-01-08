@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import witchmod.WitchMod;
 
 public class DemonfyrePower extends AbstractWitchPower {
-    public static final String POWER_ID = "DemonfyrePower";
-    public static final String NAME = "Demonfyre";
-    public static final String[] DESCRIPTIONS = new String[]{ "Increases the damage of Demonfyre by #b"};
+    public static final String POWER_ID_FULL = "WitchMod:DemonfyrePower";
+    private static final String POWER_ID = "DemonfyrePower";
+    //public static final String NAME = "Demonfyre";
+    //public static final String[] DESCRIPTIONS = new String[]{ "Increases the damage of Demonfyre by #b"};
     public static final String IMG = "powers/demonfyre.png";
     public DemonfyrePower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();

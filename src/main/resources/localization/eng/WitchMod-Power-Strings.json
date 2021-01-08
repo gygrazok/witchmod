@@ -1,0 +1,88 @@
+{
+  "WitchMod:AthamesOffering": {
+    "NAME": "Athame's Offering",
+    "DESCRIPTIONS": ["Chance to obtain a rare card increased by #b", "%."]
+  },
+  "WitchMod:BalefulWardPower": {
+    "NAME": "Baleful Ward",
+    "DESCRIPTIONS": ["If Block is broken add #b", " Baleful Ward to your hand."]
+  },
+  "WitchMod:ChosenOfTheMoonPower": {
+    "NAME": "Chosen of the Moon",
+    "DESCRIPTIONS": ["Gain #b"," Artifact when your turn begins if you have none."]
+  },
+  "WitchMod:DarkProcessionPower": {
+    "NAME": "Dark Procession",
+    "DESCRIPTIONS": ["At the start of your turn add "," copy "," copies "," of the last played card to your hand.", " NL Last played card: "]
+  },
+  "WitchMod:Decrepit": {
+    "NAME": "Decrepit",
+    "DESCRIPTIONS": ["All damage from attacks is increased by #b"]
+  },
+  "WitchMod:DeliriumFormPower": {
+    "NAME": "Delirium Form",
+    "DESCRIPTIONS": ["Whenever you play a non-Cost 0 card, draw "," card."," cards."]
+  },
+  "WitchMod:DemonfyrePower": {
+    "NAME": "Demonfyre",
+    "DESCRIPTIONS": ["Increases the damage of Demonfyre by #b"]
+  },
+  "WitchMod:GrimVengeancePower": {
+    "NAME": "Grim Vengeance",
+    "DESCRIPTIONS": ["When you are attacked apply #b"," witchmod:decrepit to the attacker."]
+  },
+  "WitchMod:HexguardPower": {
+    "NAME": "Hexguard",
+    "DESCRIPTIONS": ["Temporarily gained #b"," Artifact."]
+  },
+  "WitchMod:IllOmenPower": {
+    "NAME": "Ill Omen",
+    "DESCRIPTIONS": ["The next time you draw a curse deal #b"," damage to ALL enemies."]
+  },
+  "WitchMod:ImpendingDoom": {
+    "NAME": "Impending Doom",
+    "DESCRIPTIONS": ["At the end of its next turn, loses #b"," health."]
+  },
+  "WitchMod:Intelligence": {
+    "NAME": "Intelligence",
+    "DESCRIPTIONS": ["At the start of your turn, draw", "random card from your discard pile.", "random cards from your discard pile."]
+  },
+  "WitchMod:Twitch": {
+    "NAME": "Twitch",
+    "DESCRIPTIONS": ["Temporarily gained #b"," #yDexterity."]
+  },
+  "WitchMod:Rot": {
+    "NAME": "Rot",
+    "DESCRIPTIONS": ["At the start of its turn, loses #b",
+      " HP, then Rot increases by 1.",
+      " NL When it dies, spread to another monster.",
+      "Contagious"]
+  },
+  "WitchMod:SchadenfreudePower": {
+    "NAME": "Schadenfreude",
+    "DESCRIPTIONS": ["Whenever you apply a Debuff to an enemy, gain #b"," Block"]
+  },
+  "WitchMod:SkullFlaskPower": {
+    "NAME": "Skull Flask",
+    "DESCRIPTIONS": ["Temporarily gained #b"," Strength."]
+  },
+  "WitchMod:SummonFamiliar": {
+    "NAME": "Summon Familiar",
+    "DESCRIPTIONS": ["At the start of your turn, add ", "  to your hand",
+      "an upgraded Bat","a Bat",
+      "an upgraded Cat","a Cat",
+      "an upgraded Owl","a Owl",
+      "an upgraded Rat","a Rat",
+      "an upgraded Toad","a Toad",
+      "an upgraded Raven","a Raven"
+    ]
+  },
+  "WitchMod:TrollsBloodPower": {
+    "NAME": "Troll's Blood",
+    "DESCRIPTIONS": ["At the end of your turn gain "," health if you played at least an attack this turn."]
+  },
+  "WitchMod:TwistedMindPower": {
+    "NAME": "Twisted Mind",
+    "DESCRIPTIONS": ["Whenever you play a card that costs 2 or more, ALL enemies lose "," health."]
+  }
+}

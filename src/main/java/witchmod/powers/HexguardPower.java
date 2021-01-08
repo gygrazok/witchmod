@@ -11,14 +11,13 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import witchmod.WitchMod;
 
 public class HexguardPower extends AbstractWitchPower {
-	public static final String POWER_ID = "HexguardPower";
-	public static final String NAME = "Hexguard";
-	public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Artifact."};
+	private static final String POWER_ID = "HexguardPower";
+	//public static final String NAME = "Hexguard";
+	//public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Artifact."};
 	public static final String IMG = "powers/hexguard.png";
 
 	public HexguardPower(AbstractCreature owner, int amount) {
-		this.name = NAME;
-		this.ID = POWER_ID;
+		super(POWER_ID);
 		this.owner = owner;
 		this.amount = amount;
 		this.updateDescription();
@@ -40,7 +39,7 @@ public class HexguardPower extends AbstractWitchPower {
 	public void atStartOfTurn() {
 		flash();
 		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ArtifactPower.POWER_ID, amount));
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
 	}    
 }
 

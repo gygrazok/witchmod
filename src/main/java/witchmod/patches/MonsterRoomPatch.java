@@ -17,8 +17,8 @@ import java.util.Iterator;
 public class MonsterRoomPatch {
 	public static void Postfix(AbstractRoom __instance) {
         //PATCH FOR ATHAME RARE BONUS
-        if (AbstractDungeon.player.hasPower(AthamePower.POWER_ID) && AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount > 0){
-            __instance.rareCardChance += AbstractDungeon.player.getPower(AthamePower.POWER_ID).amount;
+        if (AbstractDungeon.player.hasPower(AthamePower.POWER_ID_FULL) && AbstractDungeon.player.getPower(AthamePower.POWER_ID_FULL).amount > 0){
+            __instance.rareCardChance += AbstractDungeon.player.getPower(AthamePower.POWER_ID_FULL).amount;
         }
     }
 

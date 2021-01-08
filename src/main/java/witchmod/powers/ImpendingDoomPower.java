@@ -13,14 +13,14 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import witchmod.WitchMod;
 
 public class ImpendingDoomPower extends AbstractWitchPower {
-    public static final String POWER_ID = "ImpendingDoom";
-    public static final String NAME = "Impending Doom";
-    public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b"," health."};
+    private static final String POWER_ID = "ImpendingDoom";
+    //public static final String NAME = "Impending Doom";
+    //public static final String[] DESCRIPTIONS = new String[]{ "At the end of its next turn, loses #b"," health."};
     public static final String IMG = "powers/impendingdoom.png";
     private AbstractCreature source;
+
     public ImpendingDoomPower(AbstractCreature owner, AbstractCreature source, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.source = source;
         this.amount = amount;
@@ -41,7 +41,7 @@ public class ImpendingDoomPower extends AbstractWitchPower {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new DamageAction(owner,new DamageInfo(source, amount, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, "ImpendingDoom"));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
         }
     }
 }

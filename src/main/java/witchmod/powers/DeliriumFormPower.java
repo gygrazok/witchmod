@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import witchmod.WitchMod;
 
 public class DeliriumFormPower extends AbstractWitchPower {
-	public static final String POWER_ID = "DeliriumFormPower";
-	public static final String NAME = "Delirium Form";
-	public static final String[] DESCRIPTIONS = new String[]{ "Whenever you play a non-Cost 0 card, draw "," card."," cards."};
+	private static final String POWER_ID = "DeliriumFormPower";
+	//public static final String NAME = "Delirium Form";
+	//public static final String[] DESCRIPTIONS = new String[]{ "Whenever you play a non-Cost 0 card, draw "," card."," cards."};
 	public static final String IMG = "powers/deliriumform.png";
 	public DeliriumFormPower(int amount) {
-		this.name = NAME;
-		this.ID = POWER_ID;
+		super(POWER_ID);
 		this.owner = AbstractDungeon.player;
 		this.amount = amount;
 		this.updateDescription();

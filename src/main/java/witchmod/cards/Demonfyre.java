@@ -50,7 +50,7 @@ public class Demonfyre extends AbstractWitchCard {
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        int bonus = AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID) == null ? 0 : AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID).amount;
+        int bonus = AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID_FULL) == null ? 0 : AbstractDungeon.player.getPower(DemonfyrePower.POWER_ID_FULL).amount;
         if (bonus > 0) {
             isDamageModified = true;
         }

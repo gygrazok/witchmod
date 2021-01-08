@@ -6,17 +6,17 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import witchmod.WitchMod;
 
 public class SchadenfreudePower extends AbstractWitchPower {
-    public static final String POWER_ID = "SchadenfreudePower";
-    public static final String NAME = "Schadenfreude";
-    public static final String[] DESCRIPTIONS = new String[]{ "Whenever you apply a Debuff to an enemy, gain #b"," Block"};
+    private static final String POWER_ID = "SchadenfreudePower";
+    //public static final String NAME = "Schadenfreude";
+    //public static final String[] DESCRIPTIONS = new String[]{ "Whenever you apply a Debuff to an enemy, gain #b"," Block"};
     public static final String IMG = "powers/schadenfreude.png";
 
     public SchadenfreudePower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
@@ -33,7 +33,7 @@ public class SchadenfreudePower extends AbstractWitchPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && source == owner && target != owner && !target.hasPower("Artifact")) {
+        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && source == owner && target != owner && !target.hasPower(ArtifactPower.POWER_ID)) {
             flash();
             AbstractDungeon.actionManager.addToTop(new GainBlockAction(owner, target, amount));
         }

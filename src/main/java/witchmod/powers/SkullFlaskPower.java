@@ -10,14 +10,13 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import witchmod.WitchMod;
 
 public class SkullFlaskPower extends AbstractWitchPower {
-    public static final String POWER_ID = "SkullFlaskPower";
-    public static final String NAME = "Skull Flask";
-    public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Strength."};
+    private static final String POWER_ID = "SkullFlaskPower";
+    //public static final String NAME = "Skull Flask";
+    //public static final String[] DESCRIPTIONS = new String[]{ "Temporarily gained #b"," Strength."};
     public static final String IMG = "powers/skullflask.png";
 
     public SkullFlaskPower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super("POWER_ID");
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
@@ -37,7 +36,7 @@ public class SkullFlaskPower extends AbstractWitchPower {
     public void atEndOfTurn(boolean isPlayer) {
     	flash();
 		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, StrengthPower.POWER_ID, amount));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
     }
     
 }

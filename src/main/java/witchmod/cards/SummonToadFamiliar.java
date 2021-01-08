@@ -31,8 +31,8 @@ public class SummonToadFamiliar extends AbstractWitchCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(SummonFamiliarPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, SummonFamiliarPower.POWER_ID));
+        if (p.hasPower(SummonFamiliarPower.POWER_ID_FULL)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, SummonFamiliarPower.POWER_ID_FULL));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SummonFamiliarPower(p, FamiliarCardEnum.TOAD, upgraded)));
     }

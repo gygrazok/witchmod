@@ -34,7 +34,7 @@
     },
     "WitchMod:BloodSabbath": {
         "NAME": "Blood Sabbath",
-        "DESCRIPTION": "Deal !D! damage and apply !M! Decrepit to ALL enemies."
+        "DESCRIPTION": "Deal !D! damage and apply !M! witchmod:decrepit to ALL enemies."
     },
     "WitchMod:Boline": {
         "NAME": "Boline",
@@ -59,7 +59,7 @@
     },
     "WitchMod:CorruptBlood": {
         "NAME": "Corrupt Blood",
-        "DESCRIPTION": "If the enemy is Poisoned, turn all Poison into Rot, otherwise apply !M! Poison. Recurrent."
+        "DESCRIPTION": "If the enemy is Poisoned, turn all Poison into witchmod:rot, otherwise apply !M! Poison. witchmod:recurrent."
     },
     "WitchMod:CrystalResonance": {
         "NAME": "Crystal Resonance",
@@ -75,8 +75,8 @@
     },
     "WitchMod:Decrepify": {
         "NAME": "Decrepify",
-        "DESCRIPTION": "Apply !M! Decrepit to a random enemy X times.",
-        "UPGRADE_DESCRIPTION": "Apply !M! Decrepit to a random enemy X+1 times."
+        "DESCRIPTION": "Apply !M! witchmod:decrepit to a random enemy X times.",
+        "UPGRADE_DESCRIPTION": "Apply !M! witchmod:decrepit to a random enemy X+1 times."
     },
     "WitchMod:Defend_Witch": {
         "NAME": "Defend",
@@ -88,7 +88,7 @@
     },
     "WitchMod:Demonfyre": {
         "NAME": "Demonfyre",
-        "DESCRIPTION": "Deal !D! damage. All Demonfyre cards deal !M! additional damage this combat. NL Recurrent."
+        "DESCRIPTION": "Deal !D! damage. All Demonfyre cards deal !M! additional damage this combat. NL witchmod:recurrent."
     },
     "WitchMod:DireShriek": {
         "NAME": "Dire Shriek",
@@ -100,7 +100,7 @@
     },
     "WitchMod:EternalThirst": {
         "NAME": "Eternal Thirst",
-        "DESCRIPTION": "Unplayable. NL Cleanse: Suffer at least 20 damage in this fight.",
+        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Suffer at least 20 damage in this fight.",
         "UPGRADE_DESCRIPTION": "Deal !D! damage, then heal for the unblocked damage dealt.",
         "EXTENDED_DESCRIPTION": [
             " NL You have suffered ",
@@ -139,11 +139,11 @@
     },
     "WitchMod:GrimVengeance": {
         "NAME": "Grim Vengeance",
-        "DESCRIPTION": "When you are attacked apply !M! Decrepit to the attacker."
+        "DESCRIPTION": "When you are attacked apply !M! witchmod:decrepit to the attacker."
     },
     "WitchMod:Harmlessness": {
         "NAME": "Harmlessness",
-        "DESCRIPTION": "Unplayable. NL Cleanse: Play 3 skills this turn.",
+        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Play 3 skills this turn.",
         "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
         "EXTENDED_DESCRIPTION": [
             "\"Harmlessness\""
@@ -188,7 +188,7 @@
     },
     "WitchMod:Malady": {
         "NAME": "Malady",
-        "DESCRIPTION": "Deal !D! damage and apply !M! Rot. NL Exhaust."
+        "DESCRIPTION": "Deal !D! damage and apply !M! witchmod:rot. NL Exhaust."
     },
     "WitchMod:MementoMori": {
         "NAME": "Memento Mori",
@@ -216,7 +216,7 @@
     },
     "WitchMod:NighInvulnerability": {
         "NAME": "Nigh Invulnerability",
-        "DESCRIPTION": "Unplayable. NL Cleanse: Play 3 attacks this turn.",
+        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Play 3 attacks this turn.",
         "UPGRADE_DESCRIPTION": "Gain !M! Intangible."
     },
     "WitchMod:OwlFamiliar": {
@@ -236,8 +236,8 @@
     },
     "WitchMod:PlagueSpreader": {
         "NAME": "Plague Spreader",
-        "DESCRIPTION": "Apply !M! Rot to ALL enemies. NL Exhaust.",
-        "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! Rot to ALL enemies. NL Exhaust."
+        "DESCRIPTION": "Apply !M! witchmod:rot to ALL enemies. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! witchmod:rot to ALL enemies. NL Exhaust."
     },
     "WitchMod:Puncture": {
         "NAME": "Puncture",
@@ -245,7 +245,7 @@
     },
     "WitchMod:RatFamiliar": {
         "NAME": "Rat",
-        "DESCRIPTION": "Ethereal. NL Apply !M! Poison and !M! Decrepit. NL Exhaust."
+        "DESCRIPTION": "Ethereal. NL Apply !M! Poison and !M! witchmod:decrepit. NL Exhaust."
     },
     "WitchMod:RavenFamiliar": {
         "NAME": "Raven",
@@ -269,7 +269,7 @@
     },
     "WitchMod:RoilingBarrier": {
         "NAME": "Roiling Barrier",
-        "DESCRIPTION": "Gain !B! block. When drawn increase this card's Block by !M!. NL Recurrent."
+        "DESCRIPTION": "Gain !B! block. When drawn increase this card's Block by !M!. NL witchmod:recurrent."
     },
     "WitchMod:RustWall": {
         "NAME": "Wall of Rust",
@@ -362,7 +362,7 @@
     },
     "WitchMod:UnluckySeven": {
         "NAME": "Unlucky Seven",
-        "DESCRIPTION": "Unplayable. NL Cleanse: Have your current HP ending with 7.",
+        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Have your current HP ending with 7.",
         "UPGRADE_DESCRIPTION": "Gain !M! [B]. NL Draw !M! cards. NL Lose !M! HP. NL Exhaust.",
         "EXTENDED_DESCRIPTION": [
             "Lucky Seven"
@@ -370,8 +370,8 @@
     },
     "WitchMod:UnnaturalEnergy": {
         "NAME": "Unnatural Energy",
-        "DESCRIPTION": "Gain [B]. NL Recurrent.",
-        "UPGRADE_DESCRIPTION": "Gain [B] [B]. NL Recurrent."
+        "DESCRIPTION": "Gain [B]. NL witchmod:recurrent.",
+        "UPGRADE_DESCRIPTION": "Gain [B] [B]. NL witchmod:recurrent."
     },
     "WitchMod:VileEgg": {
         "NAME": "Vile Egg",
@@ -400,6 +400,6 @@
     },
     "WitchMod:ZombieSpit": {
         "NAME": "Zombie Spit",
-        "DESCRIPTION": "Deal !D! damage. Apply !M! Decrepit."
+        "DESCRIPTION": "Deal !D! damage. Apply !M! witchmod:decrepit."
     }
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "NAMES": [
+      "recurrent"
+    ],
+    "DESCRIPTION": "When this card is played it's shuffled in the draw pile instead of being discarded."
+  },
+  {
+    "NAMES": [
+      "cleanse"
+    ],
+    "DESCRIPTION": "This card is cleansed if the condition is satisfied while in hand, turning into a powerful card for the rest of the combat."
+  },
+  {
+    "NAMES": [
+      "rot"
+    ],
+    "DESCRIPTION": "Creatures afflicted by Rot lose HP at the start of their turn. Each turn Rot is increased by #b1."
+  },
+  {
+    "NAMES": [
+      "decrepit"
+    ],
+    "DESCRIPTION": "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1."
+  }
+]

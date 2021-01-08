@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.actions;
 
 import com.badlogic.gdx.graphics.Color;
@@ -40,16 +37,16 @@ public class RotLoseHPAction extends AbstractGameAction {
         }
         this.tickDuration();
         if (this.isDone) {
-            AbstractPower rotPower = target.getPower(RotPower.POWER_ID);
+            AbstractPower rotPower = target.getPower(RotPower.POWER_ID_FULL);
             if (rotPower != null) {
                 int potency = rotPower.amount;
                 if (contagious && !this.target.isPlayer && target.currentHealth <= this.amount) {
                 	//spread to another random monster
                     AbstractMonster newTarget = AbstractDungeon.getRandomMonster((AbstractMonster) target);
                     if (newTarget != null) {
-                    	if (newTarget.hasPower(RotPower.POWER_ID)) {
-                    		newTarget.getPower(RotPower.POWER_ID).amount += potency;
-                    		((RotPower)newTarget.getPower(RotPower.POWER_ID)).contagious = true;
+                    	if (newTarget.hasPower(RotPower.POWER_ID_FULL)) {
+                    		newTarget.getPower(RotPower.POWER_ID_FULL).amount += potency;
+                    		((RotPower)newTarget.getPower(RotPower.POWER_ID_FULL)).contagious = true;
                     	} else {
                     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(newTarget, source, new RotPower(newTarget, source, potency, true), potency));
                     	}

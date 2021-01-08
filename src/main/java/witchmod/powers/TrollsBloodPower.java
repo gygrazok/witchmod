@@ -1,6 +1,3 @@
-/*
- * Decompiled with CFR.
- */
 package witchmod.powers;
 
 import java.util.List;
@@ -13,13 +10,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class TrollsBloodPower extends AbstractWitchPower {
-    public static final String POWER_ID = "TrollsBlood";
-    public static final String NAME = "Troll's Blood";
-    public static final String[] DESCRIPTIONS = new String[]{"At the end of your turn gain "," health if you played at least an attack this turn."};
+    private static final String POWER_ID = "TrollsBlood";
+    //public static final String NAME = "Troll's Blood";
+    //public static final String[] DESCRIPTIONS = new String[]{"At the end of your turn gain "," health if you played at least an attack this turn."};
 
     public TrollsBloodPower(AbstractCreature owner, int regenAmt) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        super(POWER_ID);
         this.owner = owner;
         this.amount = regenAmt;
         this.updateDescription();

@@ -89,16 +89,24 @@
       <scope>system</scope>
       <systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
     </dependency>
+    <dependency>
+      <groupId>com.evacipated.cardcrawl.mod</groupId>
+      <artifactId>StSLib</artifactId>
+      <version>${StSLib.version}</version>
+      <scope>system</scope>
+      <systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
+    </dependency>
   </dependencies>
   <properties>
+    <Steam.path>D:\Giochi\SteamLibrary\SteamApps</Steam.path>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <StSLib.version>1.21.3</StSLib.version>
+    <kotlin.version>1.4.20</kotlin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <ModTheSpire.version>3.18.0</ModTheSpire.version>
     <BaseMod.version>5.26.0</BaseMod.version>
-    <Steam.path>D:\Giochi\SteamLibrary\SteamApps</Steam.path>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <kotlin.version>1.4.20</kotlin.version>
     <SlayTheSpire.version>07-30-2020</SlayTheSpire.version>
-    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>
 

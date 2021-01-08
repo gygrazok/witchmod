@@ -13,6 +13,7 @@
 		<SlayTheSpire.version>07-30-2020</SlayTheSpire.version>
 		<ModTheSpire.version>3.18.0</ModTheSpire.version>
 		<BaseMod.version>5.26.0</BaseMod.version>
+		<StSLib.version>1.21.3</StSLib.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<Steam.path>D:\Giochi\SteamLibrary\SteamApps</Steam.path>
 
@@ -39,6 +40,13 @@
 			<version>${BaseMod.version}</version>
 			<scope>system</scope>
 			<systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.evacipated.cardcrawl.mod</groupId>
+			<artifactId>StSLib</artifactId>
+			<version>${StSLib.version}</version>
+			<scope>system</scope>
+			<systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
 		</dependency>
 	</dependencies>
 

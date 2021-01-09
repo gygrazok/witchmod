@@ -43,7 +43,7 @@
     },
     "WitchMod:BoneCarving": {
         "NAME": "Bone Carving",
-        "DESCRIPTION": "When drawn, apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage."
+        "DESCRIPTION": "witchmod:Unveil: apply 1 Vulnerable to a random enemy !M! times. NL Deal !D! damage."
     },
     "WitchMod:Broomstick": {
         "NAME": "Broomstick",
@@ -59,11 +59,11 @@
     },
     "WitchMod:CorruptBlood": {
         "NAME": "Corrupt Blood",
-        "DESCRIPTION": "If the enemy is Poisoned, turn all Poison into witchmod:rot, otherwise apply !M! Poison. witchmod:recurrent."
+        "DESCRIPTION": "If the enemy is Poisoned, turn all Poison into witchmod:rot, otherwise apply !M! Poison. witchmod:Recurrent."
     },
     "WitchMod:CrystalResonance": {
         "NAME": "Crystal Resonance",
-        "DESCRIPTION": "When drawn, reduce by !M! the cost of all Skills in hand for this turn. NL Gain !B! Block."
+        "DESCRIPTION": "witchmod:Unveil: reduce by !M! the cost of all Skills in hand for this turn. NL Gain !B! Block."
     },
     "WitchMod:CursedBlade": {
         "NAME": "Cursed Blade",
@@ -88,11 +88,11 @@
     },
     "WitchMod:Demonfyre": {
         "NAME": "Demonfyre",
-        "DESCRIPTION": "Deal !D! damage. All Demonfyre cards deal !M! additional damage this combat. NL witchmod:recurrent."
+        "DESCRIPTION": "Deal !D! damage. All Demonfyre cards deal !M! additional damage this combat. NL witchmod:Recurrent."
     },
     "WitchMod:DireShriek": {
         "NAME": "Dire Shriek",
-        "DESCRIPTION": "When drawn deal !M! damage to ALL enemies. NL Deal !D! damage to ALL enemies."
+        "DESCRIPTION": "witchmod:Unveil: deal !M! damage to ALL enemies. NL Deal !D! damage to ALL enemies."
     },
     "WitchMod:DoomBlade": {
         "NAME": "Impending Doom",
@@ -100,7 +100,7 @@
     },
     "WitchMod:EternalThirst": {
         "NAME": "Eternal Thirst",
-        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Suffer at least 20 damage in this fight.",
+        "DESCRIPTION": "Unplayable. NL witchmod:Cleanse: Suffer at least 20 damage in this fight.",
         "UPGRADE_DESCRIPTION": "Deal !D! damage, then heal for the unblocked damage dealt.",
         "EXTENDED_DESCRIPTION": [
             " NL You have suffered ",
@@ -120,7 +120,7 @@
     },
     "WitchMod:Foresight": {
         "NAME": "Foresight",
-        "DESCRIPTION": "Draw a card. If it's a Curse or a Status, exhaust it. Otherwise draw a copy of it. Exhaust."
+        "DESCRIPTION": "Draw a card. If it's a Curse or a Status, exhaust it. Otherwise create a copy of it. Exhaust."
     },
     "WitchMod:GhoulTouch": {
         "NAME": "Ghoul Touch",
@@ -143,7 +143,7 @@
     },
     "WitchMod:Harmlessness": {
         "NAME": "Harmlessness",
-        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Play 3 skills this turn.",
+        "DESCRIPTION": "Unplayable. NL witchmod:Cleanse: Play 3 skills this turn.",
         "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
         "EXTENDED_DESCRIPTION": [
             "\"Harmlessness\""
@@ -208,15 +208,15 @@
     },
     "WitchMod:MysticUnburial": {
         "NAME": "Mystic Unburial",
-        "DESCRIPTION": "Draw a card from your discard pile. NL Exhaust.",
-        "UPGRADE_DESCRIPTION": "Draw a card from you discard pile. That card costs 0 for this turn. NL Exhaust.",
+        "DESCRIPTION": "Choose and draw a card from your discard pile. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": "Choose and draw a card from you discard pile. That card costs 0 for this turn. NL Exhaust.",
         "EXTENDED_DESCRIPTION": [
             "My discard pile is empty."
         ]
     },
     "WitchMod:NighInvulnerability": {
         "NAME": "Nigh Invulnerability",
-        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Play 3 attacks this turn.",
+        "DESCRIPTION": "Unplayable. NL witchmod:Cleanse: Play 3 attacks this turn.",
         "UPGRADE_DESCRIPTION": "Gain !M! Intangible."
     },
     "WitchMod:OwlFamiliar": {
@@ -269,7 +269,7 @@
     },
     "WitchMod:RoilingBarrier": {
         "NAME": "Roiling Barrier",
-        "DESCRIPTION": "Gain !B! block. When drawn increase this card's Block by !M!. NL witchmod:recurrent."
+        "DESCRIPTION": "witchmod:Unveil: increase this card's Block by !M!. Gain !B! Block. NL witchmod:Recurrent."
     },
     "WitchMod:RustWall": {
         "NAME": "Wall of Rust",
@@ -293,11 +293,11 @@
     },
     "WitchMod:SkullFlask": {
         "NAME": "Skull Flask",
-        "DESCRIPTION": "When drawn, gain !M! Strength for this turn. NL Deal !D! damage."
+        "DESCRIPTION": "witchmod:Unveil: gain !M! Strength for this turn. NL Deal !D! damage."
     },
     "WitchMod:SoulBarrier": {
         "NAME": "Soul Barrier",
-        "DESCRIPTION": "When drawn, gain !M! block. NL Gain !B! block. NL Exhaust."
+        "DESCRIPTION": "witchmod:Unveil: gain !M! block. NL Gain !B! block. NL Exhaust."
     },
     "WitchMod:StrangeBrew": {
         "NAME": "Strange Brew",
@@ -342,7 +342,7 @@
     },
     "WitchMod:Thundercloud": {
         "NAME": "Thundercloud",
-        "DESCRIPTION": "When drawn, apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies."
+        "DESCRIPTION": "witchmod:Unveil: apply !M! Weak to a random enemy. NL Deal !D! damage to all Weak enemies."
     },
     "WitchMod:ToadFamiliar": {
         "NAME": "Toad",
@@ -358,11 +358,11 @@
     },
     "WitchMod:Twitch": {
         "NAME": "Twitch",
-        "DESCRIPTION": "When drawn gain !M! Dexterity this turn. NL Gain !B! block."
+        "DESCRIPTION": "witchmod:Unveil: gain !M! Dexterity this turn. NL Gain !B! block."
     },
     "WitchMod:UnluckySeven": {
         "NAME": "Unlucky Seven",
-        "DESCRIPTION": "Unplayable. NL witchmod:cleanse: Have your current HP ending with 7.",
+        "DESCRIPTION": "Unplayable. NL witchmod:Cleanse: Have your current HP ending with 7.",
         "UPGRADE_DESCRIPTION": "Gain !M! [B]. NL Draw !M! cards. NL Lose !M! HP. NL Exhaust.",
         "EXTENDED_DESCRIPTION": [
             "Lucky Seven"
@@ -370,8 +370,8 @@
     },
     "WitchMod:UnnaturalEnergy": {
         "NAME": "Unnatural Energy",
-        "DESCRIPTION": "Gain [B]. NL witchmod:recurrent.",
-        "UPGRADE_DESCRIPTION": "Gain [B] [B]. NL witchmod:recurrent."
+        "DESCRIPTION": "Gain [B]. NL witchmod:Recurrent.",
+        "UPGRADE_DESCRIPTION": "Gain [B] [B]. NL witchmod:Recurrent."
     },
     "WitchMod:VileEgg": {
         "NAME": "Vile Egg",

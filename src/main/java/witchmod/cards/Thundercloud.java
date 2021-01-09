@@ -51,6 +51,10 @@ public class Thundercloud extends AbstractWitchCard {
 
     @Override
     public void triggerWhenDrawn() {
+        unveil();
+    }
+
+    private void unveil() {
         AbstractMonster monster = AbstractDungeon.getRandomMonster();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, AbstractDungeon.player, new WeakPower(monster, magicNumber, false), magicNumber));
     }

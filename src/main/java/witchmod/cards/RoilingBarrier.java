@@ -37,7 +37,10 @@ public class RoilingBarrier extends AbstractWitchCard {
 
     @Override
     public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
+        unveil();
+    }
+
+    private void unveil() {
         baseBlock += magicNumber;
         isBlockModified = true;
     }

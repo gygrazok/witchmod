@@ -16,13 +16,12 @@ public class SkullFlaskPower extends AbstractWitchPower {
     public static final String IMG = "powers/skullflask.png";
 
     public SkullFlaskPower(AbstractCreature owner, int amount) {
-        super("POWER_ID");
+        super(POWER_ID);
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
         this.img = new Texture(WitchMod.getResourcePath(IMG));
         this.type = PowerType.BUFF;
-        
     }
 
     @Override

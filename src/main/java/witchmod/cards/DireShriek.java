@@ -51,7 +51,10 @@ public class DireShriek extends AbstractWitchCard {
 
     @Override
     public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
+        unveil();
+    }
+
+    private void unveil() {
         flash();
         CardCrawlGame.sound.play("BYRD_DEATH");
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(baseMagicNumber, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));

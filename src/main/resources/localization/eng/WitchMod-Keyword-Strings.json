@@ -22,5 +22,11 @@
       "decrepit"
     ],
     "DESCRIPTION": "Creatures afflicted by Decrepit suffer 1 extra damage from attacks for each stack. NL Each turn Decrepit is decreased by #b1."
+  },
+  {
+    "NAMES": [
+      "unveil"
+    ],
+    "DESCRIPTION": "When drawn trigger an effect."
   }
 ]

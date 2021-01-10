@@ -120,7 +120,7 @@
     },
     "WitchMod:Foresight": {
         "NAME": "Foresight",
-        "DESCRIPTION": "Draw a card. If it's a Curse or a Status, exhaust it. Otherwise create a copy of it. Exhaust."
+        "DESCRIPTION": "Scry 2, then draw a card. If it's a Curse or a Status, exhaust it. Otherwise create a copy of it. Exhaust."
     },
     "WitchMod:GhoulTouch": {
         "NAME": "Ghoul Touch",

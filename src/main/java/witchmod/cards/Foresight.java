@@ -1,5 +1,6 @@
 package witchmod.cards;
 
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,7 +11,7 @@ public class Foresight extends AbstractWitchCard {
     public static final String ID = "Foresight";
     public static final String NAME = "Foresight";
     public static final String IMG = "cards/foresight.png";
-    public static final String DESCRIPTION = "Draw a card. If it's a Curse or a Status, exhaust it. Otherwise draw a copy of it. Exhaust.";
+    public static final String DESCRIPTION = "Scry 2, then draw a card. If it's a Curse or a Status, exhaust it. Otherwise draw a copy of it. Exhaust.";
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -27,6 +28,7 @@ public class Foresight extends AbstractWitchCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ScryAction(2));
         AbstractDungeon.actionManager.addToBottom(new ForesightAction());
     }
 

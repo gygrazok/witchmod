@@ -17,7 +17,7 @@ public class RiteOfWinter extends AbstractWitchCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int POOL = 1;
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int BLOCK = 5;
     private static final int BLOCK_UPGRADED = 3;
 

@@ -29,7 +29,7 @@ public class DireShriek extends AbstractWitchCard {
     private static final int POWER = 9;
     private static final int UPGRADE_BONUS = 2;
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 6;
 
 
     public DireShriek() {

@@ -1,3 +1,9 @@
+release v1.2.2
+Now rot damage is shown on the hp bar (like poison)
+The "When drawn" mechanic is now a keyword: Unveil
+Mystic Unburial: changed text in order to clarify that you can choose the card to draw from your discard pile
+Now if the curse chosen with Black Cat is innate (ie: Writhe) it will be put on top of the deck (and therefore be the first card to be drawn)
+
 release v1.2.1
 Support for sts 2.2.0
 String corrections

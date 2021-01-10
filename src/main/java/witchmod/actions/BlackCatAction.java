@@ -64,7 +64,11 @@ public class BlackCatAction extends AbstractGameAction{
         if (!retrieveCard) {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                 AbstractCard curse = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                AbstractDungeon.effectList.add(0,new ShowCardAndAddToDrawPileEffect(curse, Settings.WIDTH/2, Settings.HEIGHT/2, true));
+                if (curse.isInnate) {
+                    AbstractDungeon.effectList.add(0,new ShowCardAndAddToDrawPileEffect(curse, Settings.WIDTH/2, Settings.HEIGHT/2, false));
+                } else {
+                    AbstractDungeon.effectList.add(0,new ShowCardAndAddToDrawPileEffect(curse, Settings.WIDTH/2, Settings.HEIGHT/2, true));
+                }
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;
             }
             retrieveCard = true;

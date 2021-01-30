@@ -190,4 +190,11 @@ public abstract class AbstractWitchCard extends CustomCard {
             initializeDescription();
         }
     }
+
+    @Override
+    public void triggerWhenDrawn() {
+        unveil();
+    }
+
+    public void unveil() {}
 }

@@ -31,13 +31,32 @@ Zombie Spit
 
 
 General comments:
-* Reword cards to make use of Fatal keyword
-* All cards that say "health" should say "HP" instead
+* Reword cards to make use of Fatal keyword -- OK
+* All cards that say "health" should say "HP" instead -- OK
 * "if you have at least a curse in hand" should be "if you have a curse in your hand" (or something similar, I couldn't find any good examples.)
 * You could use a keyword for additional effects that apply if you have a curse in your hand. 
-* Other mods use a keyword for temporary buffs, like "Momentary" in Downfall mod. You should use a similar keyword. "For 1 turn" is too ambiguous.
-* You should capitalize the first word after each ":", so this is something you need to change on each Cleanse card.
+* Other mods use a keyword for temporary buffs, like "Momentary" in Downfall mod. You should use a similar keyword. "For 1 turn" is too ambiguous. -- OK temporary
+* You should capitalize the first word after each ":", so this is something you need to change on each Cleanse card. -- OK
 * You could use a keyword for Familiars. It would simplify each familiar card by a lot. Each card's text would say "Familiar - At the start of your turn, add 1 [card] to your hand." and the "Familiar" keyword would say something like "Lose this buff when you play another Familiar card".
 * You could use a keyword for effects that trigger when drawn. My suggestion would be "Cantrip - {effect}", and the description would be "Apply this effect when the card is drawn."
 
 * This suggestion is more of a gameplay suggestion, but I'll put it here to keep my thoughts in one place. It would be interesting if you could have multiple Familiars at one time. I'm not sure if your mod already HAS ways to do this, because it's possible I haven't seen everything yet, but if it doesn't, then I recommend the following: Add a keyword that means something like "Exclusive", and pair it with "Familiar", so for example, "Exclusive Familiar". Then, if you upgrade the card (or do something else), it could lose the "Exclusive" modifier, and let you play multiple familiars. I think a Familiar-oriented run would be interesting and unique, but it's currently impossible afaik because you're only able to have one.
+
+
+balance:
+foresight: buff -> add scry 2
+dire shriek: buff -> damage when drawn increased from 5/7 to 6/8
+rite of winter: nerf -> base cost 2
+thundercloud: buff -> damage increased from 10/13 to 12/15
+graveburst: buff -> cost decreased from 2/1 to 1/0
+
+
+
+ghoul touch: nerf -> add exhaust, increase damage to 8/12
+crystal resonance: rework -> When drawn reduce by 1 the cost of the next Skill you play. Gain 7 Block.
+shrooms: nerf -> Draw 3 cards. They have random but greater than 0 costs for this turn
+schadenfreude: nerf -> You can gain up to 20 block per turn this way / 40
+twisted mind: buff -> the first time each turn you play a card that costs 2 or more, ALL enemies lose health equal to four times its cost
+blood sabbath: buff/nerf -> cost 2, exhaust
+vile egg: buff -> add a familiar POWER instead of a familiar card
+walpurgis night: rework -> return 1/2 random cards with Unveil from everywhere to the top of your deck. Draw 1/2 cards. Exhaust.

@@ -41,11 +41,7 @@ public class SoulBarrier extends AbstractWitchCard {
     }
 
     @Override
-    public void triggerWhenDrawn() {
-        unveil();
-    }
-
-    private void unveil() {
+    public void unveil() {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber));
     }
 

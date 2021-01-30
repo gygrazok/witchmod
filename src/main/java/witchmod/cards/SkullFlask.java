@@ -49,11 +49,7 @@ public class SkullFlask extends AbstractWitchCard {
     }
 
     @Override
-    public void triggerWhenDrawn() {
-        unveil();
-    }
-
-    private void unveil() {
+    public void unveil() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SkullFlaskPower(AbstractDungeon.player, magicNumber), magicNumber));
     }

@@ -33,7 +33,7 @@ public class WalpurgisNight extends AbstractWitchCard {
         AbstractDungeon.actionManager.addToBottom(new WalpurgisNightAction(magicNumber));
         int cardsToDraw = 0;
         for (AbstractCard c : p.exhaustPile.group) {
-            if ((c.type == CardType.ATTACK || c.type == CardType.SKILL) && c.isEthereal == false && !c.cardID.equals(WalpurgisNight.ID)) {
+            if ((c.type == CardType.ATTACK || c.type == CardType.SKILL) && c.isEthereal == false && !c.cardID.equals(this.cardID)) {
                 cardsToDraw++;
                 if (cardsToDraw >= magicNumber) {
                     cardsToDraw = magicNumber;
@@ -53,7 +53,7 @@ public class WalpurgisNight extends AbstractWitchCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard c : p.exhaustPile.group) {
-            if ((c.type == CardType.ATTACK || c.type == CardType.SKILL) && c.isEthereal == false && !c.cardID.equals(WalpurgisNight.ID)) {
+            if ((c.type == CardType.ATTACK || c.type == CardType.SKILL) && c.isEthereal == false && !c.cardID.equals(this.cardID)) {
                 return super.canUse(p, m);
             }
         }

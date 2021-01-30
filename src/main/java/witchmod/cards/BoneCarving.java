@@ -44,7 +44,7 @@ public class BoneCarving extends AbstractWitchCard {
     }
 
     @Override
-    public void triggerWhenDrawn() {
+    public void unveil() {
         int counter = magicNumber;
         while (counter > 0) {
             AbstractMonster monster = AbstractDungeon.getRandomMonster();

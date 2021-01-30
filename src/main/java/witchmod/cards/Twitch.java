@@ -42,11 +42,7 @@ public class Twitch extends AbstractWitchCard {
     }
 
     @Override
-    public void triggerWhenDrawn() {
-        unveil();
-    }
-
-    private void unveil() {
+    public void unveil() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseDexterityPower(AbstractDungeon.player, magicNumber), magicNumber));
     }
